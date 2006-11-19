@@ -122,14 +122,9 @@ Rake::GemPackageTask.new(spec) do |p|
   p.need_zip = true
 end
 
-desc "Publish the gem to RubyForge"
-task :publish => [ :package ] do
-  Rake::SshFilePublisher.new(
-    "cfauser@rubyforge.org",
-    "/var/www/gforge-projects/ebayapi/releases/",
-    "pkg",
-    "#{PKG_FILE_NAME}.zip",
-    "#{PKG_FILE_NAME}.tgz",
-    "#{PKG_FILE_NAME}.gem"
-  ).upload
+desc "Publish the release files to RubyForge."
+task :release => [ :gem ] do
+  `rubyforge login`
+  system("rubyforge add_release #{PKG_NAME} #{PKG_NAME} 'REL #{PKG_VERSION}' pkg/#{PKG_NAME}-#{PKG_VERSION}.gem")
 end
+
