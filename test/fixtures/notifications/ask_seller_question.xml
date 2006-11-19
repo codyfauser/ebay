@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Header>
+  <ebl:RequesterCredentials soapenv:mustUnderstand="0" xmlns:ns="urn:ebay:apis:eBLBaseComponents" xmlns:ebl="urn:ebay:apis:eBLBaseComponents">
+   <ebl:NotificationSignature xmlns:ebl="urn:ebay:apis:eBLBaseComponents">AsCmyiTlc+yVDltqXuRIEg==</ebl:NotificationSignature>
+  </ebl:RequesterCredentials>
+ </soapenv:Header>
+ <soapenv:Body>
+  <GetMemberMessagesResponse xmlns="urn:ebay:apis:eBLBaseComponents">
+   <Timestamp>2006-07-17T01:41:13.787Z</Timestamp>
+   <Ack>Success</Ack>
+   <CorrelationID>2954209950</CorrelationID>
+   <Version>469</Version>
+   <Build>e469_core_Bundled_3210255_R1</Build>
+   <NotificationEventName>AskSellerQuestion</NotificationEventName>
+   <RecipientUserID>massapparel</RecipientUserID>
+   <MemberMessage>
+    <MemberMessageExchange>
+     <Item>
+      <ItemID>110001567511</ItemID>
+      <ListingDetails>
+       <StartTime>2006-07-10T02:20:06.000Z</StartTime>
+       <EndTime>2006-07-17T02:20:06.000Z</EndTime>
+       <ViewItemURL>http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;item=140006325094&amp;category=24596</ViewItemURL>
+      </ListingDetails>
+      <Seller>
+       <UserID>massapparel</UserID>
+      </Seller>
+      <SellingStatus>
+       <CurrentPrice currencyID="USD">12.99</CurrentPrice>
+      </SellingStatus>
+      <TimeLeft>PT38M53S</TimeLeft>
+      <Title>UNC North Carolina Tarheels Fleece Jacket- Large L NWT</Title>
+     </Item>
+     <Question>
+      <MessageType>AskSellerQuestion</MessageType>
+      <QuestionType>General</QuestionType>
+      <DisplayToPublic>false</DisplayToPublic>
+      <SenderID>fguser2</SenderID>
+      <SenderEmail>unitednerdsco@hotmail.com</SenderEmail>
+      <RecipientID>170180371</RecipientID>
+      <Subject>Question for item #110001567511 - Cowboy Boots</Subject>
+      <Body>Hey, cool boots!</Body>
+      <MessageID>148860</MessageID>
+     </Question>
+     <MessageStatus>Unanswered</MessageStatus>
+     <CreationDate>2006-07-17T01:41:13.000Z</CreationDate>
+     <LastModifiedDate>2006-07-17T01:41:13.000Z</LastModifiedDate>
+    </MemberMessageExchange>
+   </MemberMessage>
+   <PaginationResult>
+    <TotalNumberOfPages>1</TotalNumberOfPages>
+    <TotalNumberOfEntries>1</TotalNumberOfEntries>
+   </PaginationResult>
+   <HasMoreItems>false</HasMoreItems>
+  </GetMemberMessagesResponse>
+ </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,19 @@
+require 'ebay/types/pagination'
+
+module Ebay
+  module Requests
+    class GetSellerTransactions < Abstract
+      include XML::Mapping
+      include Initializer
+      root_element_name 'GetSellerTransactionsRequest'
+      time_node :mod_time_from, 'ModTimeFrom', :optional => true
+      time_node :mod_time_to, 'ModTimeTo', :optional => true
+      object_node :pagination, 'Pagination', :class => Pagination, :optional => true
+      boolean_node :include_final_value_fee, 'IncludeFinalValueFee', 'true', 'false', :optional => true
+      boolean_node :include_containing_order, 'IncludeContainingOrder', 'true', 'false', :optional => true
+      value_array_node :skus, 'SKUArray', 'SKU', :default_value => []
+    end
+  end
+end
+
+

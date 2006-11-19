@@ -1,0 +1,19 @@
+<% for req in requires -%>
+<%= "require 'ebay/types/#{req}'" %>
+<% end -%>
+
+module Ebay
+  module <%= module_name %>
+    class <%= class_definition %>
+      include XML::Mapping
+      include HashInitialization
+      root_element_name '<%= element_name %>'
+<% for node in nodes -%>
+      <%= node.to_s %>
+<% end -%>
+<% for line in customization -%>
+      <%= line.chomp %>
+<% end -%>
+    end
+  end
+end

@@ -1,0 +1,16 @@
+module Ebay
+  module Types
+    class ShippingTypeCode
+      extend Enumerable
+      extend Enumeration
+      Flat = 'Flat'
+      Calculated = 'Calculated'
+      Freight = 'Freight'
+      Free = 'Free'
+      NotSpecified = 'NotSpecified'
+      FlatDomesticCalculatedInternational = 'FlatDomesticCalculatedInternational'
+      CalculatedDomesticFlatInternational = 'CalculatedDomesticFlatInternational'
+    end
+  end
+end
+

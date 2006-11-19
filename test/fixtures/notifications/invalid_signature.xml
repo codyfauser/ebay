@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Header>
+  <ebl:RequesterCredentials soapenv:mustUnderstand="0" xmlns:ns="urn:ebay:apis:eBLBaseComponents" xmlns:ebl="urn:ebay:apis:eBLBaseComponents">
+   <ebl:NotificationSignature xmlns:ebl="urn:ebay:apis:eBLBaseComponents">4RNp4FnFQZQjkWpHki25jQ==</ebl:NotificationSignature>
+  </ebl:RequesterCredentials>
+ </soapenv:Header>
+ <soapenv:Body>
+  <GetMyMessagesResponse xmlns="urn:ebay:apis:eBLBaseComponents">
+   <Timestamp>2006-07-10T23:39:30.938Z</Timestamp>
+   <Ack>Success</Ack>
+   <CorrelationID>2948246052</CorrelationID>
+   <Version>467</Version>
+   <Build>e467_core_Bundled_3169089_R1</Build>
+   <NotificationEventName>MyMessagesM2MMessage</NotificationEventName>
+   <RecipientUserID>massapparel</RecipientUserID>
+   <Messages>
+    <Message>
+     <Sender>caylon2006</Sender>
+     <SendingUserID>295682734</SendingUserID>
+     <RecipientUserID>massapparel</RecipientUserID>
+     <SendToName>massapparel</SendToName>
+     <Subject>Message from eBay Member Regarding Item #140001153277</Subject>
+     <MessageID>6278955061</MessageID>
+     <ExternalMessageID>2592234846</ExternalMessageID>
+     <Text>&lt;html&gt;
+&lt;head&gt;
+&lt;!--eBay V3- msxml 4.0 XXXXXXXXXXXXXXXXXXXXXXXXXX--&gt;
+&lt;!--srcId: MemberToMemberContactEmail--&gt;
+&lt;title&gt;Message from eBay Member Regarding Item #140001153277&lt;/title&gt;
+&lt;style&gt;
+			.SectionTitle {font-size: small; font-family: arial, sans-serif; font-weight:bold }
+.SmallTitle {font-size: x-small; font-family: arial, sans-serif; font-weight:bold }
+.SectionBody {font-size: x-small; font-family: arial, sans-serif}
+.DetailTable, .DetailTable th {font-size: 10 pt; font-family: arial, sans-serif; font-weight:normal }
+.Title {font-size: medium; font-family: verdana, arial, sans-serif}
+.BodyFont {font-size: 10 pt; font-family: arial, sans-serif; font-weight:normal}
+.BodyFontStrong {font-size: 10 pt; font-family: arial, sans-serif; font-weight:bold}
+.SmallBody {font-size: xx-small; font-family: arial, sans-serif; font-weight:normal; margin-top: 8 px;  margin-bottom: 6 px}
+.Separator { COLOR: #CCCCCC; height: 1px}
+.HighlightedSeparator { COLOR: #9999cc; height: 1px}
+.FooterSeparator { COLOR: #CCCCCC; height: 1px}
+.Footer, .Footer p {font-size: xx-small; font-family:arial, sans-serif; color:#666666; margin-top: 2 px;  margin-bottom: 8 px}
+.SmallPara, .SmallParap {margin-top: 8 px;  margin-bottom: 6 px}&lt;/style&gt;
+&lt;style&gt;
+.ItemTitle {font-size: 10pt; font-family: arial, sans-serif; font-weight:bold }
+.sectiontitle{font-size:small;font-weight:bold;}
+.pagetitle {font-size:medium;font-weight:bold;}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body bgcolor=&quot;#FFFFFF&quot;&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td width=&quot;100%&quot; style=&quot;word-wrap: break-word;&quot;&gt;
+&lt;html xmlns:x=&quot;urn:schemas-microsoft-com:xslt&quot;&gt;
+&lt;body bgcolor=&quot;#FFFFFF&quot;&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td width=&quot;100%&quot;&gt;
+&lt;table cellpadding=&quot;5&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td width=&quot;1%&quot; nowrap&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/ca/logos/ebay_95x39.gif&quot; border=&quot;0&quot; alt=&quot;eBay&quot;&gt;&lt;/td&gt;
+&lt;td valign=&quot;bottom&quot;&gt;
+&lt;font face=&quot;verdana, sans-serif&quot; size=&quot;1&quot; color=&quot;#666666&quot;&gt;&lt;b&gt;eBay International AG sent this message to Cody Fauser (massapparel).&lt;/b&gt;&lt;br&gt;
+Your registered name is included to show this message originated from eBay. &lt;a href=&quot;http://pages.ebay.ca/help/confidence/name-userid-emails.html&quot;&gt;Learn more&lt;/a&gt;.
+&lt;/font&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#FFE680&quot;&gt;
+&lt;tr&gt;
+&lt;td valign=&quot;top&quot; width=&quot;8&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/globalAssets/ltCurve.gif&quot; width=&quot;8&quot; height=&quot;8&quot;&gt;&lt;/td&gt;
+&lt;td valign=&quot;bottom&quot; width=&quot;100%&quot;&gt;
+&lt;h1 style=&quot;font-weight:bold; font-size: 14pt; font-family:arial, ; color: #000000; margin-bottom : 2px; margin-top : 2px&quot;&gt;
+&lt;font face=&quot;Arial, Verdana&quot; size=&quot;4&quot;&gt;&lt;b&gt;Question about Item -- Respond Now&lt;/b&gt;&lt;/font&gt;
+&lt;/h1&gt;
+&lt;/td&gt;
+&lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;8&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/globalAssets/rtCurve.gif&quot; width=&quot;8&quot; height=&quot;8&quot; align=&quot;top&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;3&quot; height=&quot;4&quot; bgcolor=&quot;#FFCC00&quot;&gt;&lt;spacer type=&quot;block&quot; height=&quot;4&quot; width=&quot;1&quot;&gt;&lt;/spacer&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;5&quot;&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table width=&quot;100%&quot; border=&quot;0&quot; style=&quot;border-right:1px #FFCC00 solid;border-left:1px #FFCC00 solid;border-bottom:1px #FFCC00 solid&quot;&gt;
+&lt;td style=&quot;padding-left: 8px;&quot;&gt;
+&lt;font face=&quot;Arial, Verdana&quot; size=&quot;2&quot;&gt;
+eBay sent this message on behalf of an eBay member through My Messages. Responses sent using email will go to the eBay member directly and will include your email address.
+&lt;/font&gt;
+&lt;/td&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;5&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;5&quot;&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;4&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;10&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign=&quot;top&quot; width=&quot;100%&quot; align=&quot;left&quot;&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;&quot;&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot; colspan=&quot;1&quot;&gt;
+&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;1&quot; width=&quot;100%&quot; align=&quot;center&quot; border=&quot;0&quot; bgcolor=&quot;#e2e0e0&quot;&gt;
+&lt;tr height=&quot;20&quot; bgcolor=&quot;#eeeeee&quot;&gt;
+&lt;td bgcolor=&quot;#e2e0e0&quot;&gt; &lt;span class=&quot;SectionTitle&quot;&gt;Question from caylon2006&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot; bgcolor=&quot;#eeeeee&quot; border=&quot;0&quot;&gt;
+&lt;tr&gt;&lt;td width=&quot;5&quot;&gt;&lt;img height=&quot;1&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;5&quot;&gt;&lt;/td&gt;&lt;td colspan=&quot;2&quot; nowrap&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;2&quot;&gt;&lt;b&gt;&lt;a href=&quot;http://feedback.ebay.ca/ws/eBayISAPI.dll?ViewFeedback&amp;amp;userid=caylon2006&amp;amp;sspagename=ADME:B:AAQ:CA:2&quot;&gt;caylon2006&lt;/a&gt;( &lt;a href=&quot;http://feedback.ebay.ca/ws/eBayISAPI.dll?ViewFeedback&amp;amp;userid=caylon2006&quot;&gt;3&lt;/a&gt;)&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot;&gt;&lt;/td&gt;&lt;td width=&quot;20%&quot; nowrap&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;Positive feedback:&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;100%&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot;&gt;&lt;/td&gt;&lt;td width=&quot;20%&quot; nowrap&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;Member since:&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;07-Feb-06&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot;&gt;&lt;/td&gt;&lt;td width=&quot;20%&quot; nowrap&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;Location:&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;MO, United States&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;img height=&quot;1&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot;&gt;&lt;/td&gt;&lt;td width=&quot;20%&quot; nowrap&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;Registered on:&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot;&gt;www.ebay.com&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=&quot;3&quot;&gt;&lt;img height=&quot;4&quot; src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot; align=&quot;center&quot; border=&quot;0&quot;&gt;
+&lt;tr bgcolor=&quot;#eeeeee&quot;&gt;
+&lt;td&gt;
+&lt;table cellspacing=&quot;4&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;&lt;td&gt;
+&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;Item: &lt;b&gt;American Eagle Vintage Slim Fit Mens Shirt Large L NWT&lt;/b&gt; (&lt;a href=&quot;http://cgi.ebay.ca/ws/eBayISAPI.dll?ViewItem&amp;amp;item=140001153277&amp;amp;sspagename=ADME:B:AAQ:CA:1&quot;&gt;140001153277&lt;/a&gt;)&lt;/font&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;This message was sent after the listing &lt;b&gt;closed&lt;/b&gt;.&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;caylon2006 is the &lt;b&gt;winner&lt;/b&gt;.&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor=&quot;#c6c6c6&quot;&gt;&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr bgcolor=&quot;#ffffff&quot;&gt;
+&lt;td&gt;
+&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;4&quot;&gt;
+&lt;tr&gt;
+&lt;td width=&quot;84%&quot; valign=&quot;top&quot;&gt;
+&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;have you sent the shirt yet? &lt;br/&gt;&lt;/font&gt;
+&lt;/td&gt;
+&lt;td valign=&quot;top&quot; width=&quot;185&quot; align=&quot;right&quot;&gt;&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;2&quot;&gt;Respond to this question&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;5&quot; height=&quot;5&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;http://contact.ebay.ca/ws/eBayISAPI.dll?M2MContact&amp;amp;item=140001153277&amp;amp;requested=caylon2006&amp;amp;qid=2592234846&amp;amp;redirect=0&amp;amp;sspagename=ADME:B:AAQ:CA:2&quot; border=&quot;0&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/ca/buttons/btnRespondNow.gif&quot; width=&quot;120&quot; height=&quot;32&quot; alt=&quot;Respond Now&quot; border=&quot;0&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot; height=&quot;4&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i&gt;&lt;font face=&quot;verdana, sans-serif&quot; size=&quot;1&quot; color=&quot;gray&quot;&gt;Responses in My Messages will not include your email address.&lt;/font&gt;&lt;/i&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table cellpadding=&quot;1&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;&lt;td bgcolor=&quot;white&quot; height=&quot;10&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;white&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;Thank you,&lt;br&gt;eBay&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;2&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;15&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;2&quot;&gt;
+&lt;table cellpadding=&quot;2&quot; cellspacing=&quot;3&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border: 4px solid #E0E0E0; border-top-width: 1px;&quot;&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;2&quot; bgcolor=&quot;#F4F4F4&quot; nowrap&gt;
+&lt;font style=&quot;font-size: 10 pt; font-family: arial, sans-serif; font-weight:bold&quot; class=&quot;BodyFontStrong&quot;&gt;&lt;b&gt;Details for item number: 140001153277&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td nowrap valign=&quot;top&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;Item title:&lt;/font&gt;&lt;/td&gt;
+&lt;td valign=&quot;top&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;American Eagle Vintage Slim Fit Mens Shirt Large L NWT&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td nowrap valign=&quot;top&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;Item URL:&lt;/font&gt;&lt;/td&gt;
+&lt;td valign=&quot;top&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;&lt;a href=&quot;http://cgi.ebay.ca/ws/eBayISAPI.dll?ViewItem&amp;amp;item=140001153277&amp;amp;sspagename=ADME:B:AAQ:CA:1&quot;&gt;http://cgi.ebay.ca/ws/eBayISAPI.dll?ViewItem&amp;amp;item=140001153277&amp;amp;sspagename=ADME:B:AAQ:CA:1&lt;/a&gt;&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td nowrap valign=&quot;top&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;
+End date:
+&lt;/font&gt;&lt;/td&gt;
+&lt;td valign=&quot;top&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;Friday, Jun 30, 2006 21:45:13 EDT&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;10&quot;&gt;&lt;/td&gt;
+&lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;188&quot;&gt;
+&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;188&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;BORDER: #6b7b91 1px solid;&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;#CAD2DD&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/securityCenter/imgShield_25x25.gif&quot; border=&quot;0&quot; width=&quot;25&quot; height=&quot;25&quot; alt=&quot;Marketplace Safety Tip&quot;&gt;&lt;/td&gt;
+&lt;td bgcolor=&quot;#CAD2DD&quot; nowrap&gt;
+&lt;font size=&quot;-1&quot; face=&quot;Arial, Helvetica, Verdana, sans-serif&quot;&gt;&lt;b&gt;&lt;a href=&quot;http://pages.ebay.ca/securitycentre&quot; style=&quot;text-decoration: none; color: #000000&quot;&gt;Marketplace Safety Tip&lt;/a&gt;&lt;/b&gt;&lt;/font&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#CAD2DD&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/securityCenter/imgTabCorner_25x25.gif&quot; border=&quot;0&quot; width=&quot;25&quot; height=&quot;25&quot; title=&quot;&quot; alt=&quot; &quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table border=&quot;0&quot; cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;&lt;b&gt;Always remember to complete your transactions on eBay - it&apos;s the safer way to trade.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+Is this message an offer to buy your item directly through email without winning the item on eBay?  If so, please help make the eBay marketplace safer by reporting it to us.  These &quot;outside of eBay&quot; transactions may be unsafe and are against eBay policy. &lt;a href=&quot;http://pages.ebay.ca/securitycentre/selling_safely.html&quot;&gt;Learn more about trading safely&lt;/a&gt;.
+&lt;/font&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td height=&quot;5&quot; bgcolor=&quot;#c9d2dc&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot; height=&quot;5&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; width=&quot;1&quot; height=&quot;10&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table cellSpacing=&quot;0&quot; cellPadding=&quot;5&quot; width=&quot;100%&quot; border=&quot;0&quot; style=&quot;BORDER: #c6c6c6 1px solid;&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size=&quot;2&quot; face=&quot;Arial, Verdana&quot;&gt;
+Is this email inappropriate? Does it violate &lt;a href=&quot;http://pages.ebay.ca/help/policies/rfe-unwelcome-email-misuse.html&quot;&gt;eBay policy&lt;/a&gt;? Help protect the Community by &lt;a href=&quot;http://cgi1.ebay.ca/aw-cgi/eBayISAPI.dll?ReportEmailAbuseshow&amp;amp;reporteruserid=massapparel&amp;amp;reporteduserid=caylon2006&amp;amp;emaildate=2006/07/10:16:39:28&amp;amp;emailtype=0&amp;amp;emailtext=have+you+sent+the+shirt+yet%3F+&amp;amp;trackId=2592234846&quot;&gt;reporting it&lt;/a&gt;.					
+&lt;/font&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;10&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width=&quot;100%&quot; bgcolor=&quot;#FFFFFF&quot; colspan=&quot;4&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;20&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width=&quot;100%&quot; bgcolor=&quot;#CECEE3&quot; colspan=&quot;4&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;1&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width=&quot;100%&quot; bgcolor=&quot;#FFFFFF&quot; colspan=&quot;4&quot;&gt;&lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/s.gif&quot; height=&quot;10&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;4&quot;&gt;
+&lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+&lt;tr&gt;&lt;td&gt;&lt;font face=&quot;Arial, Verdana&quot; size=&quot;1&quot; color=&quot;#666666&quot;&gt;Learn how you can protect yourself from spoof (fake) emails at: &lt;br&gt;&lt;a href=&quot;http://pages.ebay.ca/education/spooftutorial&quot;&gt;http://pages.ebay.ca/education/spooftutorial&lt;/a&gt;&lt;br&gt;&lt;br&gt;This eBay notice was sent to &lt;a href=&quot;mailto:ebay@massapparel.com&quot;&gt;ebay@massapparel.com&lt;/a&gt; on behalf of another eBay member through the eBay platform and in accordance with our Privacy Policy.  If you would like to receive this email in text format, change your &lt;a href=&quot;http://cgi4.ebay.ca/ws/eBayISAPI.dll?OptinLoginShow&quot;&gt;notification preferences&lt;/a&gt;.
+ &lt;br&gt;&lt;br&gt;See our Privacy Policy and User Agreement if you have questions about eBay&apos;s communication policies. &lt;br&gt;Privacy Policy: &lt;a href=&quot;http://pages.ebay.ca/help/policies/privacy-policy.html&quot;&gt;http://pages.ebay.ca/help/policies/privacy-policy.html&lt;/a&gt;&lt;br&gt;User Agreement: &lt;a href=&quot;http://pages.ebay.ca/help/policies/user-agreement.html&quot;&gt;http://pages.ebay.ca/help/policies/user-agreement.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;Copyright © 2006 eBay, Inc. All Rights Reserved.&lt;br&gt;Designated trademarks and brands are the property of their respective owners.&lt;br&gt;eBay and the eBay logo are registered trademarks or trademarks of eBay, Inc.&lt;br&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://ca.ebayobjects.com/1a/ebay.ca.ebay.ca.aaq/home;tile=1;sz=1x1;ord=1854902427?&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</Text>
+     <Flagged>false</Flagged>
+     <Read>false</Read>
+     <ReceiveDate>2006-07-10T23:39:28.000Z</ReceiveDate>
+     <ExpirationDate>2006-08-09T23:39:28.000Z</ExpirationDate>
+     <ResponseDetails>
+      <ResponseEnabled>true</ResponseEnabled>
+      <ResponseURL>http://contact.ebay.ca/ws/eBayISAPI.dll?M2MContact&amp;item=140001153277&amp;requested=caylon2006&amp;qid=2592234846&amp;redirect=0&amp;messageid=m6278955061</ResponseURL>
+     </ResponseDetails>
+     <Folder>
+      <FolderID>0</FolderID>
+     </Folder>
+    </Message>
+   </Messages>
+  </GetMyMessagesResponse>
+ </soapenv:Body>
+</soapenv:Envelope>

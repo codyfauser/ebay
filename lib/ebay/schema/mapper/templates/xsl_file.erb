@@ -1,0 +1,11 @@
+def file_content
+  if @file_content
+    @file ||= unpack_stylesheet(@file_content)
+  end
+end
+
+private
+def unpack_stylesheet(base64string)
+  stylesheet = base64string.unpack('m').first
+  stylesheet.gsub!(/urn:schemas-microsoft-com:xslt/, 'http://exslt.org/common')
+end

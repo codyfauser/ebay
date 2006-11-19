@@ -1,0 +1,12 @@
+module Ebay
+  module <%= module_name %>
+    class <%= class_name %>
+      extend Enumerable
+      extend Enumeration
+<% for node in nodes -%>
+      <%= node.ebay_camelize %> = '<%= node %>'
+<% end -%>
+    end
+  end
+end
+

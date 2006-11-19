@@ -1,0 +1,14 @@
+<% for req in requires -%>
+<%= "require '#{req}'" %>
+<% end -%>
+
+module Ebay
+  module Mapping
+    class <%= class_definition %>
+      include XML::Mapping
+<% for node in nodes -%>
+      <%= node.to_s %>
+<% end -%>
+    end
+  end
+end
