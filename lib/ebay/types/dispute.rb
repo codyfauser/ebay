@@ -2,8 +2,8 @@ require 'ebay/types/item'
 require 'ebay/types/dispute_resolution'
 require 'ebay/types/dispute_message'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Dispute
       include XML::Mapping
       include Initializer

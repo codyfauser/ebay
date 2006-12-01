@@ -1,8 +1,8 @@
 require 'ebay/types/error'
 require 'ebay/types/duplicate_invocation_details'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class Abstract < Base
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/store_custom_listing_header_link'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreCustomListingHeader
       include XML::Mapping
       include Initializer

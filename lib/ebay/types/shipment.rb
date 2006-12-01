@@ -2,8 +2,8 @@ require 'ebay/types/measure'
 require 'ebay/types/address'
 require 'ebay/types/item_transaction_id'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Shipment
       include XML::Mapping
       include Initializer

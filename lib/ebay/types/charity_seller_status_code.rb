@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CharitySellerStatusCode
       extend Enumerable
       extend Enumeration

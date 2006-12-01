@@ -1,7 +1,7 @@
 require 'ebay/types/my_messages_alert'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MyMessagesAlertArray
       include XML::Mapping
       include Initializer

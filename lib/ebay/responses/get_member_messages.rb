@@ -1,8 +1,8 @@
 require 'ebay/types/member_message_exchange'
 require 'ebay/types/pagination_result'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetMemberMessages < Abstract
       include XML::Mapping
       include Initializer

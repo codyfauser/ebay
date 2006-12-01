@@ -8,8 +8,8 @@ require 'ebay/types/ebx_opt_in_preference'
 require 'ebay/types/express_preferences'
 require 'ebay/types/pro_stores_checkout_preference'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetUserPreferences < Abstract
       include XML::Mapping
       include Initializer

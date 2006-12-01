@@ -1,8 +1,8 @@
 require 'ebay/types/fee'
 require 'ebay/types/express_item_requirements'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class VerifyAddItem < Abstract
       include XML::Mapping
       include Initializer

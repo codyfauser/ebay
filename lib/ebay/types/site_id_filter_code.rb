@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SiteIDFilterCode
       extend Enumerable
       extend Enumeration

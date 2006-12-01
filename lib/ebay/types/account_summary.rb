@@ -1,7 +1,7 @@
 require 'ebay/types/additional_account'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class AccountSummary
       include XML::Mapping
       include Initializer

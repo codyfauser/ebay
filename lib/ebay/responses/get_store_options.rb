@@ -2,8 +2,8 @@ require 'ebay/types/store_theme_array'
 require 'ebay/types/store_logo'
 require 'ebay/types/store_subscription'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetStoreOptions < Abstract
       include XML::Mapping
       include Initializer

@@ -1,8 +1,8 @@
 require 'ebay/types/category'
 require 'ebay/types/site_wide_characteristics'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetCategory2CS < Abstract
       include XML::Mapping
       include Initializer

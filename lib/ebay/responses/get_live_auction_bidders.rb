@@ -1,8 +1,8 @@
 require 'ebay/types/bidder_detail'
 require 'ebay/types/pagination_result'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetLiveAuctionBidders < Abstract
       include XML::Mapping
       include Initializer

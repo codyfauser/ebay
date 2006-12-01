@@ -1,6 +1,6 @@
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class UserIdPassword
       include XML::Mapping
       include Initializer

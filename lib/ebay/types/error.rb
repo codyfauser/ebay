@@ -1,7 +1,7 @@
 require 'ebay/types/error_parameter'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Error
       include XML::Mapping
       include Initializer

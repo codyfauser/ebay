@@ -1,7 +1,7 @@
 require 'ebay/types/feedback_period'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class FeedbackPeriodArray
       include XML::Mapping
       include Initializer

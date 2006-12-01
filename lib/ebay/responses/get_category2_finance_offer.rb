@@ -1,7 +1,7 @@
 require 'ebay/types/category_finance_offer'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetCategory2FinanceOffer < Abstract
       include XML::Mapping
       include Initializer

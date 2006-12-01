@@ -1,8 +1,8 @@
 require 'ebay/types/transaction'
 require 'ebay/types/pagination_result'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class PaginatedTransactionArray
       include XML::Mapping
       include Initializer

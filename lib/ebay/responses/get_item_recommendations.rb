@@ -1,7 +1,7 @@
 require 'ebay/types/get_recommendations_response_container'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetItemRecommendations < Abstract
       include XML::Mapping
       include Initializer

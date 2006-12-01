@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class BidderTypeCode
       extend Enumerable
       extend Enumeration

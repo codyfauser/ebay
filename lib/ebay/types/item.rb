@@ -30,8 +30,8 @@ require 'ebay/types/listing_checkout_redirect_preference'
 require 'ebay/types/express_details'
 require 'ebay/types/address'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Item
       include XML::Mapping
       include Initializer

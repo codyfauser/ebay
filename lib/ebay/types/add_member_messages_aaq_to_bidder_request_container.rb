@@ -1,7 +1,7 @@
 require 'ebay/types/member_message'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class AddMemberMessagesAAQToBidderRequestContainer
       include XML::Mapping
       include Initializer

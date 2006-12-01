@@ -1,6 +1,6 @@
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetAttributesCS < Abstract
       include XML::Mapping
       include Initializer

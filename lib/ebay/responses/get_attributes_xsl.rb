@@ -1,7 +1,7 @@
 require 'ebay/types/xsl_file'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetAttributesXSL < Abstract
       include XML::Mapping
       include Initializer

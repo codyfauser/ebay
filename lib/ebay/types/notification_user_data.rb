@@ -1,8 +1,8 @@
 require 'ebay/types/sms_subscription'
 require 'ebay/types/summary_event_schedule'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class NotificationUserData
       include XML::Mapping
       include Initializer

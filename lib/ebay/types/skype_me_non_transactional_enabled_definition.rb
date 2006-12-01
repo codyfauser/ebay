@@ -1,6 +1,6 @@
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SkypeMeNonTransactionalEnabledDefinition
       include XML::Mapping
       include Initializer

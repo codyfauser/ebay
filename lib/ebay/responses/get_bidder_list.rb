@@ -1,8 +1,8 @@
 require 'ebay/types/user'
 require 'ebay/types/item'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetBidderList < Abstract
       include XML::Mapping
       include Initializer

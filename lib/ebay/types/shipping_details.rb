@@ -5,8 +5,8 @@ require 'ebay/types/international_shipping_service_options'
 require 'ebay/types/tax_jurisdiction'
 require 'ebay/types/insurance_details'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ShippingDetails
       include XML::Mapping
       include Initializer

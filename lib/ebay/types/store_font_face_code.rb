@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreFontFaceCode
       extend Enumerable
       extend Enumeration

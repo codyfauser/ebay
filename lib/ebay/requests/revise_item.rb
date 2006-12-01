@@ -1,8 +1,8 @@
 require 'ebay/types/item'
 require 'ebay/types/modified_field'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class ReviseItem < Abstract
       include XML::Mapping
       include Initializer

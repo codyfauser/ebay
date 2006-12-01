@@ -1,7 +1,7 @@
 require 'ebay/types/express_histogram_department'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class DomainHistogram
       include XML::Mapping
       include Initializer

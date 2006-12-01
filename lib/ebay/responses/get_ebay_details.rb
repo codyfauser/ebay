@@ -9,8 +9,8 @@ require 'ebay/types/site_details'
 require 'ebay/types/tax_jurisdiction'
 require 'ebay/types/url_details'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GeteBayDetails < Abstract
       include XML::Mapping
       include Initializer

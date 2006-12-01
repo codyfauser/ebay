@@ -1,7 +1,7 @@
 require 'ebay/types/context_search_asset'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetContextualKeywords < Abstract
       include XML::Mapping
       include Initializer

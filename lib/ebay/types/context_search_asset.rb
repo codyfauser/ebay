@@ -1,7 +1,7 @@
 require 'ebay/types/category'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ContextSearchAsset
       include XML::Mapping
       include Initializer

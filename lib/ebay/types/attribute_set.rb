@@ -1,7 +1,7 @@
 require 'ebay/types/attribute'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class AttributeSet
       include XML::Mapping
       include Initializer

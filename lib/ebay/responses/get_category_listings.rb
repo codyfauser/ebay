@@ -3,8 +3,8 @@ require 'ebay/types/category'
 require 'ebay/types/pagination_result'
 require 'ebay/types/buying_guide_details'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetCategoryListings < Abstract
       include XML::Mapping
       include Initializer

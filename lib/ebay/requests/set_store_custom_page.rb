@@ -1,7 +1,7 @@
 require 'ebay/types/store_custom_page'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class SetStoreCustomPage < Abstract
       include XML::Mapping
       include Initializer

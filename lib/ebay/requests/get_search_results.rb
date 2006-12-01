@@ -8,8 +8,8 @@ require 'ebay/types/search_request'
 require 'ebay/types/external_product_id'
 require 'ebay/types/request_categories'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetSearchResults < Abstract
       include XML::Mapping
       include Initializer

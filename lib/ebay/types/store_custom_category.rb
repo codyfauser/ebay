@@ -1,7 +1,7 @@
 require 'ebay/types/store_custom_category'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreCustomCategory
       include XML::Mapping
       include Initializer

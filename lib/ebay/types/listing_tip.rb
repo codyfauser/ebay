@@ -1,8 +1,8 @@
 require 'ebay/types/listing_tip_message'
 require 'ebay/types/listing_tip_field'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ListingTip
       include XML::Mapping
       include Initializer

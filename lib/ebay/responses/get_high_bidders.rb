@@ -1,7 +1,7 @@
 require 'ebay/types/offer'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetHighBidders < Abstract
       include XML::Mapping
       include Initializer

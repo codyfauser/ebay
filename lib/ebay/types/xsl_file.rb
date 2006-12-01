@@ -1,6 +1,6 @@
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class XSLFile
       include XML::Mapping
       include Initializer
@@ -8,6 +8,7 @@ module Ebay
       text_node :file_name, 'FileName', :optional => true
       text_node :file_version, 'FileVersion', :optional => true
       text_node :file_content, 'FileContent', :optional => true
+      # The content of the XSL stylesheet
       def file_content
         if @file_content
           @file ||= unpack_stylesheet(@file_content)

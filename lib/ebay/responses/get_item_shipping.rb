@@ -1,7 +1,7 @@
 require 'ebay/types/shipping_details'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetItemShipping < Abstract
       include XML::Mapping
       include Initializer

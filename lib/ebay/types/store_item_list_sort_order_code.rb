@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreItemListSortOrderCode
       extend Enumerable
       extend Enumeration

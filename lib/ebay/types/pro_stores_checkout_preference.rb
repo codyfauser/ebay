@@ -1,7 +1,7 @@
 require 'ebay/types/pro_stores_details'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ProStoresCheckoutPreference
       include XML::Mapping
       include Initializer

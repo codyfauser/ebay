@@ -1,7 +1,7 @@
 require 'ebay/types/name_value_list'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class NameValueListArray
       include XML::Mapping
       include Initializer

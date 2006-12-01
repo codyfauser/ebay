@@ -5,8 +5,8 @@ require 'ebay/types/buying_guide_details'
 require 'ebay/types/expansion_array'
 require 'ebay/types/spelling_suggestion'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetSearchResults < Abstract
       include XML::Mapping
       include Initializer

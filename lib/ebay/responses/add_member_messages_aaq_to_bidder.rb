@@ -1,7 +1,7 @@
 require 'ebay/types/add_member_messages_aaq_to_bidder_response_container'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class AddMemberMessagesAAQToBidder < Abstract
       include XML::Mapping
       include Initializer

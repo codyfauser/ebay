@@ -1,7 +1,7 @@
 require 'ebay/types/live_auction_approval_status'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class ApproveLiveAuctionBidders < Abstract
       include XML::Mapping
       include Initializer

@@ -1,8 +1,8 @@
 require 'ebay/types/description_template'
 require 'ebay/types/theme_group'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetDescriptionTemplates < Abstract
       include XML::Mapping
       include Initializer

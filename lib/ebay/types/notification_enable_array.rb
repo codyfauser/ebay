@@ -1,7 +1,7 @@
 require 'ebay/types/notification_enable'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class NotificationEnableArray
       include XML::Mapping
       include Initializer

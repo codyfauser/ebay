@@ -1,7 +1,7 @@
 require 'ebay/types/item'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MyeBaySecondChanceOfferList
       include XML::Mapping
       include Initializer

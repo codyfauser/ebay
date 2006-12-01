@@ -2,8 +2,8 @@ require 'ebay/types/search_attributes'
 require 'ebay/types/pagination'
 require 'ebay/types/characteristic_set_ids'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ProductSearch
       include XML::Mapping
       include Initializer

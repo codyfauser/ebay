@@ -5,8 +5,8 @@ require 'ebay/types/shipping_service_options'
 require 'ebay/types/external_transaction'
 require 'ebay/types/transaction'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Order
       include XML::Mapping
       include Initializer

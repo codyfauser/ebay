@@ -1,7 +1,7 @@
 require 'ebay/types/authentication_entry'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetReturnURL < Abstract
       include XML::Mapping
       include Initializer

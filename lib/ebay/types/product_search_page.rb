@@ -2,8 +2,8 @@ require 'ebay/types/characteristics_set'
 require 'ebay/types/characteristic'
 require 'ebay/types/data_element_set'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ProductSearchPage
       include XML::Mapping
       include Initializer

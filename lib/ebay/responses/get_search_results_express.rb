@@ -2,8 +2,8 @@ require 'ebay/types/express_histogram_department'
 require 'ebay/types/item'
 require 'ebay/types/express_product'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetSearchResultsExpress < Abstract
       include XML::Mapping
       include Initializer

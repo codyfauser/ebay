@@ -1,7 +1,7 @@
 require 'ebay/types/listing_tip'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ListingAnalyzerRecommendations
       include XML::Mapping
       include Initializer

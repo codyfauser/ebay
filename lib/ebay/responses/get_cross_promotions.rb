@@ -1,7 +1,7 @@
 require 'ebay/types/cross_promotions'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetCrossPromotions < Abstract
       include XML::Mapping
       include Initializer

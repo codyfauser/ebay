@@ -3,8 +3,8 @@ require 'ebay/types/scheduling_info'
 require 'ebay/types/pro_stores_checkout_preference'
 require 'ebay/types/express_seller_requirements'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Seller
       include XML::Mapping
       include Initializer

@@ -1,8 +1,8 @@
 require 'ebay/types/want_it_now_post'
 require 'ebay/types/pagination_result'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetWantItNowSearchResults < Abstract
       include XML::Mapping
       include Initializer

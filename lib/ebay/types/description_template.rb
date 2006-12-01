@@ -1,6 +1,6 @@
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class DescriptionTemplate
       include XML::Mapping
       include Initializer

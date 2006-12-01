@@ -1,7 +1,7 @@
 require 'ebay/types/affiliate_tracking_details'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetSearchResultsExpress < Abstract
       include XML::Mapping
       include Initializer

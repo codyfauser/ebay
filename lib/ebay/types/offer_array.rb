@@ -1,7 +1,7 @@
 require 'ebay/types/offer'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class OfferArray
       include XML::Mapping
       include Initializer

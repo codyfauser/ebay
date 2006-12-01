@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ExpressHistogramSortCode
       extend Enumerable
       extend Enumeration

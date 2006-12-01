@@ -1,8 +1,8 @@
 require 'ebay/types/item_list_customization'
 require 'ebay/types/my_ebay_selection'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetMyeBayBuying < Abstract
       include XML::Mapping
       include Initializer

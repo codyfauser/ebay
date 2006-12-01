@@ -1,8 +1,8 @@
 require 'ebay/types/item'
 require 'ebay/types/name_value_list'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SearchResultItem
       include XML::Mapping
       include Initializer

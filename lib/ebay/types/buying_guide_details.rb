@@ -1,7 +1,7 @@
 require 'ebay/types/buying_guide'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class BuyingGuideDetails
       include XML::Mapping
       include Initializer

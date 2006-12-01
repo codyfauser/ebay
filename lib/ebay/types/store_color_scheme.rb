@@ -1,8 +1,8 @@
 require 'ebay/types/store_color'
 require 'ebay/types/store_font'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreColorScheme
       include XML::Mapping
       include Initializer

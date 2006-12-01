@@ -1,7 +1,7 @@
 require 'ebay/types/store_preferences'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class SetStorePreferences < Abstract
       include XML::Mapping
       include Initializer

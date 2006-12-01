@@ -1,7 +1,7 @@
 require 'ebay/types/promotion_rule'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class SetPromotionRules < Abstract
       include XML::Mapping
       include Initializer

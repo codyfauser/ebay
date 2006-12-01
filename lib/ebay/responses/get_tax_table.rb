@@ -1,7 +1,7 @@
 require 'ebay/types/tax_jurisdiction'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetTaxTable < Abstract
       include XML::Mapping
       include Initializer

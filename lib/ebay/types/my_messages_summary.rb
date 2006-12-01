@@ -1,7 +1,7 @@
 require 'ebay/types/my_messages_folder_summary'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MyMessagesSummary
       include XML::Mapping
       include Initializer

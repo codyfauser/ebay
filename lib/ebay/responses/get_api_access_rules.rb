@@ -1,7 +1,7 @@
 require 'ebay/types/api_access_rule'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetApiAccessRules < Abstract
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/attribute_set'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SIFFTASRecommendations
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/store_logo'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreLogoArray
       include XML::Mapping
       include Initializer

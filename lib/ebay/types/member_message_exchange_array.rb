@@ -1,7 +1,7 @@
 require 'ebay/types/member_message_exchange'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MemberMessageExchangeArray
       include XML::Mapping
       include Initializer

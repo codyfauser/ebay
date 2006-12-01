@@ -1,8 +1,8 @@
 require 'ebay/types/order'
 require 'ebay/types/transaction'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class OrderTransaction
       include XML::Mapping
       include Initializer

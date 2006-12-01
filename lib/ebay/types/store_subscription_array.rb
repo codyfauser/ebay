@@ -1,7 +1,7 @@
 require 'ebay/types/store_subscription'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreSubscriptionArray
       include XML::Mapping
       include Initializer

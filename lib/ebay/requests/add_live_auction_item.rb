@@ -1,7 +1,7 @@
 require 'ebay/types/item'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class AddLiveAuctionItem < Abstract
       include XML::Mapping
       include Initializer

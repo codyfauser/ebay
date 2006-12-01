@@ -3,8 +3,8 @@ require 'ebay/types/my_ebay_favorite_search_list'
 require 'ebay/types/my_ebay_favorite_seller_list'
 require 'ebay/types/my_ebay_second_chance_offer_list'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetMyeBay < Abstract
       include XML::Mapping
       include Initializer

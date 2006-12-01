@@ -1,7 +1,7 @@
 require 'ebay/types/my_ebay_favorite_seller'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MyeBayFavoriteSellerList
       include XML::Mapping
       include Initializer

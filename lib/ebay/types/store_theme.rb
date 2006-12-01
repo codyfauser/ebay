@@ -1,7 +1,7 @@
 require 'ebay/types/store_color_scheme'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreTheme
       include XML::Mapping
       include Initializer

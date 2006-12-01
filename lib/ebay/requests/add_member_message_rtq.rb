@@ -1,7 +1,7 @@
 require 'ebay/types/member_message'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class AddMemberMessageRTQ < Abstract
       include XML::Mapping
       include Initializer

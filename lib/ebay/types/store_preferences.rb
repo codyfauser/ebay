@@ -1,7 +1,7 @@
 require 'ebay/types/store_vacation_preferences'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StorePreferences
       include XML::Mapping
       include Initializer

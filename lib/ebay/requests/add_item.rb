@@ -1,8 +1,8 @@
 require 'ebay/types/item'
 require 'ebay/types/external_product_id'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class AddItem < Abstract
       include XML::Mapping
       include Initializer

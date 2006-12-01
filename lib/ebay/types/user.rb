@@ -5,8 +5,8 @@ require 'ebay/types/charity_id'
 require 'ebay/types/charity_seller'
 require 'ebay/types/bidding_summary'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class User
       include XML::Mapping
       include Initializer

@@ -2,8 +2,8 @@ require 'ebay/types/notification_details'
 require 'ebay/types/mark_up_mark_down_event'
 require 'ebay/types/notification_statistics'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetNotificationsUsage < Abstract
       include XML::Mapping
       include Initializer

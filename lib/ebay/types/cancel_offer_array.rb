@@ -1,7 +1,7 @@
 require 'ebay/types/cancel_offer'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CancelOfferArray
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/item_transaction_id'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetOrderTransactions < Abstract
       include XML::Mapping
       include Initializer

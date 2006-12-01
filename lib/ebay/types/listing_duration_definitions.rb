@@ -1,7 +1,7 @@
 require 'ebay/types/listing_duration_definition'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ListingDurationDefinitions
       include XML::Mapping
       include Initializer

@@ -3,8 +3,8 @@ require 'ebay/types/store_theme'
 require 'ebay/types/store_custom_category'
 require 'ebay/types/store_custom_listing_header'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Store
       include XML::Mapping
       include Initializer

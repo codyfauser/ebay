@@ -13,12 +13,13 @@ module Ebay #:nodoc:
     end
   end
 
+  # == Overview
   # Api is the main proxy class responsible for instantiating and invoking
   # the correct Ebay::Requests object for the method called. This is currently done
-  # using method_missing.  
-  # ebay = Ebay::Api.new
-  # response = ebay.get_ebay_official_time
-  # puts response.timestamp # => 2006-08-13T21:28:39.515Z
+  # using method_missing:  
+  #   ebay = Ebay::Api.new
+  #   response = ebay.get_ebay_official_time
+  #   puts response.timestamp # => 2006-08-13T21:28:39.515Z
   #
   # All Ebay API calls have a corresponding request and response object.
   # In the example above the request objects is 
@@ -38,23 +39,39 @@ module Ebay #:nodoc:
     # Make the default site US
     self.site_id = 0
   
+    # The URI that all requests are sent to. This depends on the current environment the Api
+    # is configured to use and will either be the Api#sandbox_url or the Api#production_url
     def self.service_uri
       URI.parse(using_sandbox? ? sandbox_url : production_url)
     end
 
+    # Are we currently routing requests to the eBay sandbox URL?
     def self.using_sandbox?
       use_sandbox
     end
 
+    # Are we currently routing requests to the eBay production URL?
     def self.using_production?
       !using_sandbox?
     end
 
-
+    # Simply yields the Ebay::Api class itself.  This makes configuration a bit nicer looking:
+    #
+    #  Ebay::Api.configure do |ebay|
+    #    ebay.auth_token = 'YOUR AUTH TOKEN HERE'
+    #    ebay.dev_id = 'YOUR DEVELOPER ID HERE'
+    #    ebay.app_id = 'YOUR APPLICATION ID HERE'
+    #    ebay.cert = 'YOUR CERTIFICATE HERE'
+    #
+    #  # The default environment is the production environment
+    #  # Override by setting use_sandbox to true
+    #    ebay.use_sandbox = true
+    #  end
     def self.configure
       yield self if block_given?
     end
 
+    # The schema version the API client is currently using
     def schema_version
       Ebay::Schema::VERSION.to_s
     end
@@ -75,6 +92,13 @@ module Ebay #:nodoc:
       self.class.auth_token
     end
 
+    # With no options, the default is to use the default site_id and the default
+    # auth_token configured on the Api class.
+    #   ebay = Ebay::Api.new
+    #
+    # However, another user's auth_token can be used and the site can be selected
+    # at the time of creation. Ex: Canada(Site 2) with another user's auth token.
+    #   ebay = Ebay::Api.new(:site_id => 2, :auth_token => 'TEST')
     def initialize(options = {})
       @format = options[:format] || :object
     end

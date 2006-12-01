@@ -1,7 +1,7 @@
 require 'ebay/types/want_it_now_post'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetWantItNowPost < Abstract
       include XML::Mapping
       include Initializer

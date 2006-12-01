@@ -1,7 +1,7 @@
 require 'ebay/types/add_member_messages_aaq_to_bidder_request_container'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class AddMemberMessagesAAQToBidder < Abstract
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/item'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetItem < Abstract
       include XML::Mapping
       include Initializer

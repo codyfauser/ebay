@@ -1,7 +1,7 @@
 require 'ebay/types/picture_manager_details'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetPictureManagerDetails < Abstract
       include XML::Mapping
       include Initializer

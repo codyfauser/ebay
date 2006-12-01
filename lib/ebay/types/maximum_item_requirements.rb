@@ -1,6 +1,6 @@
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MaximumItemRequirements
       include XML::Mapping
       include Initializer

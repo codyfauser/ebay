@@ -1,7 +1,7 @@
 require 'ebay/types/product_search_page'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetProductSearchPage < Abstract
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/product_info'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class PricingRecommendations
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/schedule'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class LiveAuctionCatalog
       include XML::Mapping
       include Initializer

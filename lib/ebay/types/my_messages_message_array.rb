@@ -1,7 +1,7 @@
 require 'ebay/types/my_messages_message'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MyMessagesMessageArray
       include XML::Mapping
       include Initializer

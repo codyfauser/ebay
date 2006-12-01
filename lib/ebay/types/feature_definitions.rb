@@ -29,8 +29,8 @@ require 'ebay/types/local_listing_distances_regular_definition'
 require 'ebay/types/local_listing_distances_specialty_definition'
 require 'ebay/types/local_listing_distances_non_subscription_definition'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class FeatureDefinitions
       include XML::Mapping
       include Initializer

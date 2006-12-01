@@ -1,6 +1,6 @@
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class EndItem < Abstract
       include XML::Mapping
       include Initializer

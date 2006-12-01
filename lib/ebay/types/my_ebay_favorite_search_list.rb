@@ -1,7 +1,7 @@
 require 'ebay/types/my_ebay_favorite_search'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MyeBayFavoriteSearchList
       include XML::Mapping
       include Initializer

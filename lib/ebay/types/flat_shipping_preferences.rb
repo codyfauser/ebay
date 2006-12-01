@@ -1,7 +1,7 @@
 require 'ebay/types/flat_rate_insurance_range_cost'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class FlatShippingPreferences
       include XML::Mapping
       include Initializer

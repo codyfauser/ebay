@@ -1,8 +1,8 @@
 require 'ebay/types/maximum_item_requirements'
 require 'ebay/types/verified_user_requirements'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class BuyerRequirements
       include XML::Mapping
       include Initializer

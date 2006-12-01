@@ -1,4 +1,4 @@
-module Enumeration
+module Enumeration #:nodoc:
   def each
     constants.each do |element|
       yield element

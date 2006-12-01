@@ -1,7 +1,7 @@
 require 'ebay/types/promoted_item'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class PromotionRule
       include XML::Mapping
       include Initializer

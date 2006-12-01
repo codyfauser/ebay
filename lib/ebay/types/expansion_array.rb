@@ -1,7 +1,7 @@
 require 'ebay/types/search_result_item'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ExpansionArray
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/address'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class AdFormatLead
       include XML::Mapping
       include Initializer

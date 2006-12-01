@@ -1,8 +1,8 @@
 require 'ebay/types/extended_product_finder_id'
 require 'ebay/types/characteristics_set'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Category
       include XML::Mapping
       include Initializer

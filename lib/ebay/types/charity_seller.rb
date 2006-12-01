@@ -1,7 +1,7 @@
 require 'ebay/types/charity_affiliation'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CharitySeller
       include XML::Mapping
       include Initializer

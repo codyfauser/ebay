@@ -1,7 +1,7 @@
 require 'ebay/types/offer'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class PlaceOffer < Abstract
       include XML::Mapping
       include Initializer

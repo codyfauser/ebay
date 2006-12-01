@@ -1,7 +1,7 @@
 require 'ebay/types/external_product_id'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SellerPayment
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/dispute'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetDispute < Abstract
       include XML::Mapping
       include Initializer

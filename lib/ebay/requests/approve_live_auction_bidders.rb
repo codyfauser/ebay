@@ -1,7 +1,7 @@
 require 'ebay/types/bid_approval'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class ApproveLiveAuctionBidders < Abstract
       include XML::Mapping
       include Initializer

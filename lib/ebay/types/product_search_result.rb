@@ -2,8 +2,8 @@ require 'ebay/types/product_family'
 require 'ebay/types/product_finder_constraint'
 require 'ebay/types/response_attribute_set'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ProductSearchResult
       include XML::Mapping
       include Initializer

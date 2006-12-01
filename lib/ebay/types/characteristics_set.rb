@@ -1,7 +1,7 @@
 require 'ebay/types/characteristic'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CharacteristicsSet
       include XML::Mapping
       include Initializer

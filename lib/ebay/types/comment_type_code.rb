@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CommentTypeCode
       extend Enumerable
       extend Enumeration

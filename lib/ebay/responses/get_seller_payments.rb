@@ -1,8 +1,8 @@
 require 'ebay/types/pagination_result'
 require 'ebay/types/seller_payment'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetSellerPayments < Abstract
       include XML::Mapping
       include Initializer

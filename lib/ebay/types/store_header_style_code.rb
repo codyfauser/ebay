@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class StoreHeaderStyleCode
       extend Enumerable
       extend Enumeration

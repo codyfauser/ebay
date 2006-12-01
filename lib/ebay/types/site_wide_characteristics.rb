@@ -1,7 +1,7 @@
 require 'ebay/types/characteristics_set'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SiteWideCharacteristics
       include XML::Mapping
       include Initializer

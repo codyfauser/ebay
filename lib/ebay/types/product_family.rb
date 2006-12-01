@@ -1,7 +1,7 @@
 require 'ebay/types/product'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ProductFamily
       include XML::Mapping
       include Initializer

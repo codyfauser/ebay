@@ -1,7 +1,7 @@
 require 'ebay/types/user_id_password'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CustomSecurityHeader
       include XML::Mapping
       include Initializer

@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class PhotoDisplayCode
       extend Enumerable
       extend Enumeration

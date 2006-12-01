@@ -1,8 +1,8 @@
 require 'ebay/types/label'
 require 'ebay/types/val'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Characteristic
       include XML::Mapping
       include Initializer

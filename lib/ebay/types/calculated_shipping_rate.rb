@@ -1,7 +1,7 @@
 require 'ebay/types/measure'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CalculatedShippingRate
       include XML::Mapping
       include Initializer

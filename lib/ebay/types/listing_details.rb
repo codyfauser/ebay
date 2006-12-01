@@ -1,7 +1,7 @@
 require 'ebay/types/express_item_requirements'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ListingDetails
       include XML::Mapping
       include Initializer

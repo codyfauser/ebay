@@ -1,6 +1,6 @@
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetAllBidders < Abstract
       include XML::Mapping
       include Initializer

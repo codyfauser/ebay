@@ -1,7 +1,7 @@
 require 'ebay/types/feedback_info'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class CompleteSale < Abstract
       include XML::Mapping
       include Initializer

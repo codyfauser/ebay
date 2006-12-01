@@ -1,7 +1,7 @@
 require 'ebay/types/bidder_detail'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class BidderDetailArray
       include XML::Mapping
       include Initializer

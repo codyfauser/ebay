@@ -1,8 +1,8 @@
 require 'ebay/types/item'
 require 'ebay/types/pagination_result'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class PaginatedItemArray
       include XML::Mapping
       include Initializer

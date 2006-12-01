@@ -1,7 +1,7 @@
 require 'ebay/types/best_offer'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class RespondToBestOffer < Abstract
       include XML::Mapping
       include Initializer

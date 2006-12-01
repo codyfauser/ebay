@@ -1,5 +1,5 @@
-module Ebay
-  module Initializer
+module Ebay #:nodoc:
+  module Initializer #:nodoc:
     def initialize(attributes = nil)
       super
       self.object_attributes = attributes

@@ -2,8 +2,8 @@ require 'ebay/types/category_feature'
 require 'ebay/types/site_defaults'
 require 'ebay/types/feature_definitions'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetCategoryFeatures < Abstract
       include XML::Mapping
       include Initializer

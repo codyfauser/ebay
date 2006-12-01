@@ -1,8 +1,8 @@
 require 'ebay/types/product_family'
 require 'ebay/types/product_finder_constraint'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ResponseAttributeSet
       include XML::Mapping
       include Initializer

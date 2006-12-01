@@ -2,8 +2,8 @@ require 'ebay/types/selling_summary'
 require 'ebay/types/paginated_item_array'
 require 'ebay/types/paginated_order_transaction_array'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetMyeBaySelling < Abstract
       include XML::Mapping
       include Initializer

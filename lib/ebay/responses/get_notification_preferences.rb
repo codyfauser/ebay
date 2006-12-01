@@ -3,8 +3,8 @@ require 'ebay/types/notification_enable'
 require 'ebay/types/notification_user_data'
 require 'ebay/types/notification_event_property'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetNotificationPreferences < Abstract
       include XML::Mapping
       include Initializer

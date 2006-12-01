@@ -1,6 +1,6 @@
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ApplicationDeliveryPreferences
       include XML::Mapping
       include Initializer
@@ -11,10 +11,12 @@ module Ebay
       text_node :alert_enable, 'AlertEnable', :optional => true
       text_node :notification_payload_type, 'NotificationPayloadType', :optional => true
       text_node :device_type, 'DeviceType', :optional => true
+      # Is the application enabled to received Platform Notifications?
       def application_enabled?
         @application_enable == 'Enable'
       end
       
+      # Are alerts enabled?
       def alerts_enabled?
         @alert_enable == 'Enable'
       end

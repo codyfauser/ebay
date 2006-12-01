@@ -1,8 +1,8 @@
 require 'ebay/types/pagination_result'
 require 'ebay/types/category'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetPopularKeywords < Abstract
       include XML::Mapping
       include Initializer

@@ -1,7 +1,7 @@
 require 'ebay/types/ad_format_lead'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetAdFormatLeads < Abstract
       include XML::Mapping
       include Initializer

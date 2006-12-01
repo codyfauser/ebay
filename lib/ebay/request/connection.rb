@@ -3,8 +3,8 @@ require 'date'
 require 'time'
 require 'uri'
 
-module Ebay
-  class ConnectionError < StandardError
+module Ebay #:nodoc:
+  class ConnectionError < StandardError #:nodoc:
     attr_reader :response
 
     def initialize(response, message = nil)
@@ -17,16 +17,16 @@ module Ebay
     end
   end
 
-  class ClientError < ConnectionError
+  class ClientError < ConnectionError #:nodoc:
   end
 
-  class ServerError < ConnectionError
+  class ServerError < ConnectionError #:nodoc:
   end
 
-  class ResourceNotFound < ClientError
+  class ResourceNotFound < ClientError #:nodoc:
   end
 
-  class Connection
+  class Connection #:nodoc:
     def initialize(site)
       @site = site
     end

@@ -1,7 +1,7 @@
 require 'ebay/types/feedback_requirements'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class ExpressSellerRequirements
       include XML::Mapping
       include Initializer

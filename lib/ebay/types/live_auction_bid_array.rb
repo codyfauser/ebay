@@ -1,7 +1,7 @@
 require 'ebay/types/live_auction_bid'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class LiveAuctionBidArray
       include XML::Mapping
       include Initializer

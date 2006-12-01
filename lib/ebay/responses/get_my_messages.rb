@@ -2,8 +2,8 @@ require 'ebay/types/my_messages_summary'
 require 'ebay/types/my_messages_alert'
 require 'ebay/types/my_messages_message'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetMyMessages < Abstract
       include XML::Mapping
       include Initializer

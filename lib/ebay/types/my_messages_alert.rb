@@ -2,8 +2,8 @@ require 'ebay/types/my_messages_response_details'
 require 'ebay/types/my_messages_forward_details'
 require 'ebay/types/my_messages_folder'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class MyMessagesAlert
       include XML::Mapping
       include Initializer

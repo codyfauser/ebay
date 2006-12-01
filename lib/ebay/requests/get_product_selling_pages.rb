@@ -1,7 +1,7 @@
 require 'ebay/types/product'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetProductSellingPages < Abstract
       include XML::Mapping
       include Initializer

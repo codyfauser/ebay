@@ -1,7 +1,7 @@
 require 'ebay/types/category_mapping'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetCategoryMappings < Abstract
       include XML::Mapping
       include Initializer

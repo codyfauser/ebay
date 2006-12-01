@@ -1,7 +1,7 @@
 require 'ebay/types/user'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SellingStatus
       include XML::Mapping
       include Initializer

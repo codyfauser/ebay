@@ -1,7 +1,7 @@
 require 'ebay/types/reminder_customization'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetMyeBayReminders < Abstract
       include XML::Mapping
       include Initializer

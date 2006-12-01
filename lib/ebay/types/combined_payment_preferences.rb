@@ -1,8 +1,8 @@
 require 'ebay/types/calculated_shipping_preferences'
 require 'ebay/types/flat_shipping_preferences'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class CombinedPaymentPreferences
       include XML::Mapping
       include Initializer

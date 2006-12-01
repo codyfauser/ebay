@@ -1,7 +1,7 @@
 require 'ebay/types/search_attributes'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class SearchRequest
       include XML::Mapping
       include Initializer

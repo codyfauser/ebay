@@ -1,7 +1,7 @@
 require 'ebay/types/selling_status'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class PlaceOffer < Abstract
       include XML::Mapping
       include Initializer

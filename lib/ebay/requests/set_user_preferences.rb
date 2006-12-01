@@ -7,8 +7,8 @@ require 'ebay/types/end_of_auction_email_preferences'
 require 'ebay/types/ebx_opt_in_preference'
 require 'ebay/types/express_preferences'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class SetUserPreferences < Abstract
       include XML::Mapping
       include Initializer

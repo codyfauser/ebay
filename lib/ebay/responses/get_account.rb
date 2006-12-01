@@ -2,8 +2,8 @@ require 'ebay/types/account_summary'
 require 'ebay/types/account_entry'
 require 'ebay/types/pagination_result'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetAccount < Abstract
       include XML::Mapping
       include Initializer

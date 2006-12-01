@@ -1,7 +1,7 @@
 require 'ebay/types/live_auction_catalog'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetLiveAuctionCatalogDetails < Abstract
       include XML::Mapping
       include Initializer

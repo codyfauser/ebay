@@ -2,8 +2,8 @@ require 'ebay/types/pagination'
 require 'ebay/types/search_location'
 require 'ebay/types/proximity_search'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetCategoryListings < Abstract
       include XML::Mapping
       include Initializer

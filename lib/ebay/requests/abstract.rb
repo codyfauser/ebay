@@ -1,7 +1,7 @@
 require 'ebay/types/xml_requester_credentials'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class Abstract < Base
       include XML::Mapping
       include Initializer
@@ -14,10 +14,16 @@ module Ebay
       text_node :error_handling, 'ErrorHandling', :optional => true
       text_node :invocation_id, 'InvocationID', :optional => true
       text_node :warning_level, 'WarningLevel', :optional => true
+      # eBay specifies the detail level as a collection.  The usual case is to use
+      # only a single detail level, so it is more appropriate to add an accessor for 
+      # the normal case.
+      # Reads the first detail level from the detail_levels Array.
       def detail_level
         @detail_levels.first
       end
       
+      # Overwrites the details_levels Array with a new Array containing only the 
+      # value passed in as an argument
       def detail_level=(value)
         @detail_levels = Array(value)
       end

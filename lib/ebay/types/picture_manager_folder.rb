@@ -1,7 +1,7 @@
 require 'ebay/types/picture_manager_picture'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class PictureManagerFolder
       include XML::Mapping
       include Initializer

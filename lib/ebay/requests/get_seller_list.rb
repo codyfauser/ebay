@@ -1,7 +1,7 @@
 require 'ebay/types/pagination'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetSellerList < Abstract
       include XML::Mapping
       include Initializer

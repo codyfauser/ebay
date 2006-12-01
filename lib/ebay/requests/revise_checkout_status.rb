@@ -1,8 +1,8 @@
 require 'ebay/types/address'
 require 'ebay/types/external_transaction'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class ReviseCheckoutStatus < Abstract
       include XML::Mapping
       include Initializer

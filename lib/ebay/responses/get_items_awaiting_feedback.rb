@@ -1,7 +1,7 @@
 require 'ebay/types/paginated_transaction_array'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetItemsAwaitingFeedback < Abstract
       include XML::Mapping
       include Initializer

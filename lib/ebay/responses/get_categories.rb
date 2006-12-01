@@ -1,7 +1,7 @@
 require 'ebay/types/category'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetCategories < Abstract
       include XML::Mapping
       include Initializer

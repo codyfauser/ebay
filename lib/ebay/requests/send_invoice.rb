@@ -2,8 +2,8 @@ require 'ebay/types/international_shipping_service_options'
 require 'ebay/types/shipping_service_options'
 require 'ebay/types/sales_tax'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class SendInvoice < Abstract
       include XML::Mapping
       include Initializer

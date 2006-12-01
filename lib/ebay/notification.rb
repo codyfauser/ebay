@@ -2,10 +2,10 @@ require 'rexml/document'
 require 'digest/md5'
 
 module Ebay
-  class NotificationError < StandardError
+  class NotificationError < StandardError #:nodoc:
   end
 
-  class InvalidNotificationError < NotificationError
+  class InvalidNotificationError < NotificationError #:nodoc:
   end
 
   class Notification

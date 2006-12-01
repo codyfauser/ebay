@@ -2,8 +2,8 @@ require 'ebay/types/dispute'
 require 'ebay/types/dispute_filter_count'
 require 'ebay/types/pagination_result'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetUserDisputes < Abstract
       include XML::Mapping
       include Initializer

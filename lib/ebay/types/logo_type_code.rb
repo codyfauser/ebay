@@ -1,5 +1,5 @@
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class LogoTypeCode
       extend Enumerable
       extend Enumeration

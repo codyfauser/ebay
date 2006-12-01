@@ -1,7 +1,7 @@
 require 'ebay/types/address'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class Buyer
       include XML::Mapping
       include Initializer

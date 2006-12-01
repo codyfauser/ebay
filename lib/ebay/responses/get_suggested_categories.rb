@@ -1,7 +1,7 @@
 require 'ebay/types/suggested_category'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetSuggestedCategories < Abstract
       include XML::Mapping
       include Initializer

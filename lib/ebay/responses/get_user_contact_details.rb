@@ -1,7 +1,7 @@
 require 'ebay/types/address'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetUserContactDetails < Abstract
       include XML::Mapping
       include Initializer

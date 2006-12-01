@@ -4,8 +4,8 @@ require 'ebay/types/pricing_recommendations'
 require 'ebay/types/attribute_recommendations'
 require 'ebay/types/product_info'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetRecommendations < Abstract
       include XML::Mapping
       include Initializer

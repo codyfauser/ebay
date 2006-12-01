@@ -1,8 +1,8 @@
 require 'ebay/types/data_element_set'
 require 'ebay/types/product_search_result'
 
-module Ebay
-  module Responses
+module Ebay # :nodoc:
+  module Responses # :nodoc:
     class GetProductFamilyMembers < Abstract
       include XML::Mapping
       include Initializer

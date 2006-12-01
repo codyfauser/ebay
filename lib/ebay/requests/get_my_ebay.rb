@@ -1,7 +1,7 @@
 require 'ebay/types/my_ebay_selection'
 
-module Ebay
-  module Requests
+module Ebay # :nodoc:
+  module Requests # :nodoc:
     class GetMyeBay < Abstract
       include XML::Mapping
       include Initializer

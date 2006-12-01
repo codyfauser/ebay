@@ -2,8 +2,8 @@ require 'ebay/types/item'
 require 'ebay/types/external_product_id'
 require 'ebay/types/modified_field'
 
-module Ebay
-  module Types
+module Ebay # :nodoc:
+  module Types # :nodoc:
     class GetRecommendationsRequestContainer
       include XML::Mapping
       include Initializer
