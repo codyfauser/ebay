@@ -4,6 +4,7 @@ require 'ebay/types/category'
 require 'ebay/types/buying_guide_details'
 require 'ebay/types/expansion_array'
 require 'ebay/types/spelling_suggestion'
+require 'ebay/types/related_search_keyword_array'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -23,6 +24,7 @@ module Ebay # :nodoc:
       object_node :filter_removed_expansions, 'FilterRemovedExpansionArray', :class => ExpansionArray, :optional => true
       object_node :all_categories_expansions, 'AllCategoriesExpansionArray', :class => ExpansionArray, :optional => true
       object_node :spelling_suggestion, 'SpellingSuggestion', :class => SpellingSuggestion, :optional => true
+      array_node :related_search_keywords, 'RelatedSearchKeywordArray', :class => RelatedSearchKeywordArray, :default_value => []
     end
   end
 end

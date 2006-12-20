@@ -11,6 +11,7 @@ module Ebay # :nodoc:
       object_node :feedback_info, 'FeedbackInfo', :class => FeedbackInfo, :optional => true
       boolean_node :shipped, 'Shipped', 'true', 'false', :optional => true
       boolean_node :paid, 'Paid', 'true', 'false', :optional => true
+      text_node :listing_type, 'ListingType', :optional => true
     end
   end
 end

@@ -8,6 +8,7 @@ require 'ebay/types/shipping_service_options'
 require 'ebay/types/feedback_info'
 require 'ebay/types/order'
 require 'ebay/types/listing_checkout_redirect_preference'
+require 'ebay/types/refund'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -47,6 +48,7 @@ module Ebay # :nodoc:
       money_node :final_value_fee, 'FinalValueFee', :optional => true
       text_node :transaction_platform, 'TransactionPlatform', :optional => true
       object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
+      array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
     end
   end
 end

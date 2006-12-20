@@ -1,3 +1,4 @@
+require 'ebay/initializer'
 require 'ebay/enumeration'
 require 'ebay/schema/version'
 
@@ -21,6 +22,5 @@ if File.exists?(File.dirname(__FILE__) + '/requests.rb') && File.exists?(File.di
 end
 
 require 'ebay/api'
-require 'ebay/initializer'
 require 'ebay/request'
 require 'ebay/notification'

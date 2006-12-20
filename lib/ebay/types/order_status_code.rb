@@ -7,6 +7,7 @@ module Ebay # :nodoc:
       Inactive = 'Inactive'
       Completed = 'Completed'
       Cancelled = 'Cancelled'
+      Shipped = 'Shipped'
     end
   end
 end

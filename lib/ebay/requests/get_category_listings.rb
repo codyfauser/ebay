@@ -25,6 +25,7 @@ module Ebay # :nodoc:
       boolean_node :include_condition, 'IncludeCondition', 'true', 'false', :optional => true
       boolean_node :include_feedback, 'IncludeFeedback', 'true', 'false', :optional => true
       text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
+      numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
     end
   end
 end

@@ -29,6 +29,7 @@ module Ebay # :nodoc:
       boolean_node :express_listing, 'ExpressListing', 'true', 'false', :optional => true
       object_node :express_item_requirements, 'ExpressItemRequirements', :class => ExpressItemRequirements, :optional => true
       text_node :tcr_original_item_id, 'TCROriginalItemID', :optional => true
+      text_node :view_item_url_for_natural_search, 'ViewItemURLForNaturalSearch', :optional => true
     end
   end
 end

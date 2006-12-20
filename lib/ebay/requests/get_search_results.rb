@@ -7,6 +7,7 @@ require 'ebay/types/pagination'
 require 'ebay/types/search_request'
 require 'ebay/types/external_product_id'
 require 'ebay/types/request_categories'
+require 'ebay/types/affiliate_tracking_details'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -51,6 +52,8 @@ module Ebay # :nodoc:
       boolean_node :include_feedback, 'IncludeFeedback', 'true', 'false', :optional => true
       numeric_node :charity_id, 'CharityID', :optional => true
       text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
+      numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
+      object_node :affiliate_tracking_details, 'AffiliateTrackingDetails', :class => AffiliateTrackingDetails, :optional => true
     end
   end
 end

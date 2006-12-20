@@ -90,4 +90,12 @@ class TestCoreExtString < Test::Unit::TestCase
   def test_underscore_paypal
     assert_equal 'paypal', 'PayPal'.ebay_underscore
   end
+  
+  def test_underscore_vero
+    assert_equal 'get_vero_reason_code_details', 'GetVeROReasonCodeDetails'.ebay_underscore
+  end
+  
+  def test_camelize_vero
+    assert_equal 'GetVeROReasonCodeDetails', 'get_vero_reason_code_details'.ebay_camelize
+  end
 end

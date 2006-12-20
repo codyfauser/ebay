@@ -1,3 +1,5 @@
+# * Make Gem work with edge Rails
+# * Update to schema version 491
 # * Improve RDoc documentation
 # * Updated to eBay schema version 487
 # * Updated the README

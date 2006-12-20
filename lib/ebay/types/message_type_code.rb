@@ -7,6 +7,8 @@ module Ebay # :nodoc:
       ResponseToASQQuestion = 'ResponseToASQQuestion'
       ContacteBayMember = 'ContactEbayMember'
       ContactTransactionPartner = 'ContactTransactionPartner'
+      ResponseToContacteBayMember = 'ResponseToContacteBayMember'
+      ContacteBayMemberViaCommunityLink = 'ContacteBayMemberViaCommunityLink'
     end
   end
 end

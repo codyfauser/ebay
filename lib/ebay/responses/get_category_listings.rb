@@ -2,6 +2,7 @@ require 'ebay/types/item'
 require 'ebay/types/category'
 require 'ebay/types/pagination_result'
 require 'ebay/types/buying_guide_details'
+require 'ebay/types/related_search_keyword_array'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -17,6 +18,7 @@ module Ebay # :nodoc:
       boolean_node :has_more_items, 'HasMoreItems', 'true', 'false'
       object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
       object_node :buying_guide_details, 'BuyingGuideDetails', :class => BuyingGuideDetails, :optional => true
+      array_node :related_search_keywords, 'RelatedSearchKeywordArray', :class => RelatedSearchKeywordArray, :default_value => []
     end
   end
 end
