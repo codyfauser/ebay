@@ -129,3 +129,11 @@ task :release => [ :gem ] do
   system("rubyforge add_release #{PKG_NAME} #{PKG_NAME} 'REL #{PKG_VERSION}' pkg/#{PKG_NAME}-#{PKG_VERSION}.gem")
 end
 
+desc 'Upload RDoc to RubyForge'
+task :upload => :rdoc do
+  user = "cfauser@rubyforge.org" 
+  project = '/var/www/gforge-projects/ebayapi'
+  local_dir = 'doc'
+  pub = Rake::SshDirPublisher.new user, project, local_dir
+  pub.upload
+end

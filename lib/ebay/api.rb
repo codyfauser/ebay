@@ -1,6 +1,7 @@
 require 'uri'
 require 'zlib'
 require 'stringio'
+require 'ebay/request/connection'
 
 module Ebay #:nodoc:
   class EbayError < StandardError #:nodoc:

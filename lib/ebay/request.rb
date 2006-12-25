@@ -1,1 +1,0 @@
-require 'ebay/request/connection'

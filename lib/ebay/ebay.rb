@@ -14,13 +14,12 @@ module Ebay
 end
 
 if File.exists?(File.dirname(__FILE__) + '/requests.rb') && File.exists?(File.dirname(__FILE__) + '/responses.rb')
+  require 'ebay/types'
   require 'ebay/request/base'
   require 'ebay/response/base'
   require 'ebay/requests'
   require 'ebay/responses'
-  require 'ebay/types'
 end
 
 require 'ebay/api'
-require 'ebay/request'
 require 'ebay/notification'
