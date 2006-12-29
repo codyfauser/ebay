@@ -1,3 +1,4 @@
+# * Fix overriding the default site_id and auth_token when constructing the Api
 # * Make Gem work with edge Rails
 # * Update to schema version 491
 # * Improve RDoc documentation

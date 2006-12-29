@@ -90,7 +90,11 @@ module Ebay #:nodoc:
     end
 
     def auth_token
-      self.class.auth_token
+       @auth_token || self.class.auth_token
+    end
+    
+    def site_id
+      @site_id || self.class.site_id
     end
 
     # With no options, the default is to use the default site_id and the default
@@ -102,34 +106,31 @@ module Ebay #:nodoc:
     #   ebay = Ebay::Api.new(:site_id => 2, :auth_token => 'TEST')
     def initialize(options = {})
       @format = options[:format] || :object
+      @auth_token = options[:auth_token]
+      @site_id = options[:site_id]
     end
 
     private
     def method_missing(method_id, *args, &block)
       args = args.first || {}
 
-      method_args = { :site_id => site_id,
-                      :auth_token => auth_token,
-                      :format => @format
-                    }.update(args)
+      method_args = { :format => @format }.update(args)
 
       invoke_request(method_id.to_s, method_args, &block)
     end
 
     def invoke_request(name, args)
       format = args.delete(:format)
-      site_id = args.delete(:site_id)
       request = build_request(name.ebay_camelize, args)
      
       yield request if block_given? 
       
       raw_response = connection.post( service_uri.path, 
                                       build_body(request), 
-                                      build_headers(request.call_name, site_id)
+                                      build_headers(request.call_name)
                                     )
       
       parse decompress(raw_response), format
-      
     end
 
     def build_request(name, args)
@@ -137,7 +138,7 @@ module Ebay #:nodoc:
       request_class.new(args)
     end
 
-    def build_headers(call_name, site_id)
+    def build_headers(call_name)
       {
         'X-EBAY-API-COMPATIBILITY-LEVEL' => schema_version,
         'X-EBAY-API-SESSION-CERTIFICATE' => "#{dev_id};#{app_id};#{cert}",

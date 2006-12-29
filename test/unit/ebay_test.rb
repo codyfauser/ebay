@@ -18,15 +18,31 @@ class EbayTest < Test::Unit::TestCase
 	             'X-EBAY-API-APP-NAME' => Api.app_id,
 	             'X-EBAY-API-CERT-NAME' => Api.cert,
 	             'X-EBAY-API-CALL-NAME' => 'GeteBayOfficialTime',
-	             'X-EBAY-API-SITEID' => Api.site_id.to_s,
+	             'X-EBAY-API-SITEID' => @ebay.site_id.to_s,
 	             'Content-Type' => 'text/xml',
                'Accept-Encoding' => 'gzip'
 	           }
     ebay = Api.new
-	  assert_equal header, ebay.send(:build_headers, 'GeteBayOfficialTime', Api.site_id)
-		
+	  assert_equal header, ebay.send(:build_headers, 'GeteBayOfficialTime')
 	end
-
+	
+	def test_override_site_id
+	  ebay = Api.new(:site_id => 2)
+	  assert_equal 0, Api.site_id
+	  assert_equal 2, ebay.site_id
+	end
+	
+	def test_header_uses_overridden_site_id
+	  ebay = Api.new(:site_id => 2)
+	  headers = ebay.send(:build_headers, 'GeteBayOfficialTime')
+	  assert_equal headers['X-EBAY-API-SITEID'], '2'
+	end
+	
+	def test_override_auth_token
+	  ebay = Api.new(:auth_token => 'OVERRIDE')
+	  assert_equal 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', Api.auth_token 
+	  assert_equal 'OVERRIDE', ebay.auth_token
+	end
 
   def test_raise_on_error
     Ebay::HttpMock.respond_with(@failure)
