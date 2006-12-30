@@ -115,6 +115,7 @@ module Ebay #:nodoc:
       args = args.first || {}
 
       method_args = { :format => @format }.update(args)
+      method_args[:auth_token] = auth_token
 
       invoke_request(method_id.to_s, method_args, &block)
     end
