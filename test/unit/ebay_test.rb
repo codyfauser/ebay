@@ -76,4 +76,10 @@ class EbayTest < Test::Unit::TestCase
       assert_equal ErrorClassificationCode::RequestError, error.error_classification
     end
   end
+  
+  def test_unknown_request_raises_no_method_error
+    assert_raise(NoMethodError) do 
+      @ebay.get_sushi
+    end
+  end
 end

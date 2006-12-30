@@ -1,3 +1,4 @@
+# * Actually use the auth_token, call super on method_missing when the API call isn't found
 # * Fix overriding the default site_id and auth_token when constructing the Api
 # * Make Gem work with edge Rails
 # * Update to schema version 491

@@ -32,6 +32,7 @@ module Ebay #:nodoc:
     
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
+    attr_reader :auth_token, :site_id
     
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
@@ -89,14 +90,6 @@ module Ebay #:nodoc:
       self.class.cert
     end
 
-    def auth_token
-       @auth_token || self.class.auth_token
-    end
-    
-    def site_id
-      @site_id || self.class.site_id
-    end
-
     # With no options, the default is to use the default site_id and the default
     # auth_token configured on the Api class.
     #   ebay = Ebay::Api.new
@@ -106,32 +99,35 @@ module Ebay #:nodoc:
     #   ebay = Ebay::Api.new(:site_id => 2, :auth_token => 'TEST')
     def initialize(options = {})
       @format = options[:format] || :object
-      @auth_token = options[:auth_token]
-      @site_id = options[:site_id]
+      @auth_token = options[:auth_token] || self.class.auth_token
+      @site_id = options[:site_id] || self.class.site_id
     end
 
     private
     def method_missing(method_id, *args, &block)
       args = args.first || {}
 
-      method_args = { :format => @format }.update(args)
-      method_args[:auth_token] = auth_token
-
-      invoke_request(method_id.to_s, method_args, &block)
+      format = args.delete(:format) || @format
+      
+      args[:auth_token] = auth_token
+      
+      begin
+        request = build_request(method_id.to_s.ebay_camelize, args)
+      rescue NameError
+        super
+      end
+      
+      yield request if block_given?
+      invoke(request, format)
     end
 
-    def invoke_request(name, args)
-      format = args.delete(:format)
-      request = build_request(name.ebay_camelize, args)
-     
-      yield request if block_given? 
+    def invoke(request, format)
+      response = connection.post( service_uri.path, 
+                                  build_body(request), 
+                                  build_headers(request.call_name)
+                                )
       
-      raw_response = connection.post( service_uri.path, 
-                                      build_body(request), 
-                                      build_headers(request.call_name)
-                                    )
-      
-      parse decompress(raw_response), format
+      parse decompress(response), format
     end
 
     def build_request(name, args)
