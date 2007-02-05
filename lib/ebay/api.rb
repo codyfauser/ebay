@@ -194,9 +194,11 @@ module Ebay #:nodoc:
     end
 
     def fix_root_element_name(xml)
-      if xml.root.name =~ /API/
-        xml.root.name = xml.root.name.gsub(/API/, 'Api')
-      end
+      # Fix upper cased API in response
+      xml.root.name = xml.root.name.gsub(/API/, 'Api')
+      
+      # Fix lowercased Xsl in response document
+      xml.root.name = xml.root.name.gsub(/XslResponse$/, 'XSLResponse')
     end
   end
 end
