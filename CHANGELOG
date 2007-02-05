@@ -1,3 +1,4 @@
+# * Release 0.9.4
 # * Fix get_product_finder_xsl.  eBay returns the wrong case of XSL in the response element
 # * Release 0.9.3
 # * Actually use the auth_token, call super on method_missing when the API call isn't found
