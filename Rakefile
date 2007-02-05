@@ -6,7 +6,7 @@ require 'rake/rdoctask'
 require 'rake/gempackagetask'
 require 'rake/contrib/rubyforgepublisher'
 
-PKG_VERSION = "0.9.3"
+PKG_VERSION = "0.9.4"
 PKG_NAME = "ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
