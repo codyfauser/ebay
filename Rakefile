@@ -123,10 +123,18 @@ Rake::GemPackageTask.new(spec) do |p|
   p.need_zip = true
 end
 
+desc "Release the gems and docs to RubyForge"
+task :release => [ :publish, :upload_rdoc ]
+
 desc "Publish the release files to RubyForge."
-task :release => [ :gem ] do
-  `rubyforge login`
-  system("rubyforge add_release #{PKG_NAME} #{PKG_NAME} 'REL #{PKG_VERSION}' pkg/#{PKG_NAME}-#{PKG_VERSION}.gem")
+task :publish => [ :package ] do
+  require 'rubyforge'
+  
+  packages = %w( gem tgz zip ).collect{ |ext| "pkg/#{PKG_NAME}-#{PKG_VERSION}.#{ext}" }
+  
+  rubyforge = RubyForge.new
+  rubyforge.login
+  rubyforge.add_release(PKG_NAME, PKG_NAME, "REL #{PKG_VERSION}", *packages)
 end
 
 desc 'Upload RDoc to RubyForge'
