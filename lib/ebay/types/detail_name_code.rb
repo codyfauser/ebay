@@ -12,6 +12,7 @@ module Ebay # :nodoc:
       SiteDetails = 'SiteDetails'
       TaxJurisdiction = 'TaxJurisdiction'
       URLDetails = 'URLDetails'
+      TimeZoneDetails = 'TimeZoneDetails'
       DispatchTimeMaxDetails = 'DispatchTimeMaxDetails'
     end
   end

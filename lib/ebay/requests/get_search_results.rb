@@ -37,7 +37,6 @@ module Ebay # :nodoc:
       time_node :end_time_to, 'EndTimeTo', :optional => true
       time_node :mod_time_from, 'ModTimeFrom', :optional => true
       boolean_node :include_get_it_fast_items, 'IncludeGetItFastItems', 'true', 'false', :optional => true
-      boolean_node :stores_fixed_price, 'StoresFixedPrice', 'true', 'false', :optional => true
       text_node :payment_method, 'PaymentMethod', :optional => true
       text_node :granularity_level, 'GranularityLevel', :optional => true
       boolean_node :expand_search, 'ExpandSearch', 'true', 'false', :optional => true

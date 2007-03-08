@@ -51,6 +51,7 @@ module Ebay
 
         write_class_files(simple_classes) 
         write_requires_file('types', simple_classes)
+
         remove_unused_files
       end
       

@@ -4,6 +4,9 @@ require 'ebay/types/shipping_service_options'
 require 'ebay/types/international_shipping_service_options'
 require 'ebay/types/tax_jurisdiction'
 require 'ebay/types/insurance_details'
+require 'ebay/types/flat_shipping_discount'
+require 'ebay/types/calculated_shipping_discount'
+require 'ebay/types/promotional_shipping_discount_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -11,7 +14,6 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'ShippingDetails'
-      boolean_node :allow_payment_edit, 'AllowPaymentEdit', 'true', 'false', :optional => true
       boolean_node :apply_shipping_discount, 'ApplyShippingDiscount', 'true', 'false', :optional => true
       object_node :calculated_shipping_rate, 'CalculatedShippingRate', :class => CalculatedShippingRate, :optional => true
       boolean_node :change_payment_instructions, 'ChangePaymentInstructions', 'true', 'false', :optional => true
@@ -21,7 +23,6 @@ module Ebay # :nodoc:
       boolean_node :payment_edited, 'PaymentEdited', 'true', 'false', :optional => true
       text_node :payment_instructions, 'PaymentInstructions', :optional => true
       object_node :sales_tax, 'SalesTax', :class => SalesTax, :optional => true
-      text_node :seller_postal_code, 'SellerPostalCode', :optional => true
       text_node :shipping_rate_error_message, 'ShippingRateErrorMessage', :optional => true
       text_node :shipping_rate_type, 'ShippingRateType', :optional => true
       array_node :shipping_service_options, 'ShippingServiceOptions', :class => ShippingServiceOptions, :default_value => []
@@ -36,6 +37,15 @@ module Ebay # :nodoc:
       money_node :default_shipping_cost, 'DefaultShippingCost', :optional => true
       object_node :insurance_details, 'InsuranceDetails', :class => InsuranceDetails, :optional => true
       object_node :international_insurance_details, 'InternationalInsuranceDetails', :class => InsuranceDetails, :optional => true
+      text_node :shipping_discount_profile_id, 'ShippingDiscountProfileID', :optional => true
+      object_node :flat_shipping_discount, 'FlatShippingDiscount', :class => FlatShippingDiscount, :optional => true
+      object_node :calculated_shipping_discount, 'CalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true
+      boolean_node :promotional_shipping_discount, 'PromotionalShippingDiscount', 'true', 'false', :optional => true
+      text_node :international_shipping_discount_profile_id, 'InternationalShippingDiscountProfileID', :optional => true
+      object_node :international_flat_shipping_discount, 'InternationalFlatShippingDiscount', :class => FlatShippingDiscount, :optional => true
+      object_node :international_calculated_shipping_discount, 'InternationalCalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true
+      boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
+      object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
     end
   end
 end

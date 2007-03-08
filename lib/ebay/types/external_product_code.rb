@@ -8,6 +8,7 @@ module Ebay # :nodoc:
       ProductID = 'ProductID'
       EAN = 'EAN'
       Keywords = 'Keywords'
+      MPN = 'MPN'
     end
   end
 end

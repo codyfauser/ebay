@@ -8,6 +8,10 @@ module Ebay # :nodoc:
       Completed = 'Completed'
       Cancelled = 'Cancelled'
       Shipped = 'Shipped'
+      Default = 'Default'
+      Authenticated = 'Authenticated'
+      InProcess = 'InProcess'
+      Invalid = 'Invalid'
     end
   end
 end

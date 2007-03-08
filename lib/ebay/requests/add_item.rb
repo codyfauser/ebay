@@ -1,5 +1,4 @@
 require 'ebay/types/item'
-require 'ebay/types/external_product_id'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -8,7 +7,6 @@ module Ebay # :nodoc:
       include Initializer
       root_element_name 'AddItemRequest'
       object_node :item, 'Item', :class => Item, :optional => true
-      object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
     end
   end
 end

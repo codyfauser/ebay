@@ -11,7 +11,6 @@ module Ebay # :nodoc:
       text_node :promotion_method, 'PromotionMethod', :optional => true
       text_node :seller_id, 'SellerID', :optional => true
       boolean_node :shipping_discount, 'ShippingDiscount', 'true', 'false'
-      text_node :seller_key, 'SellerKey', :optional => true
       text_node :store_name, 'StoreName', :optional => true
       array_node :promoted_items, 'PromotedItem', :class => PromotedItem, :default_value => []
     end

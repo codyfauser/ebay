@@ -44,6 +44,7 @@ module Ebay # :nodoc:
       PaymentDetailChanged = 'PaymentDetailChanged'
       AccountSuspended = 'AccountSuspended'
       AccountSummary = 'AccountSummary'
+      ThirdPartyCartCheckout = 'ThirdPartyCartCheckout'
     end
   end
 end

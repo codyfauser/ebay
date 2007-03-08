@@ -13,6 +13,7 @@ module Ebay # :nodoc:
       numeric_node :second_chance_offer_count, 'SecondChanceOfferCount', :optional => true
       numeric_node :shipping_needed_count, 'ShippingNeededCount', :optional => true
       numeric_node :relisting_needed_count, 'RelistingNeededCount', :optional => true
+      numeric_node :total_new_leads_count, 'TotalNewLeadsCount', :optional => true
     end
   end
 end

@@ -1,5 +1,6 @@
 require 'rexml/document'
 require 'digest/md5'
+require 'base64'
 
 module Ebay
   class NotificationError < StandardError #:nodoc:

@@ -7,6 +7,7 @@ module Ebay # :nodoc:
       Shipping = 'Shipping'
       Payment = 'Payment'
       MultipleItemShipping = 'MultipleItemShipping'
+      CustomizedSubject = 'CustomizedSubject'
     end
   end
 end

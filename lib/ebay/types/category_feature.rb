@@ -34,6 +34,13 @@ module Ebay # :nodoc:
       boolean_node :store_inventory_enabled, 'StoreInventoryEnabled', 'true', 'false', :optional => true
       boolean_node :skype_me_transactional_enabled, 'SkypeMeTransactionalEnabled', 'true', 'false', :optional => true
       boolean_node :skype_me_non_transactional_enabled, 'SkypeMeNonTransactionalEnabled', 'true', 'false', :optional => true
+      text_node :classified_ad_payment_method_enabled, 'ClassifiedAdPaymentMethodEnabled', :optional => true
+      boolean_node :classified_ad_shipping_method_enabled, 'ClassifiedAdShippingMethodEnabled', 'true', 'false', :optional => true
+      text_node :classified_ad_best_offer_enabled, 'ClassifiedAdBestOfferEnabled', :optional => true
+      boolean_node :classified_ad_counter_offer_enabled, 'ClassifiedAdCounterOfferEnabled', 'true', 'false', :optional => true
+      boolean_node :classified_ad_auto_decline_enabled, 'ClassifiedAdAutoDeclineEnabled', 'true', 'false', :optional => true
+      boolean_node :classified_ad_contact_by_phone_enabled, 'ClassifiedAdContactByPhoneEnabled', 'true', 'false', :optional => true
+      boolean_node :classified_ad_contact_by_email_enabled, 'ClassifiedAdContactByEmailEnabled', 'true', 'false', :optional => true
     end
   end
 end

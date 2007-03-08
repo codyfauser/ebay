@@ -1,4 +1,5 @@
 require 'ebay/types/feedback_period'
+require 'ebay/types/average_rating_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -14,6 +15,7 @@ module Ebay # :nodoc:
       numeric_node :neutral_comment_count_from_suspended_users, 'NeutralCommentCountFromSuspendedUsers', :optional => true
       numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
       numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount', :optional => true
+      array_node :seller_average_rating_details, 'SellerAverageRatingDetailArray', 'AverageRatingDetails', :class => AverageRatingDetails, :default_value => []
     end
   end
 end

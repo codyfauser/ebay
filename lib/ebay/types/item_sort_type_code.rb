@@ -73,6 +73,10 @@ module Ebay # :nodoc:
       TimeLeftDescending = 'TimeLeftDescending'
       WonPlatformDescending = 'WonPlatformDescending'
       SoldPlatformDescending = 'SoldPlatformDescending'
+      LeadCount = 'LeadCount'
+      NewLeadCount = 'NewLeadCount'
+      LeadCountDescending = 'LeadCountDescending'
+      NewLeadCountDescending = 'NewLeadCountDescending'
     end
   end
 end

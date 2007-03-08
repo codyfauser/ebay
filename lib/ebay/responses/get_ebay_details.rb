@@ -8,6 +8,7 @@ require 'ebay/types/shipping_service_details'
 require 'ebay/types/site_details'
 require 'ebay/types/tax_jurisdiction'
 require 'ebay/types/url_details'
+require 'ebay/types/time_zone_details'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -25,6 +26,7 @@ module Ebay # :nodoc:
       array_node :site_details, 'SiteDetails', :class => SiteDetails, :default_value => []
       array_node :tax_jurisdictions, 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
       array_node :url_details, 'URLDetails', :class => URLDetails, :default_value => []
+      array_node :time_zone_details, 'TimeZoneDetails', :class => TimeZoneDetails, :default_value => []
     end
   end
 end

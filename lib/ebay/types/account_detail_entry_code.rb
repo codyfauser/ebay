@@ -250,6 +250,8 @@ module Ebay # :nodoc:
       CrediteBayMotorsProFeatureFee = 'CrediteBayMotorsProFeatureFee'
       FeeGalleryPlus = 'FeeGalleryPlus'
       CreditGalleryPlus = 'CreditGalleryPlus'
+      PrivateListing = 'PrivateListing'
+      CreditPrivateListing = 'CreditPrivateListing'
     end
   end
 end

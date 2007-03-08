@@ -10,15 +10,12 @@ require 'ebay/types/listing_details'
 require 'ebay/types/listing_designer'
 require 'ebay/types/category'
 require 'ebay/types/product_listing_details'
-require 'ebay/types/proximity_search_details'
 require 'ebay/types/revise_status'
-require 'ebay/types/site_hosted_picture'
 require 'ebay/types/user'
 require 'ebay/types/selling_status'
 require 'ebay/types/shipping_details'
 require 'ebay/types/storefront'
 require 'ebay/types/vat_details'
-require 'ebay/types/vendor_hosted_picture'
 require 'ebay/types/buyer_requirements'
 require 'ebay/types/best_offer_details'
 require 'ebay/types/live_auction_details'
@@ -29,6 +26,8 @@ require 'ebay/types/digital_delivery_details'
 require 'ebay/types/listing_checkout_redirect_preference'
 require 'ebay/types/express_details'
 require 'ebay/types/address'
+require 'ebay/types/extended_contact_details'
+require 'ebay/types/name_value_list'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -76,7 +75,6 @@ module Ebay # :nodoc:
       object_node :primary_category, 'PrimaryCategory', :class => Category, :optional => true
       boolean_node :private_listing, 'PrivateListing', 'true', 'false', :optional => true
       object_node :product_listing_details, 'ProductListingDetails', :class => ProductListingDetails, :optional => true
-      object_node :proximity_search_details, 'ProximitySearchDetails', :class => ProximitySearchDetails, :optional => true
       numeric_node :quantity, 'Quantity', :optional => true
       text_node :private_notes, 'PrivateNotes', :optional => true
       text_node :region_id, 'RegionID', :optional => true
@@ -86,13 +84,9 @@ module Ebay # :nodoc:
       time_node :schedule_time, 'ScheduleTime', :optional => true
       object_node :secondary_category, 'SecondaryCategory', :class => Category, :optional => true
       object_node :free_added_category, 'FreeAddedCategory', :class => Category, :optional => true
-      object_node :site_hosted_picture, 'SiteHostedPicture', :class => SiteHostedPicture, :optional => true
       object_node :seller, 'Seller', :class => User, :optional => true
       object_node :selling_status, 'SellingStatus', :class => SellingStatus, :optional => true
-      text_node :shipping_option, 'ShippingOption', :optional => true
       object_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :optional => true
-      value_array_node :shipping_regions, 'ShippingRegions', :default_value => []
-      text_node :shipping_terms, 'ShippingTerms', :optional => true
       text_node :ship_to_locations, 'ShipToLocations', :optional => true
       text_node :site, 'Site', :optional => true
       money_node :start_price, 'StartPrice', :optional => true
@@ -102,14 +96,12 @@ module Ebay # :nodoc:
       text_node :title, 'Title', :optional => true
       text_node :uuid, 'UUID', :optional => true
       object_node :vat_details, 'VATDetails', :class => VATDetails, :optional => true
-      object_node :vendor_hosted_picture, 'VendorHostedPicture', :class => VendorHostedPicture, :optional => true
       text_node :seller_vacation_note, 'SellerVacationNote', :optional => true
       numeric_node :watch_count, 'WatchCount', :optional => true
       numeric_node :hit_count, 'HitCount', :optional => true
       boolean_node :disable_buyer_requirements, 'DisableBuyerRequirements', 'true', 'false', :optional => true
       object_node :buyer_requirements, 'BuyerRequirements', :class => BuyerRequirements, :optional => true
       object_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :optional => true
-      boolean_node :anything_points, 'AnythingPoints', 'true', 'false', :optional => true
       object_node :live_auction_details, 'LiveAuctionDetails', :class => LiveAuctionDetails, :optional => true
       boolean_node :location_defaulted, 'LocationDefaulted', 'true', 'false', :optional => true
       boolean_node :third_party_checkout, 'ThirdPartyCheckout', 'true', 'false', :optional => true
@@ -133,7 +125,6 @@ module Ebay # :nodoc:
       numeric_node :dispatch_time_max, 'DispatchTimeMax', :optional => true
       boolean_node :skype_enabled, 'SkypeEnabled', 'true', 'false', :optional => true
       text_node :skype_id, 'SkypeID', :optional => true
-      value_array_node :skype_options, 'SkypeOption', :default_value => []
       value_array_node :skype_contact_options, 'SkypeContactOption', :default_value => []
       boolean_node :best_offer_enabled, 'BestOfferEnabled', 'true', 'false', :optional => true
       boolean_node :local_listing, 'LocalListing', 'true', 'false', :optional => true
@@ -144,6 +135,10 @@ module Ebay # :nodoc:
       object_node :seller_contact_details, 'SellerContactDetails', :class => Address, :optional => true
       numeric_node :total_question_count, 'TotalQuestionCount', :optional => true
       boolean_node :proxy_item, 'ProxyItem', 'true', 'false', :optional => true
+      object_node :extended_seller_contact_details, 'ExtendedSellerContactDetails', :class => ExtendedContactDetails, :optional => true
+      numeric_node :lead_count, 'LeadCount', :optional => true
+      numeric_node :new_lead_count, 'NewLeadCount', :optional => true
+      array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
     end
   end
 end

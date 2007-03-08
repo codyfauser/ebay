@@ -31,6 +31,13 @@ module Ebay # :nodoc:
       LocalListingDistances = 'LocalListingDistances'
       SkypeMeTransactionalEnabled = 'SkypeMeTransactionalEnabled'
       SkypeMeNonTransactionalEnabled = 'SkypeMeNonTransactionalEnabled'
+      ClassifiedAdPaymentMethodEnabled = 'ClassifiedAdPaymentMethodEnabled'
+      ClassifiedAdShippingMethodEnabled = 'ClassifiedAdShippingMethodEnabled'
+      ClassifiedAdBestOfferEnabled = 'ClassifiedAdBestOfferEnabled'
+      ClassifiedAdCounterOfferEnabled = 'ClassifiedAdCounterOfferEnabled'
+      ClassifiedAdAutoDeclineEnabled = 'ClassifiedAdAutoDeclineEnabled'
+      ClassifiedAdContactByEmailEnabled = 'ClassifiedAdContactByEmailEnabled'
+      ClassifiedAdContactByPhoneEnabled = 'ClassifiedAdContactByPhoneEnabled'
     end
   end
 end

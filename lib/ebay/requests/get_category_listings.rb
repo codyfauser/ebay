@@ -14,7 +14,6 @@ module Ebay # :nodoc:
       boolean_node :free_shipping, 'FreeShipping', 'true', 'false', :optional => true
       text_node :currency, 'Currency', :optional => true
       text_node :item_type_filter, 'ItemTypeFilter', :optional => true
-      boolean_node :stores_fixed_price, 'StoresFixedPrice', 'true', 'false', :optional => true
       text_node :search_type, 'SearchType', :optional => true
       text_node :order_by, 'OrderBy', :optional => true
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true

@@ -14,6 +14,7 @@ module Ebay # :nodoc:
       time_node :end_creation_time, 'EndCreationTime', :optional => true
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true
       text_node :member_message_id, 'MemberMessageID', :optional => true
+      text_node :sender_id, 'SenderID', :optional => true
     end
   end
 end

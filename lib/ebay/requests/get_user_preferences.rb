@@ -11,7 +11,6 @@ module Ebay # :nodoc:
       boolean_node :show_seller_payment_preferences, 'ShowSellerPaymentPreferences', 'true', 'false'
       boolean_node :show_end_of_auction_email_preferences, 'ShowEndOfAuctionEmailPreferences', 'true', 'false', :optional => true
       boolean_node :show_seller_favorite_item_preferences, 'ShowSellerFavoriteItemPreferences', 'true', 'false', :optional => true
-      boolean_node :showe_bx_opt_in_preference, 'ShoweBxOptInPreference', 'true', 'false', :optional => true
       boolean_node :show_pro_stores_preferences, 'ShowProStoresPreferences', 'true', 'false', :optional => true
     end
   end

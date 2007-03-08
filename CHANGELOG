@@ -1,3 +1,4 @@
+# * Update to schema version 501.  Beware, all deprecated calls have been removed
 # * Release 0.9.4
 # * Fix get_product_finder_xsl.  eBay returns the wrong case of XSL in the response element
 # * Release 0.9.3

@@ -1,4 +1,5 @@
 require 'ebay/types/user'
+require 'ebay/types/promotional_sale_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -19,6 +20,7 @@ module Ebay # :nodoc:
       numeric_node :bidder_count, 'BidderCount', :optional => true
       text_node :listing_status, 'ListingStatus', :optional => true
       money_node :final_value_fee, 'FinalValueFee', :optional => true
+      object_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSaleDetails, :optional => true
     end
   end
 end

@@ -16,9 +16,7 @@ module Ebay # :nodoc:
       text_node :category_name, 'CategoryName', :optional => true
       text_node :category_parent_id, 'CategoryParentID', :optional => true
       text_node :category_parent_name, 'CategoryParentName', :optional => true
-      numeric_node :product_finder_id, 'ProductFinderID', :optional => true
       boolean_node :product_search_page_available, 'ProductSearchPageAvailable', 'true', 'false', :optional => true
-      boolean_node :product_finder_available, 'ProductFinderAvailable', 'true', 'false', :optional => true
       array_node :product_finder_ids, 'ProductFinderIDs', :class => ExtendedProductFinderID, :default_value => []
       array_node :characteristics_sets, 'CharacteristicsSets', :class => CharacteristicsSet, :default_value => []
       boolean_node :expired, 'Expired', 'true', 'false', :optional => true

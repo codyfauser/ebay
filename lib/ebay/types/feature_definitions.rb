@@ -28,6 +28,13 @@ require 'ebay/types/skype_me_non_transactional_enabled_definition'
 require 'ebay/types/local_listing_distances_regular_definition'
 require 'ebay/types/local_listing_distances_specialty_definition'
 require 'ebay/types/local_listing_distances_non_subscription_definition'
+require 'ebay/types/classified_ad_payment_method_enabled_definition'
+require 'ebay/types/classified_ad_shipping_method_enabled_definition'
+require 'ebay/types/classified_ad_best_offer_enabled_definition'
+require 'ebay/types/classified_ad_counter_offer_enabled_definition'
+require 'ebay/types/classified_ad_auto_decline_enabled_definition'
+require 'ebay/types/classified_ad_contact_by_phone_enabled_definition'
+require 'ebay/types/classified_ad_contact_by_email_enabled_defintion'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -65,6 +72,13 @@ module Ebay # :nodoc:
       object_node :local_listing_distances_regular, 'LocalListingDistancesRegular', :class => LocalListingDistancesRegularDefinition, :optional => true
       object_node :local_listing_distances_specialty, 'LocalListingDistancesSpecialty', :class => LocalListingDistancesSpecialtyDefinition, :optional => true
       object_node :local_listing_distances_non_subscription, 'LocalListingDistancesNonSubscription', :class => LocalListingDistancesNonSubscriptionDefinition, :optional => true
+      object_node :classified_ad_payment_method_enabled, 'ClassifiedAdPaymentMethodEnabled', :class => ClassifiedAdPaymentMethodEnabledDefinition, :optional => true
+      object_node :classified_ad_shipping_method_enabled, 'ClassifiedAdShippingMethodEnabled', :class => ClassifiedAdShippingMethodEnabledDefinition, :optional => true
+      object_node :classified_ad_best_offer_enabled, 'ClassifiedAdBestOfferEnabled', :class => ClassifiedAdBestOfferEnabledDefinition, :optional => true
+      object_node :classified_ad_counter_offer_enabled, 'ClassifiedAdCounterOfferEnabled', :class => ClassifiedAdCounterOfferEnabledDefinition, :optional => true
+      object_node :classified_ad_auto_decline_enabled, 'ClassifiedAdAutoDeclineEnabled', :class => ClassifiedAdAutoDeclineEnabledDefinition, :optional => true
+      object_node :classified_ad_contact_by_phone_enabled, 'ClassifiedAdContactByPhoneEnabled', :class => ClassifiedAdContactByPhoneEnabledDefinition, :optional => true
+      object_node :classified_ad_contact_by_email_enabled, 'ClassifiedAdContactByEmailEnabled', :class => ClassifiedAdContactByEmailEnabledDefintion, :optional => true
     end
   end
 end

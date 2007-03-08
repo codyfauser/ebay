@@ -1,6 +1,7 @@
 require 'ebay/types/search_attributes'
 require 'ebay/types/pagination'
 require 'ebay/types/characteristic_set_ids'
+require 'ebay/types/external_product_id'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -19,6 +20,8 @@ module Ebay # :nodoc:
       boolean_node :available_items_only, 'AvailableItemsOnly', 'true', 'false', :optional => true
       text_node :query_keywords, 'QueryKeywords', :optional => true
       array_node :characteristic_set_ids, 'CharacteristicSetIDs', :class => CharacteristicSetIDs, :default_value => []
+      text_node :product_reference_id, 'ProductReferenceID', :optional => true
+      object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
     end
   end
 end

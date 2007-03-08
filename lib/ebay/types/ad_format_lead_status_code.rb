@@ -1,10 +1,10 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
-    class ModifyCode
+    class AdFormatLeadStatusCode
       extend Enumerable
       extend Enumeration
-      Dropped = 'Dropped'
-      Modify = 'Modify'
+      New = 'New'
+      Responded = 'Responded'
     end
   end
 end

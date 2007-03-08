@@ -5,7 +5,7 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'GetStoreCustomPageRequest'
-      text_node :page_id, 'PageID', :optional => true
+      numeric_node :page_id, 'PageID', :optional => true
     end
   end
 end

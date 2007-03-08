@@ -239,7 +239,7 @@ module Ebay
               # Found a container!
               child = element.elements[0]
 
-              ignored = %w( MemberMessage BidApproval )
+              ignored = %w( MemberMessage BidApproval PromotionalSaleDetails )
               
               unless BuiltInTypes.include?(child.type.name)
                 @ignored_classes << name unless ignored.include?(name)

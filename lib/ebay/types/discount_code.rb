@@ -1,10 +1,10 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
-    class SkypeOptionCode
+    class DiscountCode
       extend Enumerable
       extend Enumeration
-      None = 'None'
-      Voice = 'Voice'
+      Percentage = 'Percentage'
+      Price = 'Price'
     end
   end
 end

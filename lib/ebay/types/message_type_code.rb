@@ -9,6 +9,8 @@ module Ebay # :nodoc:
       ContactTransactionPartner = 'ContactTransactionPartner'
       ResponseToContacteBayMember = 'ResponseToContacteBayMember'
       ContacteBayMemberViaCommunityLink = 'ContacteBayMemberViaCommunityLink'
+      All = 'All'
+      ContactMyBidder = 'ContactMyBidder'
     end
   end
 end

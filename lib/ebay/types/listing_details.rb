@@ -13,7 +13,6 @@ module Ebay # :nodoc:
       money_node :converted_start_price, 'ConvertedStartPrice', :optional => true
       money_node :converted_reserve_price, 'ConvertedReservePrice', :optional => true
       boolean_node :has_reserve_price, 'HasReservePrice', 'true', 'false', :optional => true
-      text_node :region_name, 'RegionName', :optional => true
       text_node :relisted_item_id, 'RelistedItemID', :optional => true
       text_node :second_chance_original_item_id, 'SecondChanceOriginalItemID', :optional => true
       time_node :start_time, 'StartTime', :optional => true

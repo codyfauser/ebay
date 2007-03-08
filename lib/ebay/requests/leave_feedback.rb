@@ -1,3 +1,4 @@
+require 'ebay/types/item_rating_details'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -10,6 +11,7 @@ module Ebay # :nodoc:
       text_node :comment_type, 'CommentType', :optional => true
       text_node :transaction_id, 'TransactionID', :optional => true
       text_node :target_user, 'TargetUser', :optional => true
+      array_node :seller_item_rating_details, 'SellerItemRatingDetailArray', 'ItemRatingDetails', :class => ItemRatingDetails, :default_value => []
     end
   end
 end
