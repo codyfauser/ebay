@@ -27,6 +27,12 @@ module Ebay #:nodoc:
   # In the example above the request objects is 
   # Ebay::Requests::GeteBayOfficialTime and the response object is
   # Ebay::Responses::GeteBayOfficialTime
+  #
+  # == Official Input / Output Reference
+  # The official input / output reference provided by eBay is a good way to get familiar
+  # with the API calls.
+  #
+  # http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/index.html
   class Api
     include Inflections
     include ApiMethods
