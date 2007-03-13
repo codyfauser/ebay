@@ -123,7 +123,7 @@ Rake::GemPackageTask.new(spec) do |p|
 end
 
 desc "Release the gems and docs to RubyForge"
-task :release => [ :publish, :upload_rdoc ]
+task :release => [ :publish, :upload ]
 
 desc "Publish the release files to RubyForge."
 task :publish => [ :package ] do
