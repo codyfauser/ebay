@@ -1,6 +1,7 @@
 module Ebay
   module Schema
     class ApiSchemaImporter
+      include Inflections
       include RubyClassGeneratorHelper
 
       attr_reader :complex_types, :simple_types
@@ -75,7 +76,7 @@ module Ebay
         prefix = "ebay/#{name}"
         File.open("#{@base_dir}/#{name}.rb", 'w') do |file|
           file.puts require_statement("#{prefix}/abstract") if add_abstract
-          file.puts classes.inject(''){|memo, c| memo << require_statement("#{prefix}/#{c.name.gsub(/(Request|Response)$/, '').ebay_underscore}")}
+          file.puts classes.inject(''){|memo, c| memo << require_statement("#{prefix}/#{ebay_underscore(c.name.gsub(/(Request|Response)$/, ''))}")}
         end
       end
       
@@ -90,7 +91,7 @@ module Ebay
         name = name.gsub(/Type$/,'')
         name.gsub!(/(Response|Request)$/, '') unless simple
         
-        "#{@base_dir}/#{module_name.downcase}/#{name.ebay_underscore}.rb"
+        "#{@base_dir}/#{module_name.downcase}/#{ebay_underscore(name)}.rb"
       end
 
       def remove_unused_files

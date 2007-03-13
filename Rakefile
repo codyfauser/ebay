@@ -114,7 +114,6 @@ spec = Gem::Specification.new do |s|
   s.homepage = "http://ebayapi.rubyforge.org"
   s.add_dependency('xml-mapping', '>= 0.8.1')
   s.add_dependency('money', '>= 1.7.1')
-  s.add_dependency('activesupport', '>= 1.3.1')
 end
 
 Rake::GemPackageTask.new(spec) do |p|

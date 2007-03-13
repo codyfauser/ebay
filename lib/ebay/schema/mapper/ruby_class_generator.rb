@@ -35,16 +35,16 @@ module Ebay
         template = simple? ? 'value' : 'base'
         base = ClassTemplate.new(template).load
        
-        customization = ClassTemplate.new(name.ebay_underscore)
+        customization = ClassTemplate.new(ebay_underscore(name))
         customization.load if customization.exists?
        
         if request? || response?
-          class_name = name.ebay_camelize.gsub(/(Request|Response)$/, '')
+          class_name = ebay_camelize(name).gsub(/(Request|Response)$/, '')
         else
-          class_name = name.ebay_camelize
+          class_name = ebay_camelize(name)
         end
 
-        element_name = name.ebay_camelize
+        element_name = ebay_camelize(name)
         
           
         class_def = ClassDefinition.new(class_name, element_name, module_name, base_class)
@@ -115,7 +115,7 @@ module Ebay
       private
       def select_template
         # First try and load a template for the class
-        template = ClassTemplate.new(name.ebay_underscore)
+        template = ClassTemplate.new(ebay_underscore(name))
         if !template.exists?
           template = ClassTemplate.new('ebay_class')
         end
@@ -180,7 +180,7 @@ module Ebay
         result = ''
         result << @nodes.inject('') do |memo, node|
           if node.respond_to?(:class_name)
-            memo << require_statement(node.class_name.ebay_underscore)
+            memo << require_statement(ebay_underscore(node.class_name))
           else
             memo
           end

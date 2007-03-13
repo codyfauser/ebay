@@ -1,9 +1,19 @@
+class Hash
+  def stringify_keys!
+    keys.each do |key|
+      unless key.class.to_s == "String" # weird hack to make the tests run when string_ext_test.rb is also running
+        self[key.to_s] = self[key]
+        delete(key)
+      end
+    end
+    self
+  end
+end
+
 require 'ebay/initializer'
 require 'ebay/enumeration'
+require 'ebay/inflections'
 require 'ebay/schema/version'
-
-# Remove the broken unpluralization of 'ies' words
-Inflector.inflections.plurals.delete_if{|inflection| inflection.first == /([^aeiouy]|qu)ies$/i }
 
 # Fix circular dependency
 module Ebay

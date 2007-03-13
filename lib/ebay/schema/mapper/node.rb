@@ -1,6 +1,7 @@
 module Ebay
   module Schema
     class Node
+      include Inflections
       class_inheritable_accessor :override_type
         
       attr_accessor :name, :min, :max
@@ -18,7 +19,7 @@ module Ebay
       end
       
       def accessor_name
-        name = @name.ebay_underscore
+        name = ebay_underscore(@name)
         if name =~ /_array$/
           name.gsub!(/_array$/, '')
           Inflector.pluralize(name)

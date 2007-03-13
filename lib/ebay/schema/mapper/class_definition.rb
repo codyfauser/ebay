@@ -1,6 +1,7 @@
 module Ebay
   module Schema
     class ClassDefinition
+      include Inflections
       include RubyClassGeneratorHelper
 
       attr_accessor :class_name, :superclass_name, :module_name , :requires, :nodes, :element_name
@@ -16,7 +17,7 @@ module Ebay
 
         @requires = nodes.inject([]) do |memo, node|
           if node.respond_to?(:class_name)
-            memo << node.class_name.ebay_underscore
+            memo << ebay_underscore(node.class_name)
           else
             memo
           end

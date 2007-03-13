@@ -1,6 +1,8 @@
 module Ebay
   module Schema
     class Enumeration
+      include Inflections
+      
       attr_accessor :codes
       def initialize(codes = [])
         codes.delete('CustomCode')
@@ -18,7 +20,7 @@ class << self
   end
         
   CODES.each do |code|
-    define_method(code.ebay_underscore) do
+    define_method(ebay_underscore(code) do
       new(code)
     end
   end

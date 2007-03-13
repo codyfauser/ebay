@@ -27,7 +27,8 @@ module Ebay #:nodoc:
   # Ebay::Requests::GeteBayOfficialTime and the response object is
   # Ebay::Responses::GeteBayOfficialTime
   class Api
-    include Ebay::Types
+    include Inflections
+    include Types
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
     
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
@@ -112,7 +113,7 @@ module Ebay #:nodoc:
       args[:auth_token] = auth_token
       
       begin
-        request = build_request(method_id.to_s.ebay_camelize, args)
+        request = build_request(ebay_camelize(method_id.to_s), args)
       rescue NameError
         super
       end
