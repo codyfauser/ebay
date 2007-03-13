@@ -1,6 +1,13 @@
 $:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
 begin
+  require 'active_support'
+rescue LoadError
+  require 'rubygems'
+  require 'active_support'
+end
+
+begin
   require 'xml/mapping'
 rescue LoadError
   require 'rubygems'
