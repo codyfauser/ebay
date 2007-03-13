@@ -1,6 +1,13 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :application_url, 'ApplicationURL', :optional => true
+    #  text_node :application_enable, 'ApplicationEnable', :optional => true
+    #  text_node :alert_email, 'AlertEmail', :optional => true
+    #  text_node :alert_enable, 'AlertEnable', :optional => true
+    #  text_node :notification_payload_type, 'NotificationPayloadType', :optional => true
+    #  text_node :device_type, 'DeviceType', :optional => true
     class ApplicationDeliveryPreferences
       include XML::Mapping
       include Initializer

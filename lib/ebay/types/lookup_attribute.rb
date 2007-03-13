@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :name, 'Name', :optional => true
+    #  text_node :value, 'Value', :optional => true
     class LookupAttribute
       include XML::Mapping
       include Initializer

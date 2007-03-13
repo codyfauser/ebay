@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
     class ClassifiedAdCounterOfferEnabledDefinition
       include XML::Mapping
       include Initializer

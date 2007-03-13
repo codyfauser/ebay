@@ -1,6 +1,10 @@
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  text_node :item_id, 'ItemID', :optional => true
+    #  text_node :status, 'Status', :optional => true
+    #  boolean_node :include_member_messages, 'IncludeMemberMessages', 'true', 'false', :optional => true
     class GetAdFormatLeads < Abstract
       include XML::Mapping
       include Initializer

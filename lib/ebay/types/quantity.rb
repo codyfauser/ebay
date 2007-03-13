@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  numeric_node :quantity, '', :optional => true
+    #  text_node :token, '@unit', :optional => true
     class Quantity
       include XML::Mapping
       include Initializer

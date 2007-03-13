@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
     class GeteBayOfficialTime < Abstract
       include XML::Mapping
       include Initializer

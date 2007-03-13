@@ -5,13 +5,17 @@ module Ebay
       include RubyClassGeneratorHelper
       BuiltInTypes = ['string', 'anyURI', 'int', 'float', 'long', 'dateTime', 'boolean', 'token', 'decimal', 'duration', 'double']
 
-      attr_reader :ignored_classes
+      attr_reader :ignored_classes, :documentation
 
-      def initialize(type, simple_types, complex_types)
+      def initialize(type, simple_types, complex_types, xml)
+        @xml = xml
+                
         @indent = 2
         @type = type
         @simple_types, @complex_types = simple_types, complex_types
         @ignored_classes = []
+        # node = @xml.find_first("xs:complexType[@name='#{xml_type}']/xs:annotation/xs:documentation")
+        # @documentation = (node && node.content) || ''
         find_base
       end
 
@@ -54,8 +58,14 @@ module Ebay
         class_def.nodes.concat nodes
         
         class_def.customization = customization.render(class_def) if customization.exists?
+      
+        # class_def.documentation = @documentation
         
         base.render(class_def)
+      end
+      
+      def xml_type
+        @type.name.name
       end
 
       def name

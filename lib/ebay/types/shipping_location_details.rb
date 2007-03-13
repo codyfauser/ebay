@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :shipping_location, 'ShippingLocation', :optional => true
+    #  text_node :description, 'Description', :optional => true
     class ShippingLocationDetails
       include XML::Mapping
       include Initializer

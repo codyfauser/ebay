@@ -4,6 +4,10 @@
 
 module Ebay # :nodoc:
   module <%= module_name %> # :nodoc:
+    # == Attributes
+<% for node in nodes -%>
+    #  <%= node.to_s %>
+<% end -%>
     class <%= class_definition %>
       include XML::Mapping
       include Initializer

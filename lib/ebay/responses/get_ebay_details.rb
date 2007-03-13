@@ -12,6 +12,18 @@ require 'ebay/types/time_zone_details'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
+    # == Attributes
+    #  array_node :country_details, 'CountryDetails', :class => CountryDetails, :default_value => []
+    #  array_node :currency_details, 'CurrencyDetails', :class => CurrencyDetails, :default_value => []
+    #  array_node :dispatch_time_max_details, 'DispatchTimeMaxDetails', :class => DispatchTimeMaxDetails, :default_value => []
+    #  array_node :payment_option_details, 'PaymentOptionDetails', :class => PaymentOptionDetails, :default_value => []
+    #  array_node :region_details, 'RegionDetails', :class => RegionDetails, :default_value => []
+    #  array_node :shipping_location_details, 'ShippingLocationDetails', :class => ShippingLocationDetails, :default_value => []
+    #  array_node :shipping_service_details, 'ShippingServiceDetails', :class => ShippingServiceDetails, :default_value => []
+    #  array_node :site_details, 'SiteDetails', :class => SiteDetails, :default_value => []
+    #  array_node :tax_jurisdictions, 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
+    #  array_node :url_details, 'URLDetails', :class => URLDetails, :default_value => []
+    #  array_node :time_zone_details, 'TimeZoneDetails', :class => TimeZoneDetails, :default_value => []
     class GeteBayDetails < Abstract
       include XML::Mapping
       include Initializer

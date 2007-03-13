@@ -2,6 +2,8 @@ require 'ebay/types/user'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
+    # == Attributes
+    #  object_node :user, 'User', :class => User, :optional => true
     class GetUser < Abstract
       include XML::Mapping
       include Initializer

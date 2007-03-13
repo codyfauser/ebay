@@ -4,12 +4,13 @@ module Ebay
       include Inflections
       include RubyClassGeneratorHelper
 
-      attr_accessor :class_name, :superclass_name, :module_name , :requires, :nodes, :element_name
+      attr_accessor :class_name, :superclass_name, :module_name , :requires, :nodes, :element_name, :documentation
 
       def initialize(class_name, element_name, module_name, superclass_name = nil)
         @class_name, @module_name = class_name, module_name
         @element_name = element_name
         @superclass_name = superclass_name.gsub(/(Request|Response)$/, '') unless superclass_name.nil?
+        @documentation = ''
       end
 
       def requires
@@ -43,7 +44,6 @@ module Ebay
       def customization
         @customization ||= ''
       end
-
     end
   end
 end

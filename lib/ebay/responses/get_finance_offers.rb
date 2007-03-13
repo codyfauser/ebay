@@ -2,6 +2,9 @@ require 'ebay/types/finance_offer'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
+    # == Attributes
+    #  numeric_node :count, 'Count', :optional => true
+    #  array_node :finance_offers, 'FinanceOfferArray', 'FinanceOffer', :class => FinanceOffer, :default_value => []
     class GetFinanceOffers < Abstract
       include XML::Mapping
       include Initializer

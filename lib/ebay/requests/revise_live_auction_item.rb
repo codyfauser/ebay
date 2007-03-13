@@ -2,6 +2,9 @@ require 'ebay/types/item'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  object_node :item, 'Item', :class => Item, :optional => true
+    #  text_node :deleted_field, 'DeletedField', :optional => true
     class ReviseLiveAuctionItem < Abstract
       include XML::Mapping
       include Initializer

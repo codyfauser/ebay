@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :id, '@id', :optional => true
+    #  
     class CharityAffiliation
       include XML::Mapping
       include Initializer

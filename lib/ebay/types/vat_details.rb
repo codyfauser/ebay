@@ -1,6 +1,10 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  boolean_node :business_seller, 'BusinessSeller', 'true', 'false', :optional => true
+    #  boolean_node :restricted_to_business, 'RestrictedToBusiness', 'true', 'false', :optional => true
+    #  numeric_node :vat_percent, 'VATPercent', :optional => true
     class VATDetails
       include XML::Mapping
       include Initializer

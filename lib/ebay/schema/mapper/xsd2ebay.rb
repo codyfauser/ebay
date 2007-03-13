@@ -5,7 +5,7 @@ module Ebay
 
       def self.run(data, directory)
         xsd = Parser.parse(data)
-        importer = ApiSchemaImporter.new(xsd)
+        importer = ApiSchemaImporter.new(xsd, data)
         importer.export_classes(directory)
       end
     end

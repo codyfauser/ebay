@@ -1,3 +1,5 @@
+#require 'xml/libxml'
+
 module Ebay
   module Schema
     class ApiSchemaImporter
@@ -8,7 +10,9 @@ module Ebay
 
       Ignores = [ 'RecipientRelationCodeType' ]
       
-      def initialize(schema)
+      def initialize(schema, data)
+        @xml = XML::Parser.string(data).parse.root
+        
         @elements = schema.collect_elements
         @elements.uniq!
         @attributes = schema.collect_attributes
@@ -38,12 +42,12 @@ module Ebay
         
         complex_classes = @complex_types.collect do |type|
           puts "Generating class for #{type.name.name}"
-          RubyClassGenerator.new(type, @simple_types, @complex_types)
+          RubyClassGenerator.new(type, @simple_types, @complex_types, @xml)
         end
         
         simple_classes = @code_types.collect do |type|
           puts "Generating simple type class for #{type.name.name}"
-          RubyClassGenerator.new(type, @simple_types, @complex_types)
+          RubyClassGenerator.new(type, @simple_types, @complex_types, @xml)
         end
        
         
@@ -64,12 +68,41 @@ module Ebay
       end
       
       def write_requires_files(classes)
-        requests = classes.select{|c| c.request?}
-        responses = classes.select{|c| c.response?}
+        requests = classes.select{|c| c.derived_request? }
+        responses = classes.select{|c| c.derived_response? }
         types = classes.select{|c| c.type?}
       
         write_requires_file('requests', requests, true) 
-        write_requires_file('responses', requests, true) 
+        write_requires_file('responses', requests, true)
+        
+        write_method_calls(requests)
+      end
+    
+      def write_method_calls(requests)
+        File.open("#{@base_dir}/api_methods.rb", "w") do |f|
+          f.puts
+          f.puts "module Ebay"
+          f.puts "  module ApiMethods"
+          begin
+            requests.each do |r|
+              name = r.name.gsub(/Request$/, '')
+              #r.documentation.each{|l| f.puts "    # #{l.strip}"}               
+              f.puts <<-DEF
+    # Builds Ebay::Requests##{name}
+    #
+    # Returns Ebay::Responses##{name}
+    #
+    # Official Documentation for #{name}[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_#{name}.html]
+    def #{ebay_underscore(name)}(params = {})
+      commit(Ebay::Requests::#{name}, params)
+    end
+              DEF
+            end
+          ensure
+            f.puts "  end"
+            f.puts "end"
+          end
+        end
       end
       
       def write_requires_file(name, classes, add_abstract = false)

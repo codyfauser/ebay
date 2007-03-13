@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :search_name, 'SearchName', :optional => true
+    #  text_node :search_query, 'SearchQuery', :optional => true
     class MyeBayFavoriteSearch
       include XML::Mapping
       include Initializer

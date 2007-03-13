@@ -4,6 +4,24 @@ require 'ebay/types/my_messages_folder'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :sender, 'Sender', :optional => true
+    #  text_node :recipient_user_id, 'RecipientUserID', :optional => true
+    #  text_node :send_to_name, 'SendToName', :optional => true
+    #  text_node :subject, 'Subject', :optional => true
+    #  text_node :message_id, 'MessageID', :optional => true
+    #  text_node :external_message_id, 'ExternalMessageID', :optional => true
+    #  text_node :content_type, 'ContentType', :optional => true
+    #  text_node :text, 'Text', :optional => true
+    #  boolean_node :flagged, 'Flagged', 'true', 'false', :optional => true
+    #  boolean_node :read, 'Read', 'true', 'false', :optional => true
+    #  time_node :creation_date, 'CreationDate', :optional => true
+    #  time_node :receive_date, 'ReceiveDate', :optional => true
+    #  time_node :expiration_date, 'ExpirationDate', :optional => true
+    #  text_node :item_id, 'ItemID', :optional => true
+    #  object_node :response_details, 'ResponseDetails', :class => MyMessagesResponseDetails, :optional => true
+    #  object_node :forward_details, 'ForwardDetails', :class => MyMessagesForwardDetails, :optional => true
+    #  object_node :folder, 'Folder', :class => MyMessagesFolder, :optional => true
     class MyMessagesMessage
       include XML::Mapping
       include Initializer

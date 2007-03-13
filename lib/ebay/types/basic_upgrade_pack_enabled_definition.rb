@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
     class BasicUpgradePackEnabledDefinition
       include XML::Mapping
       include Initializer

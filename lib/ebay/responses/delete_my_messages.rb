@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
+    # == Attributes
     class DeleteMyMessages < Abstract
       include XML::Mapping
       include Initializer

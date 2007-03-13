@@ -1,6 +1,8 @@
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  text_node :secret_id, 'SecretID', :optional => true
     class FetchToken < Abstract
       include XML::Mapping
       include Initializer

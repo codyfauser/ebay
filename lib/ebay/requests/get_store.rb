@@ -1,6 +1,10 @@
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  boolean_node :category_structure_only, 'CategoryStructureOnly', 'true', 'false', :optional => true
+    #  numeric_node :root_category_id, 'RootCategoryID', :optional => true
+    #  numeric_node :level_limit, 'LevelLimit', :optional => true
     class GetStore < Abstract
       include XML::Mapping
       include Initializer

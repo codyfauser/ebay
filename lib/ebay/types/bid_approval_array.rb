@@ -2,6 +2,8 @@ require 'ebay/types/bid_approval'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  array_node :live_auction_bids, 'LiveAuctionBid', :class => BidApproval, :default_value => []
     class BidApprovalArray
       include XML::Mapping
       include Initializer

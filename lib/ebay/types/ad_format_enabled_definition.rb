@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
     class AdFormatEnabledDefinition
       include XML::Mapping
       include Initializer

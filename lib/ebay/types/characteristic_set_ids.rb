@@ -1,6 +1,8 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :id, 'ID', :optional => true
     class CharacteristicSetIDs
       include XML::Mapping
       include Initializer

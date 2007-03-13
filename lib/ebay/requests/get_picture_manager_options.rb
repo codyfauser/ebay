@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
     class GetPictureManagerOptions < Abstract
       include XML::Mapping
       include Initializer

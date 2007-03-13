@@ -2,6 +2,8 @@ require 'ebay/types/live_auction_catalog'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
+    # == Attributes
+    #  array_node :live_auction_catalogs, 'LiveAuctionCatalog', :class => LiveAuctionCatalog, :default_value => []
     class GetLiveAuctionCatalogDetails < Abstract
       include XML::Mapping
       include Initializer

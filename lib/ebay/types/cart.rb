@@ -5,6 +5,16 @@ require 'ebay/types/checkout_order_detail'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  numeric_node :cart_id, 'CartID', :optional => true
+    #  object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
+    #  text_node :cart_status, 'CartStatus', :optional => true
+    #  time_node :creation_time, 'CreationTime', :optional => true
+    #  time_node :expiration_time, 'ExpirationTime', :optional => true
+    #  text_node :checkout_url, 'CheckoutURL', :optional => true
+    #  object_node :checkout_complete_redirect, 'CheckoutCompleteRedirect', :class => CheckoutCompleteRedirect, :optional => true
+    #  array_node :cart_items, 'CartItemArray', 'CartItem', :class => CartItem, :default_value => []
+    #  object_node :order_detail, 'OrderDetail', :class => CheckoutOrderDetail, :optional => true
     class Cart
       include XML::Mapping
       include Initializer

@@ -2,6 +2,13 @@ require 'ebay/types/feedback_info'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  text_node :item_id, 'ItemID', :optional => true
+    #  text_node :transaction_id, 'TransactionID', :optional => true
+    #  object_node :feedback_info, 'FeedbackInfo', :class => FeedbackInfo, :optional => true
+    #  boolean_node :shipped, 'Shipped', 'true', 'false', :optional => true
+    #  boolean_node :paid, 'Paid', 'true', 'false', :optional => true
+    #  text_node :listing_type, 'ListingType', :optional => true
     class CompleteSale < Abstract
       include XML::Mapping
       include Initializer

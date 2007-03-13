@@ -1,3 +1,6 @@
+# * Release 0.10.0
+# * Update the documentation for better navigation.  Provide links to official documentation. Don't use method_missing anymore
+# * Add eBay documentation from the schema into the RDoc.  Generate method calls for all API calls so they are documented
 # * Update to Schema version 503
 # * Remove unused code.  Remove dependency on Active Support for regular usage. Don't extend built in String and Hash types.
 # * Update to schema version 501.  Beware, all deprecated calls have been removed

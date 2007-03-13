@@ -1,6 +1,8 @@
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  numeric_node :task_id, 'TaskID', :optional => true
     class GetStoreCategoryUpdateStatus < Abstract
       include XML::Mapping
       include Initializer

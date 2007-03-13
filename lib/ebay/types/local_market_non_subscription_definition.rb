@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
     class LocalMarketNonSubscriptionDefinition
       include XML::Mapping
       include Initializer

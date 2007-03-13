@@ -1,6 +1,10 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :file_name, 'FileName', :optional => true
+    #  text_node :file_version, 'FileVersion', :optional => true
+    #  text_node :file_content, 'FileContent', :optional => true
     class XSLFile
       include XML::Mapping
       include Initializer

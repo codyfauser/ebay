@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :name, 'Name', :optional => true
+    #  money_node :fee, 'Fee', :optional => true
     class Fee
       include XML::Mapping
       include Initializer

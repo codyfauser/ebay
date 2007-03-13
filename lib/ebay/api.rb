@@ -2,6 +2,7 @@ require 'uri'
 require 'zlib'
 require 'stringio'
 require 'ebay/request/connection'
+require 'ebay/api_methods'
 
 module Ebay #:nodoc:
   class EbayError < StandardError #:nodoc:
@@ -16,8 +17,8 @@ module Ebay #:nodoc:
 
   # == Overview
   # Api is the main proxy class responsible for instantiating and invoking
-  # the correct Ebay::Requests object for the method called. This is currently done
-  # using method_missing:  
+  # the correct Ebay::Requests object for the method called. 
+  # All of the available method calls are included from the module Ebay::ApiMethods
   #   ebay = Ebay::Api.new
   #   response = ebay.get_ebay_official_time
   #   puts response.timestamp # => 2006-08-13T21:28:39.515Z
@@ -28,7 +29,7 @@ module Ebay #:nodoc:
   # Ebay::Responses::GeteBayOfficialTime
   class Api
     include Inflections
-    include Types
+    include ApiMethods
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
     
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
@@ -103,25 +104,17 @@ module Ebay #:nodoc:
       @auth_token = options[:auth_token] || self.class.auth_token
       @site_id = options[:site_id] || self.class.site_id
     end
-
+  
     private
-    def method_missing(method_id, *args, &block)
-      args = args.first || {}
-
-      format = args.delete(:format) || @format
+    def commit(request_class, params)
+      format = params.delete(:format) || @format      
+      params[:auth_token] = auth_token
       
-      args[:auth_token] = auth_token
-      
-      begin
-        request = build_request(ebay_camelize(method_id.to_s), args)
-      rescue NameError
-        super
-      end
-      
+      request = request_class.new(params)
       yield request if block_given?
       invoke(request, format)
     end
-
+    
     def invoke(request, format)
       response = connection.post( service_uri.path, 
                                   build_body(request), 
@@ -129,11 +122,6 @@ module Ebay #:nodoc:
                                 )
       
       parse decompress(response), format
-    end
-
-    def build_request(name, args)
-      request_class = Ebay::Requests.const_get(name)
-      request_class.new(args)
     end
 
     def build_headers(call_name)
@@ -183,7 +171,7 @@ module Ebay #:nodoc:
         fix_root_element_name(xml)
         result = XML::Mapping.load_object_from_xml(xml.root)
         case result.ack
-        when AckCode::Failure, AckCode::PartialFailure
+        when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
           raise RequestError.new(result.errors)
         end
       when :raw

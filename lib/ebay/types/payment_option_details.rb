@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :payment_option, 'PaymentOption', :optional => true
+    #  text_node :description, 'Description', :optional => true
     class PaymentOptionDetails
       include XML::Mapping
       include Initializer

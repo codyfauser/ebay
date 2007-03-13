@@ -1,6 +1,8 @@
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  numeric_node :promotional_sale_id, 'PromotionalSaleID', :optional => true
     class GetPromotionalSaleDetails < Abstract
       include XML::Mapping
       include Initializer

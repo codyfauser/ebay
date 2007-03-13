@@ -2,6 +2,8 @@ require 'ebay/types/contact_hours_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  object_node :contact_hours_details, 'ContactHoursDetails', :class => ContactHoursDetails, :optional => true
     class ExtendedContactDetails
       include XML::Mapping
       include Initializer

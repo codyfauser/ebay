@@ -1,6 +1,8 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  value_array_node :user_ids, 'UserID', :default_value => []
     class UserIDArray
       include XML::Mapping
       include Initializer

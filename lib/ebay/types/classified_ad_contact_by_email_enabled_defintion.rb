@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
     class ClassifiedAdContactByEmailEnabledDefintion
       include XML::Mapping
       include Initializer

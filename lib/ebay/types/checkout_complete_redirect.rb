@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :url, 'URL', :optional => true
+    #  text_node :name, 'Name', :optional => true
     class CheckoutCompleteRedirect
       include XML::Mapping
       include Initializer

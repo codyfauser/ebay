@@ -1,6 +1,7 @@
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
+    # == Attributes
     class SetStore < Abstract
       include XML::Mapping
       include Initializer

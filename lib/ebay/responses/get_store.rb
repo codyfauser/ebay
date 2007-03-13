@@ -2,6 +2,8 @@ require 'ebay/types/store'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
+    # == Attributes
+    #  object_node :store, 'Store', :class => Store, :optional => true
     class GetStore < Abstract
       include XML::Mapping
       include Initializer

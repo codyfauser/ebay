@@ -2,6 +2,9 @@ require 'ebay/types/promotion_rule'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
+    # == Attributes
+    #  text_node :operation_type, 'OperationType', :optional => true
+    #  array_node :promotion_rules, 'PromotionRuleArray', 'PromotionRule', :class => PromotionRule, :default_value => []
     class SetPromotionRules < Abstract
       include XML::Mapping
       include Initializer

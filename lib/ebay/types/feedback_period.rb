@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  numeric_node :period_in_days, 'PeriodInDays', :optional => true
+    #  numeric_node :count, 'Count', :optional => true
     class FeedbackPeriod
       include XML::Mapping
       include Initializer

@@ -1,6 +1,10 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :product_name, 'ProductName', :optional => true
+    #  numeric_node :part_number, 'PartNumber', :optional => true
+    #  text_node :product_part_number, 'ProductPartNumber', :optional => true
     class SellingManagerProductDetails
       include XML::Mapping
       include Initializer

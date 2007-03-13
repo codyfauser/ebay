@@ -1,6 +1,9 @@
 
 module Ebay # :nodoc:
   module Types # :nodoc:
+    # == Attributes
+    #  text_node :finance_offer_id, 'FinanceOfferID', :optional => true
+    #  text_node :category_id, 'CategoryID', :optional => true
     class CategoryFinanceOffer
       include XML::Mapping
       include Initializer
