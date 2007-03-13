@@ -35,6 +35,7 @@ require 'ebay/types/classified_ad_counter_offer_enabled_definition'
 require 'ebay/types/classified_ad_auto_decline_enabled_definition'
 require 'ebay/types/classified_ad_contact_by_phone_enabled_definition'
 require 'ebay/types/classified_ad_contact_by_email_enabled_defintion'
+require 'ebay/types/safe_payment_required_definition'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -79,6 +80,7 @@ module Ebay # :nodoc:
       object_node :classified_ad_auto_decline_enabled, 'ClassifiedAdAutoDeclineEnabled', :class => ClassifiedAdAutoDeclineEnabledDefinition, :optional => true
       object_node :classified_ad_contact_by_phone_enabled, 'ClassifiedAdContactByPhoneEnabled', :class => ClassifiedAdContactByPhoneEnabledDefinition, :optional => true
       object_node :classified_ad_contact_by_email_enabled, 'ClassifiedAdContactByEmailEnabled', :class => ClassifiedAdContactByEmailEnabledDefintion, :optional => true
+      object_node :safe_payment_required, 'SafePaymentRequired', :class => SafePaymentRequiredDefinition, :optional => true
     end
   end
 end

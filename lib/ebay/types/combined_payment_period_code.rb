@@ -8,6 +8,7 @@ module Ebay # :nodoc:
       Days7 = 'Days_7'
       Days14 = 'Days_14'
       Days30 = 'Days_30'
+      Ineligible = 'Ineligible'
     end
   end
 end

@@ -13,7 +13,6 @@ module Ebay # :nodoc:
       numeric_node :shipping_time_max, 'ShippingTimeMax', :optional => true
       numeric_node :shipping_time_min, 'ShippingTimeMin', :optional => true
       text_node :shipping_service_code, 'ShippingServiceCode', :optional => true
-      boolean_node :promotional_shipping_discount, 'PromotionalShippingDiscount', 'true', 'false', :optional => true
     end
   end
 end

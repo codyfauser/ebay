@@ -12,6 +12,7 @@ def type
   @type
 end
 
+      text_node :alternate_value, 'AlternateValue', :optional => true
     end
   end
 end

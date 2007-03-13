@@ -12,6 +12,7 @@ module Ebay # :nodoc:
       money_node :each_additional_amount_off, 'EachAdditionalAmountOff', :optional => true
       numeric_node :each_additional_percent_off, 'EachAdditionalPercentOff', :optional => true
       object_node :weight_off, 'WeightOff', :class => Measure, :optional => true
+      text_node :mapped_discount_profile_id, 'MappedDiscountProfileID', :optional => true
     end
   end
 end

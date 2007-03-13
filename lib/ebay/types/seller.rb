@@ -32,6 +32,7 @@ module Ebay # :nodoc:
       boolean_node :express_wallet, 'ExpressWallet', 'true', 'false', :optional => true
       object_node :express_seller_requirements, 'ExpressSellerRequirements', :class => ExpressSellerRequirements, :optional => true
       boolean_node :charity_registered, 'CharityRegistered', 'true', 'false', :optional => true
+      boolean_node :safe_payment_exempt, 'SafePaymentExempt', 'true', 'false', :optional => true
     end
   end
 end

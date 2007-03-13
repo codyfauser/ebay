@@ -1,6 +1,7 @@
 module Ebay
   module Schema
     class RubyClassGenerator
+      include Inflections
       include RubyClassGeneratorHelper
       BuiltInTypes = ['string', 'anyURI', 'int', 'float', 'long', 'dateTime', 'boolean', 'token', 'decimal', 'duration', 'double']
 

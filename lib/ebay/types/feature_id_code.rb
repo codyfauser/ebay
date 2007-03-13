@@ -38,6 +38,7 @@ module Ebay # :nodoc:
       ClassifiedAdAutoDeclineEnabled = 'ClassifiedAdAutoDeclineEnabled'
       ClassifiedAdContactByEmailEnabled = 'ClassifiedAdContactByEmailEnabled'
       ClassifiedAdContactByPhoneEnabled = 'ClassifiedAdContactByPhoneEnabled'
+      SafePaymentRequired = 'SafePaymentRequired'
     end
   end
 end

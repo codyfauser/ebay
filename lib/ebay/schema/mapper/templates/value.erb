@@ -4,7 +4,7 @@ module Ebay # :nodoc:
       extend Enumerable
       extend Enumeration
 <% for node in nodes -%>
-      <%= node.ebay_camelize %> = '<%= node %>'
+      <%= ebay_camelize(node) %> = '<%= node %>'
 <% end -%>
     end
   end
