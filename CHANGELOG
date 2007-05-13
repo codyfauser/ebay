@@ -1,3 +1,4 @@
+# * Tweak modification to xsl stylesheets
 # * Add an example for get_search_results with pagination
 # * Release 0.10.0
 # * Update the documentation for better navigation.  Provide links to official documentation. Don't use method_missing anymore
