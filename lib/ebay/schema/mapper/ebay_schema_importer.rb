@@ -1,4 +1,4 @@
-#require 'xml/libxml'
+require 'xml/libxml'
 
 module Ebay
   module Schema

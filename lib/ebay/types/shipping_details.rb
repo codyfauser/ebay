@@ -11,6 +11,7 @@ require 'ebay/types/promotional_shipping_discount_details'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
+    #  boolean_node :allow_payment_edit, 'AllowPaymentEdit', 'true', 'false', :optional => true
     #  boolean_node :apply_shipping_discount, 'ApplyShippingDiscount', 'true', 'false', :optional => true
     #  object_node :calculated_shipping_rate, 'CalculatedShippingRate', :class => CalculatedShippingRate, :optional => true
     #  boolean_node :change_payment_instructions, 'ChangePaymentInstructions', 'true', 'false', :optional => true
@@ -47,6 +48,7 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'ShippingDetails'
+      boolean_node :allow_payment_edit, 'AllowPaymentEdit', 'true', 'false', :optional => true
       boolean_node :apply_shipping_discount, 'ApplyShippingDiscount', 'true', 'false', :optional => true
       object_node :calculated_shipping_rate, 'CalculatedShippingRate', :class => CalculatedShippingRate, :optional => true
       boolean_node :change_payment_instructions, 'ChangePaymentInstructions', 'true', 'false', :optional => true

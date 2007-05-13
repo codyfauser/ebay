@@ -9,7 +9,6 @@ module Ebay # :nodoc:
     #  array_node :link_to_includes, 'LinkToInclude', :class => StoreCustomListingHeaderLink, :default_value => []
     #  boolean_node :add_to_favorite_stores, 'AddToFavoriteStores', 'true', 'false', :optional => true
     #  boolean_node :sign_up_for_store_newsletter, 'SignUpForStoreNewsletter', 'true', 'false', :optional => true
-    #  boolean_node :bread_crumb, 'BreadCrumb', 'true', 'false', :optional => true
     class StoreCustomListingHeader
       include XML::Mapping
       include Initializer
@@ -20,7 +19,6 @@ module Ebay # :nodoc:
       array_node :link_to_includes, 'LinkToInclude', :class => StoreCustomListingHeaderLink, :default_value => []
       boolean_node :add_to_favorite_stores, 'AddToFavoriteStores', 'true', 'false', :optional => true
       boolean_node :sign_up_for_store_newsletter, 'SignUpForStoreNewsletter', 'true', 'false', :optional => true
-      boolean_node :bread_crumb, 'BreadCrumb', 'true', 'false', :optional => true
     end
   end
 end

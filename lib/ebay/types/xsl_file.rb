@@ -22,7 +22,8 @@ module Ebay # :nodoc:
       private
       def unpack_stylesheet(base64string)
         stylesheet = base64string.unpack('m').first
-        stylesheet.gsub!(/urn:schemas-microsoft-com:xslt/, 'http://exslt.org/common')
+        stylesheet.sub!(/urn:schemas-microsoft-com:xslt/, 'http://exslt.org/common')
+        stylesheet.sub!(/exclude-result-prefixes="x"/, 'exclude-result-prefixes="x xal"')
       end
     end
   end

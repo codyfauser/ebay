@@ -11,6 +11,7 @@ module Ebay # :nodoc:
       SortByPriceDesc = 'SortByPriceDesc'
       BestMatchSort = 'BestMatchSort'
       DistanceSort = 'DistanceSort'
+      BestMatchCategoryGroup = 'BestMatchCategoryGroup'
     end
   end
 end

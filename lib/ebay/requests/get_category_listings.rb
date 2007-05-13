@@ -1,6 +1,7 @@
 require 'ebay/types/pagination'
 require 'ebay/types/search_location'
 require 'ebay/types/proximity_search'
+require 'ebay/types/group'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -22,6 +23,7 @@ module Ebay # :nodoc:
     #  boolean_node :include_feedback, 'IncludeFeedback', 'true', 'false', :optional => true
     #  text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
     #  numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
+    #  object_node :group, 'Group', :class => Group, :optional => true
     class GetCategoryListings < Abstract
       include XML::Mapping
       include Initializer
@@ -43,6 +45,7 @@ module Ebay # :nodoc:
       boolean_node :include_feedback, 'IncludeFeedback', 'true', 'false', :optional => true
       text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
       numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
+      object_node :group, 'Group', :class => Group, :optional => true
     end
   end
 end

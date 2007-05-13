@@ -1,7 +1,7 @@
 require 'ebay/types/flat_shipping_discount'
 require 'ebay/types/calculated_shipping_discount'
 require 'ebay/types/calculated_handling_discount'
-require 'ebay/types/promotional_shipping_discount'
+require 'ebay/types/promotional_shipping_discount_details'
 require 'ebay/types/shipping_insurance'
 
 module Ebay # :nodoc:
@@ -13,7 +13,7 @@ module Ebay # :nodoc:
     #  object_node :flat_shipping_discount, 'FlatShippingDiscount', :class => FlatShippingDiscount, :optional => true
     #  object_node :calculated_shipping_discount, 'CalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true
     #  object_node :calculated_handling_discount, 'CalculatedHandlingDiscount', :class => CalculatedHandlingDiscount, :optional => true
-    #  object_node :promotional_shipping_discount, 'PromotionalShippingDiscount', :class => PromotionalShippingDiscount, :optional => true
+    #  object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
     #  object_node :shipping_insurance, 'ShippingInsurance', :class => ShippingInsurance, :optional => true
     #  object_node :international_shipping_insurance, 'InternationalShippingInsurance', :class => ShippingInsurance, :optional => true
     class SetShippingDiscountProfiles < Abstract
@@ -26,7 +26,7 @@ module Ebay # :nodoc:
       object_node :flat_shipping_discount, 'FlatShippingDiscount', :class => FlatShippingDiscount, :optional => true
       object_node :calculated_shipping_discount, 'CalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true
       object_node :calculated_handling_discount, 'CalculatedHandlingDiscount', :class => CalculatedHandlingDiscount, :optional => true
-      object_node :promotional_shipping_discount, 'PromotionalShippingDiscount', :class => PromotionalShippingDiscount, :optional => true
+      object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
       object_node :shipping_insurance, 'ShippingInsurance', :class => ShippingInsurance, :optional => true
       object_node :international_shipping_insurance, 'InternationalShippingInsurance', :class => ShippingInsurance, :optional => true
     end

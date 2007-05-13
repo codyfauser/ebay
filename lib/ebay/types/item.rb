@@ -136,6 +136,9 @@ module Ebay # :nodoc:
     #  numeric_node :lead_count, 'LeadCount', :optional => true
     #  numeric_node :new_lead_count, 'NewLeadCount', :optional => true
     #  array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
+    #  text_node :group_category_id, 'GroupCategoryID', :optional => true
+    #  money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
+    #  boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -244,6 +247,9 @@ module Ebay # :nodoc:
       numeric_node :lead_count, 'LeadCount', :optional => true
       numeric_node :new_lead_count, 'NewLeadCount', :optional => true
       array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
+      text_node :group_category_id, 'GroupCategoryID', :optional => true
+      money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
+      boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
     end
   end
 end

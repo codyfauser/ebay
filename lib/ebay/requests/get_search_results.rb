@@ -8,6 +8,9 @@ require 'ebay/types/search_request'
 require 'ebay/types/external_product_id'
 require 'ebay/types/request_categories'
 require 'ebay/types/affiliate_tracking_details'
+require 'ebay/types/bid_range'
+require 'ebay/types/ticket_details'
+require 'ebay/types/group'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -50,6 +53,10 @@ module Ebay # :nodoc:
     #  text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
     #  numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
     #  object_node :affiliate_tracking_details, 'AffiliateTrackingDetails', :class => AffiliateTrackingDetails, :optional => true
+    #  object_node :bid_range, 'BidRange', :class => BidRange, :optional => true
+    #  text_node :item_condition, 'ItemCondition', :optional => true
+    #  object_node :ticket_finder, 'TicketFinder', :class => TicketDetails, :optional => true
+    #  object_node :group, 'Group', :class => Group, :optional => true
     class GetSearchResults < Abstract
       include XML::Mapping
       include Initializer
@@ -92,6 +99,10 @@ module Ebay # :nodoc:
       text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
       numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
       object_node :affiliate_tracking_details, 'AffiliateTrackingDetails', :class => AffiliateTrackingDetails, :optional => true
+      object_node :bid_range, 'BidRange', :class => BidRange, :optional => true
+      text_node :item_condition, 'ItemCondition', :optional => true
+      object_node :ticket_finder, 'TicketFinder', :class => TicketDetails, :optional => true
+      object_node :group, 'Group', :class => Group, :optional => true
     end
   end
 end

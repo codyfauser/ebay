@@ -26,6 +26,7 @@ module Ebay # :nodoc:
     #  object_node :express_item_requirements, 'ExpressItemRequirements', :class => ExpressItemRequirements, :optional => true
     #  text_node :tcr_original_item_id, 'TCROriginalItemID', :optional => true
     #  text_node :view_item_url_for_natural_search, 'ViewItemURLForNaturalSearch', :optional => true
+    #  boolean_node :pay_per_lead_enabled, 'PayPerLeadEnabled', 'true', 'false', :optional => true
     class ListingDetails
       include XML::Mapping
       include Initializer
@@ -53,6 +54,7 @@ module Ebay # :nodoc:
       object_node :express_item_requirements, 'ExpressItemRequirements', :class => ExpressItemRequirements, :optional => true
       text_node :tcr_original_item_id, 'TCROriginalItemID', :optional => true
       text_node :view_item_url_for_natural_search, 'ViewItemURLForNaturalSearch', :optional => true
+      boolean_node :pay_per_lead_enabled, 'PayPerLeadEnabled', 'true', 'false', :optional => true
     end
   end
 end

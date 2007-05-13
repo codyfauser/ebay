@@ -7,6 +7,7 @@ module Ebay # :nodoc:
     #  numeric_node :quantity_bid, 'QuantityBid', :optional => true
     #  numeric_node :quantity_won, 'QuantityWon', :optional => true
     #  boolean_node :winning, 'Winning', 'true', 'false', :optional => true
+    #  boolean_node :bid_assistant, 'BidAssistant', 'true', 'false', :optional => true
     class BiddingDetails
       include XML::Mapping
       include Initializer
@@ -16,6 +17,7 @@ module Ebay # :nodoc:
       numeric_node :quantity_bid, 'QuantityBid', :optional => true
       numeric_node :quantity_won, 'QuantityWon', :optional => true
       boolean_node :winning, 'Winning', 'true', 'false', :optional => true
+      boolean_node :bid_assistant, 'BidAssistant', 'true', 'false', :optional => true
     end
   end
 end

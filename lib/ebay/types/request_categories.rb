@@ -6,6 +6,7 @@ module Ebay # :nodoc:
     #  numeric_node :max_categories, 'MaxCategories', :optional => true
     #  numeric_node :max_subcategories, 'MaxSubcategories', :optional => true
     #  numeric_node :levels, 'Levels', :optional => true
+    #  boolean_node :demand_data, 'DemandData', 'true', 'false', :optional => true
     class RequestCategories
       include XML::Mapping
       include Initializer
@@ -14,6 +15,7 @@ module Ebay # :nodoc:
       numeric_node :max_categories, 'MaxCategories', :optional => true
       numeric_node :max_subcategories, 'MaxSubcategories', :optional => true
       numeric_node :levels, 'Levels', :optional => true
+      boolean_node :demand_data, 'DemandData', 'true', 'false', :optional => true
     end
   end
 end

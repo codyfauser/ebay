@@ -77,6 +77,8 @@ module Ebay # :nodoc:
       NewLeadCount = 'NewLeadCount'
       LeadCountDescending = 'LeadCountDescending'
       NewLeadCountDescending = 'NewLeadCountDescending'
+      ClassifiedAdPayPerLeadFee = 'ClassifiedAdPayPerLeadFee'
+      ClassifiedAdPayPerLeadFeeDescending = 'ClassifiedAdPayPerLeadFeeDescending'
     end
   end
 end

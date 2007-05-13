@@ -36,6 +36,7 @@ require 'ebay/types/classified_ad_auto_decline_enabled_definition'
 require 'ebay/types/classified_ad_contact_by_phone_enabled_definition'
 require 'ebay/types/classified_ad_contact_by_email_enabled_defintion'
 require 'ebay/types/safe_payment_required_definition'
+require 'ebay/types/classified_ad_pay_per_lead_enabled_definition'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -78,6 +79,7 @@ module Ebay # :nodoc:
     #  object_node :classified_ad_contact_by_phone_enabled, 'ClassifiedAdContactByPhoneEnabled', :class => ClassifiedAdContactByPhoneEnabledDefinition, :optional => true
     #  object_node :classified_ad_contact_by_email_enabled, 'ClassifiedAdContactByEmailEnabled', :class => ClassifiedAdContactByEmailEnabledDefintion, :optional => true
     #  object_node :safe_payment_required, 'SafePaymentRequired', :class => SafePaymentRequiredDefinition, :optional => true
+    #  object_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', :class => ClassifiedAdPayPerLeadEnabledDefinition, :optional => true
     class FeatureDefinitions
       include XML::Mapping
       include Initializer
@@ -120,6 +122,7 @@ module Ebay # :nodoc:
       object_node :classified_ad_contact_by_phone_enabled, 'ClassifiedAdContactByPhoneEnabled', :class => ClassifiedAdContactByPhoneEnabledDefinition, :optional => true
       object_node :classified_ad_contact_by_email_enabled, 'ClassifiedAdContactByEmailEnabled', :class => ClassifiedAdContactByEmailEnabledDefintion, :optional => true
       object_node :safe_payment_required, 'SafePaymentRequired', :class => SafePaymentRequiredDefinition, :optional => true
+      object_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', :class => ClassifiedAdPayPerLeadEnabledDefinition, :optional => true
     end
   end
 end

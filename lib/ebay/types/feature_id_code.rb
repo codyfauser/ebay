@@ -39,6 +39,10 @@ module Ebay # :nodoc:
       ClassifiedAdContactByEmailEnabled = 'ClassifiedAdContactByEmailEnabled'
       ClassifiedAdContactByPhoneEnabled = 'ClassifiedAdContactByPhoneEnabled'
       SafePaymentRequired = 'SafePaymentRequired'
+      MaximumBestOffersAllowed = 'MaximumBestOffersAllowed'
+      ClassifiedAdMaximumBestOffersAllowed = 'ClassifiedAdMaximumBestOffersAllowed'
+      ClassifiedAdContactByEmailAvailable = 'ClassifiedAdContactByEmailAvailable'
+      ClassifiedAdPayPerLeadEnabled = 'ClassifiedAdPayPerLeadEnabled'
     end
   end
 end

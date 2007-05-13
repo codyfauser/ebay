@@ -4,6 +4,7 @@ require 'ebay/types/paginated_order_transaction_array'
 require 'ebay/types/my_ebay_favorite_search_list'
 require 'ebay/types/my_ebay_favorite_seller_list'
 require 'ebay/types/item'
+require 'ebay/types/bid_group'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -17,6 +18,7 @@ module Ebay # :nodoc:
     #  object_node :favorite_searches, 'FavoriteSearches', :class => MyeBayFavoriteSearchList, :optional => true
     #  object_node :favorite_sellers, 'FavoriteSellers', :class => MyeBayFavoriteSellerList, :optional => true
     #  array_node :second_chance_offers, 'SecondChanceOffer', :class => Item, :default_value => []
+    #  array_node :bid_assistant_lists, 'BidAssistantList', 'BidGroup', :class => BidGroup, :default_value => []
     class GetMyeBayBuying < Abstract
       include XML::Mapping
       include Initializer
@@ -30,6 +32,7 @@ module Ebay # :nodoc:
       object_node :favorite_searches, 'FavoriteSearches', :class => MyeBayFavoriteSearchList, :optional => true
       object_node :favorite_sellers, 'FavoriteSellers', :class => MyeBayFavoriteSellerList, :optional => true
       array_node :second_chance_offers, 'SecondChanceOffer', :class => Item, :default_value => []
+      array_node :bid_assistant_lists, 'BidAssistantList', 'BidGroup', :class => BidGroup, :default_value => []
     end
   end
 end

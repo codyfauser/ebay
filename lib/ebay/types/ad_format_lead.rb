@@ -18,6 +18,7 @@ module Ebay # :nodoc:
     #  array_node :member_messages, 'MemberMessage', 'MemberMessageExchange', :class => MemberMessageExchange, :default_value => []
     #  text_node :status, 'Status', :optional => true
     #  text_node :phone2, 'Phone2', :optional => true
+    #  money_node :lead_fee, 'LeadFee', :optional => true
     class AdFormatLead
       include XML::Mapping
       include Initializer
@@ -36,6 +37,7 @@ module Ebay # :nodoc:
       array_node :member_messages, 'MemberMessage', 'MemberMessageExchange', :class => MemberMessageExchange, :default_value => []
       text_node :status, 'Status', :optional => true
       text_node :phone2, 'Phone2', :optional => true
+      money_node :lead_fee, 'LeadFee', :optional => true
     end
   end
 end

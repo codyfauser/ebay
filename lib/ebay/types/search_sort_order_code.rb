@@ -19,6 +19,7 @@ module Ebay # :nodoc:
       SortByBidCountAsc = 'SortByBidCountAsc'
       SortByBidCountDesc = 'SortByBidCountDesc'
       BestMatchSort = 'BestMatchSort'
+      BestMatchCategoryGroup = 'BestMatchCategoryGroup'
     end
   end
 end

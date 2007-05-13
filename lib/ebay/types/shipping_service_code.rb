@@ -428,6 +428,9 @@ module Ebay # :nodoc:
       CAFRUPSWorldWideExpress = 'CAFR_UPSWorldWideExpress'
       CAFRUPSWorldWideExpedited = 'CAFR_UPSWorldWideExpedited'
       UKRoyalMailSpecialDelivery9am = 'UK_RoyalMailSpecialDelivery9am'
+      USPSFirstClassMailInternational = 'USPSFirstClassMailInternational'
+      USPSPriorityMailInternational = 'USPSPriorityMailInternational'
+      USPSExpressMailInternational = 'USPSExpressMailInternational'
     end
   end
 end

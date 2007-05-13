@@ -39,6 +39,7 @@ module Ebay # :nodoc:
     #  boolean_node :classified_ad_contact_by_phone_enabled, 'ClassifiedAdContactByPhoneEnabled', 'true', 'false', :optional => true
     #  boolean_node :classified_ad_contact_by_email_enabled, 'ClassifiedAdContactByEmailEnabled', 'true', 'false', :optional => true
     #  boolean_node :safe_payment_required, 'SafePaymentRequired', 'true', 'false', :optional => true
+    #  boolean_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', 'true', 'false', :optional => true
     class CategoryFeature
       include XML::Mapping
       include Initializer
@@ -79,6 +80,7 @@ module Ebay # :nodoc:
       boolean_node :classified_ad_contact_by_phone_enabled, 'ClassifiedAdContactByPhoneEnabled', 'true', 'false', :optional => true
       boolean_node :classified_ad_contact_by_email_enabled, 'ClassifiedAdContactByEmailEnabled', 'true', 'false', :optional => true
       boolean_node :safe_payment_required, 'SafePaymentRequired', 'true', 'false', :optional => true
+      boolean_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', 'true', 'false', :optional => true
     end
   end
 end

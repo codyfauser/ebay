@@ -1,5 +1,6 @@
 require 'ebay/types/item_list_customization'
 require 'ebay/types/my_ebay_selection'
+require 'ebay/types/bid_assistant_list'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -12,6 +13,7 @@ module Ebay # :nodoc:
     #  object_node :favorite_searches, 'FavoriteSearches', :class => MyeBaySelection, :optional => true
     #  object_node :favorite_sellers, 'FavoriteSellers', :class => MyeBaySelection, :optional => true
     #  object_node :second_chance_offer, 'SecondChanceOffer', :class => MyeBaySelection, :optional => true
+    #  object_node :bid_assistant_list, 'BidAssistantList', :class => BidAssistantList, :optional => true
     class GetMyeBayBuying < Abstract
       include XML::Mapping
       include Initializer
@@ -24,6 +26,7 @@ module Ebay # :nodoc:
       object_node :favorite_searches, 'FavoriteSearches', :class => MyeBaySelection, :optional => true
       object_node :favorite_sellers, 'FavoriteSellers', :class => MyeBaySelection, :optional => true
       object_node :second_chance_offer, 'SecondChanceOffer', :class => MyeBaySelection, :optional => true
+      object_node :bid_assistant_list, 'BidAssistantList', :class => BidAssistantList, :optional => true
     end
   end
 end
