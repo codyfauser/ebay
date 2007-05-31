@@ -28,6 +28,7 @@ require 'ebay/types/express_details'
 require 'ebay/types/address'
 require 'ebay/types/extended_contact_details'
 require 'ebay/types/name_value_list'
+require 'ebay/types/buyer_protection_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -139,6 +140,7 @@ module Ebay # :nodoc:
     #  text_node :group_category_id, 'GroupCategoryID', :optional => true
     #  money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
     #  boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
+    #  object_node :apply_buyer_protection, 'ApplyBuyerProtection', :class => BuyerProtectionDetails, :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -250,6 +252,7 @@ module Ebay # :nodoc:
       text_node :group_category_id, 'GroupCategoryID', :optional => true
       money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
       boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
+      object_node :apply_buyer_protection, 'ApplyBuyerProtection', :class => BuyerProtectionDetails, :optional => true
     end
   end
 end

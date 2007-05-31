@@ -1017,6 +1017,14 @@ module Ebay
     def set_user_preferences(params = {})
       commit(Ebay::Requests::SetUserPreferences, params)
     end
+    # Builds Ebay::Requests#UploadSiteHostedPictures
+    #
+    # Returns Ebay::Responses#UploadSiteHostedPictures
+    #
+    # Official Documentation for UploadSiteHostedPictures[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_UploadSiteHostedPictures.html]
+    def upload_site_hosted_pictures(params = {})
+      commit(Ebay::Requests::UploadSiteHostedPictures, params)
+    end
     # Builds Ebay::Requests#ValidateChallengeInput
     #
     # Returns Ebay::Responses#ValidateChallengeInput

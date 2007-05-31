@@ -1,3 +1,4 @@
+# * Update to eBay XML Schema Version 513
 # * Ensure that nil values aren't used as headers in the HTTP request
 # * Update to eBay XML Schema Version 511
 # * Tweak modification to xsl stylesheets

@@ -46,6 +46,8 @@ module Ebay # :nodoc:
     #  text_node :transaction_platform, 'TransactionPlatform', :optional => true
     #  object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
     #  array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
+    #  text_node :transaction_site_id, 'TransactionSiteID', :optional => true
+    #  text_node :transaction_cobrand_id, 'TransactionCobrandID', :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -83,6 +85,8 @@ module Ebay # :nodoc:
       text_node :transaction_platform, 'TransactionPlatform', :optional => true
       object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
       array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
+      text_node :transaction_site_id, 'TransactionSiteID', :optional => true
+      text_node :transaction_cobrand_id, 'TransactionCobrandID', :optional => true
     end
   end
 end
