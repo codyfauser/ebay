@@ -6,12 +6,12 @@ require 'rake/rdoctask'
 require 'rake/gempackagetask'
 require 'rake/contrib/rubyforgepublisher'
 
-PKG_VERSION = "0.10.1"
+PKG_VERSION = "0.10.2"
 PKG_NAME = "ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
 PKG_FILES = FileList[
-  "lib/**/*", "test/**/*", "example/**/*", "[A-Z]*", "rakefile", "init.rb"
+  "lib/**/*", "test/**/*", "examples/**/*", "[A-Z]*", "rakefile", "init.rb"
 ].exclude(/~$|\.svn/)
 
 response_dir = File.join(File.dirname(__FILE__), 'test', 'fixtures', 'responses')
