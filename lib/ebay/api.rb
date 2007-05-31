@@ -132,12 +132,12 @@ module Ebay #:nodoc:
 
     def build_headers(call_name)
       {
-        'X-EBAY-API-COMPATIBILITY-LEVEL' => schema_version,
+        'X-EBAY-API-COMPATIBILITY-LEVEL' => schema_version.to_s,
         'X-EBAY-API-SESSION-CERTIFICATE' => "#{dev_id};#{app_id};#{cert}",
-        'X-EBAY-API-DEV-NAME' => dev_id,
-        'X-EBAY-API-APP-NAME' => app_id,
-        'X-EBAY-API-CERT-NAME' => cert,
-        'X-EBAY-API-CALL-NAME' => call_name,
+        'X-EBAY-API-DEV-NAME' => dev_id.to_s,
+        'X-EBAY-API-APP-NAME' => app_id.to_s,
+        'X-EBAY-API-CERT-NAME' => cert.to_s,
+        'X-EBAY-API-CALL-NAME' => call_name.to_s,
         'X-EBAY-API-SITEID' => site_id.to_s,
         'Content-Type' => 'text/xml',
         'Accept-Encoding' => 'gzip'
