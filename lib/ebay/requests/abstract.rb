@@ -7,6 +7,7 @@ module Ebay # :nodoc:
     #  text_node :error_language, 'ErrorLanguage', :optional => true
     #  text_node :message_id, 'MessageID', :optional => true
     #  text_node :version, 'Version', :optional => true
+    #  text_node :end_user_ip, 'EndUserIP', :optional => true
     #  object_node :requester_credentials, 'RequesterCredentials', :class => XMLRequesterCredentials, :optional => true
     #  text_node :error_handling, 'ErrorHandling', :optional => true
     #  text_node :invocation_id, 'InvocationID', :optional => true
@@ -19,6 +20,7 @@ module Ebay # :nodoc:
       text_node :error_language, 'ErrorLanguage', :optional => true
       text_node :message_id, 'MessageID', :optional => true
       text_node :version, 'Version', :optional => true
+      text_node :end_user_ip, 'EndUserIP', :optional => true
       object_node :requester_credentials, 'RequesterCredentials', :class => XMLRequesterCredentials, :optional => true
       text_node :error_handling, 'ErrorHandling', :optional => true
       text_node :invocation_id, 'InvocationID', :optional => true
