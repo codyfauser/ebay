@@ -177,6 +177,7 @@ module Ebay # :nodoc:
       YUM = 'YUM'
       ZMK = 'ZMK'
       ZWD = 'ZWD'
+      ATS = 'ATS'
     end
   end
 end

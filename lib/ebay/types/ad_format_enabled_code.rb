@@ -8,6 +8,7 @@ module Ebay # :nodoc:
       Only = 'Only'
       ClassifiedAdEnabled = 'ClassifiedAdEnabled'
       ClassifiedAdOnly = 'ClassifiedAdOnly'
+      LocalMarketBestOfferOnly = 'LocalMarketBestOfferOnly'
     end
   end
 end

@@ -10,6 +10,7 @@ module Ebay # :nodoc:
     #  object_node :pagination, 'Pagination', :class => Pagination, :optional => true
     #  boolean_node :include_final_value_fee, 'IncludeFinalValueFee', 'true', 'false', :optional => true
     #  boolean_node :include_containing_order, 'IncludeContainingOrder', 'true', 'false', :optional => true
+    #  text_node :platform, 'Platform', :optional => true
     class GetItemTransactions < Abstract
       include XML::Mapping
       include Initializer
@@ -21,6 +22,7 @@ module Ebay # :nodoc:
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true
       boolean_node :include_final_value_fee, 'IncludeFinalValueFee', 'true', 'false', :optional => true
       boolean_node :include_containing_order, 'IncludeContainingOrder', 'true', 'false', :optional => true
+      text_node :platform, 'Platform', :optional => true
     end
   end
 end

@@ -48,6 +48,8 @@ module Ebay # :nodoc:
     #  array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
     #  text_node :transaction_site_id, 'TransactionSiteID', :optional => true
     #  text_node :platform, 'Platform', :optional => true
+    #  text_node :cart_id, 'CartID', :optional => true
+    #  boolean_node :seller_contact_buyer_by_email, 'SellerContactBuyerByEmail', 'true', 'false', :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -87,6 +89,8 @@ module Ebay # :nodoc:
       array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
       text_node :transaction_site_id, 'TransactionSiteID', :optional => true
       text_node :platform, 'Platform', :optional => true
+      text_node :cart_id, 'CartID', :optional => true
+      boolean_node :seller_contact_buyer_by_email, 'SellerContactBuyerByEmail', 'true', 'false', :optional => true
     end
   end
 end

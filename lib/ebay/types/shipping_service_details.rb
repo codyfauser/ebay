@@ -10,6 +10,11 @@ module Ebay # :nodoc:
     #  numeric_node :shipping_time_max, 'ShippingTimeMax', :optional => true
     #  numeric_node :shipping_time_min, 'ShippingTimeMin', :optional => true
     #  text_node :shipping_service_code, 'ShippingServiceCode', :optional => true
+    #  value_array_node :service_types, 'ServiceType', :default_value => []
+    #  value_array_node :shipping_packages, 'ShippingPackage', :default_value => []
+    #  boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false', :optional => true
+    #  boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false', :optional => true
+    #  boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
     class ShippingServiceDetails
       include XML::Mapping
       include Initializer
@@ -22,6 +27,11 @@ module Ebay # :nodoc:
       numeric_node :shipping_time_max, 'ShippingTimeMax', :optional => true
       numeric_node :shipping_time_min, 'ShippingTimeMin', :optional => true
       text_node :shipping_service_code, 'ShippingServiceCode', :optional => true
+      value_array_node :service_types, 'ServiceType', :default_value => []
+      value_array_node :shipping_packages, 'ShippingPackage', :default_value => []
+      boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false', :optional => true
+      boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false', :optional => true
+      boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
     end
   end
 end

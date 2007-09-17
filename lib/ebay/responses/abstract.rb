@@ -1,5 +1,6 @@
 require 'ebay/types/error'
 require 'ebay/types/duplicate_invocation_details'
+require 'ebay/types/bot_block_response'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -17,6 +18,7 @@ module Ebay # :nodoc:
     #  text_node :eias_token, 'EIASToken', :optional => true
     #  text_node :notification_signature, 'NotificationSignature', :optional => true
     #  text_node :hard_expiration_warning, 'HardExpirationWarning', :optional => true
+    #  object_node :bot_block, 'BotBlock', :class => BotBlockResponse, :optional => true
     class Abstract < Base
       include XML::Mapping
       include Initializer
@@ -34,6 +36,7 @@ module Ebay # :nodoc:
       text_node :eias_token, 'EIASToken', :optional => true
       text_node :notification_signature, 'NotificationSignature', :optional => true
       text_node :hard_expiration_warning, 'HardExpirationWarning', :optional => true
+      object_node :bot_block, 'BotBlock', :class => BotBlockResponse, :optional => true
     end
   end
 end

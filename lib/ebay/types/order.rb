@@ -17,7 +17,6 @@ module Ebay # :nodoc:
     #  object_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :optional => true
     #  text_node :creating_user_role, 'CreatingUserRole', :optional => true
     #  time_node :created_time, 'CreatedTime', :optional => true
-    #  text_node :finance_offer_id, 'FinanceOfferID', :optional => true
     #  value_array_node :payment_methods, 'PaymentMethods', :default_value => []
     #  text_node :seller_email, 'SellerEmail', :optional => true
     #  object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
@@ -41,7 +40,6 @@ module Ebay # :nodoc:
       object_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :optional => true
       text_node :creating_user_role, 'CreatingUserRole', :optional => true
       time_node :created_time, 'CreatedTime', :optional => true
-      text_node :finance_offer_id, 'FinanceOfferID', :optional => true
       value_array_node :payment_methods, 'PaymentMethods', :default_value => []
       text_node :seller_email, 'SellerEmail', :optional => true
       object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true

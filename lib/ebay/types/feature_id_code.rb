@@ -43,6 +43,7 @@ module Ebay # :nodoc:
       ClassifiedAdMaximumBestOffersAllowed = 'ClassifiedAdMaximumBestOffersAllowed'
       ClassifiedAdContactByEmailAvailable = 'ClassifiedAdContactByEmailAvailable'
       ClassifiedAdPayPerLeadEnabled = 'ClassifiedAdPayPerLeadEnabled'
+      ItemSpecificsEnabled = 'ItemSpecificsEnabled'
     end
   end
 end

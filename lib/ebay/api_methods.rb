@@ -225,14 +225,6 @@ module Ebay
     def get_category2_cs(params = {})
       commit(Ebay::Requests::GetCategory2CS, params)
     end
-    # Builds Ebay::Requests#GetCategory2FinanceOffer
-    #
-    # Returns Ebay::Responses#GetCategory2FinanceOffer
-    #
-    # Official Documentation for GetCategory2FinanceOffer[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetCategory2FinanceOffer.html]
-    def get_category2_finance_offer(params = {})
-      commit(Ebay::Requests::GetCategory2FinanceOffer, params)
-    end
     # Builds Ebay::Requests#GetCategoryFeatures
     #
     # Returns Ebay::Responses#GetCategoryFeatures
@@ -256,6 +248,14 @@ module Ebay
     # Official Documentation for GetCategoryMappings[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetCategoryMappings.html]
     def get_category_mappings(params = {})
       commit(Ebay::Requests::GetCategoryMappings, params)
+    end
+    # Builds Ebay::Requests#GetCategorySpecifics
+    #
+    # Returns Ebay::Responses#GetCategorySpecifics
+    #
+    # Official Documentation for GetCategorySpecifics[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetCategorySpecifics.html]
+    def get_category_specifics(params = {})
+      commit(Ebay::Requests::GetCategorySpecifics, params)
     end
     # Builds Ebay::Requests#GetChallengeToken
     #
@@ -312,14 +312,6 @@ module Ebay
     # Official Documentation for GetFeedback[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetFeedback.html]
     def get_feedback(params = {})
       commit(Ebay::Requests::GetFeedback, params)
-    end
-    # Builds Ebay::Requests#GetFinanceOffers
-    #
-    # Returns Ebay::Responses#GetFinanceOffers
-    #
-    # Official Documentation for GetFinanceOffers[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetFinanceOffers.html]
-    def get_finance_offers(params = {})
-      commit(Ebay::Requests::GetFinanceOffers, params)
     end
     # Builds Ebay::Requests#GetHighBidders
     #
@@ -920,14 +912,6 @@ module Ebay
     # Official Documentation for SetPictureManagerDetails[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_SetPictureManagerDetails.html]
     def set_picture_manager_details(params = {})
       commit(Ebay::Requests::SetPictureManagerDetails, params)
-    end
-    # Builds Ebay::Requests#SetPromotionRules
-    #
-    # Returns Ebay::Responses#SetPromotionRules
-    #
-    # Official Documentation for SetPromotionRules[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_SetPromotionRules.html]
-    def set_promotion_rules(params = {})
-      commit(Ebay::Requests::SetPromotionRules, params)
     end
     # Builds Ebay::Requests#SetPromotionalSale
     #

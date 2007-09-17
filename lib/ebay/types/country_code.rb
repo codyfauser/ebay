@@ -247,6 +247,9 @@ module Ebay # :nodoc:
       QN = 'QN'
       QO = 'QO'
       QP = 'QP'
+      JE = 'JE'
+      GG = 'GG'
+      ZZ = 'ZZ'
     end
   end
 end

@@ -1,4 +1,5 @@
 require 'ebay/types/xml_requester_credentials'
+require 'ebay/types/bot_block_request'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -12,6 +13,7 @@ module Ebay # :nodoc:
     #  text_node :error_handling, 'ErrorHandling', :optional => true
     #  text_node :invocation_id, 'InvocationID', :optional => true
     #  text_node :warning_level, 'WarningLevel', :optional => true
+    #  object_node :bot_block, 'BotBlock', :class => BotBlockRequest, :optional => true
     class Abstract < Base
       include XML::Mapping
       include Initializer
@@ -25,6 +27,7 @@ module Ebay # :nodoc:
       text_node :error_handling, 'ErrorHandling', :optional => true
       text_node :invocation_id, 'InvocationID', :optional => true
       text_node :warning_level, 'WarningLevel', :optional => true
+      object_node :bot_block, 'BotBlock', :class => BotBlockRequest, :optional => true
       # eBay specifies the detail level as a collection.  The usual case is to use
       # only a single detail level, so it is more appropriate to add an accessor for 
       # the normal case.

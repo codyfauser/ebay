@@ -14,6 +14,8 @@ module Ebay # :nodoc:
       URLDetails = 'URLDetails'
       TimeZoneDetails = 'TimeZoneDetails'
       DispatchTimeMaxDetails = 'DispatchTimeMaxDetails'
+      ItemSpecificDetails = 'ItemSpecificDetails'
+      UnitOfMeasurementDetails = 'UnitOfMeasurementDetails'
     end
   end
 end

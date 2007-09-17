@@ -7,6 +7,7 @@ module Ebay # :nodoc:
       SIFFTAS = 'SIFFTAS'
       ProductPricing = 'ProductPricing'
       SuggestedAttributes = 'SuggestedAttributes'
+      ItemSpecifics = 'ItemSpecifics'
     end
   end
 end

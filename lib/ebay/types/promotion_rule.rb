@@ -1,10 +1,7 @@
-require 'ebay/types/promoted_item'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :promoted_items, 'PromotedItem', :class => PromotedItem, :default_value => []
-    #  text_node :site_id, 'SiteID', :optional => true
     #  numeric_node :promoted_store_category_id, 'PromotedStoreCategoryID', :optional => true
     #  text_node :promoted_ebay_category_id, 'PromotedeBayCategoryID', :optional => true
     #  text_node :promoted_keywords, 'PromotedKeywords', :optional => true
@@ -18,8 +15,6 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'PromotionRule'
-      array_node :promoted_items, 'PromotedItem', :class => PromotedItem, :default_value => []
-      text_node :site_id, 'SiteID', :optional => true
       numeric_node :promoted_store_category_id, 'PromotedStoreCategoryID', :optional => true
       text_node :promoted_ebay_category_id, 'PromotedeBayCategoryID', :optional => true
       text_node :promoted_keywords, 'PromotedKeywords', :optional => true

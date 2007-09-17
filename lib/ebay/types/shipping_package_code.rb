@@ -21,6 +21,18 @@ module Ebay # :nodoc:
       Motorbikes = 'Motorbikes'
       Caravan = 'Caravan'
       IndustryVehicles = 'IndustryVehicles'
+      ParcelOrPaddedEnvelope = 'ParcelOrPaddedEnvelope'
+      SmallCanadaPostBox = 'SmallCanadaPostBox'
+      MediumCanadaPostBox = 'MediumCanadaPostBox'
+      LargeCanadaPostBox = 'LargeCanadaPostBox'
+      SmallCanadaPostBubbleMailer = 'SmallCanadaPostBubbleMailer'
+      MediumCanadaPostBubbleMailer = 'MediumCanadaPostBubbleMailer'
+      LargeCanadaPostBubbleMailer = 'LargeCanadaPostBubbleMailer'
+      PaddedBags = 'PaddedBags'
+      ToughBags = 'ToughBags'
+      ExpandableToughBags = 'ExpandableToughBags'
+      MailingBoxes = 'MailingBoxes'
+      Winepak = 'Winepak'
     end
   end
 end

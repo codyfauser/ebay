@@ -9,6 +9,7 @@ module Ebay # :nodoc:
     #  boolean_node :include_final_value_fee, 'IncludeFinalValueFee', 'true', 'false', :optional => true
     #  boolean_node :include_containing_order, 'IncludeContainingOrder', 'true', 'false', :optional => true
     #  value_array_node :skus, 'SKUArray', 'SKU', :default_value => []
+    #  text_node :platform, 'Platform', :optional => true
     class GetSellerTransactions < Abstract
       include XML::Mapping
       include Initializer
@@ -19,6 +20,7 @@ module Ebay # :nodoc:
       boolean_node :include_final_value_fee, 'IncludeFinalValueFee', 'true', 'false', :optional => true
       boolean_node :include_containing_order, 'IncludeContainingOrder', 'true', 'false', :optional => true
       value_array_node :skus, 'SKUArray', 'SKU', :default_value => []
+      text_node :platform, 'Platform', :optional => true
     end
   end
 end

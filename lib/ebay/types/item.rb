@@ -52,7 +52,6 @@ module Ebay # :nodoc:
     #  cdata_node :description, 'Description', :optional => true
     #  text_node :description_revise_mode, 'DescriptionReviseMode', :optional => true
     #  object_node :distance, 'Distance', :class => Distance, :optional => true
-    #  text_node :finance_offer_id, 'FinanceOfferID', :optional => true
     #  numeric_node :gift_icon, 'GiftIcon', :optional => true
     #  value_array_node :gift_services, 'GiftServices', :default_value => []
     #  text_node :hit_counter, 'HitCounter', :optional => true
@@ -164,7 +163,6 @@ module Ebay # :nodoc:
       cdata_node :description, 'Description', :optional => true
       text_node :description_revise_mode, 'DescriptionReviseMode', :optional => true
       object_node :distance, 'Distance', :class => Distance, :optional => true
-      text_node :finance_offer_id, 'FinanceOfferID', :optional => true
       numeric_node :gift_icon, 'GiftIcon', :optional => true
       value_array_node :gift_services, 'GiftServices', :default_value => []
       text_node :hit_counter, 'HitCounter', :optional => true

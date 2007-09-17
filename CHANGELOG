@@ -1,3 +1,4 @@
+# * Update to eBay XML Schema Version 529
 # * Update to eBay XML Schema Version 517
 # * Update the end_item example to include the ending reason
 # * Update the Rakefile to include the examples, set version 0.10.2
