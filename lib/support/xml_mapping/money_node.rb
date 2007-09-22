@@ -16,7 +16,7 @@ class MoneyNode < XML::Mapping::SingleAttributeNode
 
   def set_attr_value(xml, value)
     raise "Not a Money object: #{value}" unless Money === value
-    @amount_path.first(xml, :ensure_created => true).text = value.cents
+    @amount_path.first(xml, :ensure_created => true).text = sprintf("%.2f", value.cents.to_f / 100  )
     @currency_path.first(xml, :ensure_created => true).text = value.currency
   end
 end
