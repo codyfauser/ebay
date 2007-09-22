@@ -1,3 +1,4 @@
+# * Remove dependency on ActiveSupport from TimeNode
 # * Update to eBay XML Schema Version 531
 # * Fix the money node to add the item amount as a float in dollars
 # * Update to eBay XML Schema Version 529

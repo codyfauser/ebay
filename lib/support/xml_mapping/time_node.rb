@@ -9,6 +9,7 @@ class TimeNode < XML::Mapping::SingleAttributeNode
   end
   def set_attr_value(xml, value) # :nodoc:
     raise "Not a Time object: #{value}" unless value.is_a?(Time)
-    @path.first(xml,:ensure_created=>true).text = value.to_s(:db)
+
+    @path.first(xml,:ensure_created=>true).text = value.strftime("%Y-%m-%d %H:%M:%S")
   end
 end
