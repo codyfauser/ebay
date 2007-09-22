@@ -6,7 +6,7 @@ require 'rake/rdoctask'
 require 'rake/gempackagetask'
 require 'rake/contrib/rubyforgepublisher'
 
-PKG_VERSION = "0.10.2"
+PKG_VERSION = "0.11.0"
 PKG_NAME = "ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
@@ -17,13 +17,22 @@ PKG_FILES = FileList[
 response_dir = File.join(File.dirname(__FILE__), 'test', 'fixtures', 'responses')
 
 desc "Default: Run all the unit tests"
-task :default => [ :test ]
+task :default => [ 'test:units' ]
 
-desc 'Run all unit tests.'
-Rake::TestTask.new do |t|
-  t.libs << "test"
-	t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+namespace :test do
+  desc 'Run all unit tests.'
+  Rake::TestTask.new(:units) do |t|
+    t.libs << "test"
+  	t.pattern = 'test/unit/**/*_test.rb'
+    t.verbose = true
+  end
+  
+  desc 'Run all unit tests.'
+  Rake::TestTask.new(:mapping) do |t|
+    t.libs << "test"
+  	t.pattern = 'test/mapping/**/*_test.rb'
+    t.verbose = true
+  end
 end
 
 desc "Delete tar.gz / zip / rdoc"
@@ -106,7 +115,6 @@ spec = Gem::Specification.new do |s|
   s.email = "codyfauser@gmail.com"
   s.homepage = "http://ebayapi.rubyforge.org"
   s.add_dependency('xml-mapping', '>= 0.8.1')
-  s.add_dependency('activesupport', '>= 1.3.1')
   s.add_dependency('money', '>= 1.7.1')
 end
 

@@ -1,3 +1,4 @@
+# Based on code from ActiveSupport
 module Ebay
   module Inflections
     UPCASE_TOKENS = /(Id$|Cs|Xsl|Url|Rtq|Aaq)/

@@ -2,17 +2,8 @@ $:.unshift File.dirname(__FILE__)
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib", "schema")
 
-begin
-  require 'active_support'
-rescue LoadError
-  require 'rubygems'
-  require 'active_support'
-end
-
-
 require 'test/unit'
 require 'ebay'
-require 'ebay/schema/mapper'
 require 'http_mock'
 require 'credentials'
 

@@ -1,4 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper'
+require File.dirname(__FILE__) + '/../../lib/ebay/schema/mapper'
+
 require 'rexml/document'
 	
 class GenerateFromXSDTest < Test::Unit::TestCase
