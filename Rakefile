@@ -29,66 +29,59 @@ end
 desc "Delete tar.gz / zip / rdoc"
 task :cleanup => [ :clobber_package, :clobber_rdoc ]
 
-desc 'Get the latest version of the eBay XML schema'
-task :update_schema do
-  puts 'Updating the eBay schema'
+namespace :schema do
+  desc 'Get the latest version of the eBay XML schema'
+  task :update do
+    puts 'Updating the eBay schema'
   
-  folder = File.dirname(__FILE__) + "/lib/ebay/schema"
-  url = 'http://developer.ebay.com/webservices/latest/ebaySvc.xsd'
+    folder = File.dirname(__FILE__) + "/lib/ebay/schema"
+    url = 'http://developer.ebay.com/webservices/latest/ebaySvc.xsd'
 
-  cd folder do
-    rm_f 'ebaySvc.xsd'
-    system("wget #{url}")
-  end
-end
-
-desc "Remove the generated Ruby classes"
-task :clean_classes do
-  folder = File.dirname(__FILE__) + '/lib/ebay'
-  folders = %w( responses requests types )
-  cd folder do
-    rm_rf 'requests.rb'
-    rm_rf 'responses.rb'
-    rm_rf 'types.rb'
-    folders.each do |f|
-      cd f do
-        rm_rf '*.rb'
-      end
+    cd folder do
+      rm_f 'ebaySvc.xsd'
+      system("wget #{url}")
     end
   end
-end 
+  
+  desc "Update the schema version"
+  task :update_version do
+    schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
+    # Update the schema version string
+    version = File.open(schema) do |f|
+      version_string = f.gets
+      version_string.match(/Version (\d+)/)
+      $1
+    end
 
-desc "Generate Ruby classes from the schema and updates the schema version"
-task :generate_classes_with_version => [:generate_classes, :update_schema_version]
-
-desc "Generate Ruby classes from the schema file"
-task :generate_classes => :clean_classes do
-  require 'ebay'
-  require 'ebay/schema/mapper'
-  %w(requests responses types).each do |dir|
-    folder = File.dirname(__FILE__) + "/lib/ebay/#{dir}"
-    Dir.mkdir(folder) unless File.directory?(folder)
+    version_file_path = File.dirname(__FILE__) + "/lib/ebay/schema/version.rb"
+    version_file = File.read(version_file_path)
+    version_file.gsub!(/VERSION = \d+/, "VERSION = #{version}")
+    File.open(version_file_path, 'w') do |f|
+      f.puts version_file
+    end
   end
-  schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
-  data = File.read(schema)
-  Ebay::Schema::XSD2eBay.run(data, File.dirname(__FILE__) + '/lib/ebay')
+  
 end
 
-desc "Update the schema version"
-task :update_schema_version do
-  schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
-  # Update the schema version string
-  version = File.open(schema) do |f|
-    version_string = f.gets
-    version_string.match(/Version (\d+)/)
-    $1
-  end
-
-  version_file_path = File.dirname(__FILE__) + "/lib/ebay/schema/version.rb"
-  version_file = File.read(version_file_path)
-  version_file.gsub!(/VERSION = \d+/, "VERSION = #{version}")
-  File.open(version_file_path, 'w') do |f|
-    f.puts version_file
+namespace :classes do
+  desc "Remove the generated Ruby classes"
+  task :cleanup do
+    FileList[
+      "lib/ebay/requests.rb", "lib/ebay/responses.rb", "lib/ebay/types.rb", "lib/ebay/requests/*.rb", "lib/ebay/responses/*.rb", "lib/ebay/types/*.rb"
+    ].each{|f| rm_rf f }
+  end 
+  
+  desc "Generate Ruby classes from the schema file and updates the schema version"
+  task :generate => [:cleanup, 'schema:update_version'] do
+    require 'ebay'
+    require 'ebay/schema/mapper'
+    %w(requests responses types).each do |dir|
+      folder = File.dirname(__FILE__) + "/lib/ebay/#{dir}"
+      Dir.mkdir(folder) unless File.directory?(folder)
+    end
+    schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
+    data = File.read(schema)
+    Ebay::Schema::XSD2eBay.run(data, File.dirname(__FILE__) + '/lib/ebay')
   end
 end
 
