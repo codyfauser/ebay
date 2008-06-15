@@ -10,6 +10,7 @@ module Ebay # :nodoc:
     #  numeric_node :discount_value, 'DiscountValue', :optional => true
     #  time_node :promotional_sale_start_time, 'PromotionalSaleStartTime', :optional => true
     #  time_node :promotional_sale_end_time, 'PromotionalSaleEndTime', :optional => true
+    #  text_node :promotional_sale_type, 'PromotionalSaleType', :optional => true
     class PromotionalSale
       include XML::Mapping
       include Initializer
@@ -22,6 +23,7 @@ module Ebay # :nodoc:
       numeric_node :discount_value, 'DiscountValue', :optional => true
       time_node :promotional_sale_start_time, 'PromotionalSaleStartTime', :optional => true
       time_node :promotional_sale_end_time, 'PromotionalSaleEndTime', :optional => true
+      text_node :promotional_sale_type, 'PromotionalSaleType', :optional => true
     end
   end
 end

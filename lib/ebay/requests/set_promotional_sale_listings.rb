@@ -9,6 +9,7 @@ module Ebay # :nodoc:
     #  numeric_node :category_id, 'CategoryID', :optional => true
     #  boolean_node :all_fixed_price_items, 'AllFixedPriceItems', 'true', 'false', :optional => true
     #  boolean_node :all_store_inventory_items, 'AllStoreInventoryItems', 'true', 'false', :optional => true
+    #  boolean_node :all_auction_items, 'AllAuctionItems', 'true', 'false', :optional => true
     class SetPromotionalSaleListings < Abstract
       include XML::Mapping
       include Initializer
@@ -20,6 +21,7 @@ module Ebay # :nodoc:
       numeric_node :category_id, 'CategoryID', :optional => true
       boolean_node :all_fixed_price_items, 'AllFixedPriceItems', 'true', 'false', :optional => true
       boolean_node :all_store_inventory_items, 'AllStoreInventoryItems', 'true', 'false', :optional => true
+      boolean_node :all_auction_items, 'AllAuctionItems', 'true', 'false', :optional => true
     end
   end
 end

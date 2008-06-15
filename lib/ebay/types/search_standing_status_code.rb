@@ -1,9 +1,11 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
-    class ListingSubtypeEnum
+    class SearchStandingStatusCode
       extend Enumerable
       extend Enumeration
-      ClassifiedAd = 'ClassifiedAd'
+      Raised = 'Raised'
+      Standard = 'Standard'
+      Lowered = 'Lowered'
     end
   end
 end

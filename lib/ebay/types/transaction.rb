@@ -50,6 +50,9 @@ module Ebay # :nodoc:
     #  text_node :platform, 'Platform', :optional => true
     #  text_node :cart_id, 'CartID', :optional => true
     #  boolean_node :seller_contact_buyer_by_email, 'SellerContactBuyerByEmail', 'true', 'false', :optional => true
+    #  text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
+    #  text_node :paisa_pay_id, 'PaisaPayID', :optional => true
+    #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -91,6 +94,9 @@ module Ebay # :nodoc:
       text_node :platform, 'Platform', :optional => true
       text_node :cart_id, 'CartID', :optional => true
       boolean_node :seller_contact_buyer_by_email, 'SellerContactBuyerByEmail', 'true', 'false', :optional => true
+      text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
+      text_node :paisa_pay_id, 'PaisaPayID', :optional => true
+      money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
     end
   end
 end

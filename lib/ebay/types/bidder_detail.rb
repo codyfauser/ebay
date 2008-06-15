@@ -9,6 +9,7 @@ module Ebay # :nodoc:
     #  numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
     #  numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount', :optional => true
     #  object_node :live_auction_bid_result, 'LiveAuctionBidResult', :class => LiveAuctionBid, :optional => true
+    #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
     class BidderDetail
       include XML::Mapping
       include Initializer
@@ -19,6 +20,7 @@ module Ebay # :nodoc:
       numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
       numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount', :optional => true
       object_node :live_auction_bid_result, 'LiveAuctionBidResult', :class => LiveAuctionBid, :optional => true
+      numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
     end
   end
 end

@@ -14,6 +14,8 @@ module Ebay # :nodoc:
     #  text_node :granularity_level, 'GranularityLevel', :optional => true
     #  value_array_node :skus, 'SKUArray', 'SKU', :default_value => []
     #  boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
+    #  boolean_node :admin_ended_items_only, 'AdminEndedItemsOnly', 'true', 'false', :optional => true
+    #  numeric_node :category_id, 'CategoryID', :optional => true
     class GetSellerList < Abstract
       include XML::Mapping
       include Initializer
@@ -29,6 +31,8 @@ module Ebay # :nodoc:
       text_node :granularity_level, 'GranularityLevel', :optional => true
       value_array_node :skus, 'SKUArray', 'SKU', :default_value => []
       boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
+      boolean_node :admin_ended_items_only, 'AdminEndedItemsOnly', 'true', 'false', :optional => true
+      numeric_node :category_id, 'CategoryID', :optional => true
     end
   end
 end

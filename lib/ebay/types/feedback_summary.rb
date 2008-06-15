@@ -1,5 +1,7 @@
 require 'ebay/types/feedback_period'
-require 'ebay/types/average_rating_details'
+require 'ebay/types/average_rating_summary'
+require 'ebay/types/seller_role_metrics'
+require 'ebay/types/buyer_role_metrics'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -12,7 +14,10 @@ module Ebay # :nodoc:
     #  numeric_node :neutral_comment_count_from_suspended_users, 'NeutralCommentCountFromSuspendedUsers', :optional => true
     #  numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
     #  numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount', :optional => true
-    #  array_node :seller_average_rating_details, 'SellerAverageRatingDetailArray', 'AverageRatingDetails', :class => AverageRatingDetails, :default_value => []
+    #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
+    #  array_node :seller_rating_summaries, 'SellerRatingSummaryArray', 'AverageRatingSummary', :class => AverageRatingSummary, :default_value => []
+    #  object_node :seller_role_metrics, 'SellerRoleMetrics', :class => SellerRoleMetrics, :optional => true
+    #  object_node :buyer_role_metrics, 'BuyerRoleMetrics', :class => BuyerRoleMetrics, :optional => true
     class FeedbackSummary
       include XML::Mapping
       include Initializer
@@ -25,7 +30,10 @@ module Ebay # :nodoc:
       numeric_node :neutral_comment_count_from_suspended_users, 'NeutralCommentCountFromSuspendedUsers', :optional => true
       numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
       numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount', :optional => true
-      array_node :seller_average_rating_details, 'SellerAverageRatingDetailArray', 'AverageRatingDetails', :class => AverageRatingDetails, :default_value => []
+      numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
+      array_node :seller_rating_summaries, 'SellerRatingSummaryArray', 'AverageRatingSummary', :class => AverageRatingSummary, :default_value => []
+      object_node :seller_role_metrics, 'SellerRoleMetrics', :class => SellerRoleMetrics, :optional => true
+      object_node :buyer_role_metrics, 'BuyerRoleMetrics', :class => BuyerRoleMetrics, :optional => true
     end
   end
 end

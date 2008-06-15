@@ -252,6 +252,14 @@ module Ebay # :nodoc:
       CreditGalleryPlus = 'CreditGalleryPlus'
       PrivateListing = 'PrivateListing'
       CreditPrivateListing = 'CreditPrivateListing'
+      ImmoProFee = 'ImmoProFee'
+      CreditImmoProFee = 'CreditImmoProFee'
+      ImmoProFeatureFee = 'ImmoProFeatureFee'
+      CreditImmoProFeatureFee = 'CreditImmoProFeatureFee'
+      RealEstateProFee = 'RealEstateProFee'
+      CreditRealEstateProFee = 'CreditRealEstateProFee'
+      RealEstateProFeatureFee = 'RealEstateProFeatureFee'
+      CreditRealEstateProFeatureFee = 'CreditRealEstateProFeatureFee'
     end
   end
 end

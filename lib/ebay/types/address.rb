@@ -30,6 +30,8 @@ module Ebay # :nodoc:
     #  text_node :international_street, 'InternationalStreet', :optional => true
     #  text_node :company_name, 'CompanyName', :optional => true
     #  text_node :address_record_type, 'AddressRecordType', :optional => true
+    #  text_node :first_name, 'FirstName', :optional => true
+    #  text_node :last_name, 'LastName', :optional => true
     class Address
       include XML::Mapping
       include Initializer
@@ -62,6 +64,8 @@ module Ebay # :nodoc:
       text_node :international_street, 'InternationalStreet', :optional => true
       text_node :company_name, 'CompanyName', :optional => true
       text_node :address_record_type, 'AddressRecordType', :optional => true
+      text_node :first_name, 'FirstName', :optional => true
+      text_node :last_name, 'LastName', :optional => true
     end
   end
 end

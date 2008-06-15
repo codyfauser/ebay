@@ -8,6 +8,7 @@ module Ebay # :nodoc:
     #  text_node :payment_method_used, 'PaymentMethodUsed', :optional => true
     #  text_node :complete_status, 'CompleteStatus', :optional => true
     #  boolean_node :buyer_selected_shipping, 'BuyerSelectedShipping', 'true', 'false', :optional => true
+    #  text_node :payment_hold_status, 'PaymentHoldStatus', :optional => true
     class TransactionStatus
       include XML::Mapping
       include Initializer
@@ -18,6 +19,7 @@ module Ebay # :nodoc:
       text_node :payment_method_used, 'PaymentMethodUsed', :optional => true
       text_node :complete_status, 'CompleteStatus', :optional => true
       boolean_node :buyer_selected_shipping, 'BuyerSelectedShipping', 'true', 'false', :optional => true
+      text_node :payment_hold_status, 'PaymentHoldStatus', :optional => true
     end
   end
 end

@@ -5,6 +5,8 @@ module Ebay # :nodoc:
     #  text_node :item_id, 'ItemID', :optional => true
     #  text_node :status, 'Status', :optional => true
     #  boolean_node :include_member_messages, 'IncludeMemberMessages', 'true', 'false', :optional => true
+    #  time_node :start_creation_time, 'StartCreationTime', :optional => true
+    #  time_node :end_creation_time, 'EndCreationTime', :optional => true
     class GetAdFormatLeads < Abstract
       include XML::Mapping
       include Initializer
@@ -12,6 +14,8 @@ module Ebay # :nodoc:
       text_node :item_id, 'ItemID', :optional => true
       text_node :status, 'Status', :optional => true
       boolean_node :include_member_messages, 'IncludeMemberMessages', 'true', 'false', :optional => true
+      time_node :start_creation_time, 'StartCreationTime', :optional => true
+      time_node :end_creation_time, 'EndCreationTime', :optional => true
     end
   end
 end

@@ -1,4 +1,5 @@
 require 'ebay/types/listing_duration_reference'
+require 'ebay/types/listing_enhancement_duration_reference'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -41,6 +42,53 @@ module Ebay # :nodoc:
     #  boolean_node :safe_payment_required, 'SafePaymentRequired', 'true', 'false', :optional => true
     #  boolean_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', 'true', 'false', :optional => true
     #  text_node :item_specifics_enabled, 'ItemSpecificsEnabled', :optional => true
+    #  boolean_node :paisa_pay_full_escrow_enabled, 'PaisaPayFullEscrowEnabled', 'true', 'false', :optional => true
+    #  boolean_node :classified_ad_auto_accept_enabled, 'ClassifiedAdAutoAcceptEnabled', 'true', 'false', :optional => true
+    #  boolean_node :best_offer_auto_accept_enabled, 'BestOfferAutoAcceptEnabled', 'true', 'false', :optional => true
+    #  boolean_node :cross_border_trade_north_america_enabled, 'CrossBorderTradeNorthAmericaEnabled', 'true', 'false', :optional => true
+    #  boolean_node :cross_border_trade_gb_enabled, 'CrossBorderTradeGBEnabled', 'true', 'false', :optional => true
+    #  boolean_node :cross_border_trade_australia_enabled, 'CrossBorderTradeAustraliaEnabled', 'true', 'false', :optional => true
+    #  boolean_node :paypal_buyer_protection_enabled, 'PayPalBuyerProtectionEnabled', 'true', 'false', :optional => true
+    #  boolean_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', 'true', 'false', :optional => true
+    #  boolean_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', 'true', 'false', :optional => true
+    #  array_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationReference, :default_value => []
+    #  boolean_node :paypal_required, 'PayPalRequired', 'true', 'false', :optional => true
+    #  text_node :ebay_motors_pro_ad_format_enabled, 'eBayMotorsProAdFormatEnabled', :optional => true
+    #  boolean_node :ebay_motors_pro_contact_by_phone_enabled, 'eBayMotorsProContactByPhoneEnabled', 'true', 'false', :optional => true
+    #  numeric_node :ebay_motors_pro_phone_count, 'eBayMotorsProPhoneCount', :optional => true
+    #  boolean_node :ebay_motors_pro_contact_by_address_enabled, 'eBayMotorsProContactByAddressEnabled', 'true', 'false', :optional => true
+    #  numeric_node :ebay_motors_pro_street_count, 'eBayMotorsProStreetCount', :optional => true
+    #  boolean_node :ebay_motors_pro_company_name_enabled, 'eBayMotorsProCompanyNameEnabled', 'true', 'false', :optional => true
+    #  boolean_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', 'true', 'false', :optional => true
+    #  text_node :ebay_motors_pro_best_offer_enabled, 'eBayMotorsProBestOfferEnabled', :optional => true
+    #  boolean_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', 'true', 'false', :optional => true
+    #  boolean_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', 'true', 'false', :optional => true
+    #  text_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :optional => true
+    #  boolean_node :ebay_motors_pro_shipping_method_enabled, 'eBayMotorsProShippingMethodEnabled', 'true', 'false', :optional => true
+    #  boolean_node :ebay_motors_pro_counter_offer_enabled, 'eBayMotorsProCounterOfferEnabled', 'true', 'false', :optional => true
+    #  boolean_node :ebay_motors_pro_seller_contact_details_enabled, 'eBayMotorsProSellerContactDetailsEnabled', 'true', 'false', :optional => true
+    #  text_node :local_market_ad_format_enabled, 'LocalMarketAdFormatEnabled', :optional => true
+    #  boolean_node :local_market_contact_by_phone_enabled, 'LocalMarketContactByPhoneEnabled', 'true', 'false', :optional => true
+    #  numeric_node :local_market_phone_count, 'LocalMarketPhoneCount', :optional => true
+    #  boolean_node :local_market_contact_by_address_enabled, 'LocalMarketContactByAddressEnabled', 'true', 'false', :optional => true
+    #  numeric_node :local_market_street_count, 'LocalMarketStreetCount', :optional => true
+    #  boolean_node :local_market_company_name_enabled, 'LocalMarketCompanyNameEnabled', 'true', 'false', :optional => true
+    #  boolean_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', 'true', 'false', :optional => true
+    #  text_node :local_market_best_offer_enabled, 'LocalMarketBestOfferEnabled', :optional => true
+    #  boolean_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', 'true', 'false', :optional => true
+    #  boolean_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', 'true', 'false', :optional => true
+    #  text_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :optional => true
+    #  boolean_node :local_market_shipping_method_enabled, 'LocalMarketShippingMethodEnabled', 'true', 'false', :optional => true
+    #  boolean_node :local_market_counter_offer_enabled, 'LocalMarketCounterOfferEnabled', 'true', 'false', :optional => true
+    #  boolean_node :local_market_seller_contact_details_enabled, 'LocalMarketSellerContactDetailsEnabled', 'true', 'false', :optional => true
+    #  numeric_node :classified_ad_phone_count, 'ClassifiedAdPhoneCount', :optional => true
+    #  boolean_node :classified_ad_contact_by_address_enabled, 'ClassifiedAdContactByAddressEnabled', 'true', 'false', :optional => true
+    #  numeric_node :classified_ad_street_count, 'ClassifiedAdStreetCount', :optional => true
+    #  boolean_node :classified_ad_company_name_enabled, 'ClassifiedAdCompanyNameEnabled', 'true', 'false', :optional => true
+    #  text_node :speciality_subscription, 'SpecialitySubscription', :optional => true
+    #  text_node :regular_subscription, 'RegularSubscription', :optional => true
+    #  text_node :premium_subscription, 'PremiumSubscription', :optional => true
+    #  text_node :non_subscription, 'NonSubscription', :optional => true
     class CategoryFeature
       include XML::Mapping
       include Initializer
@@ -83,6 +131,53 @@ module Ebay # :nodoc:
       boolean_node :safe_payment_required, 'SafePaymentRequired', 'true', 'false', :optional => true
       boolean_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', 'true', 'false', :optional => true
       text_node :item_specifics_enabled, 'ItemSpecificsEnabled', :optional => true
+      boolean_node :paisa_pay_full_escrow_enabled, 'PaisaPayFullEscrowEnabled', 'true', 'false', :optional => true
+      boolean_node :classified_ad_auto_accept_enabled, 'ClassifiedAdAutoAcceptEnabled', 'true', 'false', :optional => true
+      boolean_node :best_offer_auto_accept_enabled, 'BestOfferAutoAcceptEnabled', 'true', 'false', :optional => true
+      boolean_node :cross_border_trade_north_america_enabled, 'CrossBorderTradeNorthAmericaEnabled', 'true', 'false', :optional => true
+      boolean_node :cross_border_trade_gb_enabled, 'CrossBorderTradeGBEnabled', 'true', 'false', :optional => true
+      boolean_node :cross_border_trade_australia_enabled, 'CrossBorderTradeAustraliaEnabled', 'true', 'false', :optional => true
+      boolean_node :paypal_buyer_protection_enabled, 'PayPalBuyerProtectionEnabled', 'true', 'false', :optional => true
+      boolean_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', 'true', 'false', :optional => true
+      boolean_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', 'true', 'false', :optional => true
+      array_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationReference, :default_value => []
+      boolean_node :paypal_required, 'PayPalRequired', 'true', 'false', :optional => true
+      text_node :ebay_motors_pro_ad_format_enabled, 'eBayMotorsProAdFormatEnabled', :optional => true
+      boolean_node :ebay_motors_pro_contact_by_phone_enabled, 'eBayMotorsProContactByPhoneEnabled', 'true', 'false', :optional => true
+      numeric_node :ebay_motors_pro_phone_count, 'eBayMotorsProPhoneCount', :optional => true
+      boolean_node :ebay_motors_pro_contact_by_address_enabled, 'eBayMotorsProContactByAddressEnabled', 'true', 'false', :optional => true
+      numeric_node :ebay_motors_pro_street_count, 'eBayMotorsProStreetCount', :optional => true
+      boolean_node :ebay_motors_pro_company_name_enabled, 'eBayMotorsProCompanyNameEnabled', 'true', 'false', :optional => true
+      boolean_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', 'true', 'false', :optional => true
+      text_node :ebay_motors_pro_best_offer_enabled, 'eBayMotorsProBestOfferEnabled', :optional => true
+      boolean_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', 'true', 'false', :optional => true
+      boolean_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', 'true', 'false', :optional => true
+      text_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :optional => true
+      boolean_node :ebay_motors_pro_shipping_method_enabled, 'eBayMotorsProShippingMethodEnabled', 'true', 'false', :optional => true
+      boolean_node :ebay_motors_pro_counter_offer_enabled, 'eBayMotorsProCounterOfferEnabled', 'true', 'false', :optional => true
+      boolean_node :ebay_motors_pro_seller_contact_details_enabled, 'eBayMotorsProSellerContactDetailsEnabled', 'true', 'false', :optional => true
+      text_node :local_market_ad_format_enabled, 'LocalMarketAdFormatEnabled', :optional => true
+      boolean_node :local_market_contact_by_phone_enabled, 'LocalMarketContactByPhoneEnabled', 'true', 'false', :optional => true
+      numeric_node :local_market_phone_count, 'LocalMarketPhoneCount', :optional => true
+      boolean_node :local_market_contact_by_address_enabled, 'LocalMarketContactByAddressEnabled', 'true', 'false', :optional => true
+      numeric_node :local_market_street_count, 'LocalMarketStreetCount', :optional => true
+      boolean_node :local_market_company_name_enabled, 'LocalMarketCompanyNameEnabled', 'true', 'false', :optional => true
+      boolean_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', 'true', 'false', :optional => true
+      text_node :local_market_best_offer_enabled, 'LocalMarketBestOfferEnabled', :optional => true
+      boolean_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', 'true', 'false', :optional => true
+      boolean_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', 'true', 'false', :optional => true
+      text_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :optional => true
+      boolean_node :local_market_shipping_method_enabled, 'LocalMarketShippingMethodEnabled', 'true', 'false', :optional => true
+      boolean_node :local_market_counter_offer_enabled, 'LocalMarketCounterOfferEnabled', 'true', 'false', :optional => true
+      boolean_node :local_market_seller_contact_details_enabled, 'LocalMarketSellerContactDetailsEnabled', 'true', 'false', :optional => true
+      numeric_node :classified_ad_phone_count, 'ClassifiedAdPhoneCount', :optional => true
+      boolean_node :classified_ad_contact_by_address_enabled, 'ClassifiedAdContactByAddressEnabled', 'true', 'false', :optional => true
+      numeric_node :classified_ad_street_count, 'ClassifiedAdStreetCount', :optional => true
+      boolean_node :classified_ad_company_name_enabled, 'ClassifiedAdCompanyNameEnabled', 'true', 'false', :optional => true
+      text_node :speciality_subscription, 'SpecialitySubscription', :optional => true
+      text_node :regular_subscription, 'RegularSubscription', :optional => true
+      text_node :premium_subscription, 'PremiumSubscription', :optional => true
+      text_node :non_subscription, 'NonSubscription', :optional => true
     end
   end
 end

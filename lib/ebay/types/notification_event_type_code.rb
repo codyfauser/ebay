@@ -46,6 +46,23 @@ module Ebay # :nodoc:
       AccountSummary = 'AccountSummary'
       ThirdPartyCartCheckout = 'ThirdPartyCartCheckout'
       ItemRevisedAddCharity = 'ItemRevisedAddCharity'
+      ItemAddedToWatchList = 'ItemAddedToWatchList'
+      ItemRemovedFromWatchList = 'ItemRemovedFromWatchList'
+      ItemAddedToBidGroup = 'ItemAddedToBidGroup'
+      ItemRemovedFromBidGroup = 'ItemRemovedFromBidGroup'
+      FeedbackLeft = 'FeedbackLeft'
+      FeedbackReceived = 'FeedbackReceived'
+      FeedbackStarChanged = 'FeedbackStarChanged'
+      BidPlaced = 'BidPlaced'
+      BidReceived = 'BidReceived'
+      ItemWon = 'ItemWon'
+      ItemLost = 'ItemLost'
+      ItemUnsold = 'ItemUnsold'
+      CounterOfferReceived = 'CounterOfferReceived'
+      BestOfferDeclined = 'BestOfferDeclined'
+      BestOfferPlaced = 'BestOfferPlaced'
+      ItemsCanceled = 'ItemsCanceled'
+      TokenRevocation = 'TokenRevocation'
     end
   end
 end

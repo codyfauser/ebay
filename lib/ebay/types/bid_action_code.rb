@@ -13,6 +13,10 @@ module Ebay # :nodoc:
       Absentee = 'Absentee'
       BuyItNow = 'BuyItNow'
       Purchase = 'Purchase'
+      Offer = 'Offer'
+      Counter = 'Counter'
+      Accept = 'Accept'
+      Decline = 'Decline'
     end
   end
 end

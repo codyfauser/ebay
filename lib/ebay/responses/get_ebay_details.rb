@@ -11,6 +11,9 @@ require 'ebay/types/url_details'
 require 'ebay/types/time_zone_details'
 require 'ebay/types/item_specific_details'
 require 'ebay/types/unit_of_measurement_details'
+require 'ebay/types/region_of_origin_details'
+require 'ebay/types/shipping_package_details'
+require 'ebay/types/shipping_carrier_details'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -28,6 +31,9 @@ module Ebay # :nodoc:
     #  array_node :time_zone_details, 'TimeZoneDetails', :class => TimeZoneDetails, :default_value => []
     #  array_node :item_specific_details, 'ItemSpecificDetails', :class => ItemSpecificDetails, :default_value => []
     #  array_node :unit_of_measurement_details, 'UnitOfMeasurementDetails', :class => UnitOfMeasurementDetails, :default_value => []
+    #  array_node :region_of_origin_details, 'RegionOfOriginDetails', :class => RegionOfOriginDetails, :default_value => []
+    #  array_node :shipping_package_details, 'ShippingPackageDetails', :class => ShippingPackageDetails, :default_value => []
+    #  array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
     class GeteBayDetails < Abstract
       include XML::Mapping
       include Initializer
@@ -45,6 +51,9 @@ module Ebay # :nodoc:
       array_node :time_zone_details, 'TimeZoneDetails', :class => TimeZoneDetails, :default_value => []
       array_node :item_specific_details, 'ItemSpecificDetails', :class => ItemSpecificDetails, :default_value => []
       array_node :unit_of_measurement_details, 'UnitOfMeasurementDetails', :class => UnitOfMeasurementDetails, :default_value => []
+      array_node :region_of_origin_details, 'RegionOfOriginDetails', :class => RegionOfOriginDetails, :default_value => []
+      array_node :shipping_package_details, 'ShippingPackageDetails', :class => ShippingPackageDetails, :default_value => []
+      array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
     end
   end
 end

@@ -12,6 +12,7 @@ module Ebay # :nodoc:
     #  boolean_node :exclude_summary, 'ExcludeSummary', 'true', 'false', :optional => true
     #  text_node :account_entry_sort_type, 'AccountEntrySortType', :optional => true
     #  text_node :currency, 'Currency', :optional => true
+    #  text_node :item_id, 'ItemID', :optional => true
     class GetAccount < Abstract
       include XML::Mapping
       include Initializer
@@ -25,6 +26,7 @@ module Ebay # :nodoc:
       boolean_node :exclude_summary, 'ExcludeSummary', 'true', 'false', :optional => true
       text_node :account_entry_sort_type, 'AccountEntrySortType', :optional => true
       text_node :currency, 'Currency', :optional => true
+      text_node :item_id, 'ItemID', :optional => true
     end
   end
 end

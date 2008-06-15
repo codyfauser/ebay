@@ -27,6 +27,7 @@ module Ebay # :nodoc:
     #  text_node :tcr_original_item_id, 'TCROriginalItemID', :optional => true
     #  text_node :view_item_url_for_natural_search, 'ViewItemURLForNaturalSearch', :optional => true
     #  boolean_node :pay_per_lead_enabled, 'PayPerLeadEnabled', 'true', 'false', :optional => true
+    #  money_node :best_offer_auto_accept_price, 'BestOfferAutoAcceptPrice', :optional => true
     class ListingDetails
       include XML::Mapping
       include Initializer
@@ -55,6 +56,7 @@ module Ebay # :nodoc:
       text_node :tcr_original_item_id, 'TCROriginalItemID', :optional => true
       text_node :view_item_url_for_natural_search, 'ViewItemURLForNaturalSearch', :optional => true
       boolean_node :pay_per_lead_enabled, 'PayPerLeadEnabled', 'true', 'false', :optional => true
+      money_node :best_offer_auto_accept_price, 'BestOfferAutoAcceptPrice', :optional => true
     end
   end
 end

@@ -18,6 +18,7 @@ module Ebay # :nodoc:
     #  text_node :listing_status, 'ListingStatus', :optional => true
     #  money_node :final_value_fee, 'FinalValueFee', :optional => true
     #  object_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSaleDetails, :optional => true
+    #  boolean_node :admin_ended, 'AdminEnded', 'true', 'false', :optional => true
     class SellingStatus
       include XML::Mapping
       include Initializer
@@ -36,6 +37,7 @@ module Ebay # :nodoc:
       text_node :listing_status, 'ListingStatus', :optional => true
       money_node :final_value_fee, 'FinalValueFee', :optional => true
       object_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSaleDetails, :optional => true
+      boolean_node :admin_ended, 'AdminEnded', 'true', 'false', :optional => true
     end
   end
 end

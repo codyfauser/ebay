@@ -16,6 +16,7 @@ module Ebay # :nodoc:
     #  object_node :seller_favorite_item_preferences, 'SellerFavoriteItemPreferences', :class => SellerFavoriteItemPreferences, :optional => true
     #  object_node :end_of_auction_email_preferences, 'EndOfAuctionEmailPreferences', :class => EndOfAuctionEmailPreferences, :optional => true
     #  object_node :express_preferences, 'ExpressPreferences', :class => ExpressPreferences, :optional => true
+    #  boolean_node :email_shipment_tracking_number_preference, 'EmailShipmentTrackingNumberPreference', 'true', 'false', :optional => true
     class SetUserPreferences < Abstract
       include XML::Mapping
       include Initializer
@@ -27,6 +28,7 @@ module Ebay # :nodoc:
       object_node :seller_favorite_item_preferences, 'SellerFavoriteItemPreferences', :class => SellerFavoriteItemPreferences, :optional => true
       object_node :end_of_auction_email_preferences, 'EndOfAuctionEmailPreferences', :class => EndOfAuctionEmailPreferences, :optional => true
       object_node :express_preferences, 'ExpressPreferences', :class => ExpressPreferences, :optional => true
+      boolean_node :email_shipment_tracking_number_preference, 'EmailShipmentTrackingNumberPreference', 'true', 'false', :optional => true
     end
   end
 end

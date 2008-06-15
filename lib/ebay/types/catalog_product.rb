@@ -16,6 +16,7 @@ module Ebay # :nodoc:
     #  array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
     #  numeric_node :review_count, 'ReviewCount', :optional => true
     #  object_node :review_details, 'ReviewDetails', :class => ReviewDetails, :optional => true
+    #  text_node :product_state, 'ProductState', :optional => true
     class CatalogProduct
       include XML::Mapping
       include Initializer
@@ -31,6 +32,7 @@ module Ebay # :nodoc:
       array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
       numeric_node :review_count, 'ReviewCount', :optional => true
       object_node :review_details, 'ReviewDetails', :class => ReviewDetails, :optional => true
+      text_node :product_state, 'ProductState', :optional => true
     end
   end
 end

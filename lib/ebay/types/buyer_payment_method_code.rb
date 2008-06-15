@@ -26,6 +26,8 @@ module Ebay # :nodoc:
       LoanCheck = 'LoanCheck'
       CashInPerson = 'CashInPerson'
       ELV = 'ELV'
+      PaisaPayEscrow = 'PaisaPayEscrow'
+      PaisaPayEscrowEMI = 'PaisaPayEscrowEMI'
     end
   end
 end

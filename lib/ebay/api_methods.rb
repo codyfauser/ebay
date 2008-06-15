@@ -273,6 +273,14 @@ module Ebay
     def get_charities(params = {})
       commit(Ebay::Requests::GetCharities, params)
     end
+    # Builds Ebay::Requests#GetClientAlertsAuthToken
+    #
+    # Returns Ebay::Responses#GetClientAlertsAuthToken
+    #
+    # Official Documentation for GetClientAlertsAuthToken[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetClientAlertsAuthToken.html]
+    def get_client_alerts_auth_token(params = {})
+      commit(Ebay::Requests::GetClientAlertsAuthToken, params)
+    end
     # Builds Ebay::Requests#GetContextualKeywords
     #
     # Returns Ebay::Responses#GetContextualKeywords
@@ -304,6 +312,14 @@ module Ebay
     # Official Documentation for GetDispute[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetDispute.html]
     def get_dispute(params = {})
       commit(Ebay::Requests::GetDispute, params)
+    end
+    # Builds Ebay::Requests#GetExpressWishList
+    #
+    # Returns Ebay::Responses#GetExpressWishList
+    #
+    # Official Documentation for GetExpressWishList[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetExpressWishList.html]
+    def get_express_wish_list(params = {})
+      commit(Ebay::Requests::GetExpressWishList, params)
     end
     # Builds Ebay::Requests#GetFeedback
     #
@@ -585,6 +601,14 @@ module Ebay
     def get_search_results_express(params = {})
       commit(Ebay::Requests::GetSearchResultsExpress, params)
     end
+    # Builds Ebay::Requests#GetSellerDashboard
+    #
+    # Returns Ebay::Responses#GetSellerDashboard
+    #
+    # Official Documentation for GetSellerDashboard[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetSellerDashboard.html]
+    def get_seller_dashboard(params = {})
+      commit(Ebay::Requests::GetSellerDashboard, params)
+    end
     # Builds Ebay::Requests#GetSellerEvents
     #
     # Returns Ebay::Responses#GetSellerEvents
@@ -616,6 +640,14 @@ module Ebay
     # Official Documentation for GetSellerTransactions[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetSellerTransactions.html]
     def get_seller_transactions(params = {})
       commit(Ebay::Requests::GetSellerTransactions, params)
+    end
+    # Builds Ebay::Requests#GetSessionID
+    #
+    # Returns Ebay::Responses#GetSessionID
+    #
+    # Official Documentation for GetSessionID[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetSessionID.html]
+    def get_session_id(params = {})
+      commit(Ebay::Requests::GetSessionID, params)
     end
     # Builds Ebay::Requests#GetShippingDiscountProfiles
     #
@@ -680,6 +712,14 @@ module Ebay
     # Official Documentation for GetTaxTable[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetTaxTable.html]
     def get_tax_table(params = {})
       commit(Ebay::Requests::GetTaxTable, params)
+    end
+    # Builds Ebay::Requests#GetTokenStatus
+    #
+    # Returns Ebay::Responses#GetTokenStatus
+    #
+    # Official Documentation for GetTokenStatus[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetTokenStatus.html]
+    def get_token_status(params = {})
+      commit(Ebay::Requests::GetTokenStatus, params)
     end
     # Builds Ebay::Requests#GetUser
     #
@@ -864,6 +904,14 @@ module Ebay
     # Official Documentation for ReviseMyMessagesFolders[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ReviseMyMessagesFolders.html]
     def revise_my_messages_folders(params = {})
       commit(Ebay::Requests::ReviseMyMessagesFolders, params)
+    end
+    # Builds Ebay::Requests#RevokeToken
+    #
+    # Returns Ebay::Responses#RevokeToken
+    #
+    # Official Documentation for RevokeToken[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_RevokeToken.html]
+    def revoke_token(params = {})
+      commit(Ebay::Requests::RevokeToken, params)
     end
     # Builds Ebay::Requests#SellerReverseDispute
     #

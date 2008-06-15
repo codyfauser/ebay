@@ -44,6 +44,7 @@ module Ebay # :nodoc:
     #  object_node :international_calculated_shipping_discount, 'InternationalCalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true
     #  boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
     #  object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
+    #  money_node :cod_cost, 'CODCost', :optional => true
     class ShippingDetails
       include XML::Mapping
       include Initializer
@@ -81,6 +82,7 @@ module Ebay # :nodoc:
       object_node :international_calculated_shipping_discount, 'InternationalCalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true
       boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
       object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
+      money_node :cod_cost, 'CODCost', :optional => true
     end
   end
 end

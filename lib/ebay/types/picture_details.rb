@@ -7,6 +7,7 @@ module Ebay # :nodoc:
     #  text_node :photo_display, 'PhotoDisplay', :optional => true
     #  text_node :picture_url, 'PictureURL', :optional => true
     #  text_node :picture_source, 'PictureSource', :optional => true
+    #  text_node :gallery_duration, 'GalleryDuration', :optional => true
     class PictureDetails
       include XML::Mapping
       include Initializer
@@ -16,6 +17,7 @@ module Ebay # :nodoc:
       text_node :photo_display, 'PhotoDisplay', :optional => true
       text_node :picture_url, 'PictureURL', :optional => true
       text_node :picture_source, 'PictureSource', :optional => true
+      text_node :gallery_duration, 'GalleryDuration', :optional => true
     end
   end
 end

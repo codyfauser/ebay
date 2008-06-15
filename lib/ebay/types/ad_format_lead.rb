@@ -19,6 +19,14 @@ module Ebay # :nodoc:
     #  text_node :status, 'Status', :optional => true
     #  text_node :phone2, 'Phone2', :optional => true
     #  money_node :lead_fee, 'LeadFee', :optional => true
+    #  text_node :external_email, 'ExternalEmail', :optional => true
+    #  text_node :purchase_time_frame, 'PurchaseTimeFrame', :optional => true
+    #  text_node :trade_in_year, 'TradeInYear', :optional => true
+    #  text_node :trade_in_make, 'TradeInMake', :optional => true
+    #  text_node :trade_in_model, 'TradeInModel', :optional => true
+    #  boolean_node :financing_answer, 'FinancingAnswer', 'true', 'false', :optional => true
+    #  boolean_node :answer1, 'Answer1', 'true', 'false', :optional => true
+    #  boolean_node :answer2, 'Answer2', 'true', 'false', :optional => true
     class AdFormatLead
       include XML::Mapping
       include Initializer
@@ -38,6 +46,14 @@ module Ebay # :nodoc:
       text_node :status, 'Status', :optional => true
       text_node :phone2, 'Phone2', :optional => true
       money_node :lead_fee, 'LeadFee', :optional => true
+      text_node :external_email, 'ExternalEmail', :optional => true
+      text_node :purchase_time_frame, 'PurchaseTimeFrame', :optional => true
+      text_node :trade_in_year, 'TradeInYear', :optional => true
+      text_node :trade_in_make, 'TradeInMake', :optional => true
+      text_node :trade_in_model, 'TradeInModel', :optional => true
+      boolean_node :financing_answer, 'FinancingAnswer', 'true', 'false', :optional => true
+      boolean_node :answer1, 'Answer1', 'true', 'false', :optional => true
+      boolean_node :answer2, 'Answer2', 'true', 'false', :optional => true
     end
   end
 end

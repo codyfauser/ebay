@@ -2,6 +2,7 @@ require 'ebay/types/address'
 require 'ebay/types/scheduling_info'
 require 'ebay/types/pro_stores_checkout_preference'
 require 'ebay/types/express_seller_requirements'
+require 'ebay/types/charity_affiliation_detail'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -30,6 +31,9 @@ module Ebay # :nodoc:
     #  object_node :express_seller_requirements, 'ExpressSellerRequirements', :class => ExpressSellerRequirements, :optional => true
     #  boolean_node :charity_registered, 'CharityRegistered', 'true', 'false', :optional => true
     #  boolean_node :safe_payment_exempt, 'SafePaymentExempt', 'true', 'false', :optional => true
+    #  numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
+    #  array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
+    #  numeric_node :transaction_percent, 'TransactionPercent', :optional => true
     class Seller
       include XML::Mapping
       include Initializer
@@ -58,6 +62,9 @@ module Ebay # :nodoc:
       object_node :express_seller_requirements, 'ExpressSellerRequirements', :class => ExpressSellerRequirements, :optional => true
       boolean_node :charity_registered, 'CharityRegistered', 'true', 'false', :optional => true
       boolean_node :safe_payment_exempt, 'SafePaymentExempt', 'true', 'false', :optional => true
+      numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
+      array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
+      numeric_node :transaction_percent, 'TransactionPercent', :optional => true
     end
   end
 end

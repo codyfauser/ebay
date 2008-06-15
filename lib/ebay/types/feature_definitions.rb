@@ -38,6 +38,53 @@ require 'ebay/types/classified_ad_contact_by_email_enabled_defintion'
 require 'ebay/types/safe_payment_required_definition'
 require 'ebay/types/classified_ad_pay_per_lead_enabled_definition'
 require 'ebay/types/item_specifics_enabled_definition'
+require 'ebay/types/paisa_pay_full_escrow_enabled_definition'
+require 'ebay/types/best_offer_auto_accept_enabled_definition'
+require 'ebay/types/classified_ad_auto_accept_enabled_definition'
+require 'ebay/types/cross_border_trade_north_america_enabled_definition'
+require 'ebay/types/cross_border_trade_gb_enabled_definition'
+require 'ebay/types/cross_border_trade_australia_enabled_definition'
+require 'ebay/types/paypal_buyer_protection_enabled_definition'
+require 'ebay/types/buyer_guarantee_enabled_definition'
+require 'ebay/types/combined_fixed_price_treatment_enabled_definition'
+require 'ebay/types/listing_enhancement_duration_definition'
+require 'ebay/types/paypal_required_definition'
+require 'ebay/types/ebay_motors_pro_ad_format_enabled_definition'
+require 'ebay/types/ebay_motors_pro_contact_by_phone_enabled_definition'
+require 'ebay/types/ebay_motors_pro_phone_count_definition'
+require 'ebay/types/ebay_motors_pro_contact_by_address_enabled_definition'
+require 'ebay/types/ebay_motors_pro_street_count_definition'
+require 'ebay/types/ebay_motors_pro_company_name_enabled_definition'
+require 'ebay/types/ebay_motors_pro_contact_by_email_enabled_defintion'
+require 'ebay/types/ebay_motors_pro_best_offer_enabled_definition'
+require 'ebay/types/ebay_motors_pro_auto_accept_enabled_defintion'
+require 'ebay/types/ebay_motors_pro_auto_decline_enabled_defintion'
+require 'ebay/types/ebay_motors_pro_payment_method_check_out_enabled_defintion'
+require 'ebay/types/ebay_motors_pro_shipping_method_enabled_definition'
+require 'ebay/types/ebay_motors_pro_counter_offer_enabled_definition'
+require 'ebay/types/ebay_motors_pro_seller_contact_details_enabled_definition'
+require 'ebay/types/local_market_ad_format_enabled_definition'
+require 'ebay/types/local_market_contact_by_phone_enabled_definition'
+require 'ebay/types/local_market_phone_count_definition'
+require 'ebay/types/local_market_contact_by_address_enabled_definition'
+require 'ebay/types/local_market_street_count_definition'
+require 'ebay/types/local_market_company_name_enabled_definition'
+require 'ebay/types/local_market_contact_by_email_enabled_defintion'
+require 'ebay/types/local_market_best_offer_enabled_definition'
+require 'ebay/types/local_market_auto_accept_enabled_defintion'
+require 'ebay/types/local_market_auto_decline_enabled_defintion'
+require 'ebay/types/local_market_payment_method_check_out_enabled_defintion'
+require 'ebay/types/local_market_shipping_method_enabled_definition'
+require 'ebay/types/local_market_counter_offer_enabled_definition'
+require 'ebay/types/local_market_seller_contact_details_enabled_definition'
+require 'ebay/types/classified_ad_phone_count_definition'
+require 'ebay/types/classified_ad_contact_by_address_enabled_definition'
+require 'ebay/types/classified_ad_street_count_definition'
+require 'ebay/types/classified_ad_company_name_enabled_definition'
+require 'ebay/types/speciality_subscription_definition'
+require 'ebay/types/regular_subscription_definition'
+require 'ebay/types/premium_subscription_definition'
+require 'ebay/types/non_subscription_definition'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -82,6 +129,53 @@ module Ebay # :nodoc:
     #  object_node :safe_payment_required, 'SafePaymentRequired', :class => SafePaymentRequiredDefinition, :optional => true
     #  object_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', :class => ClassifiedAdPayPerLeadEnabledDefinition, :optional => true
     #  object_node :item_specifics_enabled, 'ItemSpecificsEnabled', :class => ItemSpecificsEnabledDefinition, :optional => true
+    #  object_node :paisa_pay_full_escrow_enabled, 'PaisaPayFullEscrowEnabled', :class => PaisaPayFullEscrowEnabledDefinition, :optional => true
+    #  object_node :best_offer_auto_accept_enabled, 'BestOfferAutoAcceptEnabled', :class => BestOfferAutoAcceptEnabledDefinition, :optional => true
+    #  object_node :classified_ad_auto_accept_enabled, 'ClassifiedAdAutoAcceptEnabled', :class => ClassifiedAdAutoAcceptEnabledDefinition, :optional => true
+    #  object_node :cross_border_trade_north_america_enabled, 'CrossBorderTradeNorthAmericaEnabled', :class => CrossBorderTradeNorthAmericaEnabledDefinition, :optional => true
+    #  object_node :cross_border_trade_gb_enabled, 'CrossBorderTradeGBEnabled', :class => CrossBorderTradeGBEnabledDefinition, :optional => true
+    #  object_node :cross_border_trade_australia_enabled, 'CrossBorderTradeAustraliaEnabled', :class => CrossBorderTradeAustraliaEnabledDefinition, :optional => true
+    #  object_node :paypal_buyer_protection_enabled, 'PayPalBuyerProtectionEnabled', :class => PayPalBuyerProtectionEnabledDefinition, :optional => true
+    #  object_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', :class => BuyerGuaranteeEnabledDefinition, :optional => true
+    #  object_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', :class => CombinedFixedPriceTreatmentEnabledDefinition, :optional => true
+    #  object_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationDefinition, :optional => true
+    #  object_node :paypal_required, 'PayPalRequired', :class => PayPalRequiredDefinition, :optional => true
+    #  object_node :ebay_motors_pro_ad_format_enabled, 'eBayMotorsProAdFormatEnabled', :class => EBayMotorsProAdFormatEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_contact_by_phone_enabled, 'eBayMotorsProContactByPhoneEnabled', :class => EBayMotorsProContactByPhoneEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_phone_count, 'eBayMotorsProPhoneCount', :class => EBayMotorsProPhoneCountDefinition, :optional => true
+    #  object_node :ebay_motors_pro_contact_by_address_enabled, 'eBayMotorsProContactByAddressEnabled', :class => EBayMotorsProContactByAddressEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_street_count, 'eBayMotorsProStreetCount', :class => EBayMotorsProStreetCountDefinition, :optional => true
+    #  object_node :ebay_motors_pro_company_name_enabled, 'eBayMotorsProCompanyNameEnabled', :class => EBayMotorsProCompanyNameEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', :class => EBayMotorsProContactByEmailEnabledDefintion, :optional => true
+    #  object_node :ebay_motors_pro_best_offer_enabled, 'eBayMotorsProBestOfferEnabled', :class => EBayMotorsProBestOfferEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', :class => EBayMotorsProAutoAcceptEnabledDefintion, :optional => true
+    #  object_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', :class => EBayMotorsProAutoDeclineEnabledDefintion, :optional => true
+    #  object_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :class => EBayMotorsProPaymentMethodCheckOutEnabledDefintion, :optional => true
+    #  object_node :ebay_motors_pro_shipping_method_enabled, 'eBayMotorsProShippingMethodEnabled', :class => EBayMotorsProShippingMethodEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_counter_offer_enabled, 'eBayMotorsProCounterOfferEnabled', :class => EBayMotorsProCounterOfferEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_seller_contact_details_enabled, 'eBayMotorsProSellerContactDetailsEnabled', :class => EBayMotorsProSellerContactDetailsEnabledDefinition, :optional => true
+    #  object_node :local_market_ad_format_enabled, 'LocalMarketAdFormatEnabled', :class => LocalMarketAdFormatEnabledDefinition, :optional => true
+    #  object_node :local_market_contact_by_phone_enabled, 'LocalMarketContactByPhoneEnabled', :class => LocalMarketContactByPhoneEnabledDefinition, :optional => true
+    #  object_node :local_market_phone_count, 'LocalMarketPhoneCount', :class => LocalMarketPhoneCountDefinition, :optional => true
+    #  object_node :local_market_contact_by_address_enabled, 'LocalMarketContactByAddressEnabled', :class => LocalMarketContactByAddressEnabledDefinition, :optional => true
+    #  object_node :local_market_street_count, 'LocalMarketStreetCount', :class => LocalMarketStreetCountDefinition, :optional => true
+    #  object_node :local_market_company_name_enabled, 'LocalMarketCompanyNameEnabled', :class => LocalMarketCompanyNameEnabledDefinition, :optional => true
+    #  object_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', :class => LocalMarketContactByEmailEnabledDefintion, :optional => true
+    #  object_node :local_market_best_offer_enabled, 'LocalMarketBestOfferEnabled', :class => LocalMarketBestOfferEnabledDefinition, :optional => true
+    #  object_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', :class => LocalMarketAutoAcceptEnabledDefintion, :optional => true
+    #  object_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', :class => LocalMarketAutoDeclineEnabledDefintion, :optional => true
+    #  object_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :class => LocalMarketPaymentMethodCheckOutEnabledDefintion, :optional => true
+    #  object_node :local_market_shipping_method_enabled, 'LocalMarketShippingMethodEnabled', :class => LocalMarketShippingMethodEnabledDefinition, :optional => true
+    #  object_node :local_market_counter_offer_enabled, 'LocalMarketCounterOfferEnabled', :class => LocalMarketCounterOfferEnabledDefinition, :optional => true
+    #  object_node :local_market_seller_contact_details_enabled, 'LocalMarketSellerContactDetailsEnabled', :class => LocalMarketSellerContactDetailsEnabledDefinition, :optional => true
+    #  object_node :classified_ad_phone_count, 'ClassifiedAdPhoneCount', :class => ClassifiedAdPhoneCountDefinition, :optional => true
+    #  object_node :classified_ad_contact_by_address_enabled, 'ClassifiedAdContactByAddressEnabled', :class => ClassifiedAdContactByAddressEnabledDefinition, :optional => true
+    #  object_node :classified_ad_street_count, 'ClassifiedAdStreetCount', :class => ClassifiedAdStreetCountDefinition, :optional => true
+    #  object_node :classified_ad_company_name_enabled, 'ClassifiedAdCompanyNameEnabled', :class => ClassifiedAdCompanyNameEnabledDefinition, :optional => true
+    #  object_node :speciality_subscription, 'SpecialitySubscription', :class => SpecialitySubscriptionDefinition, :optional => true
+    #  object_node :regular_subscription, 'RegularSubscription', :class => RegularSubscriptionDefinition, :optional => true
+    #  object_node :premium_subscription, 'PremiumSubscription', :class => PremiumSubscriptionDefinition, :optional => true
+    #  object_node :non_subscription, 'NonSubscription', :class => NonSubscriptionDefinition, :optional => true
     class FeatureDefinitions
       include XML::Mapping
       include Initializer
@@ -126,6 +220,53 @@ module Ebay # :nodoc:
       object_node :safe_payment_required, 'SafePaymentRequired', :class => SafePaymentRequiredDefinition, :optional => true
       object_node :classified_ad_pay_per_lead_enabled, 'ClassifiedAdPayPerLeadEnabled', :class => ClassifiedAdPayPerLeadEnabledDefinition, :optional => true
       object_node :item_specifics_enabled, 'ItemSpecificsEnabled', :class => ItemSpecificsEnabledDefinition, :optional => true
+      object_node :paisa_pay_full_escrow_enabled, 'PaisaPayFullEscrowEnabled', :class => PaisaPayFullEscrowEnabledDefinition, :optional => true
+      object_node :best_offer_auto_accept_enabled, 'BestOfferAutoAcceptEnabled', :class => BestOfferAutoAcceptEnabledDefinition, :optional => true
+      object_node :classified_ad_auto_accept_enabled, 'ClassifiedAdAutoAcceptEnabled', :class => ClassifiedAdAutoAcceptEnabledDefinition, :optional => true
+      object_node :cross_border_trade_north_america_enabled, 'CrossBorderTradeNorthAmericaEnabled', :class => CrossBorderTradeNorthAmericaEnabledDefinition, :optional => true
+      object_node :cross_border_trade_gb_enabled, 'CrossBorderTradeGBEnabled', :class => CrossBorderTradeGBEnabledDefinition, :optional => true
+      object_node :cross_border_trade_australia_enabled, 'CrossBorderTradeAustraliaEnabled', :class => CrossBorderTradeAustraliaEnabledDefinition, :optional => true
+      object_node :paypal_buyer_protection_enabled, 'PayPalBuyerProtectionEnabled', :class => PayPalBuyerProtectionEnabledDefinition, :optional => true
+      object_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', :class => BuyerGuaranteeEnabledDefinition, :optional => true
+      object_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', :class => CombinedFixedPriceTreatmentEnabledDefinition, :optional => true
+      object_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationDefinition, :optional => true
+      object_node :paypal_required, 'PayPalRequired', :class => PayPalRequiredDefinition, :optional => true
+      object_node :ebay_motors_pro_ad_format_enabled, 'eBayMotorsProAdFormatEnabled', :class => EBayMotorsProAdFormatEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_contact_by_phone_enabled, 'eBayMotorsProContactByPhoneEnabled', :class => EBayMotorsProContactByPhoneEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_phone_count, 'eBayMotorsProPhoneCount', :class => EBayMotorsProPhoneCountDefinition, :optional => true
+      object_node :ebay_motors_pro_contact_by_address_enabled, 'eBayMotorsProContactByAddressEnabled', :class => EBayMotorsProContactByAddressEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_street_count, 'eBayMotorsProStreetCount', :class => EBayMotorsProStreetCountDefinition, :optional => true
+      object_node :ebay_motors_pro_company_name_enabled, 'eBayMotorsProCompanyNameEnabled', :class => EBayMotorsProCompanyNameEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', :class => EBayMotorsProContactByEmailEnabledDefintion, :optional => true
+      object_node :ebay_motors_pro_best_offer_enabled, 'eBayMotorsProBestOfferEnabled', :class => EBayMotorsProBestOfferEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', :class => EBayMotorsProAutoAcceptEnabledDefintion, :optional => true
+      object_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', :class => EBayMotorsProAutoDeclineEnabledDefintion, :optional => true
+      object_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :class => EBayMotorsProPaymentMethodCheckOutEnabledDefintion, :optional => true
+      object_node :ebay_motors_pro_shipping_method_enabled, 'eBayMotorsProShippingMethodEnabled', :class => EBayMotorsProShippingMethodEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_counter_offer_enabled, 'eBayMotorsProCounterOfferEnabled', :class => EBayMotorsProCounterOfferEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_seller_contact_details_enabled, 'eBayMotorsProSellerContactDetailsEnabled', :class => EBayMotorsProSellerContactDetailsEnabledDefinition, :optional => true
+      object_node :local_market_ad_format_enabled, 'LocalMarketAdFormatEnabled', :class => LocalMarketAdFormatEnabledDefinition, :optional => true
+      object_node :local_market_contact_by_phone_enabled, 'LocalMarketContactByPhoneEnabled', :class => LocalMarketContactByPhoneEnabledDefinition, :optional => true
+      object_node :local_market_phone_count, 'LocalMarketPhoneCount', :class => LocalMarketPhoneCountDefinition, :optional => true
+      object_node :local_market_contact_by_address_enabled, 'LocalMarketContactByAddressEnabled', :class => LocalMarketContactByAddressEnabledDefinition, :optional => true
+      object_node :local_market_street_count, 'LocalMarketStreetCount', :class => LocalMarketStreetCountDefinition, :optional => true
+      object_node :local_market_company_name_enabled, 'LocalMarketCompanyNameEnabled', :class => LocalMarketCompanyNameEnabledDefinition, :optional => true
+      object_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', :class => LocalMarketContactByEmailEnabledDefintion, :optional => true
+      object_node :local_market_best_offer_enabled, 'LocalMarketBestOfferEnabled', :class => LocalMarketBestOfferEnabledDefinition, :optional => true
+      object_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', :class => LocalMarketAutoAcceptEnabledDefintion, :optional => true
+      object_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', :class => LocalMarketAutoDeclineEnabledDefintion, :optional => true
+      object_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :class => LocalMarketPaymentMethodCheckOutEnabledDefintion, :optional => true
+      object_node :local_market_shipping_method_enabled, 'LocalMarketShippingMethodEnabled', :class => LocalMarketShippingMethodEnabledDefinition, :optional => true
+      object_node :local_market_counter_offer_enabled, 'LocalMarketCounterOfferEnabled', :class => LocalMarketCounterOfferEnabledDefinition, :optional => true
+      object_node :local_market_seller_contact_details_enabled, 'LocalMarketSellerContactDetailsEnabled', :class => LocalMarketSellerContactDetailsEnabledDefinition, :optional => true
+      object_node :classified_ad_phone_count, 'ClassifiedAdPhoneCount', :class => ClassifiedAdPhoneCountDefinition, :optional => true
+      object_node :classified_ad_contact_by_address_enabled, 'ClassifiedAdContactByAddressEnabled', :class => ClassifiedAdContactByAddressEnabledDefinition, :optional => true
+      object_node :classified_ad_street_count, 'ClassifiedAdStreetCount', :class => ClassifiedAdStreetCountDefinition, :optional => true
+      object_node :classified_ad_company_name_enabled, 'ClassifiedAdCompanyNameEnabled', :class => ClassifiedAdCompanyNameEnabledDefinition, :optional => true
+      object_node :speciality_subscription, 'SpecialitySubscription', :class => SpecialitySubscriptionDefinition, :optional => true
+      object_node :regular_subscription, 'RegularSubscription', :class => RegularSubscriptionDefinition, :optional => true
+      object_node :premium_subscription, 'PremiumSubscription', :class => PremiumSubscriptionDefinition, :optional => true
+      object_node :non_subscription, 'NonSubscription', :class => NonSubscriptionDefinition, :optional => true
     end
   end
 end

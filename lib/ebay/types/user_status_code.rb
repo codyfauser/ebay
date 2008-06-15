@@ -20,6 +20,7 @@ module Ebay # :nodoc:
       UnconfirmedPassport = 'UnconfirmedPassport'
       CreditCardVerifyPassport = 'CreditCardVerifyPassport'
       UnconfirmedExpress = 'UnconfirmedExpress'
+      Guest = 'Guest'
     end
   end
 end

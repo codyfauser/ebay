@@ -13,9 +13,12 @@ module Ebay # :nodoc:
       TaxJurisdiction = 'TaxJurisdiction'
       URLDetails = 'URLDetails'
       TimeZoneDetails = 'TimeZoneDetails'
+      RegionOfOriginDetails = 'RegionOfOriginDetails'
       DispatchTimeMaxDetails = 'DispatchTimeMaxDetails'
       ItemSpecificDetails = 'ItemSpecificDetails'
       UnitOfMeasurementDetails = 'UnitOfMeasurementDetails'
+      ShippingPackageDetails = 'ShippingPackageDetails'
+      ShippingCarrierDetails = 'ShippingCarrierDetails'
     end
   end
 end

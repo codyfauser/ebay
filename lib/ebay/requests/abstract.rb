@@ -12,6 +12,7 @@ module Ebay # :nodoc:
     #  object_node :requester_credentials, 'RequesterCredentials', :class => XMLRequesterCredentials, :optional => true
     #  text_node :error_handling, 'ErrorHandling', :optional => true
     #  text_node :invocation_id, 'InvocationID', :optional => true
+    #  text_node :output_selector, 'OutputSelector', :optional => true
     #  text_node :warning_level, 'WarningLevel', :optional => true
     #  object_node :bot_block, 'BotBlock', :class => BotBlockRequest, :optional => true
     class Abstract < Base
@@ -26,6 +27,7 @@ module Ebay # :nodoc:
       object_node :requester_credentials, 'RequesterCredentials', :class => XMLRequesterCredentials, :optional => true
       text_node :error_handling, 'ErrorHandling', :optional => true
       text_node :invocation_id, 'InvocationID', :optional => true
+      text_node :output_selector, 'OutputSelector', :optional => true
       text_node :warning_level, 'WarningLevel', :optional => true
       object_node :bot_block, 'BotBlock', :class => BotBlockRequest, :optional => true
       # eBay specifies the detail level as a collection.  The usual case is to use

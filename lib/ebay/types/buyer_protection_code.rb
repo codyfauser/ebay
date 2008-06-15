@@ -7,6 +7,7 @@ module Ebay # :nodoc:
       ItemEligible = 'ItemEligible'
       ItemMarkedIneligible = 'ItemMarkedIneligible'
       ItemMarkedEligible = 'ItemMarkedEligible'
+      NoCoverage = 'NoCoverage'
     end
   end
 end

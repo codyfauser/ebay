@@ -15,6 +15,7 @@ module Ebay # :nodoc:
       Half = 'Half'
       LeadGeneration = 'LeadGeneration'
       Express = 'Express'
+      Shopping = 'Shopping'
     end
   end
 end

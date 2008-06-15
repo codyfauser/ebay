@@ -7,6 +7,7 @@ module Ebay # :nodoc:
     #  boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
     #  boolean_node :include_cross_promotion, 'IncludeCrossPromotion', 'true', 'false', :optional => true
     #  boolean_node :include_item_specifics, 'IncludeItemSpecifics', 'true', 'false', :optional => true
+    #  boolean_node :include_tax_table, 'IncludeTaxTable', 'true', 'false', :optional => true
     class GetItem < Abstract
       include XML::Mapping
       include Initializer
@@ -16,6 +17,7 @@ module Ebay # :nodoc:
       boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
       boolean_node :include_cross_promotion, 'IncludeCrossPromotion', 'true', 'false', :optional => true
       boolean_node :include_item_specifics, 'IncludeItemSpecifics', 'true', 'false', :optional => true
+      boolean_node :include_tax_table, 'IncludeTaxTable', 'true', 'false', :optional => true
     end
   end
 end

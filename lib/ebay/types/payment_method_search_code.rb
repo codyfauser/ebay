@@ -6,6 +6,7 @@ module Ebay # :nodoc:
       PayPal = 'PayPal'
       PaisaPay = 'PaisaPay'
       PayPalOrPaisaPay = 'PayPalOrPaisaPay'
+      PaisaPayEscrowEMI = 'PaisaPayEscrowEMI'
     end
   end
 end

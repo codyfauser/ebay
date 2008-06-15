@@ -10,6 +10,7 @@ module Ebay # :nodoc:
       NotSpecified = 'NotSpecified'
       FlatDomesticCalculatedInternational = 'FlatDomesticCalculatedInternational'
       CalculatedDomesticFlatInternational = 'CalculatedDomesticFlatInternational'
+      FreightFlat = 'FreightFlat'
     end
   end
 end

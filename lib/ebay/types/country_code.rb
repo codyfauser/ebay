@@ -250,6 +250,8 @@ module Ebay # :nodoc:
       JE = 'JE'
       GG = 'GG'
       ZZ = 'ZZ'
+      RS = 'RS'
+      ME = 'ME'
     end
   end
 end

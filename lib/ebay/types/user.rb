@@ -2,7 +2,6 @@ require 'ebay/types/address'
 require 'ebay/types/buyer'
 require 'ebay/types/seller'
 require 'ebay/types/charity_id'
-require 'ebay/types/charity_seller'
 require 'ebay/types/bidding_summary'
 
 module Ebay # :nodoc:
@@ -32,7 +31,6 @@ module Ebay # :nodoc:
     #  object_node :buyer_info, 'BuyerInfo', :class => Buyer, :optional => true
     #  object_node :seller_info, 'SellerInfo', :class => Seller, :optional => true
     #  array_node :charity_affiliations, 'CharityAffiliations', 'CharityID', :class => CharityID, :default_value => []
-    #  object_node :charity_seller, 'CharitySeller', :class => CharitySeller, :optional => true
     #  text_node :paypal_account_level, 'PayPalAccountLevel', :optional => true
     #  text_node :paypal_account_type, 'PayPalAccountType', :optional => true
     #  text_node :paypal_account_status, 'PayPalAccountStatus', :optional => true
@@ -46,6 +44,7 @@ module Ebay # :nodoc:
     #  text_node :seller_payment_method, 'SellerPaymentMethod', :optional => true
     #  object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
     #  boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
+    #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
     class User
       include XML::Mapping
       include Initializer
@@ -74,7 +73,6 @@ module Ebay # :nodoc:
       object_node :buyer_info, 'BuyerInfo', :class => Buyer, :optional => true
       object_node :seller_info, 'SellerInfo', :class => Seller, :optional => true
       array_node :charity_affiliations, 'CharityAffiliations', 'CharityID', :class => CharityID, :default_value => []
-      object_node :charity_seller, 'CharitySeller', :class => CharitySeller, :optional => true
       text_node :paypal_account_level, 'PayPalAccountLevel', :optional => true
       text_node :paypal_account_type, 'PayPalAccountType', :optional => true
       text_node :paypal_account_status, 'PayPalAccountStatus', :optional => true
@@ -88,6 +86,7 @@ module Ebay # :nodoc:
       text_node :seller_payment_method, 'SellerPaymentMethod', :optional => true
       object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
       boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
+      numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
     end
   end
 end

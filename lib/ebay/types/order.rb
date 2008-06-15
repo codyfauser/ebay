@@ -27,6 +27,8 @@ module Ebay # :nodoc:
     #  boolean_node :digital_delivery, 'DigitalDelivery', 'true', 'false', :optional => true
     #  array_node :transactions, 'TransactionArray', 'Transaction', :class => Transaction, :default_value => []
     #  text_node :buyer_user_id, 'BuyerUserID', :optional => true
+    #  time_node :paid_time, 'PaidTime', :optional => true
+    #  time_node :shipped_time, 'ShippedTime', :optional => true
     class Order
       include XML::Mapping
       include Initializer
@@ -50,6 +52,8 @@ module Ebay # :nodoc:
       boolean_node :digital_delivery, 'DigitalDelivery', 'true', 'false', :optional => true
       array_node :transactions, 'TransactionArray', 'Transaction', :class => Transaction, :default_value => []
       text_node :buyer_user_id, 'BuyerUserID', :optional => true
+      time_node :paid_time, 'PaidTime', :optional => true
+      time_node :shipped_time, 'ShippedTime', :optional => true
     end
   end
 end

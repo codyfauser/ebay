@@ -1,4 +1,5 @@
 require 'ebay/types/feedback_info'
+require 'ebay/types/shipment'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -9,6 +10,7 @@ module Ebay # :nodoc:
     #  boolean_node :shipped, 'Shipped', 'true', 'false', :optional => true
     #  boolean_node :paid, 'Paid', 'true', 'false', :optional => true
     #  text_node :listing_type, 'ListingType', :optional => true
+    #  object_node :shipment, 'Shipment', :class => Shipment, :optional => true
     class CompleteSale < Abstract
       include XML::Mapping
       include Initializer
@@ -19,6 +21,7 @@ module Ebay # :nodoc:
       boolean_node :shipped, 'Shipped', 'true', 'false', :optional => true
       boolean_node :paid, 'Paid', 'true', 'false', :optional => true
       text_node :listing_type, 'ListingType', :optional => true
+      object_node :shipment, 'Shipment', :class => Shipment, :optional => true
     end
   end
 end

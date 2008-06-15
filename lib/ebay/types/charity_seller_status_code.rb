@@ -12,6 +12,8 @@ module Ebay # :nodoc:
       RegisteredNoCreditCard = 'RegisteredNoCreditCard'
       NotRegisteredLostDirectSellerStatus = 'NotRegisteredLostDirectSellerStatus'
       DirectDebitRejected = 'DirectDebitRejected'
+      RegisteredDirectSeller = 'RegisteredDirectSeller'
+      RegisteredNoPaymentMethod = 'RegisteredNoPaymentMethod'
     end
   end
 end

@@ -4,6 +4,7 @@ module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
     #  text_node :originating_postal_code, 'OriginatingPostalCode', :optional => true
+    #  text_node :measurement_unit, 'MeasurementUnit', :optional => true
     #  object_node :package_depth, 'PackageDepth', :class => Measure, :optional => true
     #  object_node :package_length, 'PackageLength', :class => Measure, :optional => true
     #  object_node :package_width, 'PackageWidth', :class => Measure, :optional => true
@@ -18,6 +19,7 @@ module Ebay # :nodoc:
       include Initializer
       root_element_name 'CalculatedShippingRate'
       text_node :originating_postal_code, 'OriginatingPostalCode', :optional => true
+      text_node :measurement_unit, 'MeasurementUnit', :optional => true
       object_node :package_depth, 'PackageDepth', :class => Measure, :optional => true
       object_node :package_length, 'PackageLength', :class => Measure, :optional => true
       object_node :package_width, 'PackageWidth', :class => Measure, :optional => true

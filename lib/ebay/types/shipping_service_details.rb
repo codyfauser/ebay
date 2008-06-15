@@ -15,6 +15,8 @@ module Ebay # :nodoc:
     #  boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false', :optional => true
     #  boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false', :optional => true
     #  boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
+    #  value_array_node :shipping_carriers, 'ShippingCarrier', :default_value => []
+    #  boolean_node :cod_service, 'CODService', 'true', 'false', :optional => true
     class ShippingServiceDetails
       include XML::Mapping
       include Initializer
@@ -32,6 +34,8 @@ module Ebay # :nodoc:
       boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false', :optional => true
       boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false', :optional => true
       boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
+      value_array_node :shipping_carriers, 'ShippingCarrier', :default_value => []
+      boolean_node :cod_service, 'CODService', 'true', 'false', :optional => true
     end
   end
 end

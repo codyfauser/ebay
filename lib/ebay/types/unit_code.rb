@@ -4,9 +4,11 @@ module Ebay # :nodoc:
       extend Enumerable
       extend Enumeration
       Kg = 'kg'
+      Gm = 'gm'
       Lbs = 'lbs'
       Oz = 'oz'
       Cm = 'cm'
+      Mm = 'mm'
       Inches = 'inches'
       Ft = 'ft'
     end

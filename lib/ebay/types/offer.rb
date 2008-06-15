@@ -17,6 +17,8 @@ module Ebay # :nodoc:
     #  object_node :user, 'User', :class => User, :optional => true
     #  boolean_node :user_consent, 'UserConsent', 'true', 'false', :optional => true
     #  numeric_node :bid_count, 'BidCount', :optional => true
+    #  text_node :message, 'Message', :optional => true
+    #  text_node :best_offer_id, 'BestOfferID', :optional => true
     class Offer
       include XML::Mapping
       include Initializer
@@ -35,6 +37,8 @@ module Ebay # :nodoc:
       object_node :user, 'User', :class => User, :optional => true
       boolean_node :user_consent, 'UserConsent', 'true', 'false', :optional => true
       numeric_node :bid_count, 'BidCount', :optional => true
+      text_node :message, 'Message', :optional => true
+      text_node :best_offer_id, 'BestOfferID', :optional => true
     end
   end
 end

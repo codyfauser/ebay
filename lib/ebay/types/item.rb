@@ -16,7 +16,6 @@ require 'ebay/types/selling_status'
 require 'ebay/types/shipping_details'
 require 'ebay/types/storefront'
 require 'ebay/types/vat_details'
-require 'ebay/types/buyer_requirements'
 require 'ebay/types/best_offer_details'
 require 'ebay/types/live_auction_details'
 require 'ebay/types/search_details'
@@ -29,6 +28,9 @@ require 'ebay/types/address'
 require 'ebay/types/extended_contact_details'
 require 'ebay/types/name_value_list'
 require 'ebay/types/buyer_protection_details'
+require 'ebay/types/item_policy_violation'
+require 'ebay/types/business_seller_details'
+require 'ebay/types/buyer_requirement_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -61,7 +63,6 @@ module Ebay # :nodoc:
     #  text_node :listing_duration, 'ListingDuration', :optional => true
     #  value_array_node :listing_enhancements, 'ListingEnhancement', :default_value => []
     #  text_node :listing_type, 'ListingType', :optional => true
-    #  text_node :listing_subtype, 'ListingSubtype', :optional => true
     #  text_node :location, 'Location', :optional => true
     #  numeric_node :lot_size, 'LotSize', :optional => true
     #  boolean_node :now_and_new, 'NowAndNew', 'true', 'false', :optional => true
@@ -97,7 +98,6 @@ module Ebay # :nodoc:
     #  numeric_node :watch_count, 'WatchCount', :optional => true
     #  numeric_node :hit_count, 'HitCount', :optional => true
     #  boolean_node :disable_buyer_requirements, 'DisableBuyerRequirements', 'true', 'false', :optional => true
-    #  object_node :buyer_requirements, 'BuyerRequirements', :class => BuyerRequirements, :optional => true
     #  object_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :optional => true
     #  object_node :live_auction_details, 'LiveAuctionDetails', :class => LiveAuctionDetails, :optional => true
     #  boolean_node :location_defaulted, 'LocationDefaulted', 'true', 'false', :optional => true
@@ -140,6 +140,15 @@ module Ebay # :nodoc:
     #  money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
     #  boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
     #  object_node :apply_buyer_protection, 'ApplyBuyerProtection', :class => BuyerProtectionDetails, :optional => true
+    #  text_node :listing_subtype2, 'ListingSubtype2', :optional => true
+    #  boolean_node :mechanical_check_accepted, 'MechanicalCheckAccepted', 'true', 'false', :optional => true
+    #  boolean_node :update_seller_info, 'UpdateSellerInfo', 'true', 'false', :optional => true
+    #  boolean_node :update_return_policy, 'UpdateReturnPolicy', 'true', 'false', :optional => true
+    #  object_node :item_policy_violation, 'ItemPolicyViolation', :class => ItemPolicyViolation, :optional => true
+    #  text_node :cross_border_trade, 'CrossBorderTrade', :optional => true
+    #  object_node :business_seller_details, 'BusinessSellerDetails', :class => BusinessSellerDetails, :optional => true
+    #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
+    #  object_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => BuyerRequirementDetails, :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -172,7 +181,6 @@ module Ebay # :nodoc:
       text_node :listing_duration, 'ListingDuration', :optional => true
       value_array_node :listing_enhancements, 'ListingEnhancement', :default_value => []
       text_node :listing_type, 'ListingType', :optional => true
-      text_node :listing_subtype, 'ListingSubtype', :optional => true
       text_node :location, 'Location', :optional => true
       numeric_node :lot_size, 'LotSize', :optional => true
       boolean_node :now_and_new, 'NowAndNew', 'true', 'false', :optional => true
@@ -208,7 +216,6 @@ module Ebay # :nodoc:
       numeric_node :watch_count, 'WatchCount', :optional => true
       numeric_node :hit_count, 'HitCount', :optional => true
       boolean_node :disable_buyer_requirements, 'DisableBuyerRequirements', 'true', 'false', :optional => true
-      object_node :buyer_requirements, 'BuyerRequirements', :class => BuyerRequirements, :optional => true
       object_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :optional => true
       object_node :live_auction_details, 'LiveAuctionDetails', :class => LiveAuctionDetails, :optional => true
       boolean_node :location_defaulted, 'LocationDefaulted', 'true', 'false', :optional => true
@@ -251,6 +258,15 @@ module Ebay # :nodoc:
       money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
       boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
       object_node :apply_buyer_protection, 'ApplyBuyerProtection', :class => BuyerProtectionDetails, :optional => true
+      text_node :listing_subtype2, 'ListingSubtype2', :optional => true
+      boolean_node :mechanical_check_accepted, 'MechanicalCheckAccepted', 'true', 'false', :optional => true
+      boolean_node :update_seller_info, 'UpdateSellerInfo', 'true', 'false', :optional => true
+      boolean_node :update_return_policy, 'UpdateReturnPolicy', 'true', 'false', :optional => true
+      object_node :item_policy_violation, 'ItemPolicyViolation', :class => ItemPolicyViolation, :optional => true
+      text_node :cross_border_trade, 'CrossBorderTrade', :optional => true
+      object_node :business_seller_details, 'BusinessSellerDetails', :class => BusinessSellerDetails, :optional => true
+      money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
+      object_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => BuyerRequirementDetails, :optional => true
     end
   end
 end

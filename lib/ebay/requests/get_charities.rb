@@ -9,6 +9,7 @@ module Ebay # :nodoc:
     #  numeric_node :charity_domain, 'CharityDomain', :optional => true
     #  boolean_node :include_description, 'IncludeDescription', 'true', 'false', :optional => true
     #  text_node :match_type, 'MatchType', :optional => true
+    #  boolean_node :featured, 'Featured', 'true', 'false', :optional => true
     class GetCharities < Abstract
       include XML::Mapping
       include Initializer
@@ -20,6 +21,7 @@ module Ebay # :nodoc:
       numeric_node :charity_domain, 'CharityDomain', :optional => true
       boolean_node :include_description, 'IncludeDescription', 'true', 'false', :optional => true
       text_node :match_type, 'MatchType', :optional => true
+      boolean_node :featured, 'Featured', 'true', 'false', :optional => true
     end
   end
 end

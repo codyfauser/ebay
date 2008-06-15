@@ -15,6 +15,7 @@ end
     #  time_node :next_retry_time, 'NextRetryTime', :optional => true
     #  time_node :delivery_time, 'DeliveryTime', :optional => true
     #  text_node :error_message, 'ErrorMessage', :optional => true
+    #  text_node :delivery_url_name, 'DeliveryURLName', :optional => true
     class NotificationDetails
       include XML::Mapping
       include Initializer
@@ -32,6 +33,7 @@ end
       time_node :next_retry_time, 'NextRetryTime', :optional => true
       time_node :delivery_time, 'DeliveryTime', :optional => true
       text_node :error_message, 'ErrorMessage', :optional => true
+      text_node :delivery_url_name, 'DeliveryURLName', :optional => true
     end
   end
 end

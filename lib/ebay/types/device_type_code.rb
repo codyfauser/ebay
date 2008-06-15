@@ -5,6 +5,7 @@ module Ebay # :nodoc:
       extend Enumeration
       Platform = 'Platform'
       SMS = 'SMS'
+      ClientAlerts = 'ClientAlerts'
     end
   end
 end

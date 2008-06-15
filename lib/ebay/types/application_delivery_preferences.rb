@@ -1,3 +1,4 @@
+require 'ebay/types/delivery_url_detail'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -8,6 +9,8 @@ module Ebay # :nodoc:
     #  text_node :alert_enable, 'AlertEnable', :optional => true
     #  text_node :notification_payload_type, 'NotificationPayloadType', :optional => true
     #  text_node :device_type, 'DeviceType', :optional => true
+    #  text_node :payload_version, 'PayloadVersion', :optional => true
+    #  array_node :delivery_url_details, 'DeliveryURLDetails', :class => DeliveryURLDetail, :default_value => []
     class ApplicationDeliveryPreferences
       include XML::Mapping
       include Initializer
@@ -18,6 +21,8 @@ module Ebay # :nodoc:
       text_node :alert_enable, 'AlertEnable', :optional => true
       text_node :notification_payload_type, 'NotificationPayloadType', :optional => true
       text_node :device_type, 'DeviceType', :optional => true
+      text_node :payload_version, 'PayloadVersion', :optional => true
+      array_node :delivery_url_details, 'DeliveryURLDetails', :class => DeliveryURLDetail, :default_value => []
       # Is the application enabled to received Platform Notifications?
       def application_enabled?
         @application_enable == 'Enable'

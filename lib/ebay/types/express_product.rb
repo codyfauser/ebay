@@ -12,6 +12,8 @@ module Ebay # :nodoc:
     #  object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
     #  numeric_node :product_reference_id, 'ProductReferenceID', :optional => true
     #  array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
+    #  text_node :details_url, 'DetailsURL', :optional => true
+    #  text_node :product_state, 'ProductState', :optional => true
     class ExpressProduct
       include XML::Mapping
       include Initializer
@@ -24,6 +26,8 @@ module Ebay # :nodoc:
       object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
       numeric_node :product_reference_id, 'ProductReferenceID', :optional => true
       array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
+      text_node :details_url, 'DetailsURL', :optional => true
+      text_node :product_state, 'ProductState', :optional => true
     end
   end
 end

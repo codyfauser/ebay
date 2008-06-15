@@ -5,6 +5,7 @@ module Ebay # :nodoc:
       extend Enumeration
       NothingOnFile = 'NothingOnFile'
       CreditCard = 'CreditCard'
+      PayPal = 'PayPal'
       DirectDebit = 'DirectDebit'
       DirectDebitPendingSignatureMandate = 'DirectDebitPendingSignatureMandate'
       EBayDirectPay = 'eBayDirectPay'
