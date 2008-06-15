@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/../test_helper'
-require 'flexmock'
 require 'yaml'
 
 class NotificationsTest < Test::Unit::TestCase
