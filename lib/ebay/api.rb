@@ -40,6 +40,7 @@ module Ebay #:nodoc:
     
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
+    cattr_accessor :username, :password
     attr_reader :auth_token, :site_id
     
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
@@ -113,7 +114,10 @@ module Ebay #:nodoc:
   
     private
     def commit(request_class, params)
-      format = params.delete(:format) || @format      
+      format = params.delete(:format) || @format
+      
+      params[:username] = username
+      params[:password] = password
       params[:auth_token] = auth_token
       
       request = request_class.new(params)

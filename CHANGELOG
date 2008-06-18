@@ -1,3 +1,5 @@
+# * Support SetReturnURL GetReturnURL GetRuName FetchToken that require a username and password
+# * Don't cache the HTTP connection
 # * Update schema to version 569
 # * Remove requirement of flexmock
 # * Remove dependency of project on ActiveSupport and update Rakefile for release 0.11.0
