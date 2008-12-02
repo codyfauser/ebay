@@ -4,7 +4,6 @@ require 'ebay/types/cross_promotion_preferences'
 require 'ebay/types/seller_payment_preferences'
 require 'ebay/types/seller_favorite_item_preferences'
 require 'ebay/types/end_of_auction_email_preferences'
-require 'ebay/types/express_preferences'
 require 'ebay/types/pro_stores_checkout_preference'
 
 module Ebay # :nodoc:
@@ -17,7 +16,6 @@ module Ebay # :nodoc:
     #  object_node :seller_favorite_item_preferences, 'SellerFavoriteItemPreferences', :class => SellerFavoriteItemPreferences, :optional => true
     #  object_node :end_of_auction_email_preferences, 'EndOfAuctionEmailPreferences', :class => EndOfAuctionEmailPreferences, :optional => true
     #  boolean_node :email_shipment_tracking_number_preference, 'EmailShipmentTrackingNumberPreference', 'true', 'false', :optional => true
-    #  object_node :express_preferences, 'ExpressPreferences', :class => ExpressPreferences, :optional => true
     #  object_node :pro_stores_preference, 'ProStoresPreference', :class => ProStoresCheckoutPreference, :optional => true
     class GetUserPreferences < Abstract
       include XML::Mapping
@@ -30,7 +28,6 @@ module Ebay # :nodoc:
       object_node :seller_favorite_item_preferences, 'SellerFavoriteItemPreferences', :class => SellerFavoriteItemPreferences, :optional => true
       object_node :end_of_auction_email_preferences, 'EndOfAuctionEmailPreferences', :class => EndOfAuctionEmailPreferences, :optional => true
       boolean_node :email_shipment_tracking_number_preference, 'EmailShipmentTrackingNumberPreference', 'true', 'false', :optional => true
-      object_node :express_preferences, 'ExpressPreferences', :class => ExpressPreferences, :optional => true
       object_node :pro_stores_preference, 'ProStoresPreference', :class => ProStoresCheckoutPreference, :optional => true
     end
   end

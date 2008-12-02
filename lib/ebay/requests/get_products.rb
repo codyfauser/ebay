@@ -11,6 +11,7 @@ module Ebay # :nodoc:
     #  boolean_node :include_buying_guide_details, 'IncludeBuyingGuideDetails', 'true', 'false', :optional => true
     #  boolean_node :include_histogram, 'IncludeHistogram', 'true', 'false', :optional => true
     #  object_node :affiliate_tracking_details, 'AffiliateTrackingDetails', :class => AffiliateTrackingDetails, :optional => true
+    #  boolean_node :hide_duplicate_items, 'HideDuplicateItems', 'true', 'false', :optional => true
     class GetProducts < Abstract
       include XML::Mapping
       include Initializer
@@ -22,6 +23,7 @@ module Ebay # :nodoc:
       boolean_node :include_buying_guide_details, 'IncludeBuyingGuideDetails', 'true', 'false', :optional => true
       boolean_node :include_histogram, 'IncludeHistogram', 'true', 'false', :optional => true
       object_node :affiliate_tracking_details, 'AffiliateTrackingDetails', :class => AffiliateTrackingDetails, :optional => true
+      boolean_node :hide_duplicate_items, 'HideDuplicateItems', 'true', 'false', :optional => true
     end
   end
 end

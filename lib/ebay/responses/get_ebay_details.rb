@@ -14,6 +14,7 @@ require 'ebay/types/unit_of_measurement_details'
 require 'ebay/types/region_of_origin_details'
 require 'ebay/types/shipping_package_details'
 require 'ebay/types/shipping_carrier_details'
+require 'ebay/types/return_policy_details'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -34,6 +35,7 @@ module Ebay # :nodoc:
     #  array_node :region_of_origin_details, 'RegionOfOriginDetails', :class => RegionOfOriginDetails, :default_value => []
     #  array_node :shipping_package_details, 'ShippingPackageDetails', :class => ShippingPackageDetails, :default_value => []
     #  array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
+    #  object_node :return_policy_details, 'ReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
     class GeteBayDetails < Abstract
       include XML::Mapping
       include Initializer
@@ -54,6 +56,7 @@ module Ebay # :nodoc:
       array_node :region_of_origin_details, 'RegionOfOriginDetails', :class => RegionOfOriginDetails, :default_value => []
       array_node :shipping_package_details, 'ShippingPackageDetails', :class => ShippingPackageDetails, :default_value => []
       array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
+      object_node :return_policy_details, 'ReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
     end
   end
 end

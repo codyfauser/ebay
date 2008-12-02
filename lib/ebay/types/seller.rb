@@ -1,7 +1,6 @@
 require 'ebay/types/address'
 require 'ebay/types/scheduling_info'
 require 'ebay/types/pro_stores_checkout_preference'
-require 'ebay/types/express_seller_requirements'
 require 'ebay/types/charity_affiliation_detail'
 
 module Ebay # :nodoc:
@@ -24,11 +23,9 @@ module Ebay # :nodoc:
     #  text_node :store_url, 'StoreURL', :optional => true
     #  text_node :seller_business_type, 'SellerBusinessType', :optional => true
     #  boolean_node :registered_business_seller, 'RegisteredBusinessSeller', 'true', 'false', :optional => true
-    #  boolean_node :express_eligible, 'ExpressEligible', 'true', 'false', :optional => true
+    #  text_node :store_site, 'StoreSite', :optional => true
     #  text_node :payment_method, 'PaymentMethod', :optional => true
     #  object_node :pro_stores_preference, 'ProStoresPreference', :class => ProStoresCheckoutPreference, :optional => true
-    #  boolean_node :express_wallet, 'ExpressWallet', 'true', 'false', :optional => true
-    #  object_node :express_seller_requirements, 'ExpressSellerRequirements', :class => ExpressSellerRequirements, :optional => true
     #  boolean_node :charity_registered, 'CharityRegistered', 'true', 'false', :optional => true
     #  boolean_node :safe_payment_exempt, 'SafePaymentExempt', 'true', 'false', :optional => true
     #  numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
@@ -55,11 +52,9 @@ module Ebay # :nodoc:
       text_node :store_url, 'StoreURL', :optional => true
       text_node :seller_business_type, 'SellerBusinessType', :optional => true
       boolean_node :registered_business_seller, 'RegisteredBusinessSeller', 'true', 'false', :optional => true
-      boolean_node :express_eligible, 'ExpressEligible', 'true', 'false', :optional => true
+      text_node :store_site, 'StoreSite', :optional => true
       text_node :payment_method, 'PaymentMethod', :optional => true
       object_node :pro_stores_preference, 'ProStoresPreference', :class => ProStoresCheckoutPreference, :optional => true
-      boolean_node :express_wallet, 'ExpressWallet', 'true', 'false', :optional => true
-      object_node :express_seller_requirements, 'ExpressSellerRequirements', :class => ExpressSellerRequirements, :optional => true
       boolean_node :charity_registered, 'CharityRegistered', 'true', 'false', :optional => true
       boolean_node :safe_payment_exempt, 'SafePaymentExempt', 'true', 'false', :optional => true
       numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true

@@ -63,6 +63,7 @@ module Ebay # :nodoc:
       BestOfferPlaced = 'BestOfferPlaced'
       ItemsCanceled = 'ItemsCanceled'
       TokenRevocation = 'TokenRevocation'
+      BulkDataExchangeJobCompleted = 'BulkDataExchangeJobCompleted'
     end
   end
 end

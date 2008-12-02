@@ -12,6 +12,9 @@ module Ebay # :nodoc:
     #  object_node :sold_list, 'SoldList', :class => PaginatedOrderTransactionArray, :optional => true
     #  object_node :unsold_list, 'UnsoldList', :class => PaginatedItemArray, :optional => true
     #  object_node :summary, 'Summary', :class => MyeBaySellingSummary, :optional => true
+    #  object_node :bid_list, 'BidList', :class => PaginatedItemArray, :optional => true
+    #  object_node :deleted_from_sold_list, 'DeletedFromSoldList', :class => PaginatedOrderTransactionArray, :optional => true
+    #  object_node :deleted_from_unsold_list, 'DeletedFromUnsoldList', :class => PaginatedItemArray, :optional => true
     class GetMyeBaySelling < Abstract
       include XML::Mapping
       include Initializer
@@ -22,6 +25,9 @@ module Ebay # :nodoc:
       object_node :sold_list, 'SoldList', :class => PaginatedOrderTransactionArray, :optional => true
       object_node :unsold_list, 'UnsoldList', :class => PaginatedItemArray, :optional => true
       object_node :summary, 'Summary', :class => MyeBaySellingSummary, :optional => true
+      object_node :bid_list, 'BidList', :class => PaginatedItemArray, :optional => true
+      object_node :deleted_from_sold_list, 'DeletedFromSoldList', :class => PaginatedOrderTransactionArray, :optional => true
+      object_node :deleted_from_unsold_list, 'DeletedFromUnsoldList', :class => PaginatedItemArray, :optional => true
     end
   end
 end

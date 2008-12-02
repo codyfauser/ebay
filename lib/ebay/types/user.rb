@@ -45,6 +45,7 @@ module Ebay # :nodoc:
     #  object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
     #  boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
     #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
+    #  boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
     class User
       include XML::Mapping
       include Initializer
@@ -87,6 +88,7 @@ module Ebay # :nodoc:
       object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
       boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
       numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
+      boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
     end
   end
 end

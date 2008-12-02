@@ -7,6 +7,7 @@ module Ebay # :nodoc:
       Express = 'Express'
       Half = 'Half'
       Shopping = 'Shopping'
+      WorldOfGood = 'WorldOfGood'
     end
   end
 end

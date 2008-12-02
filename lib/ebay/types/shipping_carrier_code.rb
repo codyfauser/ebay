@@ -15,6 +15,7 @@ module Ebay # :nodoc:
       Chronopost = 'Chronopost'
       Correos = 'Correos'
       Seur = 'Seur'
+      Nacex = 'Nacex'
     end
   end
 end

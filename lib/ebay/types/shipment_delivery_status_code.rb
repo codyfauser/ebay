@@ -10,6 +10,9 @@ module Ebay # :nodoc:
       Returned = 'Returned'
       Canceled = 'Canceled'
       LabelPrinted = 'LabelPrinted'
+      Unconfirmed = 'Unconfirmed'
+      Unknown = 'Unknown'
+      Error = 'Error'
     end
   end
 end

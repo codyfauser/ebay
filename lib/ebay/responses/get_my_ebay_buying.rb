@@ -19,6 +19,8 @@ module Ebay # :nodoc:
     #  object_node :favorite_sellers, 'FavoriteSellers', :class => MyeBayFavoriteSellerList, :optional => true
     #  array_node :second_chance_offers, 'SecondChanceOffer', :class => Item, :default_value => []
     #  array_node :bid_assistant_lists, 'BidAssistantList', 'BidGroup', :class => BidGroup, :default_value => []
+    #  object_node :deleted_from_won_list, 'DeletedFromWonList', :class => PaginatedOrderTransactionArray, :optional => true
+    #  object_node :deleted_from_lost_list, 'DeletedFromLostList', :class => PaginatedItemArray, :optional => true
     class GetMyeBayBuying < Abstract
       include XML::Mapping
       include Initializer
@@ -33,6 +35,8 @@ module Ebay # :nodoc:
       object_node :favorite_sellers, 'FavoriteSellers', :class => MyeBayFavoriteSellerList, :optional => true
       array_node :second_chance_offers, 'SecondChanceOffer', :class => Item, :default_value => []
       array_node :bid_assistant_lists, 'BidAssistantList', 'BidGroup', :class => BidGroup, :default_value => []
+      object_node :deleted_from_won_list, 'DeletedFromWonList', :class => PaginatedOrderTransactionArray, :optional => true
+      object_node :deleted_from_lost_list, 'DeletedFromLostList', :class => PaginatedItemArray, :optional => true
     end
   end
 end

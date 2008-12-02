@@ -50,6 +50,7 @@ module Ebay # :nodoc:
       CrossBorderTradeEnabled = 'CrossBorderTradeEnabled'
       PayPalBuyerProtectionEnabled = 'PayPalBuyerProtectionEnabled'
       BuyerGuaranteeEnabled = 'BuyerGuaranteeEnabled'
+      INEscrowWorkflowTimeline = 'INEscrowWorkflowTimeline'
       CombinedFixedPriceTreatment = 'CombinedFixedPriceTreatment'
       GalleryFeaturedDurations = 'GalleryFeaturedDurations'
       PayPalRequired = 'PayPalRequired'
@@ -83,6 +84,20 @@ module Ebay # :nodoc:
       RegularSubscription = 'RegularSubscription'
       PremiumSubscription = 'PremiumSubscription'
       NonSubscription = 'NonSubscription'
+      IntangibleEnabled = 'IntangibleEnabled'
+      PayPalRequiredForStoreOwner = 'PayPalRequiredForStoreOwner'
+      ReviseQuantityAllowed = 'ReviseQuantityAllowed'
+      RevisePriceAllowed = 'RevisePriceAllowed'
+      StoreOwnerExtendedListingDurationsEnabled = 'StoreOwnerExtendedListingDurationsEnabled'
+      StoreOwnerExtendedListingDurations = 'StoreOwnerExtendedListingDurations'
+      ReturnPolicyEnabled = 'ReturnPolicyEnabled'
+      HandlingTimeEnabled = 'HandlingTimeEnabled'
+      PaymentMethods = 'PaymentMethods'
+      MaxFlatShippingCost = 'MaxFlatShippingCost'
+      MaxFlatShippingCostCBTExempt = 'MaxFlatShippingCostCBTExempt'
+      Group1MaxFlatShippingCost = 'Group1MaxFlatShippingCost'
+      Group2MaxFlatShippingCost = 'Group2MaxFlatShippingCost'
+      Group3MaxFlatShippingCost = 'Group3MaxFlatShippingCost'
     end
   end
 end

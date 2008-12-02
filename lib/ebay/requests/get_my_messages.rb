@@ -7,6 +7,7 @@ module Ebay # :nodoc:
     #  numeric_node :folder_id, 'FolderID', :optional => true
     #  time_node :start_time, 'StartTime', :optional => true
     #  time_node :end_time, 'EndTime', :optional => true
+    #  value_array_node :external_message_ids, 'ExternalMessageIDs', 'ExternalMessageID', :default_value => []
     class GetMyMessages < Abstract
       include XML::Mapping
       include Initializer
@@ -16,6 +17,7 @@ module Ebay # :nodoc:
       numeric_node :folder_id, 'FolderID', :optional => true
       time_node :start_time, 'StartTime', :optional => true
       time_node :end_time, 'EndTime', :optional => true
+      value_array_node :external_message_ids, 'ExternalMessageIDs', 'ExternalMessageID', :default_value => []
     end
   end
 end

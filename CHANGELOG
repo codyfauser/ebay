@@ -1,3 +1,4 @@
+# * Update to schema version 591
 # * Support SetReturnURL GetReturnURL GetRuName FetchToken that require a username and password
 # * Don't cache the HTTP connection
 # * Update schema to version 569

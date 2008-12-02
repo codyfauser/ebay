@@ -21,9 +21,7 @@ require 'ebay/types/live_auction_details'
 require 'ebay/types/search_details'
 require 'ebay/types/external_product_id'
 require 'ebay/types/picture_details'
-require 'ebay/types/digital_delivery_details'
 require 'ebay/types/listing_checkout_redirect_preference'
-require 'ebay/types/express_details'
 require 'ebay/types/address'
 require 'ebay/types/extended_contact_details'
 require 'ebay/types/name_value_list'
@@ -31,6 +29,7 @@ require 'ebay/types/buyer_protection_details'
 require 'ebay/types/item_policy_violation'
 require 'ebay/types/business_seller_details'
 require 'ebay/types/buyer_requirement_details'
+require 'ebay/types/return_policy'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -118,7 +117,6 @@ module Ebay # :nodoc:
     #  object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
     #  text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
     #  object_node :picture_details, 'PictureDetails', :class => PictureDetails, :optional => true
-    #  object_node :digital_delivery_details, 'DigitalDeliveryDetails', :class => DigitalDeliveryDetails, :optional => true
     #  numeric_node :dispatch_time_max, 'DispatchTimeMax', :optional => true
     #  boolean_node :skype_enabled, 'SkypeEnabled', 'true', 'false', :optional => true
     #  text_node :skype_id, 'SkypeID', :optional => true
@@ -126,9 +124,7 @@ module Ebay # :nodoc:
     #  boolean_node :best_offer_enabled, 'BestOfferEnabled', 'true', 'false', :optional => true
     #  boolean_node :local_listing, 'LocalListing', 'true', 'false', :optional => true
     #  boolean_node :third_party_checkout_integration, 'ThirdPartyCheckoutIntegration', 'true', 'false', :optional => true
-    #  boolean_node :express_opt_out, 'ExpressOptOut', 'true', 'false', :optional => true
     #  object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
-    #  object_node :express_details, 'ExpressDetails', :class => ExpressDetails, :optional => true
     #  object_node :seller_contact_details, 'SellerContactDetails', :class => Address, :optional => true
     #  numeric_node :total_question_count, 'TotalQuestionCount', :optional => true
     #  boolean_node :proxy_item, 'ProxyItem', 'true', 'false', :optional => true
@@ -149,6 +145,8 @@ module Ebay # :nodoc:
     #  object_node :business_seller_details, 'BusinessSellerDetails', :class => BusinessSellerDetails, :optional => true
     #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
     #  object_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => BuyerRequirementDetails, :optional => true
+    #  object_node :return_policy, 'ReturnPolicy', :class => ReturnPolicy, :optional => true
+    #  value_array_node :payment_allowed_sites, 'PaymentAllowedSite', :default_value => []
     class Item
       include XML::Mapping
       include Initializer
@@ -236,7 +234,6 @@ module Ebay # :nodoc:
       object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
       text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
       object_node :picture_details, 'PictureDetails', :class => PictureDetails, :optional => true
-      object_node :digital_delivery_details, 'DigitalDeliveryDetails', :class => DigitalDeliveryDetails, :optional => true
       numeric_node :dispatch_time_max, 'DispatchTimeMax', :optional => true
       boolean_node :skype_enabled, 'SkypeEnabled', 'true', 'false', :optional => true
       text_node :skype_id, 'SkypeID', :optional => true
@@ -244,9 +241,7 @@ module Ebay # :nodoc:
       boolean_node :best_offer_enabled, 'BestOfferEnabled', 'true', 'false', :optional => true
       boolean_node :local_listing, 'LocalListing', 'true', 'false', :optional => true
       boolean_node :third_party_checkout_integration, 'ThirdPartyCheckoutIntegration', 'true', 'false', :optional => true
-      boolean_node :express_opt_out, 'ExpressOptOut', 'true', 'false', :optional => true
       object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
-      object_node :express_details, 'ExpressDetails', :class => ExpressDetails, :optional => true
       object_node :seller_contact_details, 'SellerContactDetails', :class => Address, :optional => true
       numeric_node :total_question_count, 'TotalQuestionCount', :optional => true
       boolean_node :proxy_item, 'ProxyItem', 'true', 'false', :optional => true
@@ -267,6 +262,8 @@ module Ebay # :nodoc:
       object_node :business_seller_details, 'BusinessSellerDetails', :class => BusinessSellerDetails, :optional => true
       money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
       object_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => BuyerRequirementDetails, :optional => true
+      object_node :return_policy, 'ReturnPolicy', :class => ReturnPolicy, :optional => true
+      value_array_node :payment_allowed_sites, 'PaymentAllowedSite', :default_value => []
     end
   end
 end

@@ -11,6 +11,7 @@ module Ebay # :nodoc:
     #  boolean_node :paid, 'Paid', 'true', 'false', :optional => true
     #  text_node :listing_type, 'ListingType', :optional => true
     #  object_node :shipment, 'Shipment', :class => Shipment, :optional => true
+    #  text_node :order_id, 'OrderID', :optional => true
     class CompleteSale < Abstract
       include XML::Mapping
       include Initializer
@@ -22,6 +23,7 @@ module Ebay # :nodoc:
       boolean_node :paid, 'Paid', 'true', 'false', :optional => true
       text_node :listing_type, 'ListingType', :optional => true
       object_node :shipment, 'Shipment', :class => Shipment, :optional => true
+      text_node :order_id, 'OrderID', :optional => true
     end
   end
 end

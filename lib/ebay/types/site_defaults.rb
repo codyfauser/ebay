@@ -1,5 +1,6 @@
 require 'ebay/types/listing_duration_reference'
 require 'ebay/types/listing_enhancement_duration_reference'
+require 'ebay/types/store_owner_extended_listing_durations'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -15,7 +16,6 @@ module Ebay # :nodoc:
     #  boolean_node :value_pack_enabled, 'ValuePackEnabled', 'true', 'false', :optional => true
     #  boolean_node :pro_pack_plus_enabled, 'ProPackPlusEnabled', 'true', 'false', :optional => true
     #  text_node :ad_format_enabled, 'AdFormatEnabled', :optional => true
-    #  text_node :digital_delivery_enabled, 'DigitalDeliveryEnabled', :optional => true
     #  boolean_node :best_offer_counter_enabled, 'BestOfferCounterEnabled', 'true', 'false', :optional => true
     #  boolean_node :best_offer_auto_decline_enabled, 'BestOfferAutoDeclineEnabled', 'true', 'false', :optional => true
     #  boolean_node :local_market_speciality_subscription, 'LocalMarketSpecialitySubscription', 'true', 'false', :optional => true
@@ -52,6 +52,7 @@ module Ebay # :nodoc:
     #  boolean_node :cross_border_trade_australia_enabled, 'CrossBorderTradeAustraliaEnabled', 'true', 'false', :optional => true
     #  boolean_node :paypal_buyer_protection_enabled, 'PayPalBuyerProtectionEnabled', 'true', 'false', :optional => true
     #  boolean_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', 'true', 'false', :optional => true
+    #  text_node :in_escrow_workflow_timeline, 'INEscrowWorkflowTimeline', :optional => true
     #  boolean_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', 'true', 'false', :optional => true
     #  array_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationReference, :default_value => []
     #  boolean_node :paypal_required, 'PayPalRequired', 'true', 'false', :optional => true
@@ -91,6 +92,19 @@ module Ebay # :nodoc:
     #  text_node :regular_subscription, 'RegularSubscription', :optional => true
     #  text_node :premium_subscription, 'PremiumSubscription', :optional => true
     #  text_node :non_subscription, 'NonSubscription', :optional => true
+    #  boolean_node :paypal_required_for_store_owner, 'PayPalRequiredForStoreOwner', 'true', 'false', :optional => true
+    #  boolean_node :revise_quantity_allowed, 'ReviseQuantityAllowed', 'true', 'false', :optional => true
+    #  boolean_node :revise_price_allowed, 'RevisePriceAllowed', 'true', 'false', :optional => true
+    #  boolean_node :store_owner_extended_listing_durations_enabled, 'StoreOwnerExtendedListingDurationsEnabled', 'true', 'false', :optional => true
+    #  array_node :store_owner_extended_listing_durations, 'StoreOwnerExtendedListingDurations', :class => StoreOwnerExtendedListingDurations, :default_value => []
+    #  boolean_node :return_policy_enabled, 'ReturnPolicyEnabled', 'true', 'false', :optional => true
+    #  boolean_node :handling_time_enabled, 'HandlingTimeEnabled', 'true', 'false', :optional => true
+    #  money_node :max_flat_shipping_cost, 'MaxFlatShippingCost', :optional => true
+    #  boolean_node :max_flat_shipping_cost_cbt_exempt, 'MaxFlatShippingCostCBTExempt', 'true', 'false', :optional => true
+    #  money_node :group1_max_flat_shipping_cost, 'Group1MaxFlatShippingCost', :optional => true
+    #  money_node :group2_max_flat_shipping_cost, 'Group2MaxFlatShippingCost', :optional => true
+    #  money_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :optional => true
+    #  value_array_node :payment_methods, 'PaymentMethod', :default_value => []
     class SiteDefaults
       include XML::Mapping
       include Initializer
@@ -106,7 +120,6 @@ module Ebay # :nodoc:
       boolean_node :value_pack_enabled, 'ValuePackEnabled', 'true', 'false', :optional => true
       boolean_node :pro_pack_plus_enabled, 'ProPackPlusEnabled', 'true', 'false', :optional => true
       text_node :ad_format_enabled, 'AdFormatEnabled', :optional => true
-      text_node :digital_delivery_enabled, 'DigitalDeliveryEnabled', :optional => true
       boolean_node :best_offer_counter_enabled, 'BestOfferCounterEnabled', 'true', 'false', :optional => true
       boolean_node :best_offer_auto_decline_enabled, 'BestOfferAutoDeclineEnabled', 'true', 'false', :optional => true
       boolean_node :local_market_speciality_subscription, 'LocalMarketSpecialitySubscription', 'true', 'false', :optional => true
@@ -143,6 +156,7 @@ module Ebay # :nodoc:
       boolean_node :cross_border_trade_australia_enabled, 'CrossBorderTradeAustraliaEnabled', 'true', 'false', :optional => true
       boolean_node :paypal_buyer_protection_enabled, 'PayPalBuyerProtectionEnabled', 'true', 'false', :optional => true
       boolean_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', 'true', 'false', :optional => true
+      text_node :in_escrow_workflow_timeline, 'INEscrowWorkflowTimeline', :optional => true
       boolean_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', 'true', 'false', :optional => true
       array_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationReference, :default_value => []
       boolean_node :paypal_required, 'PayPalRequired', 'true', 'false', :optional => true
@@ -182,6 +196,19 @@ module Ebay # :nodoc:
       text_node :regular_subscription, 'RegularSubscription', :optional => true
       text_node :premium_subscription, 'PremiumSubscription', :optional => true
       text_node :non_subscription, 'NonSubscription', :optional => true
+      boolean_node :paypal_required_for_store_owner, 'PayPalRequiredForStoreOwner', 'true', 'false', :optional => true
+      boolean_node :revise_quantity_allowed, 'ReviseQuantityAllowed', 'true', 'false', :optional => true
+      boolean_node :revise_price_allowed, 'RevisePriceAllowed', 'true', 'false', :optional => true
+      boolean_node :store_owner_extended_listing_durations_enabled, 'StoreOwnerExtendedListingDurationsEnabled', 'true', 'false', :optional => true
+      array_node :store_owner_extended_listing_durations, 'StoreOwnerExtendedListingDurations', :class => StoreOwnerExtendedListingDurations, :default_value => []
+      boolean_node :return_policy_enabled, 'ReturnPolicyEnabled', 'true', 'false', :optional => true
+      boolean_node :handling_time_enabled, 'HandlingTimeEnabled', 'true', 'false', :optional => true
+      money_node :max_flat_shipping_cost, 'MaxFlatShippingCost', :optional => true
+      boolean_node :max_flat_shipping_cost_cbt_exempt, 'MaxFlatShippingCostCBTExempt', 'true', 'false', :optional => true
+      money_node :group1_max_flat_shipping_cost, 'Group1MaxFlatShippingCost', :optional => true
+      money_node :group2_max_flat_shipping_cost, 'Group2MaxFlatShippingCost', :optional => true
+      money_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :optional => true
+      value_array_node :payment_methods, 'PaymentMethod', :default_value => []
     end
   end
 end

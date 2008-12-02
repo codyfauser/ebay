@@ -9,7 +9,6 @@ require 'ebay/types/basic_upgrade_pack_enabled_definition'
 require 'ebay/types/value_pack_enabled_definition'
 require 'ebay/types/pro_pack_plus_enabled_definition'
 require 'ebay/types/ad_format_enabled_definition'
-require 'ebay/types/digital_delivery_enabled_definition'
 require 'ebay/types/best_offer_counter_enabled_definition'
 require 'ebay/types/best_offer_auto_decline_enabled_definition'
 require 'ebay/types/local_market_speciality_subscription_definition'
@@ -48,6 +47,7 @@ require 'ebay/types/paypal_buyer_protection_enabled_definition'
 require 'ebay/types/buyer_guarantee_enabled_definition'
 require 'ebay/types/combined_fixed_price_treatment_enabled_definition'
 require 'ebay/types/listing_enhancement_duration_definition'
+require 'ebay/types/in_escrow_workflow_timeline_definition'
 require 'ebay/types/paypal_required_definition'
 require 'ebay/types/ebay_motors_pro_ad_format_enabled_definition'
 require 'ebay/types/ebay_motors_pro_contact_by_phone_enabled_definition'
@@ -55,11 +55,11 @@ require 'ebay/types/ebay_motors_pro_phone_count_definition'
 require 'ebay/types/ebay_motors_pro_contact_by_address_enabled_definition'
 require 'ebay/types/ebay_motors_pro_street_count_definition'
 require 'ebay/types/ebay_motors_pro_company_name_enabled_definition'
-require 'ebay/types/ebay_motors_pro_contact_by_email_enabled_defintion'
+require 'ebay/types/ebay_motors_pro_contact_by_email_enabled_definition'
 require 'ebay/types/ebay_motors_pro_best_offer_enabled_definition'
-require 'ebay/types/ebay_motors_pro_auto_accept_enabled_defintion'
-require 'ebay/types/ebay_motors_pro_auto_decline_enabled_defintion'
-require 'ebay/types/ebay_motors_pro_payment_method_check_out_enabled_defintion'
+require 'ebay/types/ebay_motors_pro_auto_accept_enabled_definition'
+require 'ebay/types/ebay_motors_pro_auto_decline_enabled_definition'
+require 'ebay/types/ebay_motors_pro_payment_method_check_out_enabled_definition'
 require 'ebay/types/ebay_motors_pro_shipping_method_enabled_definition'
 require 'ebay/types/ebay_motors_pro_counter_offer_enabled_definition'
 require 'ebay/types/ebay_motors_pro_seller_contact_details_enabled_definition'
@@ -69,11 +69,11 @@ require 'ebay/types/local_market_phone_count_definition'
 require 'ebay/types/local_market_contact_by_address_enabled_definition'
 require 'ebay/types/local_market_street_count_definition'
 require 'ebay/types/local_market_company_name_enabled_definition'
-require 'ebay/types/local_market_contact_by_email_enabled_defintion'
+require 'ebay/types/local_market_contact_by_email_enabled_definition'
 require 'ebay/types/local_market_best_offer_enabled_definition'
-require 'ebay/types/local_market_auto_accept_enabled_defintion'
-require 'ebay/types/local_market_auto_decline_enabled_defintion'
-require 'ebay/types/local_market_payment_method_check_out_enabled_defintion'
+require 'ebay/types/local_market_auto_accept_enabled_definition'
+require 'ebay/types/local_market_auto_decline_enabled_definition'
+require 'ebay/types/local_market_payment_method_check_out_enabled_definition'
 require 'ebay/types/local_market_shipping_method_enabled_definition'
 require 'ebay/types/local_market_counter_offer_enabled_definition'
 require 'ebay/types/local_market_seller_contact_details_enabled_definition'
@@ -85,6 +85,19 @@ require 'ebay/types/speciality_subscription_definition'
 require 'ebay/types/regular_subscription_definition'
 require 'ebay/types/premium_subscription_definition'
 require 'ebay/types/non_subscription_definition'
+require 'ebay/types/return_policy_enabled_definition'
+require 'ebay/types/handling_time_enabled_definition'
+require 'ebay/types/paypal_required_for_store_owner_definition'
+require 'ebay/types/revise_quantity_allowed_definition'
+require 'ebay/types/revise_price_allowed_definition'
+require 'ebay/types/store_owner_extended_listing_durations_enabled_definition'
+require 'ebay/types/store_owner_extended_listing_durations_definition'
+require 'ebay/types/payment_method_definition'
+require 'ebay/types/group1_max_flat_shipping_cost_definition'
+require 'ebay/types/group2_max_flat_shipping_cost_definition'
+require 'ebay/types/group3_max_flat_shipping_cost_definition'
+require 'ebay/types/max_flat_shipping_cost_cbt_exempt_definition'
+require 'ebay/types/max_flat_shipping_cost_definition'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -100,7 +113,6 @@ module Ebay # :nodoc:
     #  object_node :value_pack_enabled, 'ValuePackEnabled', :class => ValuePackEnabledDefinition, :optional => true
     #  object_node :pro_pack_plus_enabled, 'ProPackPlusEnabled', :class => ProPackPlusEnabledDefinition, :optional => true
     #  object_node :ad_format_enabled, 'AdFormatEnabled', :class => AdFormatEnabledDefinition, :optional => true
-    #  object_node :digital_delivery_enabled, 'DigitalDeliveryEnabled', :class => DigitalDeliveryEnabledDefinition, :optional => true
     #  object_node :best_offer_counter_enabled, 'BestOfferCounterEnabled', :class => BestOfferCounterEnabledDefinition, :optional => true
     #  object_node :best_offer_auto_decline_enabled, 'BestOfferAutoDeclineEnabled', :class => BestOfferAutoDeclineEnabledDefinition, :optional => true
     #  object_node :local_market_speciality_subscription, 'LocalMarketSpecialitySubscription', :class => LocalMarketSpecialitySubscriptionDefinition, :optional => true
@@ -139,6 +151,7 @@ module Ebay # :nodoc:
     #  object_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', :class => BuyerGuaranteeEnabledDefinition, :optional => true
     #  object_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', :class => CombinedFixedPriceTreatmentEnabledDefinition, :optional => true
     #  object_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationDefinition, :optional => true
+    #  object_node :in_escrow_workflow_timeline, 'INEscrowWorkflowTimeline', :class => INEscrowWorkflowTimelineDefinition, :optional => true
     #  object_node :paypal_required, 'PayPalRequired', :class => PayPalRequiredDefinition, :optional => true
     #  object_node :ebay_motors_pro_ad_format_enabled, 'eBayMotorsProAdFormatEnabled', :class => EBayMotorsProAdFormatEnabledDefinition, :optional => true
     #  object_node :ebay_motors_pro_contact_by_phone_enabled, 'eBayMotorsProContactByPhoneEnabled', :class => EBayMotorsProContactByPhoneEnabledDefinition, :optional => true
@@ -146,11 +159,11 @@ module Ebay # :nodoc:
     #  object_node :ebay_motors_pro_contact_by_address_enabled, 'eBayMotorsProContactByAddressEnabled', :class => EBayMotorsProContactByAddressEnabledDefinition, :optional => true
     #  object_node :ebay_motors_pro_street_count, 'eBayMotorsProStreetCount', :class => EBayMotorsProStreetCountDefinition, :optional => true
     #  object_node :ebay_motors_pro_company_name_enabled, 'eBayMotorsProCompanyNameEnabled', :class => EBayMotorsProCompanyNameEnabledDefinition, :optional => true
-    #  object_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', :class => EBayMotorsProContactByEmailEnabledDefintion, :optional => true
+    #  object_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', :class => EBayMotorsProContactByEmailEnabledDefinition, :optional => true
     #  object_node :ebay_motors_pro_best_offer_enabled, 'eBayMotorsProBestOfferEnabled', :class => EBayMotorsProBestOfferEnabledDefinition, :optional => true
-    #  object_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', :class => EBayMotorsProAutoAcceptEnabledDefintion, :optional => true
-    #  object_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', :class => EBayMotorsProAutoDeclineEnabledDefintion, :optional => true
-    #  object_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :class => EBayMotorsProPaymentMethodCheckOutEnabledDefintion, :optional => true
+    #  object_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', :class => EBayMotorsProAutoAcceptEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', :class => EBayMotorsProAutoDeclineEnabledDefinition, :optional => true
+    #  object_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :class => EBayMotorsProPaymentMethodCheckOutEnabledDefinition, :optional => true
     #  object_node :ebay_motors_pro_shipping_method_enabled, 'eBayMotorsProShippingMethodEnabled', :class => EBayMotorsProShippingMethodEnabledDefinition, :optional => true
     #  object_node :ebay_motors_pro_counter_offer_enabled, 'eBayMotorsProCounterOfferEnabled', :class => EBayMotorsProCounterOfferEnabledDefinition, :optional => true
     #  object_node :ebay_motors_pro_seller_contact_details_enabled, 'eBayMotorsProSellerContactDetailsEnabled', :class => EBayMotorsProSellerContactDetailsEnabledDefinition, :optional => true
@@ -160,11 +173,11 @@ module Ebay # :nodoc:
     #  object_node :local_market_contact_by_address_enabled, 'LocalMarketContactByAddressEnabled', :class => LocalMarketContactByAddressEnabledDefinition, :optional => true
     #  object_node :local_market_street_count, 'LocalMarketStreetCount', :class => LocalMarketStreetCountDefinition, :optional => true
     #  object_node :local_market_company_name_enabled, 'LocalMarketCompanyNameEnabled', :class => LocalMarketCompanyNameEnabledDefinition, :optional => true
-    #  object_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', :class => LocalMarketContactByEmailEnabledDefintion, :optional => true
+    #  object_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', :class => LocalMarketContactByEmailEnabledDefinition, :optional => true
     #  object_node :local_market_best_offer_enabled, 'LocalMarketBestOfferEnabled', :class => LocalMarketBestOfferEnabledDefinition, :optional => true
-    #  object_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', :class => LocalMarketAutoAcceptEnabledDefintion, :optional => true
-    #  object_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', :class => LocalMarketAutoDeclineEnabledDefintion, :optional => true
-    #  object_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :class => LocalMarketPaymentMethodCheckOutEnabledDefintion, :optional => true
+    #  object_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', :class => LocalMarketAutoAcceptEnabledDefinition, :optional => true
+    #  object_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', :class => LocalMarketAutoDeclineEnabledDefinition, :optional => true
+    #  object_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :class => LocalMarketPaymentMethodCheckOutEnabledDefinition, :optional => true
     #  object_node :local_market_shipping_method_enabled, 'LocalMarketShippingMethodEnabled', :class => LocalMarketShippingMethodEnabledDefinition, :optional => true
     #  object_node :local_market_counter_offer_enabled, 'LocalMarketCounterOfferEnabled', :class => LocalMarketCounterOfferEnabledDefinition, :optional => true
     #  object_node :local_market_seller_contact_details_enabled, 'LocalMarketSellerContactDetailsEnabled', :class => LocalMarketSellerContactDetailsEnabledDefinition, :optional => true
@@ -176,6 +189,19 @@ module Ebay # :nodoc:
     #  object_node :regular_subscription, 'RegularSubscription', :class => RegularSubscriptionDefinition, :optional => true
     #  object_node :premium_subscription, 'PremiumSubscription', :class => PremiumSubscriptionDefinition, :optional => true
     #  object_node :non_subscription, 'NonSubscription', :class => NonSubscriptionDefinition, :optional => true
+    #  object_node :return_policy_enabled, 'ReturnPolicyEnabled', :class => ReturnPolicyEnabledDefinition, :optional => true
+    #  object_node :handling_time_enabled, 'HandlingTimeEnabled', :class => HandlingTimeEnabledDefinition, :optional => true
+    #  object_node :paypal_required_for_store_owner, 'PayPalRequiredForStoreOwner', :class => PayPalRequiredForStoreOwnerDefinition, :optional => true
+    #  object_node :revise_quantity_allowed, 'ReviseQuantityAllowed', :class => ReviseQuantityAllowedDefinition, :optional => true
+    #  object_node :revise_price_allowed, 'RevisePriceAllowed', :class => RevisePriceAllowedDefinition, :optional => true
+    #  object_node :store_owner_extended_listing_durations_enabled, 'StoreOwnerExtendedListingDurationsEnabled', :class => StoreOwnerExtendedListingDurationsEnabledDefinition, :optional => true
+    #  object_node :store_owner_extended_listing_durations, 'StoreOwnerExtendedListingDurations', :class => StoreOwnerExtendedListingDurationsDefinition, :optional => true
+    #  object_node :payment_method, 'PaymentMethod', :class => PaymentMethodDefinition, :optional => true
+    #  object_node :group1_max_flat_shipping_cost, 'Group1MaxFlatShippingCost', :class => Group1MaxFlatShippingCostDefinition, :optional => true
+    #  object_node :group2_max_flat_shipping_cost, 'Group2MaxFlatShippingCost', :class => Group2MaxFlatShippingCostDefinition, :optional => true
+    #  object_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :class => Group3MaxFlatShippingCostDefinition, :optional => true
+    #  object_node :max_flat_shipping_cost_cbt_exempt, 'MaxFlatShippingCostCBTExempt', :class => MaxFlatShippingCostCBTExemptDefinition, :optional => true
+    #  object_node :max_flat_shipping_cost, 'MaxFlatShippingCost', :class => MaxFlatShippingCostDefinition, :optional => true
     class FeatureDefinitions
       include XML::Mapping
       include Initializer
@@ -191,7 +217,6 @@ module Ebay # :nodoc:
       object_node :value_pack_enabled, 'ValuePackEnabled', :class => ValuePackEnabledDefinition, :optional => true
       object_node :pro_pack_plus_enabled, 'ProPackPlusEnabled', :class => ProPackPlusEnabledDefinition, :optional => true
       object_node :ad_format_enabled, 'AdFormatEnabled', :class => AdFormatEnabledDefinition, :optional => true
-      object_node :digital_delivery_enabled, 'DigitalDeliveryEnabled', :class => DigitalDeliveryEnabledDefinition, :optional => true
       object_node :best_offer_counter_enabled, 'BestOfferCounterEnabled', :class => BestOfferCounterEnabledDefinition, :optional => true
       object_node :best_offer_auto_decline_enabled, 'BestOfferAutoDeclineEnabled', :class => BestOfferAutoDeclineEnabledDefinition, :optional => true
       object_node :local_market_speciality_subscription, 'LocalMarketSpecialitySubscription', :class => LocalMarketSpecialitySubscriptionDefinition, :optional => true
@@ -230,6 +255,7 @@ module Ebay # :nodoc:
       object_node :buyer_guarantee_enabled, 'BuyerGuaranteeEnabled', :class => BuyerGuaranteeEnabledDefinition, :optional => true
       object_node :combined_fixed_price_treatment_enabled, 'CombinedFixedPriceTreatmentEnabled', :class => CombinedFixedPriceTreatmentEnabledDefinition, :optional => true
       object_node :gallery_featured_durations, 'GalleryFeaturedDurations', :class => ListingEnhancementDurationDefinition, :optional => true
+      object_node :in_escrow_workflow_timeline, 'INEscrowWorkflowTimeline', :class => INEscrowWorkflowTimelineDefinition, :optional => true
       object_node :paypal_required, 'PayPalRequired', :class => PayPalRequiredDefinition, :optional => true
       object_node :ebay_motors_pro_ad_format_enabled, 'eBayMotorsProAdFormatEnabled', :class => EBayMotorsProAdFormatEnabledDefinition, :optional => true
       object_node :ebay_motors_pro_contact_by_phone_enabled, 'eBayMotorsProContactByPhoneEnabled', :class => EBayMotorsProContactByPhoneEnabledDefinition, :optional => true
@@ -237,11 +263,11 @@ module Ebay # :nodoc:
       object_node :ebay_motors_pro_contact_by_address_enabled, 'eBayMotorsProContactByAddressEnabled', :class => EBayMotorsProContactByAddressEnabledDefinition, :optional => true
       object_node :ebay_motors_pro_street_count, 'eBayMotorsProStreetCount', :class => EBayMotorsProStreetCountDefinition, :optional => true
       object_node :ebay_motors_pro_company_name_enabled, 'eBayMotorsProCompanyNameEnabled', :class => EBayMotorsProCompanyNameEnabledDefinition, :optional => true
-      object_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', :class => EBayMotorsProContactByEmailEnabledDefintion, :optional => true
+      object_node :ebay_motors_pro_contact_by_email_enabled, 'eBayMotorsProContactByEmailEnabled', :class => EBayMotorsProContactByEmailEnabledDefinition, :optional => true
       object_node :ebay_motors_pro_best_offer_enabled, 'eBayMotorsProBestOfferEnabled', :class => EBayMotorsProBestOfferEnabledDefinition, :optional => true
-      object_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', :class => EBayMotorsProAutoAcceptEnabledDefintion, :optional => true
-      object_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', :class => EBayMotorsProAutoDeclineEnabledDefintion, :optional => true
-      object_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :class => EBayMotorsProPaymentMethodCheckOutEnabledDefintion, :optional => true
+      object_node :ebay_motors_pro_auto_accept_enabled, 'eBayMotorsProAutoAcceptEnabled', :class => EBayMotorsProAutoAcceptEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_auto_decline_enabled, 'eBayMotorsProAutoDeclineEnabled', :class => EBayMotorsProAutoDeclineEnabledDefinition, :optional => true
+      object_node :ebay_motors_pro_payment_method_check_out_enabled, 'eBayMotorsProPaymentMethodCheckOutEnabled', :class => EBayMotorsProPaymentMethodCheckOutEnabledDefinition, :optional => true
       object_node :ebay_motors_pro_shipping_method_enabled, 'eBayMotorsProShippingMethodEnabled', :class => EBayMotorsProShippingMethodEnabledDefinition, :optional => true
       object_node :ebay_motors_pro_counter_offer_enabled, 'eBayMotorsProCounterOfferEnabled', :class => EBayMotorsProCounterOfferEnabledDefinition, :optional => true
       object_node :ebay_motors_pro_seller_contact_details_enabled, 'eBayMotorsProSellerContactDetailsEnabled', :class => EBayMotorsProSellerContactDetailsEnabledDefinition, :optional => true
@@ -251,11 +277,11 @@ module Ebay # :nodoc:
       object_node :local_market_contact_by_address_enabled, 'LocalMarketContactByAddressEnabled', :class => LocalMarketContactByAddressEnabledDefinition, :optional => true
       object_node :local_market_street_count, 'LocalMarketStreetCount', :class => LocalMarketStreetCountDefinition, :optional => true
       object_node :local_market_company_name_enabled, 'LocalMarketCompanyNameEnabled', :class => LocalMarketCompanyNameEnabledDefinition, :optional => true
-      object_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', :class => LocalMarketContactByEmailEnabledDefintion, :optional => true
+      object_node :local_market_contact_by_email_enabled, 'LocalMarketContactByEmailEnabled', :class => LocalMarketContactByEmailEnabledDefinition, :optional => true
       object_node :local_market_best_offer_enabled, 'LocalMarketBestOfferEnabled', :class => LocalMarketBestOfferEnabledDefinition, :optional => true
-      object_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', :class => LocalMarketAutoAcceptEnabledDefintion, :optional => true
-      object_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', :class => LocalMarketAutoDeclineEnabledDefintion, :optional => true
-      object_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :class => LocalMarketPaymentMethodCheckOutEnabledDefintion, :optional => true
+      object_node :local_market_auto_accept_enabled, 'LocalMarketAutoAcceptEnabled', :class => LocalMarketAutoAcceptEnabledDefinition, :optional => true
+      object_node :local_market_auto_decline_enabled, 'LocalMarketAutoDeclineEnabled', :class => LocalMarketAutoDeclineEnabledDefinition, :optional => true
+      object_node :local_market_payment_method_check_out_enabled, 'LocalMarketPaymentMethodCheckOutEnabled', :class => LocalMarketPaymentMethodCheckOutEnabledDefinition, :optional => true
       object_node :local_market_shipping_method_enabled, 'LocalMarketShippingMethodEnabled', :class => LocalMarketShippingMethodEnabledDefinition, :optional => true
       object_node :local_market_counter_offer_enabled, 'LocalMarketCounterOfferEnabled', :class => LocalMarketCounterOfferEnabledDefinition, :optional => true
       object_node :local_market_seller_contact_details_enabled, 'LocalMarketSellerContactDetailsEnabled', :class => LocalMarketSellerContactDetailsEnabledDefinition, :optional => true
@@ -267,6 +293,19 @@ module Ebay # :nodoc:
       object_node :regular_subscription, 'RegularSubscription', :class => RegularSubscriptionDefinition, :optional => true
       object_node :premium_subscription, 'PremiumSubscription', :class => PremiumSubscriptionDefinition, :optional => true
       object_node :non_subscription, 'NonSubscription', :class => NonSubscriptionDefinition, :optional => true
+      object_node :return_policy_enabled, 'ReturnPolicyEnabled', :class => ReturnPolicyEnabledDefinition, :optional => true
+      object_node :handling_time_enabled, 'HandlingTimeEnabled', :class => HandlingTimeEnabledDefinition, :optional => true
+      object_node :paypal_required_for_store_owner, 'PayPalRequiredForStoreOwner', :class => PayPalRequiredForStoreOwnerDefinition, :optional => true
+      object_node :revise_quantity_allowed, 'ReviseQuantityAllowed', :class => ReviseQuantityAllowedDefinition, :optional => true
+      object_node :revise_price_allowed, 'RevisePriceAllowed', :class => RevisePriceAllowedDefinition, :optional => true
+      object_node :store_owner_extended_listing_durations_enabled, 'StoreOwnerExtendedListingDurationsEnabled', :class => StoreOwnerExtendedListingDurationsEnabledDefinition, :optional => true
+      object_node :store_owner_extended_listing_durations, 'StoreOwnerExtendedListingDurations', :class => StoreOwnerExtendedListingDurationsDefinition, :optional => true
+      object_node :payment_method, 'PaymentMethod', :class => PaymentMethodDefinition, :optional => true
+      object_node :group1_max_flat_shipping_cost, 'Group1MaxFlatShippingCost', :class => Group1MaxFlatShippingCostDefinition, :optional => true
+      object_node :group2_max_flat_shipping_cost, 'Group2MaxFlatShippingCost', :class => Group2MaxFlatShippingCostDefinition, :optional => true
+      object_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :class => Group3MaxFlatShippingCostDefinition, :optional => true
+      object_node :max_flat_shipping_cost_cbt_exempt, 'MaxFlatShippingCostCBTExempt', :class => MaxFlatShippingCostCBTExemptDefinition, :optional => true
+      object_node :max_flat_shipping_cost, 'MaxFlatShippingCost', :class => MaxFlatShippingCostDefinition, :optional => true
     end
   end
 end

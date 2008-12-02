@@ -29,6 +29,7 @@ module Ebay # :nodoc:
     #  time_node :refund_granted_time, 'RefundGrantedTime', :optional => true
     #  time_node :refund_requested_time, 'RefundRequestedTime', :optional => true
     #  text_node :status, 'Status', :optional => true
+    #  time_node :shipped_time, 'ShippedTime', :optional => true
     class Shipment
       include XML::Mapping
       include Initializer
@@ -57,6 +58,7 @@ module Ebay # :nodoc:
       time_node :refund_granted_time, 'RefundGrantedTime', :optional => true
       time_node :refund_requested_time, 'RefundRequestedTime', :optional => true
       text_node :status, 'Status', :optional => true
+      time_node :shipped_time, 'ShippedTime', :optional => true
     end
   end
 end

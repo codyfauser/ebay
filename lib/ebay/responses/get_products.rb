@@ -14,6 +14,7 @@ module Ebay # :nodoc:
     #  array_node :products, 'Product', :class => CatalogProduct, :default_value => []
     #  array_node :items, 'ItemArray', 'Item', :class => Item, :default_value => []
     #  object_node :buying_guide_details, 'BuyingGuideDetails', :class => BuyingGuideDetails, :optional => true
+    #  boolean_node :duplicate_items, 'DuplicateItems', 'true', 'false', :optional => true
     class GetProducts < Abstract
       include XML::Mapping
       include Initializer
@@ -26,6 +27,7 @@ module Ebay # :nodoc:
       array_node :products, 'Product', :class => CatalogProduct, :default_value => []
       array_node :items, 'ItemArray', 'Item', :class => Item, :default_value => []
       object_node :buying_guide_details, 'BuyingGuideDetails', :class => BuyingGuideDetails, :optional => true
+      boolean_node :duplicate_items, 'DuplicateItems', 'true', 'false', :optional => true
     end
   end
 end

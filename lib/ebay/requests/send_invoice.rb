@@ -18,6 +18,7 @@ module Ebay # :nodoc:
     #  text_node :checkout_instructions, 'CheckoutInstructions', :optional => true
     #  boolean_node :email_copy_to_seller, 'EmailCopyToSeller', 'true', 'false', :optional => true
     #  money_node :cod_cost, 'CODCost', :optional => true
+    #  text_node :sku, 'SKU', :optional => true
     class SendInvoice < Abstract
       include XML::Mapping
       include Initializer
@@ -35,6 +36,7 @@ module Ebay # :nodoc:
       text_node :checkout_instructions, 'CheckoutInstructions', :optional => true
       boolean_node :email_copy_to_seller, 'EmailCopyToSeller', 'true', 'false', :optional => true
       money_node :cod_cost, 'CODCost', :optional => true
+      text_node :sku, 'SKU', :optional => true
     end
   end
 end

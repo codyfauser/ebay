@@ -14,6 +14,12 @@ module Ebay # :nodoc:
       PaymentPendingWithPaisaPay = 'PaymentPendingWithPaisaPay'
       PaidWithPaisaPay = 'PaidWithPaisaPay'
       PaymentPending = 'PaymentPending'
+      PaymentPendingWithPaisaPayEscrow = 'PaymentPendingWithPaisaPayEscrow'
+      PaidWithPaisaPayEscrow = 'PaidWithPaisaPayEscrow'
+      PaisaPayNotPaid = 'PaisaPayNotPaid'
+      Refunded = 'Refunded'
+      WaitingForCODPayment = 'WaitingForCODPayment'
+      PaidCOD = 'PaidCOD'
     end
   end
 end

@@ -46,7 +46,6 @@ module Ebay # :nodoc:
     #  numeric_node :quantity, 'Quantity', :optional => true
     #  text_node :quantity_operator, 'QuantityOperator', :optional => true
     #  text_node :seller_business_type, 'SellerBusinessType', :optional => true
-    #  boolean_node :digital_delivery, 'DigitalDelivery', 'true', 'false', :optional => true
     #  boolean_node :include_condition, 'IncludeCondition', 'true', 'false', :optional => true
     #  boolean_node :include_feedback, 'IncludeFeedback', 'true', 'false', :optional => true
     #  numeric_node :charity_id, 'CharityID', :optional => true
@@ -57,6 +56,7 @@ module Ebay # :nodoc:
     #  text_node :item_condition, 'ItemCondition', :optional => true
     #  object_node :ticket_finder, 'TicketFinder', :class => TicketDetails, :optional => true
     #  object_node :group, 'Group', :class => Group, :optional => true
+    #  boolean_node :hide_duplicate_items, 'HideDuplicateItems', 'true', 'false', :optional => true
     class GetSearchResults < Abstract
       include XML::Mapping
       include Initializer
@@ -92,7 +92,6 @@ module Ebay # :nodoc:
       numeric_node :quantity, 'Quantity', :optional => true
       text_node :quantity_operator, 'QuantityOperator', :optional => true
       text_node :seller_business_type, 'SellerBusinessType', :optional => true
-      boolean_node :digital_delivery, 'DigitalDelivery', 'true', 'false', :optional => true
       boolean_node :include_condition, 'IncludeCondition', 'true', 'false', :optional => true
       boolean_node :include_feedback, 'IncludeFeedback', 'true', 'false', :optional => true
       numeric_node :charity_id, 'CharityID', :optional => true
@@ -103,6 +102,7 @@ module Ebay # :nodoc:
       text_node :item_condition, 'ItemCondition', :optional => true
       object_node :ticket_finder, 'TicketFinder', :class => TicketDetails, :optional => true
       object_node :group, 'Group', :class => Group, :optional => true
+      boolean_node :hide_duplicate_items, 'HideDuplicateItems', 'true', 'false', :optional => true
     end
   end
 end

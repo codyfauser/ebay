@@ -16,6 +16,7 @@ module Ebay # :nodoc:
     #  object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
     #  object_node :buying_guide_details, 'BuyingGuideDetails', :class => BuyingGuideDetails, :optional => true
     #  array_node :related_search_keywords, 'RelatedSearchKeywordArray', :class => RelatedSearchKeywordArray, :default_value => []
+    #  boolean_node :duplicate_items, 'DuplicateItems', 'true', 'false', :optional => true
     class GetCategoryListings < Abstract
       include XML::Mapping
       include Initializer
@@ -29,6 +30,7 @@ module Ebay # :nodoc:
       object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
       object_node :buying_guide_details, 'BuyingGuideDetails', :class => BuyingGuideDetails, :optional => true
       array_node :related_search_keywords, 'RelatedSearchKeywordArray', :class => RelatedSearchKeywordArray, :default_value => []
+      boolean_node :duplicate_items, 'DuplicateItems', 'true', 'false', :optional => true
     end
   end
 end

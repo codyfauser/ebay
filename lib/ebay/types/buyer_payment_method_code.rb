@@ -28,6 +28,8 @@ module Ebay # :nodoc:
       ELV = 'ELV'
       PaisaPayEscrow = 'PaisaPayEscrow'
       PaisaPayEscrowEMI = 'PaisaPayEscrowEMI'
+      ProPay = 'ProPay'
+      PayOnPickup = 'PayOnPickup'
     end
   end
 end

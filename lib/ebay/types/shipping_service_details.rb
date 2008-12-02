@@ -1,3 +1,5 @@
+require 'ebay/types/announcement_message'
+require 'ebay/types/shipping_service_package_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -17,6 +19,11 @@ module Ebay # :nodoc:
     #  boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
     #  value_array_node :shipping_carriers, 'ShippingCarrier', :default_value => []
     #  boolean_node :cod_service, 'CODService', 'true', 'false', :optional => true
+    #  array_node :deprecation_details, 'DeprecationDetails', :class => AnnouncementMessage, :default_value => []
+    #  numeric_node :mapped_to_shipping_service_id, 'MappedToShippingServiceID', :optional => true
+    #  text_node :cost_group_flat, 'CostGroupFlat', :optional => true
+    #  array_node :shipping_service_package_details, 'ShippingServicePackageDetails', :class => ShippingServicePackageDetails, :default_value => []
+    #  boolean_node :weight_required, 'WeightRequired', 'true', 'false', :optional => true
     class ShippingServiceDetails
       include XML::Mapping
       include Initializer
@@ -36,6 +43,11 @@ module Ebay # :nodoc:
       boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
       value_array_node :shipping_carriers, 'ShippingCarrier', :default_value => []
       boolean_node :cod_service, 'CODService', 'true', 'false', :optional => true
+      array_node :deprecation_details, 'DeprecationDetails', :class => AnnouncementMessage, :default_value => []
+      numeric_node :mapped_to_shipping_service_id, 'MappedToShippingServiceID', :optional => true
+      text_node :cost_group_flat, 'CostGroupFlat', :optional => true
+      array_node :shipping_service_package_details, 'ShippingServicePackageDetails', :class => ShippingServicePackageDetails, :default_value => []
+      boolean_node :weight_required, 'WeightRequired', 'true', 'false', :optional => true
     end
   end
 end

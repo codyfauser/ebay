@@ -24,6 +24,7 @@ module Ebay # :nodoc:
     #  text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
     #  numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
     #  object_node :group, 'Group', :class => Group, :optional => true
+    #  boolean_node :hide_duplicate_items, 'HideDuplicateItems', 'true', 'false', :optional => true
     class GetCategoryListings < Abstract
       include XML::Mapping
       include Initializer
@@ -46,6 +47,7 @@ module Ebay # :nodoc:
       text_node :local_search_postal_code, 'LocalSearchPostalCode', :optional => true
       numeric_node :max_related_search_keywords, 'MaxRelatedSearchKeywords', :optional => true
       object_node :group, 'Group', :class => Group, :optional => true
+      boolean_node :hide_duplicate_items, 'HideDuplicateItems', 'true', 'false', :optional => true
     end
   end
 end

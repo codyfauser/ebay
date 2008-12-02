@@ -1,4 +1,3 @@
-require 'ebay/types/express_item_requirements'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -22,8 +21,6 @@ module Ebay # :nodoc:
     #  money_node :minimum_best_offer_price, 'MinimumBestOfferPrice', :optional => true
     #  text_node :minimum_best_offer_message, 'MinimumBestOfferMessage', :optional => true
     #  text_node :local_listing_distance, 'LocalListingDistance', :optional => true
-    #  boolean_node :express_listing, 'ExpressListing', 'true', 'false', :optional => true
-    #  object_node :express_item_requirements, 'ExpressItemRequirements', :class => ExpressItemRequirements, :optional => true
     #  text_node :tcr_original_item_id, 'TCROriginalItemID', :optional => true
     #  text_node :view_item_url_for_natural_search, 'ViewItemURLForNaturalSearch', :optional => true
     #  boolean_node :pay_per_lead_enabled, 'PayPerLeadEnabled', 'true', 'false', :optional => true
@@ -51,8 +48,6 @@ module Ebay # :nodoc:
       money_node :minimum_best_offer_price, 'MinimumBestOfferPrice', :optional => true
       text_node :minimum_best_offer_message, 'MinimumBestOfferMessage', :optional => true
       text_node :local_listing_distance, 'LocalListingDistance', :optional => true
-      boolean_node :express_listing, 'ExpressListing', 'true', 'false', :optional => true
-      object_node :express_item_requirements, 'ExpressItemRequirements', :class => ExpressItemRequirements, :optional => true
       text_node :tcr_original_item_id, 'TCROriginalItemID', :optional => true
       text_node :view_item_url_for_natural_search, 'ViewItemURLForNaturalSearch', :optional => true
       boolean_node :pay_per_lead_enabled, 'PayPerLeadEnabled', 'true', 'false', :optional => true

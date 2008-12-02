@@ -22,6 +22,10 @@ module Ebay # :nodoc:
     #  object_node :response_details, 'ResponseDetails', :class => MyMessagesResponseDetails, :optional => true
     #  object_node :forward_details, 'ForwardDetails', :class => MyMessagesForwardDetails, :optional => true
     #  object_node :folder, 'Folder', :class => MyMessagesFolder, :optional => true
+    #  text_node :content, 'Content', :optional => true
+    #  text_node :message_type, 'MessageType', :optional => true
+    #  text_node :listing_status, 'ListingStatus', :optional => true
+    #  text_node :question_type, 'QuestionType', :optional => true
     class MyMessagesMessage
       include XML::Mapping
       include Initializer
@@ -43,6 +47,10 @@ module Ebay # :nodoc:
       object_node :response_details, 'ResponseDetails', :class => MyMessagesResponseDetails, :optional => true
       object_node :forward_details, 'ForwardDetails', :class => MyMessagesForwardDetails, :optional => true
       object_node :folder, 'Folder', :class => MyMessagesFolder, :optional => true
+      text_node :content, 'Content', :optional => true
+      text_node :message_type, 'MessageType', :optional => true
+      text_node :listing_status, 'ListingStatus', :optional => true
+      text_node :question_type, 'QuestionType', :optional => true
     end
   end
 end

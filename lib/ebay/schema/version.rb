@@ -1,5 +1,5 @@
 module Ebay
   module Schema
-    VERSION = 569
+    VERSION = 591
   end
 end

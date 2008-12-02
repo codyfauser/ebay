@@ -7,6 +7,8 @@ module Ebay # :nodoc:
       NewlyListed = 'NewlyListed'
       LowestPriced = 'LowestPriced'
       HighestPriced = 'HighestPriced'
+      LowestPricedPlusShipping = 'LowestPricedPlusShipping'
+      HighestPricedPlusShipping = 'HighestPricedPlusShipping'
     end
   end
 end

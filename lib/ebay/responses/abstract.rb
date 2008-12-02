@@ -19,6 +19,7 @@ module Ebay # :nodoc:
     #  text_node :notification_signature, 'NotificationSignature', :optional => true
     #  text_node :hard_expiration_warning, 'HardExpirationWarning', :optional => true
     #  object_node :bot_block, 'BotBlock', :class => BotBlockResponse, :optional => true
+    #  text_node :external_user_data, 'ExternalUserData', :optional => true
     class Abstract < Base
       include XML::Mapping
       include Initializer
@@ -37,6 +38,7 @@ module Ebay # :nodoc:
       text_node :notification_signature, 'NotificationSignature', :optional => true
       text_node :hard_expiration_warning, 'HardExpirationWarning', :optional => true
       object_node :bot_block, 'BotBlock', :class => BotBlockResponse, :optional => true
+      text_node :external_user_data, 'ExternalUserData', :optional => true
     end
   end
 end

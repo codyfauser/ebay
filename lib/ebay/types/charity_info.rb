@@ -12,6 +12,7 @@ module Ebay # :nodoc:
     #  text_node :charity_id, 'CharityID', :optional => true
     #  text_node :logo_url_selling, 'LogoURLSelling', :optional => true
     #  boolean_node :display_logo_selling, 'DisplayLogoSelling', 'true', 'false', :optional => true
+    #  boolean_node :display_name_in_checkout, 'DisplayNameInCheckout', 'true', 'false', :optional => true
     #  text_node :id, '@id', :optional => true
     class CharityInfo
       include XML::Mapping
@@ -27,6 +28,7 @@ module Ebay # :nodoc:
       text_node :charity_id, 'CharityID', :optional => true
       text_node :logo_url_selling, 'LogoURLSelling', :optional => true
       boolean_node :display_logo_selling, 'DisplayLogoSelling', 'true', 'false', :optional => true
+      boolean_node :display_name_in_checkout, 'DisplayNameInCheckout', 'true', 'false', :optional => true
       text_node :id, '@id', :optional => true
     end
   end

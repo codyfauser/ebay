@@ -17,7 +17,6 @@ module Ebay # :nodoc:
     #  boolean_node :eligible_checkout, 'EligibleCheckout', 'true', 'false', :optional => true
     #  boolean_node :no_preapproved_bidder_list, 'NoPreapprovedBidderList', 'true', 'false', :optional => true
     #  boolean_node :no_charity, 'NoCharity', 'true', 'false', :optional => true
-    #  boolean_node :no_digital_delivery, 'NoDigitalDelivery', 'true', 'false', :optional => true
     #  boolean_node :combined_shipping_discount, 'CombinedShippingDiscount', 'true', 'false', :optional => true
     #  boolean_node :ship_from_eligible_country, 'ShipFromEligibleCountry', 'true', 'false', :optional => true
     #  boolean_node :paypal_account_accepts_unconfirmed_address, 'PayPalAccountAcceptsUnconfirmedAddress', 'true', 'false', :optional => true
@@ -40,7 +39,6 @@ module Ebay # :nodoc:
       boolean_node :eligible_checkout, 'EligibleCheckout', 'true', 'false', :optional => true
       boolean_node :no_preapproved_bidder_list, 'NoPreapprovedBidderList', 'true', 'false', :optional => true
       boolean_node :no_charity, 'NoCharity', 'true', 'false', :optional => true
-      boolean_node :no_digital_delivery, 'NoDigitalDelivery', 'true', 'false', :optional => true
       boolean_node :combined_shipping_discount, 'CombinedShippingDiscount', 'true', 'false', :optional => true
       boolean_node :ship_from_eligible_country, 'ShipFromEligibleCountry', 'true', 'false', :optional => true
       boolean_node :paypal_account_accepts_unconfirmed_address, 'PayPalAccountAcceptsUnconfirmedAddress', 'true', 'false', :optional => true

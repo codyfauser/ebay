@@ -5,7 +5,8 @@ module Ebay # :nodoc:
     #  numeric_node :package_id, 'PackageID', :optional => true
     #  text_node :description, 'Description', :optional => true
     #  text_node :shipping_package, 'ShippingPackage', :optional => true
-    #  boolean_node :default, 'Default', 'true', 'false', :optional => true
+    #  boolean_node :default_value, 'DefaultValue', 'true', 'false', :optional => true
+    #  boolean_node :dimensions_supported, 'DimensionsSupported', 'true', 'false', :optional => true
     class ShippingPackageDetails
       include XML::Mapping
       include Initializer
@@ -13,7 +14,8 @@ module Ebay # :nodoc:
       numeric_node :package_id, 'PackageID', :optional => true
       text_node :description, 'Description', :optional => true
       text_node :shipping_package, 'ShippingPackage', :optional => true
-      boolean_node :default, 'Default', 'true', 'false', :optional => true
+      boolean_node :default_value, 'DefaultValue', 'true', 'false', :optional => true
+      boolean_node :dimensions_supported, 'DimensionsSupported', 'true', 'false', :optional => true
     end
   end
 end
