@@ -11,7 +11,7 @@ PKG_NAME = "ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
 PKG_FILES = FileList[
-  "lib/**/*", "test/**/*", "examples/**/*", "[A-Z]*", "rakefile", "init.rb"
+  "lib/**/*", "test/**/*", "examples/**/*", "[A-Z]*", "Rakefile", "init.rb"
 ].exclude(/~$|\.svn/)
 
 response_dir = File.join(File.dirname(__FILE__), 'test', 'fixtures', 'responses')
