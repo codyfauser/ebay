@@ -28,6 +28,9 @@ module Ebay # :nodoc:
       ELV = 'ELV'
       PaisaPayEscrow = 'PaisaPayEscrow'
       PaisaPayEscrowEMI = 'PaisaPayEscrowEMI'
+      IntegratedMerchantCreditCard = 'IntegratedMerchantCreditCard'
+      Moneybookers = 'Moneybookers'
+      Paymate = 'Paymate'
       ProPay = 'ProPay'
       PayOnPickup = 'PayOnPickup'
     end

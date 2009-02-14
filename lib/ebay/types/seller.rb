@@ -2,6 +2,7 @@ require 'ebay/types/address'
 require 'ebay/types/scheduling_info'
 require 'ebay/types/pro_stores_checkout_preference'
 require 'ebay/types/charity_affiliation_detail'
+require 'ebay/types/integrated_merchant_credit_card_info'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -31,6 +32,7 @@ module Ebay # :nodoc:
     #  numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
     #  array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
     #  numeric_node :transaction_percent, 'TransactionPercent', :optional => true
+    #  object_node :integrated_merchant_credit_card_info, 'IntegratedMerchantCreditCardInfo', :class => IntegratedMerchantCreditCardInfo, :optional => true
     class Seller
       include XML::Mapping
       include Initializer
@@ -60,6 +62,7 @@ module Ebay # :nodoc:
       numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
       array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
       numeric_node :transaction_percent, 'TransactionPercent', :optional => true
+      object_node :integrated_merchant_credit_card_info, 'IntegratedMerchantCreditCardInfo', :class => IntegratedMerchantCreditCardInfo, :optional => true
     end
   end
 end

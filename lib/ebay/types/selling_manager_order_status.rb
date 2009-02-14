@@ -17,6 +17,7 @@ module Ebay # :nodoc:
     #  time_node :paid_time, 'PaidTime', :optional => true
     #  time_node :last_email_sent_time, 'LastEmailSentTime', :optional => true
     #  time_node :seller_invoice_time, 'SellerInvoiceTime', :optional => true
+    #  boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
     class SellingManagerOrderStatus
       include XML::Mapping
       include Initializer
@@ -36,6 +37,7 @@ module Ebay # :nodoc:
       time_node :paid_time, 'PaidTime', :optional => true
       time_node :last_email_sent_time, 'LastEmailSentTime', :optional => true
       time_node :seller_invoice_time, 'SellerInvoiceTime', :optional => true
+      boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
     end
   end
 end

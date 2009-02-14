@@ -28,6 +28,7 @@ module Ebay # :nodoc:
     #  text_node :buyer_user_id, 'BuyerUserID', :optional => true
     #  time_node :paid_time, 'PaidTime', :optional => true
     #  time_node :shipped_time, 'ShippedTime', :optional => true
+    #  boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
     class Order
       include XML::Mapping
       include Initializer
@@ -52,6 +53,7 @@ module Ebay # :nodoc:
       text_node :buyer_user_id, 'BuyerUserID', :optional => true
       time_node :paid_time, 'PaidTime', :optional => true
       time_node :shipped_time, 'ShippedTime', :optional => true
+      boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
     end
   end
 end

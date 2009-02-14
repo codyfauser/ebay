@@ -19,6 +19,7 @@ module Ebay # :nodoc:
       UnitOfMeasurementDetails = 'UnitOfMeasurementDetails'
       ShippingPackageDetails = 'ShippingPackageDetails'
       ShippingCarrierDetails = 'ShippingCarrierDetails'
+      ListingStartPriceDetails = 'ListingStartPriceDetails'
       ReturnPolicyDetails = 'ReturnPolicyDetails'
     end
   end

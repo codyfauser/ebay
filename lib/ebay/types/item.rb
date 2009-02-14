@@ -147,6 +147,8 @@ module Ebay # :nodoc:
     #  object_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => BuyerRequirementDetails, :optional => true
     #  object_node :return_policy, 'ReturnPolicy', :class => ReturnPolicy, :optional => true
     #  value_array_node :payment_allowed_sites, 'PaymentAllowedSite', :default_value => []
+    #  text_node :inventory_tracking_method, 'InventoryTrackingMethod', :optional => true
+    #  boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -264,6 +266,8 @@ module Ebay # :nodoc:
       object_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => BuyerRequirementDetails, :optional => true
       object_node :return_policy, 'ReturnPolicy', :class => ReturnPolicy, :optional => true
       value_array_node :payment_allowed_sites, 'PaymentAllowedSite', :default_value => []
+      text_node :inventory_tracking_method, 'InventoryTrackingMethod', :optional => true
+      boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
     end
   end
 end

@@ -43,7 +43,6 @@ module Ebay # :nodoc:
     #  object_node :feedback_received, 'FeedbackReceived', :class => FeedbackInfo, :optional => true
     #  object_node :containing_order, 'ContainingOrder', :class => Order, :optional => true
     #  money_node :final_value_fee, 'FinalValueFee', :optional => true
-    #  text_node :transaction_platform, 'TransactionPlatform', :optional => true
     #  object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
     #  array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
     #  text_node :transaction_site_id, 'TransactionSiteID', :optional => true
@@ -87,7 +86,6 @@ module Ebay # :nodoc:
       object_node :feedback_received, 'FeedbackReceived', :class => FeedbackInfo, :optional => true
       object_node :containing_order, 'ContainingOrder', :class => Order, :optional => true
       money_node :final_value_fee, 'FinalValueFee', :optional => true
-      text_node :transaction_platform, 'TransactionPlatform', :optional => true
       object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
       array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
       text_node :transaction_site_id, 'TransactionSiteID', :optional => true

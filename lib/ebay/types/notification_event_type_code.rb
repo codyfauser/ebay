@@ -64,6 +64,8 @@ module Ebay # :nodoc:
       ItemsCanceled = 'ItemsCanceled'
       TokenRevocation = 'TokenRevocation'
       BulkDataExchangeJobCompleted = 'BulkDataExchangeJobCompleted'
+      ItemMarkedShipped = 'ItemMarkedShipped'
+      ItemMarkedPaid = 'ItemMarkedPaid'
     end
   end
 end
