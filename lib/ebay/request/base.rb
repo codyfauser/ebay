@@ -11,11 +11,7 @@ module Ebay
       end
 
       def requester_credentials
-        if %w( SetReturnURL GetReturnURL GetRuName FetchToken ).include?(call_name)
-          XMLRequesterCredentials.new(:username => username, :password => password)
-        else
-          XMLRequesterCredentials.new(:ebay_auth_token => auth_token)
-        end
+        XMLRequesterCredentials.new(:ebay_auth_token => auth_token)
       end
     end
   end

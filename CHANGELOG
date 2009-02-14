@@ -1,3 +1,4 @@
+* Remove support for deprecated calls requiring the username and password
 * Make the add_item example more fully featured
 * Lock onto Money v1.7.1 as Money v2.0.0 has an issue with == and non-money objects. Add a test to detect the condition
 * Update to schema version 591
