@@ -1,3 +1,5 @@
+# Copy this file and paste it into a new file called config.rb
+# Then, replace the values where appropriate below and save.
 Ebay::Api.configure do |ebay|
   ebay.auth_token = 'YOUR AUTH TOKEN HERE'
   ebay.dev_id = 'YOUR DEVELOPER ID HERE'
