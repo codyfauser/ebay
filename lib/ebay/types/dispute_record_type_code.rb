@@ -5,6 +5,7 @@ module Ebay # :nodoc:
       extend Enumeration
       UnpaidItem = 'UnpaidItem'
       ItemNotReceived = 'ItemNotReceived'
+      HalfDispute = 'HalfDispute'
     end
   end
 end

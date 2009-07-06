@@ -10,6 +10,7 @@ module Ebay # :nodoc:
     #  object_node :bid_list, 'BidList', :class => ItemListCustomization, :optional => true
     #  object_node :deleted_from_sold_list, 'DeletedFromSoldList', :class => ItemListCustomization, :optional => true
     #  object_node :deleted_from_unsold_list, 'DeletedFromUnsoldList', :class => ItemListCustomization, :optional => true
+    #  object_node :selling_summary, 'SellingSummary', :class => ItemListCustomization, :optional => true
     class GetMyeBaySelling < Abstract
       include XML::Mapping
       include Initializer
@@ -21,6 +22,7 @@ module Ebay # :nodoc:
       object_node :bid_list, 'BidList', :class => ItemListCustomization, :optional => true
       object_node :deleted_from_sold_list, 'DeletedFromSoldList', :class => ItemListCustomization, :optional => true
       object_node :deleted_from_unsold_list, 'DeletedFromUnsoldList', :class => ItemListCustomization, :optional => true
+      object_node :selling_summary, 'SellingSummary', :class => ItemListCustomization, :optional => true
     end
   end
 end

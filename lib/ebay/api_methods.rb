@@ -41,14 +41,6 @@ module Ebay
     def add_items(params = {})
       commit(Ebay::Requests::AddItems, params)
     end
-    # Builds Ebay::Requests#AddLiveAuctionItem
-    #
-    # Returns Ebay::Responses#AddLiveAuctionItem
-    #
-    # Official Documentation for AddLiveAuctionItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_AddLiveAuctionItem.html]
-    def add_live_auction_item(params = {})
-      commit(Ebay::Requests::AddLiveAuctionItem, params)
-    end
     # Builds Ebay::Requests#AddMemberMessageAAQToPartner
     #
     # Returns Ebay::Responses#AddMemberMessageAAQToPartner
@@ -136,14 +128,6 @@ module Ebay
     # Official Documentation for AddTransactionConfirmationItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_AddTransactionConfirmationItem.html]
     def add_transaction_confirmation_item(params = {})
       commit(Ebay::Requests::AddTransactionConfirmationItem, params)
-    end
-    # Builds Ebay::Requests#ApproveLiveAuctionBidders
-    #
-    # Returns Ebay::Responses#ApproveLiveAuctionBidders
-    #
-    # Official Documentation for ApproveLiveAuctionBidders[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ApproveLiveAuctionBidders.html]
-    def approve_live_auction_bidders(params = {})
-      commit(Ebay::Requests::ApproveLiveAuctionBidders, params)
     end
     # Builds Ebay::Requests#CompleteSale
     #
@@ -456,22 +440,6 @@ module Ebay
     # Official Documentation for GetItemsAwaitingFeedback[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetItemsAwaitingFeedback.html]
     def get_items_awaiting_feedback(params = {})
       commit(Ebay::Requests::GetItemsAwaitingFeedback, params)
-    end
-    # Builds Ebay::Requests#GetLiveAuctionBidders
-    #
-    # Returns Ebay::Responses#GetLiveAuctionBidders
-    #
-    # Official Documentation for GetLiveAuctionBidders[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetLiveAuctionBidders.html]
-    def get_live_auction_bidders(params = {})
-      commit(Ebay::Requests::GetLiveAuctionBidders, params)
-    end
-    # Builds Ebay::Requests#GetLiveAuctionCatalogDetails
-    #
-    # Returns Ebay::Responses#GetLiveAuctionCatalogDetails
-    #
-    # Official Documentation for GetLiveAuctionCatalogDetails[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetLiveAuctionCatalogDetails.html]
-    def get_live_auction_catalog_details(params = {})
-      commit(Ebay::Requests::GetLiveAuctionCatalogDetails, params)
     end
     # Builds Ebay::Requests#GetMemberMessages
     #
@@ -1024,14 +992,6 @@ module Ebay
     # Official Documentation for ReviseItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ReviseItem.html]
     def revise_item(params = {})
       commit(Ebay::Requests::ReviseItem, params)
-    end
-    # Builds Ebay::Requests#ReviseLiveAuctionItem
-    #
-    # Returns Ebay::Responses#ReviseLiveAuctionItem
-    #
-    # Official Documentation for ReviseLiveAuctionItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ReviseLiveAuctionItem.html]
-    def revise_live_auction_item(params = {})
-      commit(Ebay::Requests::ReviseLiveAuctionItem, params)
     end
     # Builds Ebay::Requests#ReviseMyMessages
     #

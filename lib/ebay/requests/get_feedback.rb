@@ -8,6 +8,7 @@ module Ebay # :nodoc:
     #  text_node :item_id, 'ItemID', :optional => true
     #  text_node :transaction_id, 'TransactionID', :optional => true
     #  value_array_node :comment_types, 'CommentType', :default_value => []
+    #  text_node :feedback_type, 'FeedbackType', :optional => true
     #  object_node :pagination, 'Pagination', :class => Pagination, :optional => true
     class GetFeedback < Abstract
       include XML::Mapping
@@ -18,6 +19,7 @@ module Ebay # :nodoc:
       text_node :item_id, 'ItemID', :optional => true
       text_node :transaction_id, 'TransactionID', :optional => true
       value_array_node :comment_types, 'CommentType', :default_value => []
+      text_node :feedback_type, 'FeedbackType', :optional => true
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true
     end
   end

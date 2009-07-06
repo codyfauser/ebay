@@ -16,6 +16,7 @@ module Ebay # :nodoc:
     #  object_node :bid_assistant_list, 'BidAssistantList', :class => BidAssistantList, :optional => true
     #  object_node :deleted_from_won_list, 'DeletedFromWonList', :class => ItemListCustomization, :optional => true
     #  object_node :deleted_from_lost_list, 'DeletedFromLostList', :class => ItemListCustomization, :optional => true
+    #  object_node :buying_summary, 'BuyingSummary', :class => ItemListCustomization, :optional => true
     class GetMyeBayBuying < Abstract
       include XML::Mapping
       include Initializer
@@ -31,6 +32,7 @@ module Ebay # :nodoc:
       object_node :bid_assistant_list, 'BidAssistantList', :class => BidAssistantList, :optional => true
       object_node :deleted_from_won_list, 'DeletedFromWonList', :class => ItemListCustomization, :optional => true
       object_node :deleted_from_lost_list, 'DeletedFromLostList', :class => ItemListCustomization, :optional => true
+      object_node :buying_summary, 'BuyingSummary', :class => ItemListCustomization, :optional => true
     end
   end
 end

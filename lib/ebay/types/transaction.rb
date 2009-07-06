@@ -52,6 +52,7 @@ module Ebay # :nodoc:
     #  text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
     #  text_node :paisa_pay_id, 'PaisaPayID', :optional => true
     #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
+    #  text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -95,6 +96,7 @@ module Ebay # :nodoc:
       text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
       text_node :paisa_pay_id, 'PaisaPayID', :optional => true
       money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
+      text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
     end
   end
 end

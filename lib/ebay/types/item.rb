@@ -17,7 +17,6 @@ require 'ebay/types/shipping_details'
 require 'ebay/types/storefront'
 require 'ebay/types/vat_details'
 require 'ebay/types/best_offer_details'
-require 'ebay/types/live_auction_details'
 require 'ebay/types/search_details'
 require 'ebay/types/external_product_id'
 require 'ebay/types/picture_details'
@@ -64,7 +63,6 @@ module Ebay # :nodoc:
     #  text_node :listing_type, 'ListingType', :optional => true
     #  text_node :location, 'Location', :optional => true
     #  numeric_node :lot_size, 'LotSize', :optional => true
-    #  boolean_node :now_and_new, 'NowAndNew', 'true', 'false', :optional => true
     #  text_node :partner_code, 'PartnerCode', :optional => true
     #  text_node :partner_name, 'PartnerName', :optional => true
     #  value_array_node :payment_methods, 'PaymentMethods', :default_value => []
@@ -98,7 +96,6 @@ module Ebay # :nodoc:
     #  numeric_node :hit_count, 'HitCount', :optional => true
     #  boolean_node :disable_buyer_requirements, 'DisableBuyerRequirements', 'true', 'false', :optional => true
     #  object_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :optional => true
-    #  object_node :live_auction_details, 'LiveAuctionDetails', :class => LiveAuctionDetails, :optional => true
     #  boolean_node :location_defaulted, 'LocationDefaulted', 'true', 'false', :optional => true
     #  boolean_node :third_party_checkout, 'ThirdPartyCheckout', 'true', 'false', :optional => true
     #  boolean_node :use_tax_table, 'UseTaxTable', 'true', 'false', :optional => true
@@ -183,7 +180,6 @@ module Ebay # :nodoc:
       text_node :listing_type, 'ListingType', :optional => true
       text_node :location, 'Location', :optional => true
       numeric_node :lot_size, 'LotSize', :optional => true
-      boolean_node :now_and_new, 'NowAndNew', 'true', 'false', :optional => true
       text_node :partner_code, 'PartnerCode', :optional => true
       text_node :partner_name, 'PartnerName', :optional => true
       value_array_node :payment_methods, 'PaymentMethods', :default_value => []
@@ -217,7 +213,6 @@ module Ebay # :nodoc:
       numeric_node :hit_count, 'HitCount', :optional => true
       boolean_node :disable_buyer_requirements, 'DisableBuyerRequirements', 'true', 'false', :optional => true
       object_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :optional => true
-      object_node :live_auction_details, 'LiveAuctionDetails', :class => LiveAuctionDetails, :optional => true
       boolean_node :location_defaulted, 'LocationDefaulted', 'true', 'false', :optional => true
       boolean_node :third_party_checkout, 'ThirdPartyCheckout', 'true', 'false', :optional => true
       boolean_node :use_tax_table, 'UseTaxTable', 'true', 'false', :optional => true

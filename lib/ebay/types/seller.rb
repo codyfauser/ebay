@@ -13,7 +13,6 @@ module Ebay # :nodoc:
     #  boolean_node :checkout_enabled, 'CheckoutEnabled', 'true', 'false'
     #  boolean_node :cip_bank_account_stored, 'CIPBankAccountStored', 'true', 'false'
     #  boolean_node :good_standing, 'GoodStanding', 'true', 'false'
-    #  boolean_node :live_auction_authorized, 'LiveAuctionAuthorized', 'true', 'false'
     #  text_node :merchandizing_pref, 'MerchandizingPref', :optional => true
     #  boolean_node :qualifies_for_b2_bvat, 'QualifiesForB2BVAT', 'true', 'false'
     #  text_node :seller_guarantee_level, 'SellerGuaranteeLevel', :optional => true
@@ -43,7 +42,6 @@ module Ebay # :nodoc:
       boolean_node :checkout_enabled, 'CheckoutEnabled', 'true', 'false'
       boolean_node :cip_bank_account_stored, 'CIPBankAccountStored', 'true', 'false'
       boolean_node :good_standing, 'GoodStanding', 'true', 'false'
-      boolean_node :live_auction_authorized, 'LiveAuctionAuthorized', 'true', 'false'
       text_node :merchandizing_pref, 'MerchandizingPref', :optional => true
       boolean_node :qualifies_for_b2_bvat, 'QualifiesForB2BVAT', 'true', 'false'
       text_node :seller_guarantee_level, 'SellerGuaranteeLevel', :optional => true

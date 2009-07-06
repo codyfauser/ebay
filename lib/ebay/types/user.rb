@@ -46,6 +46,7 @@ module Ebay # :nodoc:
     #  boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
     #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
     #  boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
+    #  text_node :billing_email, 'BillingEmail', :optional => true
     class User
       include XML::Mapping
       include Initializer
@@ -89,6 +90,7 @@ module Ebay # :nodoc:
       boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
       numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
       boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
+      text_node :billing_email, 'BillingEmail', :optional => true
     end
   end
 end
