@@ -4,6 +4,7 @@ require 'ebay/types/power_seller_dashboard'
 require 'ebay/types/policy_compliance_dashboard'
 require 'ebay/types/buyer_satisfaction_dashboard'
 require 'ebay/types/seller_account_dashboard'
+require 'ebay/types/performance_dashboard'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -14,6 +15,7 @@ module Ebay # :nodoc:
     #  object_node :policy_compliance, 'PolicyCompliance', :class => PolicyComplianceDashboard, :optional => true
     #  object_node :buyer_satisfaction, 'BuyerSatisfaction', :class => BuyerSatisfactionDashboard, :optional => true
     #  object_node :seller_account, 'SellerAccount', :class => SellerAccountDashboard, :optional => true
+    #  array_node :performances, 'Performance', :class => PerformanceDashboard, :default_value => []
     class GetSellerDashboard < Abstract
       include XML::Mapping
       include Initializer
@@ -24,6 +26,7 @@ module Ebay # :nodoc:
       object_node :policy_compliance, 'PolicyCompliance', :class => PolicyComplianceDashboard, :optional => true
       object_node :buyer_satisfaction, 'BuyerSatisfaction', :class => BuyerSatisfactionDashboard, :optional => true
       object_node :seller_account, 'SellerAccount', :class => SellerAccountDashboard, :optional => true
+      array_node :performances, 'Performance', :class => PerformanceDashboard, :default_value => []
     end
   end
 end

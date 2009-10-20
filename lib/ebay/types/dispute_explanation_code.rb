@@ -16,6 +16,11 @@ module Ebay # :nodoc:
       BuyerNoLongerRegistered = 'BuyerNoLongerRegistered'
       OtherExplanation = 'OtherExplanation'
       Unspecified = 'Unspecified'
+      UPIAssistance = 'UPIAssistance'
+      BuyerPaymentNotReceivedOrCleared = 'BuyerPaymentNotReceivedOrCleared'
+      SellerDoesntShipToCountry = 'SellerDoesntShipToCountry'
+      BuyerNotPaid = 'BuyerNotPaid'
+      UPIAssistanceDisabled = 'UPIAssistanceDisabled'
     end
   end
 end

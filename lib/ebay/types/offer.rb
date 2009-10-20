@@ -19,6 +19,7 @@ module Ebay # :nodoc:
     #  numeric_node :bid_count, 'BidCount', :optional => true
     #  text_node :message, 'Message', :optional => true
     #  text_node :best_offer_id, 'BestOfferID', :optional => true
+    #  money_node :my_max_bid, 'MyMaxBid', :optional => true
     class Offer
       include XML::Mapping
       include Initializer
@@ -39,6 +40,7 @@ module Ebay # :nodoc:
       numeric_node :bid_count, 'BidCount', :optional => true
       text_node :message, 'Message', :optional => true
       text_node :best_offer_id, 'BestOfferID', :optional => true
+      money_node :my_max_bid, 'MyMaxBid', :optional => true
     end
   end
 end

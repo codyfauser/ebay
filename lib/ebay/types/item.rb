@@ -29,6 +29,8 @@ require 'ebay/types/item_policy_violation'
 require 'ebay/types/business_seller_details'
 require 'ebay/types/buyer_requirement_details'
 require 'ebay/types/return_policy'
+require 'ebay/types/variations'
+require 'ebay/types/item_compatibility'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -146,6 +148,9 @@ module Ebay # :nodoc:
     #  value_array_node :payment_allowed_sites, 'PaymentAllowedSite', :default_value => []
     #  text_node :inventory_tracking_method, 'InventoryTrackingMethod', :optional => true
     #  boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
+    #  object_node :variations, 'Variations', :class => Variations, :optional => true
+    #  array_node :item_compatibility_lists, 'ItemCompatibilityList', 'Compatibility', :class => ItemCompatibility, :default_value => []
+    #  numeric_node :item_compatibility_count, 'ItemCompatibilityCount', :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -263,6 +268,9 @@ module Ebay # :nodoc:
       value_array_node :payment_allowed_sites, 'PaymentAllowedSite', :default_value => []
       text_node :inventory_tracking_method, 'InventoryTrackingMethod', :optional => true
       boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
+      object_node :variations, 'Variations', :class => Variations, :optional => true
+      array_node :item_compatibility_lists, 'ItemCompatibilityList', 'Compatibility', :class => ItemCompatibility, :default_value => []
+      numeric_node :item_compatibility_count, 'ItemCompatibilityCount', :optional => true
     end
   end
 end

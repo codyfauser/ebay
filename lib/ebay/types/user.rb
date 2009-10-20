@@ -9,7 +9,6 @@ module Ebay # :nodoc:
     # == Attributes
     #  boolean_node :about_me_page, 'AboutMePage', 'true', 'false', :optional => true
     #  text_node :eias_token, 'EIASToken', :optional => true
-    #  text_node :rest_token, 'RESTToken', :optional => true
     #  text_node :email, 'Email', :optional => true
     #  numeric_node :feedback_score, 'FeedbackScore', :optional => true
     #  numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
@@ -47,13 +46,13 @@ module Ebay # :nodoc:
     #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
     #  boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
     #  text_node :billing_email, 'BillingEmail', :optional => true
+    #  boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false', :optional => true
     class User
       include XML::Mapping
       include Initializer
       root_element_name 'User'
       boolean_node :about_me_page, 'AboutMePage', 'true', 'false', :optional => true
       text_node :eias_token, 'EIASToken', :optional => true
-      text_node :rest_token, 'RESTToken', :optional => true
       text_node :email, 'Email', :optional => true
       numeric_node :feedback_score, 'FeedbackScore', :optional => true
       numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
@@ -91,6 +90,7 @@ module Ebay # :nodoc:
       numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
       boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
       text_node :billing_email, 'BillingEmail', :optional => true
+      boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false', :optional => true
     end
   end
 end

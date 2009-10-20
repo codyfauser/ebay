@@ -18,6 +18,8 @@ module Ebay # :nodoc:
     #  array_node :warranty_durations, 'WarrantyDuration', :class => WarrantyDurationDetails, :default_value => []
     #  boolean_node :ean, 'EAN', 'true', 'false', :optional => true
     #  array_node :shipping_cost_paid_bies, 'ShippingCostPaidBy', :class => ShippingCostPaidByDetails, :default_value => []
+    #  text_node :detail_version, 'DetailVersion', :optional => true
+    #  time_node :update_time, 'UpdateTime', :optional => true
     class ReturnPolicyDetails
       include XML::Mapping
       include Initializer
@@ -31,6 +33,8 @@ module Ebay # :nodoc:
       array_node :warranty_durations, 'WarrantyDuration', :class => WarrantyDurationDetails, :default_value => []
       boolean_node :ean, 'EAN', 'true', 'false', :optional => true
       array_node :shipping_cost_paid_bies, 'ShippingCostPaidBy', :class => ShippingCostPaidByDetails, :default_value => []
+      text_node :detail_version, 'DetailVersion', :optional => true
+      time_node :update_time, 'UpdateTime', :optional => true
     end
   end
 end

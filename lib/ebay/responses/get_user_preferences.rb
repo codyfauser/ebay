@@ -5,6 +5,8 @@ require 'ebay/types/seller_payment_preferences'
 require 'ebay/types/seller_favorite_item_preferences'
 require 'ebay/types/end_of_auction_email_preferences'
 require 'ebay/types/pro_stores_checkout_preference'
+require 'ebay/types/unpaid_item_assistance_preferences'
+require 'ebay/types/seller_exclude_ship_to_location_preferences'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -17,6 +19,8 @@ module Ebay # :nodoc:
     #  object_node :end_of_auction_email_preferences, 'EndOfAuctionEmailPreferences', :class => EndOfAuctionEmailPreferences, :optional => true
     #  boolean_node :email_shipment_tracking_number_preference, 'EmailShipmentTrackingNumberPreference', 'true', 'false', :optional => true
     #  object_node :pro_stores_preference, 'ProStoresPreference', :class => ProStoresCheckoutPreference, :optional => true
+    #  object_node :unpaid_item_assistance_preferences, 'UnpaidItemAssistancePreferences', :class => UnpaidItemAssistancePreferences, :optional => true
+    #  array_node :seller_exclude_ship_to_location_preferences, 'SellerExcludeShipToLocationPreferences', :class => SellerExcludeShipToLocationPreferences, :default_value => []
     class GetUserPreferences < Abstract
       include XML::Mapping
       include Initializer
@@ -29,6 +33,8 @@ module Ebay # :nodoc:
       object_node :end_of_auction_email_preferences, 'EndOfAuctionEmailPreferences', :class => EndOfAuctionEmailPreferences, :optional => true
       boolean_node :email_shipment_tracking_number_preference, 'EmailShipmentTrackingNumberPreference', 'true', 'false', :optional => true
       object_node :pro_stores_preference, 'ProStoresPreference', :class => ProStoresCheckoutPreference, :optional => true
+      object_node :unpaid_item_assistance_preferences, 'UnpaidItemAssistancePreferences', :class => UnpaidItemAssistancePreferences, :optional => true
+      array_node :seller_exclude_ship_to_location_preferences, 'SellerExcludeShipToLocationPreferences', :class => SellerExcludeShipToLocationPreferences, :default_value => []
     end
   end
 end

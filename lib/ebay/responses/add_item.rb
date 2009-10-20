@@ -9,6 +9,7 @@ module Ebay # :nodoc:
     #  array_node :fees, 'Fees', 'Fee', :class => Fee, :default_value => []
     #  text_node :category_id, 'CategoryID', :optional => true
     #  text_node :category2_id, 'Category2ID', :optional => true
+    #  value_array_node :discount_reasons, 'DiscountReason', :default_value => []
     class AddItem < Abstract
       include XML::Mapping
       include Initializer
@@ -19,6 +20,7 @@ module Ebay # :nodoc:
       array_node :fees, 'Fees', 'Fee', :class => Fee, :default_value => []
       text_node :category_id, 'CategoryID', :optional => true
       text_node :category2_id, 'Category2ID', :optional => true
+      value_array_node :discount_reasons, 'DiscountReason', :default_value => []
     end
   end
 end

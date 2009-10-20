@@ -8,6 +8,8 @@ module Ebay # :nodoc:
     #  text_node :daylight_savings_label, 'DaylightSavingsLabel', :optional => true
     #  text_node :daylight_savings_offset, 'DaylightSavingsOffset', :optional => true
     #  boolean_node :daylight_savings_in_effect, 'DaylightSavingsInEffect', 'true', 'false', :optional => true
+    #  text_node :detail_version, 'DetailVersion', :optional => true
+    #  time_node :update_time, 'UpdateTime', :optional => true
     class TimeZoneDetails
       include XML::Mapping
       include Initializer
@@ -18,6 +20,8 @@ module Ebay # :nodoc:
       text_node :daylight_savings_label, 'DaylightSavingsLabel', :optional => true
       text_node :daylight_savings_offset, 'DaylightSavingsOffset', :optional => true
       boolean_node :daylight_savings_in_effect, 'DaylightSavingsInEffect', 'true', 'false', :optional => true
+      text_node :detail_version, 'DetailVersion', :optional => true
+      time_node :update_time, 'UpdateTime', :optional => true
     end
   end
 end

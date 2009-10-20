@@ -9,6 +9,8 @@ module Ebay # :nodoc:
     #  text_node :query, 'Query', :optional => true
     #  text_node :correlation_id, 'CorrelationID', :optional => true
     #  text_node :deleted_field, 'DeletedField', :optional => true
+    #  boolean_node :exclude_relationships, 'ExcludeRelationships', 'true', 'false', :optional => true
+    #  boolean_node :include_confidence, 'IncludeConfidence', 'true', 'false', :optional => true
     class GetRecommendationsRequestContainer
       include XML::Mapping
       include Initializer
@@ -19,6 +21,8 @@ module Ebay # :nodoc:
       text_node :query, 'Query', :optional => true
       text_node :correlation_id, 'CorrelationID', :optional => true
       text_node :deleted_field, 'DeletedField', :optional => true
+      boolean_node :exclude_relationships, 'ExcludeRelationships', 'true', 'false', :optional => true
+      boolean_node :include_confidence, 'IncludeConfidence', 'true', 'false', :optional => true
     end
   end
 end

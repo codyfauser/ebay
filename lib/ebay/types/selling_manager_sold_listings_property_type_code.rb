@@ -52,6 +52,7 @@ module Ebay # :nodoc:
       CustomEmailTemplate18SendError = 'CustomEmailTemplate18SendError'
       CustomEmailTemplate19SendError = 'CustomEmailTemplate19SendError'
       CustomEmailTemplate20SendError = 'CustomEmailTemplate20SendError'
+      ResponseRequiredForReturnCase = 'ResponseRequiredForReturnCase'
     end
   end
 end

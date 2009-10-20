@@ -16,6 +16,10 @@ require 'ebay/types/shipping_package_details'
 require 'ebay/types/shipping_carrier_details'
 require 'ebay/types/return_policy_details'
 require 'ebay/types/listing_start_price_details'
+require 'ebay/types/site_buyer_requirement_details'
+require 'ebay/types/listing_feature_details'
+require 'ebay/types/variation_details'
+require 'ebay/types/exclude_shipping_location_details'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -38,6 +42,11 @@ module Ebay # :nodoc:
     #  array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
     #  object_node :return_policy_details, 'ReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
     #  array_node :listing_start_price_details, 'ListingStartPriceDetails', :class => ListingStartPriceDetails, :default_value => []
+    #  array_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => SiteBuyerRequirementDetails, :default_value => []
+    #  array_node :listing_feature_details, 'ListingFeatureDetails', :class => ListingFeatureDetails, :default_value => []
+    #  object_node :variation_details, 'VariationDetails', :class => VariationDetails, :optional => true
+    #  array_node :exclude_shipping_location_details, 'ExcludeShippingLocationDetails', :class => ExcludeShippingLocationDetails, :default_value => []
+    #  time_node :update_time, 'UpdateTime', :optional => true
     class GeteBayDetails < Abstract
       include XML::Mapping
       include Initializer
@@ -60,6 +69,11 @@ module Ebay # :nodoc:
       array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
       object_node :return_policy_details, 'ReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
       array_node :listing_start_price_details, 'ListingStartPriceDetails', :class => ListingStartPriceDetails, :default_value => []
+      array_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => SiteBuyerRequirementDetails, :default_value => []
+      array_node :listing_feature_details, 'ListingFeatureDetails', :class => ListingFeatureDetails, :default_value => []
+      object_node :variation_details, 'VariationDetails', :class => VariationDetails, :optional => true
+      array_node :exclude_shipping_location_details, 'ExcludeShippingLocationDetails', :class => ExcludeShippingLocationDetails, :default_value => []
+      time_node :update_time, 'UpdateTime', :optional => true
     end
   end
 end

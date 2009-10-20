@@ -3,7 +3,6 @@ module Ebay # :nodoc:
     class AuthTokenTypeCode
       extend Enumerable
       extend Enumeration
-      RESTToken = 'RESTToken'
       ClientAlertsToken = 'ClientAlertsToken'
     end
   end

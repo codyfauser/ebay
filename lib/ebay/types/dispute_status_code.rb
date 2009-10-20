@@ -22,6 +22,7 @@ module Ebay # :nodoc:
       ClaimPaid = 'ClaimPaid'
       ClaimResolved = 'ClaimResolved'
       ClaimSubmitted = 'ClaimSubmitted'
+      UnpaidItemOpened = 'UnpaidItemOpened'
     end
   end
 end

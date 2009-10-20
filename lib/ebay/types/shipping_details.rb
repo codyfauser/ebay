@@ -45,6 +45,8 @@ module Ebay # :nodoc:
     #  boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
     #  object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
     #  money_node :cod_cost, 'CODCost', :optional => true
+    #  text_node :exclude_ship_to_location, 'ExcludeShipToLocation', :optional => true
+    #  boolean_node :seller_exclude_ship_to_locations_preference, 'SellerExcludeShipToLocationsPreference', 'true', 'false', :optional => true
     class ShippingDetails
       include XML::Mapping
       include Initializer
@@ -83,6 +85,8 @@ module Ebay # :nodoc:
       boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
       object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
       money_node :cod_cost, 'CODCost', :optional => true
+      text_node :exclude_ship_to_location, 'ExcludeShipToLocation', :optional => true
+      boolean_node :seller_exclude_ship_to_locations_preference, 'SellerExcludeShipToLocationsPreference', 'true', 'false', :optional => true
     end
   end
 end

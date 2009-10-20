@@ -1,3 +1,4 @@
+require 'ebay/types/name_value_list'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -6,6 +7,8 @@ module Ebay # :nodoc:
     #  text_node :action, 'Action', :optional => true
     #  text_node :note_text, 'NoteText', :optional => true
     #  text_node :transaction_id, 'TransactionID', :optional => true
+    #  array_node :variation_specifics, 'VariationSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
+    #  text_node :sku, 'SKU', :optional => true
     class SetUserNotes < Abstract
       include XML::Mapping
       include Initializer
@@ -14,6 +17,8 @@ module Ebay # :nodoc:
       text_node :action, 'Action', :optional => true
       text_node :note_text, 'NoteText', :optional => true
       text_node :transaction_id, 'TransactionID', :optional => true
+      array_node :variation_specifics, 'VariationSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
+      text_node :sku, 'SKU', :optional => true
     end
   end
 end

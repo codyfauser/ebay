@@ -98,6 +98,13 @@ require 'ebay/types/group2_max_flat_shipping_cost_definition'
 require 'ebay/types/group3_max_flat_shipping_cost_definition'
 require 'ebay/types/max_flat_shipping_cost_cbt_exempt_definition'
 require 'ebay/types/max_flat_shipping_cost_definition'
+require 'ebay/types/variations_enabled_definition'
+require 'ebay/types/attribute_conversion_enabled_feature_definition'
+require 'ebay/types/free_gallery_plus_enabled_definition'
+require 'ebay/types/free_picture_pack_enabled_definition'
+require 'ebay/types/item_compatibility_enabled_definition'
+require 'ebay/types/max_item_compatibility_definition'
+require 'ebay/types/min_item_compatibility_definition'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -202,6 +209,13 @@ module Ebay # :nodoc:
     #  object_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :class => Group3MaxFlatShippingCostDefinition, :optional => true
     #  object_node :max_flat_shipping_cost_cbt_exempt, 'MaxFlatShippingCostCBTExempt', :class => MaxFlatShippingCostCBTExemptDefinition, :optional => true
     #  object_node :max_flat_shipping_cost, 'MaxFlatShippingCost', :class => MaxFlatShippingCostDefinition, :optional => true
+    #  object_node :variations_enabled, 'VariationsEnabled', :class => VariationsEnabledDefinition, :optional => true
+    #  object_node :attribute_conversion_enabled, 'AttributeConversionEnabled', :class => AttributeConversionEnabledFeatureDefinition, :optional => true
+    #  object_node :free_gallery_plus_enabled, 'FreeGalleryPlusEnabled', :class => FreeGalleryPlusEnabledDefinition, :optional => true
+    #  object_node :free_picture_pack_enabled, 'FreePicturePackEnabled', :class => FreePicturePackEnabledDefinition, :optional => true
+    #  object_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :class => ItemCompatibilityEnabledDefinition, :optional => true
+    #  object_node :max_item_compatibility, 'MaxItemCompatibility', :class => MaxItemCompatibilityDefinition, :optional => true
+    #  object_node :min_item_compatibility, 'MinItemCompatibility', :class => MinItemCompatibilityDefinition, :optional => true
     class FeatureDefinitions
       include XML::Mapping
       include Initializer
@@ -306,6 +320,13 @@ module Ebay # :nodoc:
       object_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :class => Group3MaxFlatShippingCostDefinition, :optional => true
       object_node :max_flat_shipping_cost_cbt_exempt, 'MaxFlatShippingCostCBTExempt', :class => MaxFlatShippingCostCBTExemptDefinition, :optional => true
       object_node :max_flat_shipping_cost, 'MaxFlatShippingCost', :class => MaxFlatShippingCostDefinition, :optional => true
+      object_node :variations_enabled, 'VariationsEnabled', :class => VariationsEnabledDefinition, :optional => true
+      object_node :attribute_conversion_enabled, 'AttributeConversionEnabled', :class => AttributeConversionEnabledFeatureDefinition, :optional => true
+      object_node :free_gallery_plus_enabled, 'FreeGalleryPlusEnabled', :class => FreeGalleryPlusEnabledDefinition, :optional => true
+      object_node :free_picture_pack_enabled, 'FreePicturePackEnabled', :class => FreePicturePackEnabledDefinition, :optional => true
+      object_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :class => ItemCompatibilityEnabledDefinition, :optional => true
+      object_node :max_item_compatibility, 'MaxItemCompatibility', :class => MaxItemCompatibilityDefinition, :optional => true
+      object_node :min_item_compatibility, 'MinItemCompatibility', :class => MinItemCompatibilityDefinition, :optional => true
     end
   end
 end

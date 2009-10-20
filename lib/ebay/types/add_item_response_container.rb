@@ -13,6 +13,7 @@ module Ebay # :nodoc:
     #  text_node :correlation_id, 'CorrelationID', :optional => true
     #  array_node :errors, 'Errors', :class => Error, :default_value => []
     #  text_node :message, 'Message', :optional => true
+    #  value_array_node :discount_reasons, 'DiscountReason', :default_value => []
     class AddItemResponseContainer
       include XML::Mapping
       include Initializer
@@ -26,6 +27,7 @@ module Ebay # :nodoc:
       text_node :correlation_id, 'CorrelationID', :optional => true
       array_node :errors, 'Errors', :class => Error, :default_value => []
       text_node :message, 'Message', :optional => true
+      value_array_node :discount_reasons, 'DiscountReason', :default_value => []
     end
   end
 end

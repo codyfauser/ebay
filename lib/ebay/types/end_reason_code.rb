@@ -8,6 +8,7 @@ module Ebay # :nodoc:
       Incorrect = 'Incorrect'
       OtherListingError = 'OtherListingError'
       SellToHighBidder = 'SellToHighBidder'
+      Sold = 'Sold'
     end
   end
 end

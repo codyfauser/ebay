@@ -105,6 +105,13 @@ module Ebay # :nodoc:
     #  money_node :group2_max_flat_shipping_cost, 'Group2MaxFlatShippingCost', :optional => true
     #  money_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :optional => true
     #  value_array_node :payment_methods, 'PaymentMethod', :default_value => []
+    #  boolean_node :variations_enabled, 'VariationsEnabled', 'true', 'false', :optional => true
+    #  text_node :attribute_conversion_enabled, 'AttributeConversionEnabled', :optional => true
+    #  boolean_node :free_gallery_plus_enabled, 'FreeGalleryPlusEnabled', 'true', 'false', :optional => true
+    #  boolean_node :free_picture_pack_enabled, 'FreePicturePackEnabled', 'true', 'false', :optional => true
+    #  text_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :optional => true
+    #  numeric_node :min_item_compatibility, 'MinItemCompatibility', :optional => true
+    #  numeric_node :max_item_compatibility, 'MaxItemCompatibility', :optional => true
     class SiteDefaults
       include XML::Mapping
       include Initializer
@@ -209,6 +216,13 @@ module Ebay # :nodoc:
       money_node :group2_max_flat_shipping_cost, 'Group2MaxFlatShippingCost', :optional => true
       money_node :group3_max_flat_shipping_cost, 'Group3MaxFlatShippingCost', :optional => true
       value_array_node :payment_methods, 'PaymentMethod', :default_value => []
+      boolean_node :variations_enabled, 'VariationsEnabled', 'true', 'false', :optional => true
+      text_node :attribute_conversion_enabled, 'AttributeConversionEnabled', :optional => true
+      boolean_node :free_gallery_plus_enabled, 'FreeGalleryPlusEnabled', 'true', 'false', :optional => true
+      boolean_node :free_picture_pack_enabled, 'FreePicturePackEnabled', 'true', 'false', :optional => true
+      text_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :optional => true
+      numeric_node :min_item_compatibility, 'MinItemCompatibility', :optional => true
+      numeric_node :max_item_compatibility, 'MaxItemCompatibility', :optional => true
     end
   end
 end

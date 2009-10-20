@@ -1,4 +1,5 @@
 require 'ebay/types/shipment'
+require 'ebay/types/variation'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -22,6 +23,7 @@ module Ebay # :nodoc:
     #  value_array_node :listed_ons, 'ListedOn', :default_value => []
     #  object_node :shipment, 'Shipment', :class => Shipment, :optional => true
     #  boolean_node :charity_listing, 'CharityListing', 'true', 'false', :optional => true
+    #  object_node :variation, 'Variation', :class => Variation, :optional => true
     class SellingManagerSoldTransaction
       include XML::Mapping
       include Initializer
@@ -45,6 +47,7 @@ module Ebay # :nodoc:
       value_array_node :listed_ons, 'ListedOn', :default_value => []
       object_node :shipment, 'Shipment', :class => Shipment, :optional => true
       boolean_node :charity_listing, 'CharityListing', 'true', 'false', :optional => true
+      object_node :variation, 'Variation', :class => Variation, :optional => true
     end
   end
 end

@@ -9,6 +9,7 @@ require 'ebay/types/feedback_info'
 require 'ebay/types/order'
 require 'ebay/types/listing_checkout_redirect_preference'
 require 'ebay/types/refund'
+require 'ebay/types/variation'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -52,6 +53,7 @@ module Ebay # :nodoc:
     #  text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
     #  text_node :paisa_pay_id, 'PaisaPayID', :optional => true
     #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
+    #  object_node :variation, 'Variation', :class => Variation, :optional => true
     #  text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
     class Transaction
       include XML::Mapping
@@ -96,6 +98,7 @@ module Ebay # :nodoc:
       text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
       text_node :paisa_pay_id, 'PaisaPayID', :optional => true
       money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
+      object_node :variation, 'Variation', :class => Variation, :optional => true
       text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
     end
   end

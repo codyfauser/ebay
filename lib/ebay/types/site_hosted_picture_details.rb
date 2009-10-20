@@ -9,6 +9,8 @@ module Ebay # :nodoc:
     #  text_node :full_url, 'FullURL', :optional => true
     #  text_node :base_url, 'BaseURL', :optional => true
     #  array_node :picture_set_members, 'PictureSetMember', :class => PictureSetMember, :default_value => []
+    #  text_node :external_picture_url, 'ExternalPictureURL', :optional => true
+    #  time_node :use_by_date, 'UseByDate', :optional => true
     class SiteHostedPictureDetails
       include XML::Mapping
       include Initializer
@@ -19,6 +21,8 @@ module Ebay # :nodoc:
       text_node :full_url, 'FullURL', :optional => true
       text_node :base_url, 'BaseURL', :optional => true
       array_node :picture_set_members, 'PictureSetMember', :class => PictureSetMember, :default_value => []
+      text_node :external_picture_url, 'ExternalPictureURL', :optional => true
+      time_node :use_by_date, 'UseByDate', :optional => true
     end
   end
 end
