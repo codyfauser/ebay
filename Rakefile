@@ -56,17 +56,17 @@ namespace :schema do
   task :update_version do
     schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
     # Update the schema version string
-    version = File.open(schema) do |f|
-      version_string = f.gets
-      version_string.match(/Version (\d+)/)
-      $1
-    end
-
-    version_file_path = File.dirname(__FILE__) + "/lib/ebay/schema/version.rb"
-    version_file = File.read(version_file_path)
-    version_file.gsub!(/VERSION = \d+/, "VERSION = #{version}")
-    File.open(version_file_path, 'w') do |f|
-      f.puts version_file
+    
+    File.read(schema) =~ /Version (\d+)/m
+    if version = $1
+      version_file_path = File.dirname(__FILE__) + "/lib/ebay/schema/version.rb"
+      version_file = File.read(version_file_path)
+      version_file.gsub!(/VERSION = \d+/, "VERSION = #{version}")
+      File.open(version_file_path, 'w') do |f|
+        f.puts version_file
+      end
+    else
+      raise "Unable to parse the version from the schema"
     end
   end
   
