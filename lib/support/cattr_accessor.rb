@@ -26,7 +26,7 @@ class Class # :nodoc:
         end
       EOS
     end
-  end
+  end unless respond_to?(:cattr_reader)
   
   def cattr_writer(*syms)
     syms.each do |sym|
@@ -48,10 +48,10 @@ class Class # :nodoc:
         end
       EOS
     end
-  end
+  end unless respond_to?(:cattr_writer)
   
   def cattr_accessor(*syms)
     cattr_reader(*syms)
     cattr_writer(*syms)
-  end
+  end unless respond_to?(:cattr_accessor)
 end
