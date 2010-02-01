@@ -17,9 +17,11 @@ module Ebay # :nodoc:
     #  time_node :printed_time, 'PrintedTime', :optional => true
     #  object_node :ship_from_address, 'ShipFromAddress', :class => Address, :optional => true
     #  object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
+    #  text_node :shipping_carrier_used, 'ShippingCarrierUsed', :optional => true
     #  value_array_node :shipping_features, 'ShippingFeature', :default_value => []
     #  text_node :shipping_package, 'ShippingPackage', :optional => true
     #  text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
+    #  text_node :shipment_tracking_number, 'ShipmentTrackingNumber', :optional => true
     #  object_node :weight_major, 'WeightMajor', :class => Measure, :optional => true
     #  object_node :weight_minor, 'WeightMinor', :class => Measure, :optional => true
     #  array_node :item_transaction_ids, 'ItemTransactionID', :class => ItemTransactionID, :default_value => []
@@ -46,9 +48,11 @@ module Ebay # :nodoc:
       time_node :printed_time, 'PrintedTime', :optional => true
       object_node :ship_from_address, 'ShipFromAddress', :class => Address, :optional => true
       object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
+      text_node :shipping_carrier_used, 'ShippingCarrierUsed', :optional => true
       value_array_node :shipping_features, 'ShippingFeature', :default_value => []
       text_node :shipping_package, 'ShippingPackage', :optional => true
       text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
+      text_node :shipment_tracking_number, 'ShipmentTrackingNumber', :optional => true
       object_node :weight_major, 'WeightMajor', :class => Measure, :optional => true
       object_node :weight_minor, 'WeightMinor', :class => Measure, :optional => true
       array_node :item_transaction_ids, 'ItemTransactionID', :class => ItemTransactionID, :default_value => []

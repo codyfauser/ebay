@@ -8,6 +8,7 @@ module Ebay # :nodoc:
     #  numeric_node :num_items, 'NumItems', :optional => true
     #  money_node :min_price, 'MinPrice', :optional => true
     #  money_node :max_price, 'MaxPrice', :optional => true
+    #  text_node :product_reference_id, 'ProductReferenceID', :optional => true
     #  text_node :product_id, '@productID', :optional => true
     #  text_node :stock_photo_url, '@stockPhotoURL', :optional => true
     #  text_node :title, '@title', :optional => true
@@ -20,6 +21,7 @@ module Ebay # :nodoc:
       numeric_node :num_items, 'NumItems', :optional => true
       money_node :min_price, 'MinPrice', :optional => true
       money_node :max_price, 'MaxPrice', :optional => true
+      text_node :product_reference_id, 'ProductReferenceID', :optional => true
       text_node :product_id, '@productID', :optional => true
       text_node :stock_photo_url, '@stockPhotoURL', :optional => true
       text_node :title, '@title', :optional => true

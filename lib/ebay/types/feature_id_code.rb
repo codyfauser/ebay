@@ -102,6 +102,9 @@ module Ebay # :nodoc:
       AttributeConversionEnabled = 'AttributeConversionEnabled'
       FreeGalleryPlusEnabled = 'FreeGalleryPlusEnabled'
       FreePicturePackEnabled = 'FreePicturePackEnabled'
+      CompatibilityEnabled = 'CompatibilityEnabled'
+      MinCompatibleApplications = 'MinCompatibleApplications'
+      MaxCompatibleApplications = 'MaxCompatibleApplications'
     end
   end
 end

@@ -28,6 +28,9 @@ module Ebay # :nodoc:
       ClaimPaid = 'ClaimPaid'
       ClaimResolved = 'ClaimResolved'
       ClaimSubmitted = 'ClaimSubmitted'
+      UnpaidItemOpen = 'UnpaidItemOpen'
+      UPIAssistanceDisabledByeBay = 'UPIAssistanceDisabledByeBay'
+      UPIAssistanceDisabledBySeller = 'UPIAssistanceDisabledBySeller'
     end
   end
 end

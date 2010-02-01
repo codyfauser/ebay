@@ -1297,5 +1297,13 @@ module Ebay
     def verify_add_second_chance_item(params = {})
       commit(Ebay::Requests::VerifyAddSecondChanceItem, params)
     end
+    # Builds Ebay::Requests#VerifyRelistItem
+    #
+    # Returns Ebay::Responses#VerifyRelistItem
+    #
+    # Official Documentation for VerifyRelistItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_VerifyRelistItem.html]
+    def verify_relist_item(params = {})
+      commit(Ebay::Requests::VerifyRelistItem, params)
+    end
   end
 end
