@@ -42,7 +42,7 @@ module Ebay
        
         customization = ClassTemplate.new(ebay_underscore(name))
         customization.load if customization.exists?
-       
+        
         if request? || response?
           class_name = ebay_camelize(name).gsub(/(Request|Response)$/, '')
         else
@@ -134,13 +134,22 @@ module Ebay
       end
 
       def find_base
-        type = @type.complexcontent.extension.base
-        @base = @complex_types.find_name(type.name) unless type.nil?
-      rescue NoMethodError
+        return nil if @type.nil?
+        
+        the_base = case
+          when @type.respond_to?(:complexcontent) && @type.complexcontent.respond_to?(:extension)
+            @type.complexcontent.extension.base
+          when @type.respond_to?(:complexcontent) && @type.complexcontent.respond_to?(:base)
+            @type.complexcontent.base
+          else
+            nil
+        end
+        
+        @base = @complex_types.find_name(the_base.name) unless the_base.nil?
       end
 
       def non_inherited_elements
-        return @type.elements if @base.nil?
+        return @type.each_element {} if @base.nil?
 
         @type.elements.reject do |e|
           @base.find_element(e.name)
@@ -158,9 +167,12 @@ module Ebay
           result = []
           result << build_node_for_built_in_type(trim_type(name), content.extension.base.name, :field => '', :min => '0')
 
-          result.concat(content.attributes.collect do |a|
-            TextNode.new(trim_code_type(a.type.name), :field => "@#{a.name.name}", :min => '0')
-          end)
+          unless !content.respond_to?(:attributes) or content.attributes.nil?
+            result.concat(content.attributes.collect do |a|
+              TextNode.new(trim_code_type(a.type.name), :field => "@#{a.name.name}", :min => '0')
+            end)
+          end
+          
           result
         else
           result = nodes_for_complex_elements
@@ -175,9 +187,15 @@ module Ebay
           end.flatten
         rescue NoMethodError
           # Hack for when the type doesn't respond to elements
-          @type.complexcontent.content.content.elements.collect do |e|
-            node_for(e)
-          end.flatten
+          if @type.complexcontent.nil?
+            []
+          elsif @type.complexcontent.content.nil?
+            []
+          else
+            @type.complexcontent.content.elements.collect do |e|
+              node_for(e)
+            end.flatten
+          end
         end
       end
 
@@ -246,9 +264,15 @@ module Ebay
           if simple_type
             TextNode.new(name, options)
           elsif element = @complex_types.find_name(type)
-            if element.elements.size == 1 && element.elements[0].maxoccurs == "unbounded"
+            element_elements = element.each_element {}
+            
+            if element_elements.nil? and type == 'AmountType'
+              MoneyNode.new(name, options)
+            elsif element_elements.nil?
+              ObjectNode.new(name, options)
+            elsif element_elements.size == 1 && element_elements[0].maxoccurs == "unbounded"
               # Found a container!
-              child = element.elements[0]
+              child = element_elements[0]
 
               ignored = %w( MemberMessage BidApproval PromotionalSaleDetails BidAssistantList )
               
@@ -264,11 +288,7 @@ module Ebay
                 ArrayNode.new(name, options)
               end
             else
-              if type == 'AmountType'
-                MoneyNode.new(name, options)
-              else
-                ObjectNode.new(name, options)
-              end
+              ObjectNode.new(name, options)
             end
           end
         else
