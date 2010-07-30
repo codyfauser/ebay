@@ -260,6 +260,7 @@ module Ebay # :nodoc:
       CreditRealEstateProFee = 'CreditRealEstateProFee'
       RealEstateProFeatureFee = 'RealEstateProFeatureFee'
       CreditRealEstateProFeatureFee = 'CreditRealEstateProFeatureFee'
+      Discount = 'Discount'
     end
   end
 end

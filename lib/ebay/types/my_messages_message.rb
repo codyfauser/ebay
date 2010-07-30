@@ -26,6 +26,10 @@ module Ebay # :nodoc:
     #  text_node :message_type, 'MessageType', :optional => true
     #  text_node :listing_status, 'ListingStatus', :optional => true
     #  text_node :question_type, 'QuestionType', :optional => true
+    #  boolean_node :replied, 'Replied', 'true', 'false', :optional => true
+    #  boolean_node :high_priority, 'HighPriority', 'true', 'false', :optional => true
+    #  time_node :item_end_time, 'ItemEndTime', :optional => true
+    #  text_node :item_title, 'ItemTitle', :optional => true
     class MyMessagesMessage
       include XML::Mapping
       include Initializer
@@ -51,6 +55,10 @@ module Ebay # :nodoc:
       text_node :message_type, 'MessageType', :optional => true
       text_node :listing_status, 'ListingStatus', :optional => true
       text_node :question_type, 'QuestionType', :optional => true
+      boolean_node :replied, 'Replied', 'true', 'false', :optional => true
+      boolean_node :high_priority, 'HighPriority', 'true', 'false', :optional => true
+      time_node :item_end_time, 'ItemEndTime', :optional => true
+      text_node :item_title, 'ItemTitle', :optional => true
     end
   end
 end

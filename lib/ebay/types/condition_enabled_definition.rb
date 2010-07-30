@@ -2,12 +2,10 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  
-    class Base64Binary
+    class ConditionEnabledDefinition
       include XML::Mapping
       include Initializer
-      root_element_name 'Base64Binary'
-      
+      root_element_name 'ConditionEnabledDefinition'
     end
   end
 end

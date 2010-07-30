@@ -105,6 +105,8 @@ module Ebay # :nodoc:
       CompatibilityEnabled = 'CompatibilityEnabled'
       MinCompatibleApplications = 'MinCompatibleApplications'
       MaxCompatibleApplications = 'MaxCompatibleApplications'
+      ConditionEnabled = 'ConditionEnabled'
+      ConditionValues = 'ConditionValues'
     end
   end
 end

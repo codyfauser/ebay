@@ -9,6 +9,7 @@ module Ebay # :nodoc:
     #  array_node :value_recommendations, 'ValueRecommendation', :class => ValueRecommendation, :default_value => []
     #  text_node :help_url, 'HelpURL', :optional => true
     #  text_node :source, 'Source', :optional => true
+    #  text_node :help_text, 'HelpText', :optional => true
     class NameRecommendation
       include XML::Mapping
       include Initializer
@@ -18,6 +19,7 @@ module Ebay # :nodoc:
       array_node :value_recommendations, 'ValueRecommendation', :class => ValueRecommendation, :default_value => []
       text_node :help_url, 'HelpURL', :optional => true
       text_node :source, 'Source', :optional => true
+      text_node :help_text, 'HelpText', :optional => true
     end
   end
 end
