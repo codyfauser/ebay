@@ -31,6 +31,9 @@ require 'ebay/types/buyer_requirement_details'
 require 'ebay/types/return_policy'
 require 'ebay/types/variations'
 require 'ebay/types/item_compatibility'
+require 'ebay/types/rental'
+require 'ebay/types/rental_price'
+
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -151,6 +154,8 @@ module Ebay # :nodoc:
     #  object_node :variations, 'Variations', :class => Variations, :optional => true
     #  array_node :item_compatibility_lists, 'ItemCompatibilityList', 'Compatibility', :class => ItemCompatibility, :default_value => []
     #  numeric_node :item_compatibility_count, 'ItemCompatibilityCount', :optional => true
+    #  array_node :rental, 'Rental', 'RentalPrice', :class => RentalPrice, :default_value => []
+
     class Item
       include XML::Mapping
       include Initializer
@@ -271,6 +276,8 @@ module Ebay # :nodoc:
       object_node :variations, 'Variations', :class => Variations, :optional => true
       array_node :item_compatibility_lists, 'ItemCompatibilityList', 'Compatibility', :class => ItemCompatibility, :default_value => []
       numeric_node :item_compatibility_count, 'ItemCompatibilityCount', :optional => true
+      object_node :rental, 'Rental', :class => Rental, :optional => false
+
     end
   end
 end
