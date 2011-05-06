@@ -1,5 +1,3 @@
-require 'ebay/types/val'
-
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Rental

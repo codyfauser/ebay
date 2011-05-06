@@ -32,7 +32,7 @@ require 'ebay/types/return_policy'
 require 'ebay/types/variations'
 require 'ebay/types/item_compatibility'
 require 'ebay/types/rental'
-require 'ebay/types/rental_price'
+#require 'ebay/types/rental_price'
 
 
 module Ebay # :nodoc:
