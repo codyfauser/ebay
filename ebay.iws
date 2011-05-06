@@ -15,14 +15,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3ee53da-62af-403d-aec6-cf74cc2a43fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ebay/rental_price_information.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebay.ipr" afterPath="$PROJECT_DIR$/ebay.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ebay.iws" afterPath="$PROJECT_DIR$/ebay.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/ebay/types/item.rb" afterPath="$PROJECT_DIR$/lib/ebay/types/item.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/ebay/types/rental.rb" afterPath="$PROJECT_DIR$/lib/ebay/types/rental.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/ebay/types/rental_price.rb" afterPath="$PROJECT_DIR$/lib/ebay/types/rental_price.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/support/xml_mapping.rb" afterPath="$PROJECT_DIR$/lib/support/xml_mapping.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/support/xml_mapping/rental_price_node.rb" afterPath="$PROJECT_DIR$/lib/support/xml_mapping/rental_price_node.rb" />
     </list>
     <ignored path="ebay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,7 +80,7 @@
       <file leaf-file-name="rental_price.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/ebay/types/rental_price.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="36" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+            <state line="8" column="26" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,16 +89,7 @@
       <file leaf-file-name="rental.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/ebay/types/rental.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="784" selection-end="784" vertical-scroll-proportion="0.3243243">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="value_array_node.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/support/xml_mapping/value_array_node.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="31" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+            <state line="15" column="105" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.23166023">
               <folding />
             </state>
           </provider>
@@ -112,7 +98,7 @@
       <file leaf-file-name="rental_price_node.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/support/xml_mapping/rental_price_node.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="71" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0">
+            <state line="21" column="0" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,7 +107,7 @@
       <file leaf-file-name="item.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/ebay/types/item.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="51" selection-start="13545" selection-end="13545" vertical-scroll-proportion="0.0">
+            <state line="155" column="74" selection-start="11512" selection-end="11530" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -161,8 +147,8 @@
       <list>
         <option value="$PROJECT_DIR$/lib/ebay/rental_price.rb" />
         <option value="$PROJECT_DIR$/lib/support/xml_mapping.rb" />
-        <option value="$PROJECT_DIR$/lib/support/xml_mapping/rental_price_node.rb" />
         <option value="$PROJECT_DIR$/lib/ebay/rental_price_information.rb" />
+        <option value="$PROJECT_DIR$/lib/support/xml_mapping/rental_price_node.rb" />
         <option value="$PROJECT_DIR$/lib/ebay/types/rental_price.rb" />
         <option value="$PROJECT_DIR$/lib/ebay/types/item.rb" />
         <option value="$PROJECT_DIR$/lib/ebay/types/rental.rb" />
@@ -667,7 +653,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="290" y="22" width="1523" height="898" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -677,6 +663,7 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -793,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/support/xml_mapping/rental_price_node.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="71" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Application Support/IntelliJIdea10/ruby/rubystubs/rubystubs18/kernel.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1633" column="6" selection-start="53030" selection-end="53030" vertical-scroll-proportion="0.33333334">
@@ -809,28 +789,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/support/xml_mapping/value_array_node.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="31" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+        <state line="3" column="52" selection-start="89" selection-end="202" vertical-scroll-proportion="0.046332046">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/ebay/types/item.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="51" selection-start="13545" selection-end="13545" vertical-scroll-proportion="0.0">
+        <state line="155" column="74" selection-start="11512" selection-end="11530" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/support/xml_mapping/rental_price_node.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/ebay/types/rental_price.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+        <state line="8" column="26" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/ebay/types/rental.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="784" selection-end="784" vertical-scroll-proportion="0.3243243">
+        <state line="15" column="105" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.23166023">
           <folding />
         </state>
       </provider>

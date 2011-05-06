@@ -1,19 +1,24 @@
-#require 'ebay/types/rental_price'
+require 'ebay/types/rental_price'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Rental
-    #  array_node :values, 'Value', :class => Val, :default_value => []
-    #  numeric_node :attribute_id, '@attributeID', :optional => true
-    #  text_node :attribute_label, '@attributeLabel', :optional => true
+    #  rental_price_node :rental_price__days_30_rental_price, "RentalPrice[@duration='Days30RentalPrice'], :optional => false"
+    #  rental_price_node :rental_price__days_45_rental_price, "RentalPrice[@duration='Days45RentalPrice'], :optional => false"
+    #  rental_price_node :rental_price__days_60_rental_price, "RentalPrice[@duration='Days60RentalPrice'], :optional => false"
+    #  rental_price_node :rental_price__days_90_rental_price, "RentalPrice[@duration='Days90RentalPrice'], :optional => false"
+    #  rental_price_node :rental_price__days_125_rental_price, "RentalPrice[@duration='Days125RentalPrice'], :optional => false"
+    #  numeric_node :item_buyout_price, 'ItemBuyoutPrice', :optional => false
     class Rental
       include XML::Mapping
       include Initializer
       root_element_name 'Rental'
-#      array_node :rental_price, 'RentalPrice', :class => RentalPrice, :default_value => []
-#      array_node :item_buyout_price, 'ItemBuyoutPrice', :default_value => []
-      rental_price_node :rentalPrice, 'RentalPrice', :optional => false
-#      array_node :rental_prices, 'AttributeArray', 'Attribute', :class => Attribute, :default_value => []
+      rental_price_node :rental_price__days_30_rental_price, "RentalPrice[@duration='Days30RentalPrice']", :optional => false
+      rental_price_node :rental_price__days_45_rental_price, "RentalPrice[@duration='Days45RentalPrice']", :optional => false
+      rental_price_node :rental_price__days_60_rental_price, "RentalPrice[@duration='Days60RentalPrice']", :optional => false
+      rental_price_node :rental_price__days_90_rental_price, "RentalPrice[@duration='Days90RentalPrice']", :optional => false
+      rental_price_node :rental_price__days_125_rental_price, "RentalPrice[@duration='Days125RentalPrice']", :optional => false
+      numeric_node :item_buyout_price, 'ItemBuyoutPrice', :optional => false
     end
   end
 end
