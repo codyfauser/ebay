@@ -275,7 +275,7 @@ module Ebay # :nodoc:
       object_node :variations, 'Variations', :class => Variations, :optional => true
       array_node :item_compatibility_lists, 'ItemCompatibilityList', 'Compatibility', :class => ItemCompatibility, :default_value => []
       numeric_node :item_compatibility_count, 'ItemCompatibilityCount', :optional => true
-      object_node :rental, 'Rental', :class => Rental, :optional => false
+      object_node :rental, 'Rental', :class => Rental, :optional => true
     end
   end
 end
