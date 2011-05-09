@@ -17,6 +17,7 @@ module Ebay # :nodoc:
     #  boolean_node :admin_ended_items_only, 'AdminEndedItemsOnly', 'true', 'false', :optional => true
     #  numeric_node :category_id, 'CategoryID', :optional => true
     #  boolean_node :include_variations, 'IncludeVariations', 'true', 'false', :optional => true
+    #  text_node :rental_type_filter, 'RentalTypeFilter', :optional => true
     class GetSellerList < Abstract
       include XML::Mapping
       include Initializer
@@ -35,6 +36,7 @@ module Ebay # :nodoc:
       boolean_node :admin_ended_items_only, 'AdminEndedItemsOnly', 'true', 'false', :optional => true
       numeric_node :category_id, 'CategoryID', :optional => true
       boolean_node :include_variations, 'IncludeVariations', 'true', 'false', :optional => true
+      text_node :rental_type_filter, 'RentalTypeFilter', :optional => true
     end
   end
 end
