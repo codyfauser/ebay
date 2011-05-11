@@ -18,6 +18,7 @@ module Ebay # :nodoc:
     #  numeric_node :category_id, 'CategoryID', :optional => true
     #  boolean_node :include_variations, 'IncludeVariations', 'true', 'false', :optional => true
     #  text_node :rental_type_filter, 'RentalTypeFilter', :optional => true
+    #  text_node :listing_type, 'ListingType', :optional => true
     class GetSellerList < Abstract
       include XML::Mapping
       include Initializer
@@ -37,6 +38,7 @@ module Ebay # :nodoc:
       numeric_node :category_id, 'CategoryID', :optional => true
       boolean_node :include_variations, 'IncludeVariations', 'true', 'false', :optional => true
       text_node :rental_type_filter, 'RentalTypeFilter', :optional => true
+      text_node :listing_type, 'ListingType', :optional => true
     end
   end
 end

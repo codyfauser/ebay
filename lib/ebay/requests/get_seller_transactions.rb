@@ -12,6 +12,9 @@ module Ebay # :nodoc:
     #  text_node :platform, 'Platform', :optional => true
     #  numeric_node :number_of_days, 'NumberOfDays', :optional => true
     #  text_node :inventory_tracking_method, 'InventoryTrackingMethod', :optional => true
+    #  text_node :listing_type, 'ListingType', :optional => true
+    #  text_node :order_role, 'OrderRole', :optional => true
+    #  text_node :order_status, 'OrderStatus', :optional => true
     class GetSellerTransactions < Abstract
       include XML::Mapping
       include Initializer
@@ -25,6 +28,9 @@ module Ebay # :nodoc:
       text_node :platform, 'Platform', :optional => true
       numeric_node :number_of_days, 'NumberOfDays', :optional => true
       text_node :inventory_tracking_method, 'InventoryTrackingMethod', :optional => true
+      text_node :listing_type, 'ListingType', :optional => true
+      text_node :order_role, 'OrderRole', :optional => true
+      text_node :order_status, 'OrderStatus', :optional => true
     end
   end
 end

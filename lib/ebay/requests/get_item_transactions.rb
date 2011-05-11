@@ -13,6 +13,7 @@ module Ebay # :nodoc:
     #  text_node :platform, 'Platform', :optional => true
     #  numeric_node :number_of_days, 'NumberOfDays', :optional => true
     #  boolean_node :include_variations, 'IncludeVariations', 'true', 'false', :optional => true
+    #  text_node :rental_type_filter, 'RentalTypeFilter', :optional => true
     class GetItemTransactions < Abstract
       include XML::Mapping
       include Initializer
@@ -27,6 +28,7 @@ module Ebay # :nodoc:
       text_node :platform, 'Platform', :optional => true
       numeric_node :number_of_days, 'NumberOfDays', :optional => true
       boolean_node :include_variations, 'IncludeVariations', 'true', 'false', :optional => true
+      text_node :rental_type_filter, 'RentalTypeFilter', :optional => true
     end
   end
 end

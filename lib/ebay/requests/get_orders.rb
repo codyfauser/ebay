@@ -10,6 +10,7 @@ module Ebay # :nodoc:
     #  text_node :order_status, 'OrderStatus', :optional => true
     #  text_node :listing_type, 'ListingType', :optional => true
     #  object_node :pagination, 'Pagination', :class => Pagination, :optional => true
+    #  array_node :item_transaction_ids, 'ItemTransactionIDArray', 'ItemTransactionID', :class => ItemTransactionID, :default_value => []
     class GetOrders < Abstract
       include XML::Mapping
       include Initializer
@@ -21,6 +22,7 @@ module Ebay # :nodoc:
       text_node :order_status, 'OrderStatus', :optional => true
       text_node :listing_type, 'ListingType', :optional => true
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true
+      array_node :item_transaction_ids, 'ItemTransactionIDArray', 'ItemTransactionID', :class => ItemTransactionID, :default_value => []
     end
   end
 end
