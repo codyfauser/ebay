@@ -1305,5 +1305,12 @@ module Ebay
     def verify_relist_item(params = {})
       commit(Ebay::Requests::VerifyRelistItem, params)
     end
+    # Builds Ebay::Requests#UpdateRentalStatus
+    #
+    # Returns Ebay::Responses#UpdateRentalStatus
+    #
+    def update_rental_status(params = {})
+      commit(Ebay::Requests::UpdateRentalStatus, params)
+    end
   end
 end
