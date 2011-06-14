@@ -153,6 +153,10 @@ module Ebay #:nodoc:
       result << REXML::XMLDecl.new('1.0', 'UTF-8')
       result << request.save_to_xml
       result.root.add_namespace XmlNs
+      Rails.logger.debug("------------------------------------------------------------------------------------------------------")
+      Rails.logger.debug("Ebay Request")
+      Rails.logger.debug("#{result.to_s}")
+      Rails.logger.debug("------------------------------------------------------------------------------------------------------")
       result.to_s
     end
 
@@ -179,6 +183,10 @@ module Ebay #:nodoc:
         xml = REXML::Document.new(content)
         # Fixes the wrong case of API returned by eBay
         fix_root_element_name(xml)
+        Rails.logger.debug("------------------------------------------------------------------------------------------------------")
+        Rails.logger.debug("Ebay Response")
+        Rails.logger.debug("#{xml.to_s}")
+        Rails.logger.debug("------------------------------------------------------------------------------------------------------")
         result = XML::Mapping.load_object_from_xml(xml.root)
         case result.ack
         when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
