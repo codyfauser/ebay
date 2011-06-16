@@ -1310,7 +1310,7 @@ module Ebay
     # Returns Ebay::Responses#UpdateRentalStatus
     #
     def update_rental_status(params = {})
-      commit(Ebay::Requests::UpdateRentalStatus, params)
+      commit(Ebay::Requests::UpdateRentalStatus, params, "half_rental_service")
     end
   end
 end

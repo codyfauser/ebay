@@ -37,6 +37,7 @@ module Ebay #:nodoc:
     include Inflections
     include ApiMethods
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
+    SERVICES = {"half_rental_service" => { :name => "HalfRentalManagementServiceV1", :uri => URI.parse("http://svcs.ebay.com/services/Half/HalfRentalManagementServiceV1/v1") } }
     
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
@@ -113,7 +114,7 @@ module Ebay #:nodoc:
     end
   
     private
-    def commit(request_class, params)
+    def commit(request_class, params, service_name = nil)
       format = params.delete(:format) || @format
       
       params[:username] = username
@@ -122,13 +123,13 @@ module Ebay #:nodoc:
       
       request = request_class.new(params)
       yield request if block_given?
-      invoke(request, format)
+      invoke(request, format, service_name)
     end
     
-    def invoke(request, format)
-      response = connection.post( service_uri.path, 
+    def invoke(request, format, service_name)
+      response = connection.post( service_name == nil ? service_uri.path : SERVICES[service_name][:uri].path,
                                   build_body(request), 
-                                  build_headers(request.call_name)
+                                  service_name == nil ? build_headers(request.call_name) : build_soa_headers(request.call_name, SERVICES[service_name][:name])
                                 )
       
       parse decompress(response), format
@@ -143,6 +144,19 @@ module Ebay #:nodoc:
         'X-EBAY-API-CERT-NAME' => cert.to_s,
         'X-EBAY-API-CALL-NAME' => call_name.to_s,
         'X-EBAY-API-SITEID' => site_id.to_s,
+        'Content-Type' => 'text/xml',
+        'Accept-Encoding' => 'gzip'
+      }
+    end
+
+    def build_soa_headers(call_name, service_name)
+      {
+        'X-EBAY-SOA-SERVICE-NAME' => service_name,
+        'X-EBAY-SOA-OPERATION-NAME' => call_name,
+#        'X-EBAY-SOA-SECURITY-TOKEN' => auth_token,
+        'X-EBAY-SOA-REQUEST-DATA-FORMAT' => 'XML',
+        'X-EBAY-SOA-RESPONSE-DATA-FORMAT' => 'XML',
+        'X-EBAY-SOA-SECURITY-APPNAME' => app_id.to_s,
         'Content-Type' => 'text/xml',
         'Accept-Encoding' => 'gzip'
       }
