@@ -10,6 +10,7 @@ module Ebay #:nodoc:
 
   class RequestError < EbayError #:nodoc:
     attr_reader :errors
+
     def initialize(errors)
       @errors = errors
     end
@@ -37,20 +38,20 @@ module Ebay #:nodoc:
     include Inflections
     include ApiMethods
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
-    SERVICES = {"half_rental_service" => { :name => "HalfRentalManagementServiceV1", :uri => URI.parse("http://svcs.ebay.com/services/Half/HalfRentalManagementServiceV1/v1") } }
-    
+    SERVICES = {"half_rental_service" => {:name => "HalfRentalManagementServiceV1", :uri => URI.parse("http://svcs.ebay.com/services/Half/HalfRentalManagementServiceV1/v1", :namespace=>"http://www.ebay.com/marketplace/half/v1/services")}}
+
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
     cattr_accessor :username, :password
     attr_reader :auth_token, :site_id
-    
+
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
     self.use_sandbox = false
 
     # Make the default site US
     self.site_id = 0
-  
+
     # The URI that all requests are sent to. This depends on the current environment the Api
     # is configured to use and will either be the Api#sandbox_url or the Api#production_url
     def self.service_uri
@@ -91,7 +92,7 @@ module Ebay #:nodoc:
     def service_uri
       self.class.service_uri
     end
-    
+
     def app_id
       self.class.app_id
     end
@@ -112,61 +113,71 @@ module Ebay #:nodoc:
       @auth_token = options[:auth_token] || self.class.auth_token
       @site_id = options[:site_id] || self.class.site_id
     end
-  
+
     private
     def commit(request_class, params, service_name = nil)
       format = params.delete(:format) || @format
-      
+
       params[:username] = username
       params[:password] = password
       params[:auth_token] = auth_token
-      
+
       request = request_class.new(params)
       yield request if block_given?
       invoke(request, format, service_name)
     end
-    
-    def invoke(request, format, service_name)
-      response = connection.post( service_name == nil ? service_uri.path : SERVICES[service_name][:uri].path,
-                                  build_body(request), 
-                                  service_name == nil ? build_headers(request.call_name) : build_soa_headers(request.call_name, SERVICES[service_name][:name])
-                                )
-      
+
+    def invoke(request, format, service_name = nil)
+
+      response = nil
+      if (service_name)
+        response = connection.post(service_uri.path,
+                                   build_body(request, XmlNs),
+                                   build_headers(request.call_name)
+        )
+
+      else
+        response = connection.post(SERVICES[service_name][:uri].path,
+                                   build_body(request,SERVICES[service_name][:namespace]),
+                                   build_soa_headers(request.call_name, SERVICES[service_name][:name])
+
+      end
+
       parse decompress(response), format
     end
 
     def build_headers(call_name)
       {
-        'X-EBAY-API-COMPATIBILITY-LEVEL' => schema_version.to_s,
-        'X-EBAY-API-SESSION-CERTIFICATE' => "#{dev_id};#{app_id};#{cert}",
-        'X-EBAY-API-DEV-NAME' => dev_id.to_s,
-        'X-EBAY-API-APP-NAME' => app_id.to_s,
-        'X-EBAY-API-CERT-NAME' => cert.to_s,
-        'X-EBAY-API-CALL-NAME' => call_name.to_s,
-        'X-EBAY-API-SITEID' => site_id.to_s,
-        'Content-Type' => 'text/xml',
-        'Accept-Encoding' => 'gzip'
+          'X-EBAY-API-COMPATIBILITY-LEVEL' => schema_version.to_s,
+          'X-EBAY-API-SESSION-CERTIFICATE' => "#{dev_id};#{app_id};#{cert}",
+          'X-EBAY-API-DEV-NAME' => dev_id.to_s,
+          'X-EBAY-API-APP-NAME' => app_id.to_s,
+          'X-EBAY-API-CERT-NAME' => cert.to_s,
+          'X-EBAY-API-CALL-NAME' => call_name.to_s,
+          'X-EBAY-API-SITEID' => site_id.to_s,
+          'Content-Type' => 'text/xml',
+          'Accept-Encoding' => 'gzip'
       }
     end
 
     def build_soa_headers(call_name, service_name)
       {
-        'X-EBAY-SOA-SERVICE-NAME' => service_name,
-        'X-EBAY-SOA-OPERATION-NAME' => call_name,
-#        'X-EBAY-SOA-SECURITY-TOKEN' => auth_token,
-        'X-EBAY-SOA-REQUEST-DATA-FORMAT' => 'XML',
-        'X-EBAY-SOA-RESPONSE-DATA-FORMAT' => 'XML',
-        'X-EBAY-SOA-SECURITY-APPNAME' => app_id.to_s,
-        'Content-Type' => 'text/xml',
-        'Accept-Encoding' => 'gzip'
+          'X-EBAY-SOA-SERVICE-NAME' => service_name,
+          'X-EBAY-SOA-OPERATION-NAME' => call_name,
+          #        'X-EBAY-SOA-SECURITY-TOKEN' => auth_token,
+          'X-EBAY-SOA-REQUEST-DATA-FORMAT' => 'XML',
+          'X-EBAY-SOA-RESPONSE-DATA-FORMAT' => 'XML',
+          'X-EBAY-SOA-SECURITY-APPNAME' => app_id.to_s,
+          'Content-Type' => 'text/xml',
+          'Accept-Encoding' => 'gzip'
       }
     end
 
-    def build_body(request)
+    def build_body(request, namespace)
       result = REXML::Document.new
       result << REXML::XMLDecl.new('1.0', 'UTF-8')
       result << request.save_to_xml
-      result.root.add_namespace XmlNs
+      result.root.add_namespace namespace
       Rails.logger.debug("------------------------------------------------------------------------------------------------------")
       Rails.logger.debug("Ebay Request")
       Rails.logger.debug("#{result.to_s}")
@@ -181,35 +192,35 @@ module Ebay #:nodoc:
 
     def decompress(response)
       content = case response['Content-Encoding']
-      when 'gzip'
-        gzr = Zlib::GzipReader.new(StringIO.new(response.body))
-        decoded = gzr.read
-        gzr.close
-        decoded
-      else
-        response.body
-      end
+                  when 'gzip'
+                    gzr = Zlib::GzipReader.new(StringIO.new(response.body))
+                    decoded = gzr.read
+                    gzr.close
+                    decoded
+                  else
+                    response.body
+                end
     end
 
     def parse(content, format)
       case format
-      when :object
-        xml = REXML::Document.new(content)
-        # Fixes the wrong case of API returned by eBay
-        fix_root_element_name(xml)
-        Rails.logger.debug("------------------------------------------------------------------------------------------------------")
-        Rails.logger.debug("Ebay Response")
-        Rails.logger.debug("#{xml.to_s}")
-        Rails.logger.debug("------------------------------------------------------------------------------------------------------")
-        result = XML::Mapping.load_object_from_xml(xml.root)
-        case result.ack
-        when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
-          raise RequestError.new(result.errors)
-        end
-      when :raw
-        result = content
-      else
-        raise ArgumentError, "Unknown response format '#{format}' requested"
+        when :object
+          xml = REXML::Document.new(content)
+          # Fixes the wrong case of API returned by eBay
+          fix_root_element_name(xml)
+          Rails.logger.debug("------------------------------------------------------------------------------------------------------")
+          Rails.logger.debug("Ebay Response")
+          Rails.logger.debug("#{xml.to_s}")
+          Rails.logger.debug("------------------------------------------------------------------------------------------------------")
+          result = XML::Mapping.load_object_from_xml(xml.root)
+          case result.ack
+            when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
+              raise RequestError.new(result.errors)
+          end
+        when :raw
+          result = content
+        else
+          raise ArgumentError, "Unknown response format '#{format}' requested"
       end
       result
     end
@@ -217,7 +228,7 @@ module Ebay #:nodoc:
     def fix_root_element_name(xml)
       # Fix upper cased API in response
       xml.root.name = xml.root.name.gsub(/API/, 'Api')
-      
+
       # Fix lowercased Xsl in response document
       xml.root.name = xml.root.name.gsub(/XslResponse$/, 'XSLResponse')
     end
