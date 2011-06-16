@@ -11,7 +11,9 @@ module Ebay
       end
 
       def requester_credentials
-        XMLRequesterCredentials.new(:ebay_auth_token => auth_token, :username => username, :password => password)
+        if auth_token || username || password
+          XMLRequesterCredentials.new(:ebay_auth_token => auth_token, :username => username, :password => password)
+        end
       end
     end
   end

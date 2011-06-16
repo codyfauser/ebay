@@ -38,7 +38,7 @@ module Ebay #:nodoc:
     include Inflections
     include ApiMethods
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
-    SERVICES = {"half_rental_service" => {:name => "HalfRentalManagementServiceV1", :uri => URI.parse("http://svcs.ebay.com/services/Half/HalfRentalManagementServiceV1/v1", :namespace=>"http://www.ebay.com/marketplace/half/v1/services")}}
+    SERVICES = {"half_rental_service" => {:name => "HalfRentalManagementServiceV1", :uri => URI.parse("http://svcs.ebay.com/services/Half/HalfRentalManagementServiceV1/v1"), :namespace => "http://www.ebay.com/marketplace/half/v1/services"}}
 
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
@@ -118,9 +118,11 @@ module Ebay #:nodoc:
     def commit(request_class, params, service_name = nil)
       format = params.delete(:format) || @format
 
-      params[:username] = username
-      params[:password] = password
-      params[:auth_token] = auth_token
+      if (service_name == nil)
+        params[:username] = username
+        params[:password] = password
+        params[:auth_token] = auth_token
+      end
 
       request = request_class.new(params)
       yield request if block_given?
@@ -130,7 +132,7 @@ module Ebay #:nodoc:
     def invoke(request, format, service_name = nil)
 
       response = nil
-      if (service_name)
+      if (service_name == nil)
         response = connection.post(service_uri.path,
                                    build_body(request, XmlNs),
                                    build_headers(request.call_name)
@@ -138,8 +140,9 @@ module Ebay #:nodoc:
 
       else
         response = connection.post(SERVICES[service_name][:uri].path,
-                                   build_body(request,SERVICES[service_name][:namespace]),
+                                   build_body(request, SERVICES[service_name][:namespace]),
                                    build_soa_headers(request.call_name, SERVICES[service_name][:name])
+        )
 
       end
 
@@ -163,8 +166,8 @@ module Ebay #:nodoc:
     def build_soa_headers(call_name, service_name)
       {
           'X-EBAY-SOA-SERVICE-NAME' => service_name,
-          'X-EBAY-SOA-OPERATION-NAME' => call_name,
-          #        'X-EBAY-SOA-SECURITY-TOKEN' => auth_token,
+          'X-EBAY-SOA-OPERATION-NAME' => call_name[0].chr.swapcase + call_name[1..call_name.size],
+          'X-EBAY-SOA-SECURITY-TOKEN' => auth_token,
           'X-EBAY-SOA-REQUEST-DATA-FORMAT' => 'XML',
           'X-EBAY-SOA-RESPONSE-DATA-FORMAT' => 'XML',
           'X-EBAY-SOA-SECURITY-APPNAME' => app_id.to_s,
