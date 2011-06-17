@@ -11,7 +11,7 @@ module Ebay # :nodoc:
     class UpdateRentalStatus < Abstract
       include XML::Mapping
       include Initializer
-      root_element_name 'UpdateRentalStatusResponse'
+      root_element_name 'updateRentalStatusResponse'
     end
   end
 end
