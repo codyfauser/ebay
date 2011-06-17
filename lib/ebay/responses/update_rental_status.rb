@@ -12,6 +12,10 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'updateRentalStatusResponse'
+
+      time_node :timestamp, 'timestamp', :optional => true
+      text_node :ack, 'ack', :optional => true
+      text_node :version, 'version', :optional => true
     end
   end
 end

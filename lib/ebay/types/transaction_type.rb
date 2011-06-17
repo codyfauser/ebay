@@ -10,7 +10,7 @@ module Ebay # :nodoc:
       root_element_name 'transaction'
       text_node :transaction_id, 'transactionID', :optional => false
       text_node :item_id, 'itemID', :optional => true
-      time_node :actual_return_date, 'actualReturnDate', :optional => false
+      text_node :actual_return_date, 'actualReturnDate', :optional => false
     end
   end
 end
