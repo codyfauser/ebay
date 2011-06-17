@@ -38,9 +38,8 @@ module Ebay #:nodoc:
     include Inflections
     include ApiMethods
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
-    SERVICES = {"half_rental_service" => {:name => "HalfRentalManagementServiceV1", :uri => URI.parse("http://svcs.ebay.com/services/Half/HalfRentalManagementServiceV1/v1"), :namespace => "http://www.ebay.com/marketplace/half/v1/services"}}
 
-    cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
+    cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id, :services
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
     cattr_accessor :username, :password
     attr_reader :auth_token, :site_id
@@ -48,6 +47,7 @@ module Ebay #:nodoc:
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
     self.use_sandbox = false
+    self.services = nil
 
     # Make the default site US
     self.site_id = 0
@@ -66,6 +66,11 @@ module Ebay #:nodoc:
     # Are we currently routing requests to the eBay production URL?
     def self.using_production?
       !using_sandbox?
+    end
+
+    # The URI that all requests using service_key are sent to.
+    def self.service_uri_by_service_key(service_key)
+      URI.parse(using_sandbox? ?  services[service_key][:sandbox_url] :  services[service_key][:production_url]) unless services.nil? ||  service_key.nil?
     end
 
     # Simply yields the Ebay::Api class itself.  This makes configuration a bit nicer looking:
@@ -93,6 +98,10 @@ module Ebay #:nodoc:
       self.class.service_uri
     end
 
+    def service_uri_by_service_key(service_key)
+      self.class.service_uri_by_service_key(service_key)
+    end
+
     def app_id
       self.class.app_id
     end
@@ -115,10 +124,12 @@ module Ebay #:nodoc:
     end
 
     private
-    def commit(request_class, params, service_name = nil)
+    def commit(request_class, params, service_key = nil)
       format = params.delete(:format) || @format
 
-      if (service_name == nil)
+      @service_key = service_key
+
+      if (@service_key == nil)
         params[:username] = username
         params[:password] = password
         params[:auth_token] = auth_token
@@ -126,22 +137,21 @@ module Ebay #:nodoc:
 
       request = request_class.new(params)
       yield request if block_given?
-      invoke(request, format, service_name)
+      invoke(request, format)
     end
 
-    def invoke(request, format, service_name = nil)
-
+    def invoke(request, format)
       response = nil
-      if (service_name == nil)
+      if (@service_key == nil)
         response = connection.post(service_uri.path,
                                    build_body(request, XmlNs),
                                    build_headers(request.call_name)
         )
 
       else
-        response = connection.post(SERVICES[service_name][:uri].path,
-                                   build_body(request, SERVICES[service_name][:namespace]),
-                                   build_soa_headers(request.call_name, SERVICES[service_name][:name])
+        response = connection.post(service_uri_by_service_key(@service_key).path,
+                                   build_body(request, services[@service_key][:namespace]),
+                                   build_soa_headers(request.call_name)
         )
 
       end
@@ -163,14 +173,14 @@ module Ebay #:nodoc:
       }
     end
 
-    def build_soa_headers(call_name, service_name)
+    def build_soa_headers(call_name)
       {
-          'X-EBAY-SOA-SERVICE-NAME' => service_name,
+          'X-EBAY-SOA-SERVICE-NAME' => services[@service_key][:service_name],
           'X-EBAY-SOA-OPERATION-NAME' => call_name[0].chr.swapcase + call_name[1..call_name.size],
           'X-EBAY-SOA-SECURITY-TOKEN' => auth_token,
           'X-EBAY-SOA-REQUEST-DATA-FORMAT' => 'XML',
           'X-EBAY-SOA-RESPONSE-DATA-FORMAT' => 'XML',
-          'X-EBAY-SOA-SECURITY-APPNAME' => app_id.to_s,
+          'X-EBAY-SOA-SECURITY-APPNAME' => services[@service_key][:security_appname],
           'Content-Type' => 'text/xml',
           'Accept-Encoding' => 'gzip'
       }
@@ -189,8 +199,21 @@ module Ebay #:nodoc:
     end
 
     def connection(refresh = false)
-      @connection = Connection.new(service_uri) if refresh || @connection.nil?
-      @connection
+      current_site = nil
+      current_site = @connection.site unless @connection.nil?
+
+      new_site = nil
+      if @service_key
+        new_site = service_uri_by_service_key(@service_key)
+      else
+        new_site = service_uri
+      end
+
+      if refresh || current_site != new_site
+        @connection = Connection.new(new_site)
+      end
+
+      return @connection
     end
 
     def decompress(response)

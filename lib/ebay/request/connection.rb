@@ -27,6 +27,8 @@ module Ebay #:nodoc:
   end
 
   class Connection #:nodoc:
+    attr_reader :site
+
     def initialize(site)
       @site = site
     end
