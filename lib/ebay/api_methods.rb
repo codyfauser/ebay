@@ -1312,5 +1312,12 @@ module Ebay
     def update_rental_status(params = {})
       commit(Ebay::Requests::UpdateRentalStatus, params, "half_rental_service")
     end
+    # Builds Ebay::Requests#GetVersion
+    #
+    # Returns Ebay::Responses#GetVersion
+    #
+    def get_version(params = {})
+      commit(Ebay::Requests::GetVersion, params, "half_rental_service")
+    end
   end
 end
