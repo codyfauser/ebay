@@ -1319,5 +1319,12 @@ module Ebay
     def get_version(params = {})
       commit(Ebay::Requests::GetVersion, params, "half_rental_service")
     end
+    # Builds Ebay::Requests#FileRentalDispute
+    #
+    # Returns Ebay::Responses#FileRentalDispute
+    #
+    def get_version(params = {})
+      commit(Ebay::Requests::FileRentalDispute, params, "half_rental_service")
+    end
   end
 end
