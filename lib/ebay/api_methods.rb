@@ -1323,7 +1323,7 @@ module Ebay
     #
     # Returns Ebay::Responses#FileRentalDispute
     #
-    def get_version(params = {})
+    def file_rental_dispute(params = {})
       commit(Ebay::Requests::FileRentalDispute, params, "half_rental_service")
     end
   end
