@@ -5,9 +5,8 @@ PATH
       activesupport (~> 3.1.0)
       libxml-ruby (~> 2.3.0)
       money (~> 4.0.2)
-      rubyjedi-soap4r
+      rubyjedi-soap4r (~> 1.5.8.20100619003610)
       xml-mapping (~> 0.9.1)
-      xml-simple (~> 1.1.1)
 
 GEM
   remote: http://rubygems.org/
@@ -25,7 +24,6 @@ GEM
     rubyjedi-soap4r (1.5.8.20100619003610)
       httpclient (~> 2.1.5.2)
     xml-mapping (0.9.1)
-    xml-simple (1.1.1)
 
 PLATFORMS
   ruby
