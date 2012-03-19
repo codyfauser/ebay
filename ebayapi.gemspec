@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
 
+require 'ebay/version'
+
 Gem::Specification.new do |s|
   s.name        = "ebayapi"
-  s.version     = "0.20.0"
-  s.author      = "Cody Fausner"
+  s.version     = Ebay::VERSION
+  s.author      = "Cody Fauser"
   s.email       = "codyfauser@gmail.com"
   s.homepage    = "https://github.com/codyfauser/ebay"
   s.summary     = "Ruby interface to the eBay XML Trading API"
@@ -18,6 +20,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency("activesupport", ["~> 3.1.0"])
   s.add_dependency("xml-mapping", ["~> 0.9.1"])
+  s.add_dependency("xml-simple", ["~> 1.1.1"])
+  s.add_dependency("rubyjedi-soap4r" )
   s.add_dependency("libxml-ruby", ["~> 2.3.0"])
   s.add_dependency("money", ["~> 4.0.2"])
 end

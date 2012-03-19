@@ -21,7 +21,7 @@ module Ebay
       
       def render(definition)
         raise TemplateError, "No template has been loaded" if @template.nil?
-        @template.result(definition.send(:binding))
+        @template.result(definition.instance_eval{binding})
       end
 
       def exists?

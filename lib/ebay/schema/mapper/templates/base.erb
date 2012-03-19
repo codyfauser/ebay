@@ -15,7 +15,7 @@ module Ebay # :nodoc:
 <% for node in nodes -%>
       <%= node.to_s %>
 <% end -%>
-<% for line in customization -%>
+<% for line in customization.lines -%>
       <%= line.chomp %>
 <% end -%>
     end

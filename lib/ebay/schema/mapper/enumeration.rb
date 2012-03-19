@@ -11,14 +11,14 @@ module Ebay
       
       def to_s
         <<-END
-CODES = #{@codes.inspect}
+CODES = [#{@codes * ','}]
 
 
 class << self
   def codes
     CODES
   end
-        
+
   CODES.each do |code|
     define_method(ebay_underscore(code) do
       new(code)
