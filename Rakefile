@@ -2,8 +2,8 @@ $:.unshift File.join(File.dirname(__FILE__), 'lib')
 require 'rubygems'
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
-require 'rake/gempackagetask'
+#require 'rake/rdoctask'
+require 'rubygems/package_task'
 require 'rake/contrib/rubyforgepublisher'
 
 PKG_VERSION = "0.12.0"
@@ -94,15 +94,15 @@ namespace :classes do
   end
 end
 
-Rake::RDocTask.new { |rdoc|
-  rdoc.rdoc_dir = 'doc'
-  rdoc.title    = "eBayAPI Ruby client for the eBay unified schema XML API"
-  rdoc.options << '--line-numbers' << '--inline-source' << '--main=README'
-  rdoc.rdoc_files.include('README', 'CHANGELOG')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-  rdoc.rdoc_files.exclude('lib/ebay/schema')
-  rdoc.rdoc_files.exclude('lib/support')
-}
+#Rake::RDocTask.new { |rdoc|
+  #rdoc.rdoc_dir = 'doc'
+  #rdoc.title    = "eBayAPI Ruby client for the eBay unified schema XML API"
+  #rdoc.options << '--line-numbers' << '--inline-source' << '--main=README'
+  #rdoc.rdoc_files.include('README', 'CHANGELOG')
+  #rdoc.rdoc_files.include('lib/**/*.rb')
+  #rdoc.rdoc_files.exclude('lib/ebay/schema')
+  #rdoc.rdoc_files.exclude('lib/support')
+#}
 
 spec = Gem::Specification.new do |s|
   s.name = PKG_NAME
@@ -118,31 +118,31 @@ spec = Gem::Specification.new do |s|
   s.add_dependency('money', '= 1.7.1')
 end
 
-Rake::GemPackageTask.new(spec) do |p|
-  p.gem_spec = spec
-  p.need_tar = true
-  p.need_zip = true
-end
+#Rake::GemPackageTask.new(spec) do |p|
+  #p.gem_spec = spec
+  #p.need_tar = true
+  #p.need_zip = true
+#end
 
-desc "Release the gems and docs to RubyForge"
-task :release => [ :publish, :upload ]
+#desc "Release the gems and docs to RubyForge"
+#task :release => [ :publish, :upload ]
 
-desc "Publish the release files to RubyForge."
-task :publish => [ :package ] do
-  require 'rubyforge'
+#desc "Publish the release files to RubyForge."
+#task :publish => [ :package ] do
+  #require 'rubyforge'
   
-  packages = %w( gem tgz zip ).collect{ |ext| "pkg/#{PKG_NAME}-#{PKG_VERSION}.#{ext}" }
+  #packages = %w( gem tgz zip ).collect{ |ext| "pkg/#{PKG_NAME}-#{PKG_VERSION}.#{ext}" }
   
-  rubyforge = RubyForge.new
-  rubyforge.login
-  rubyforge.add_release(PKG_NAME, PKG_NAME, "REL #{PKG_VERSION}", *packages)
-end
+  #rubyforge = RubyForge.new
+  #rubyforge.login
+  #rubyforge.add_release(PKG_NAME, PKG_NAME, "REL #{PKG_VERSION}", *packages)
+#end
 
-desc 'Upload RDoc to RubyForge'
-task :upload => :rdoc do
-  user = "cfauser@rubyforge.org" 
-  project = '/var/www/gforge-projects/ebayapi'
-  local_dir = 'doc'
-  pub = Rake::SshDirPublisher.new user, project, local_dir
-  pub.upload
-end
+#desc 'Upload RDoc to RubyForge'
+#task :upload => :rdoc do
+  #user = "cfauser@rubyforge.org" 
+  #project = '/var/www/gforge-projects/ebayapi'
+  #local_dir = 'doc'
+  #pub = Rake::SshDirPublisher.new user, project, local_dir
+  #pub.upload
+#end

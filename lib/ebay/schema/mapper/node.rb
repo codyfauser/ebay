@@ -3,7 +3,7 @@ module Ebay
     class Node
       include Inflections
       class_inheritable_accessor :override_type
-        
+
       attr_accessor :name, :min, :max
       def initialize(name, attributes = {})
         @name = name
@@ -17,25 +17,25 @@ module Ebay
       def optional?
         @min == "0"
       end
-      
+
       def accessor_name
         name = ebay_underscore(@name)
         if name =~ /_array$/
           name.gsub!(/_array$/, '')
-          Inflector.pluralize(name)
+          ActiveSupport::Inflector.pluralize(name)
         else
           name
         end
       end
 
       def xml_mapping_node_type
-        override_type || Inflector.demodulize(self.class.to_s).underscore
+        override_type || ActiveSupport::Inflector.demodulize(self.class.to_s).underscore
       end
 
       def declaration
         "#{xml_mapping_node_type} :#{accessor_name}"
       end
-      
+
       private
       def clean_class_name(name)
         trim_namespace(name.gsub(/Type$/, '')).camelize
@@ -66,10 +66,10 @@ end
         result
       end
     end
-    
+
     class CdataNode < TextNode
     end
-    
+
     class BooleanNode < Node
       def to_s
         result = "#{declaration}, '#{@name}', 'true', 'false'"
@@ -90,7 +90,7 @@ end
     class DateTimeNode < TextNode
       self.override_type = 'time_node'
     end
-    
+
     class ValueArrayNode < Node
       def to_s
         result = "#{declaration.pluralize}, '#{@name}', "
@@ -103,14 +103,14 @@ end
       def class_name
         clean_class_name(@type)
       end
-			
+
       def to_s
         result = "#{declaration.pluralize}, '#{@name}', "
         result << "'#{@child}', " if @child
         result << ":class => #{class_name}, :default_value => []"
 			end
     end
-    
+
     class MoneyNode < Node
       def to_s
         result = "#{declaration}, '#{@name}'"
@@ -118,12 +118,12 @@ end
         result
       end
     end
-    
+
     class ValueNode < Node
       def class_name
         clean_class_name(@type)
       end
-      
+
       def to_s
         result = "#{declaration}, '#{@name}', :class => #{class_name}"
         result << ', :optional => true' if @min == '0'
@@ -135,7 +135,7 @@ end
       def class_name
         clean_class_name(@type)
       end
-      
+
       def to_s
         result = "#{declaration}, '#{@name}', :class => #{class_name}"
         result << ', :optional => true' if @min == '0'
