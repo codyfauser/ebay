@@ -3,7 +3,7 @@ require 'xml/mapping/base'
 
 class MoneyNode < XML::Mapping::SingleAttributeNode
   def initialize_impl(path)
-    @amount_path = XML::XXPath.new(path + "/")
+    @amount_path = XML::XXPath.new(path)
     @currency_path = XML::XXPath.new(path + "/@currencyID")
   end
 

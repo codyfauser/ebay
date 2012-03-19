@@ -27,7 +27,7 @@ class MoneyNodeTest < Test::Unit::TestCase
     item = Widget.load_from_xml(REXML::Document.new(@xml).root)
     assert_instance_of Money, item.amount
     assert_equal 1000, item.amount.cents
-    assert_equal 'CAD', item.amount.currency
+    assert_equal 'CAD', item.amount.currency.iso_code
   end
   
   def test_to_xml

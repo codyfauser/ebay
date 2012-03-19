@@ -3,7 +3,7 @@ require 'ebay/types/rental_price_value'
 
 class RentalPriceValueNode < XML::Mapping::SingleAttributeNode
   def initialize_impl(path)
-    @val_path = XML::XXPath.new(path + "/")
+    @val_path = XML::XXPath.new(path)
     @duration_path = XML::XXPath.new(path + "/@duration")
   end
 
