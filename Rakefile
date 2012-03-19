@@ -5,6 +5,6 @@ require 'bundler'
 
 Bundler::GemHelper.install_tasks
 
-Dir.glob('lib/tasks/*.rake').each do |r| 
-  import r
+Dir.glob('lib/tasks/*.rake').each do |rake_file|
+  import rake_file
 end

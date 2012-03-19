@@ -2,7 +2,7 @@ module Ebay
   module Schema
     class Node
       include Inflections
-      class_inheritable_accessor :override_type
+      class_attribute :override_type
 
       attr_accessor :name, :min, :max
       def initialize(name, attributes = {})
