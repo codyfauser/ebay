@@ -1,2 +1,3 @@
 lib/ebay/schema/ebaySvc.xsd
 examples/config.rb
+examples/run_ruby.sh
