@@ -72,14 +72,26 @@ end
 
 # ---------------------------------------------------------------
 # mapping old -> new if category hierarchy changes
+#
+# TODO: does not work propery
 # ---------------------------------------------------------------
 def get_category_mapping(site_id)
   ebay = Ebay::Api.new
   
-  puts "reading category mappings for site: #{site_id}"
-  resp = ebay.get_category_mappings({:category_site_id => site_id})
+  puts "------------"
+  puts "reading category mappings"
+  resp = ebay.get_category_mappings()
   
-  puts "TODO: hier weiter"
+  # the response:
+  #
+  # class GetCategoryMappings 
+  #    :category_mappings   the mappings
+  #    :category_version    the new version of the category hierarchy
+  puts "mapping to new category version #{resp.category_version}"
+  
+  puts "found #{resp.category_mappings.count()} mappings"
+  
+  doesnotwork = true
 end
 
 
