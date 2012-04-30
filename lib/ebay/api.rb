@@ -18,14 +18,14 @@ module Ebay #:nodoc:
 
   # == Overview
   # Api is the main proxy class responsible for instantiating and invoking
-  # the correct Ebay::Requests object for the method called. 
+  # the correct Ebay::Requests object for the method called.
   # All of the available method calls are included from the module Ebay::ApiMethods
   #   ebay = Ebay::Api.new
   #   response = ebay.get_ebay_official_time
   #   puts response.timestamp # => 2006-08-13T21:28:39.515Z
   #
   # All Ebay API calls have a corresponding request and response object.
-  # In the example above the request objects is 
+  # In the example above the request objects is
   # Ebay::Requests::GeteBayOfficialTime and the response object is
   # Ebay::Responses::GeteBayOfficialTime
   #
@@ -191,10 +191,6 @@ module Ebay #:nodoc:
       result << REXML::XMLDecl.new('1.0', 'UTF-8')
       result << request.save_to_xml
       result.root.add_namespace namespace
-      Rails.logger.debug("------------------------------------------------------------------------------------------------------")
-      Rails.logger.debug("Ebay Request")
-      Rails.logger.debug("#{result.to_s}")
-      Rails.logger.debug("------------------------------------------------------------------------------------------------------")
       result.to_s
     end
 
@@ -234,10 +230,6 @@ module Ebay #:nodoc:
           xml = REXML::Document.new(content)
           # Fixes the wrong case of API returned by eBay
           fix_root_element_name(xml)
-          Rails.logger.debug("------------------------------------------------------------------------------------------------------")
-          Rails.logger.debug("Ebay Response")
-          Rails.logger.debug("#{xml.to_s}")
-          Rails.logger.debug("------------------------------------------------------------------------------------------------------")
           result = XML::Mapping.load_object_from_xml(xml.root)
           case result.ack
             when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure

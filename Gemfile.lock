@@ -1,0 +1,32 @@
+PATH
+  remote: .
+  specs:
+    ebayapi (0.20.0)
+      activesupport (~> 3.1.0)
+      libxml-ruby (~> 2.3.0)
+      money (~> 4.0.2)
+      rubyjedi-soap4r (~> 1.5.8.20100619003610)
+      xml-mapping (~> 0.9.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.1.4)
+      multi_json (~> 1.0)
+    httpclient (2.1.5.2)
+    i18n (0.6.0)
+    json (1.6.5)
+    libxml-ruby (2.3.0)
+    money (4.0.2)
+      i18n (~> 0.4)
+      json
+    multi_json (1.1.0)
+    rubyjedi-soap4r (1.5.8.20100619003610)
+      httpclient (~> 2.1.5.2)
+    xml-mapping (0.9.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ebayapi!
