@@ -10,6 +10,7 @@ require 'ebay/types/order'
 require 'ebay/types/listing_checkout_redirect_preference'
 require 'ebay/types/refund'
 require 'ebay/types/variation'
+require 'ebay/types/taxes'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -55,6 +56,7 @@ module Ebay # :nodoc:
     #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
     #  object_node :variation, 'Variation', :class => Variation, :optional => true
     #  text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
+    #  object_node :taxes, 'Taxes', :class => Taxes, :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -100,6 +102,7 @@ module Ebay # :nodoc:
       money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
       object_node :variation, 'Variation', :class => Variation, :optional => true
       text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
+      object_node :taxes, 'Taxes', :class => Taxes, :optional => true
     end
   end
 end

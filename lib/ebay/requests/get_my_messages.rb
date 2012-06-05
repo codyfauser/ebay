@@ -1,3 +1,4 @@
+require 'ebay/types/pagination'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -8,6 +9,8 @@ module Ebay # :nodoc:
     #  time_node :start_time, 'StartTime', :optional => true
     #  time_node :end_time, 'EndTime', :optional => true
     #  value_array_node :external_message_ids, 'ExternalMessageIDs', 'ExternalMessageID', :default_value => []
+    #  object_node :pagination, 'Pagination', :class => Pagination, :optional => true
+    #  boolean_node :include_high_priority_message_only, 'IncludeHighPriorityMessageOnly', 'true', 'false', :optional => true
     class GetMyMessages < Abstract
       include XML::Mapping
       include Initializer
@@ -18,6 +21,8 @@ module Ebay # :nodoc:
       time_node :start_time, 'StartTime', :optional => true
       time_node :end_time, 'EndTime', :optional => true
       value_array_node :external_message_ids, 'ExternalMessageIDs', 'ExternalMessageID', :default_value => []
+      object_node :pagination, 'Pagination', :class => Pagination, :optional => true
+      boolean_node :include_high_priority_message_only, 'IncludeHighPriorityMessageOnly', 'true', 'false', :optional => true
     end
   end
 end

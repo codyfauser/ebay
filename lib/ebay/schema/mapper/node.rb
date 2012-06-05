@@ -22,14 +22,14 @@ module Ebay
         name = ebay_underscore(@name)
         if name =~ /_array$/
           name.gsub!(/_array$/, '')
-          Inflector.pluralize(name)
+          ActiveSupport::Inflector.pluralize(name)
         else
           name
         end
       end
 
       def xml_mapping_node_type
-        override_type || Inflector.demodulize(self.class.to_s).underscore
+        override_type || ActiveSupport::Inflector.demodulize(self.class.to_s).underscore
       end
 
       def declaration

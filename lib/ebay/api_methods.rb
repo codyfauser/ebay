@@ -233,6 +233,14 @@ module Ebay
     def end_items(params = {})
       commit(Ebay::Requests::EndItems, params)
     end
+    # Builds Ebay::Requests#ExtendSiteHostedPictures
+    #
+    # Returns Ebay::Responses#ExtendSiteHostedPictures
+    #
+    # Official Documentation for ExtendSiteHostedPictures[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ExtendSiteHostedPictures.html]
+    def extend_site_hosted_pictures(params = {})
+      commit(Ebay::Requests::ExtendSiteHostedPictures, params)
+    end
     # Builds Ebay::Requests#FetchToken
     #
     # Returns Ebay::Responses#FetchToken

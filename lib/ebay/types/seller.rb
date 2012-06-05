@@ -35,6 +35,7 @@ module Ebay # :nodoc:
     #  object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
     #  boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
     #  value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+    #  value_array_node :recoupment_policy_consents, 'RecoupmentPolicyConsent', 'Site', :default_value => []
     class Seller
       include XML::Mapping
       include Initializer
@@ -67,6 +68,7 @@ module Ebay # :nodoc:
       object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
       boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
       value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+      value_array_node :recoupment_policy_consents, 'RecoupmentPolicyConsent', 'Site', :default_value => []
     end
   end
 end

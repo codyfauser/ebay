@@ -10,4 +10,4 @@ require 'mapper/class_template'
 require 'mapper/class_definition'
 
 # Remove the broken unpluralization of 'ies' words
-Inflector.inflections.plurals.delete_if{|inflection| inflection.first == /([^aeiouy]|qu)ies$/i }
+ActiveSupport::Inflector.inflections.plurals.delete_if{|inflection| inflection.first == /([^aeiouy]|qu)ies$/i }

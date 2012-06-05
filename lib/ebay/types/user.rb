@@ -47,6 +47,7 @@ module Ebay # :nodoc:
     #  boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
     #  text_node :billing_email, 'BillingEmail', :optional => true
     #  boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false', :optional => true
+    #  text_node :static_alias, 'StaticAlias', :optional => true
     class User
       include XML::Mapping
       include Initializer
@@ -91,6 +92,7 @@ module Ebay # :nodoc:
       boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
       text_node :billing_email, 'BillingEmail', :optional => true
       boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false', :optional => true
+      text_node :static_alias, 'StaticAlias', :optional => true
     end
   end
 end

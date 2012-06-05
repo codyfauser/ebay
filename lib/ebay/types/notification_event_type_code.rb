@@ -66,6 +66,8 @@ module Ebay # :nodoc:
       BulkDataExchangeJobCompleted = 'BulkDataExchangeJobCompleted'
       ItemMarkedShipped = 'ItemMarkedShipped'
       ItemMarkedPaid = 'ItemMarkedPaid'
+      MyMessagesHighPriorityMessage = 'MyMessagesHighPriorityMessage'
+      MyMessagesHighPriorityMessageHeader = 'MyMessagesHighPriorityMessageHeader'
     end
   end
 end

@@ -20,6 +20,8 @@ require 'ebay/types/site_buyer_requirement_details'
 require 'ebay/types/listing_feature_details'
 require 'ebay/types/variation_details'
 require 'ebay/types/exclude_shipping_location_details'
+require 'ebay/types/recoupment_policy_details'
+require 'ebay/types/shipping_category_details'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -47,6 +49,8 @@ module Ebay # :nodoc:
     #  object_node :variation_details, 'VariationDetails', :class => VariationDetails, :optional => true
     #  array_node :exclude_shipping_location_details, 'ExcludeShippingLocationDetails', :class => ExcludeShippingLocationDetails, :default_value => []
     #  time_node :update_time, 'UpdateTime', :optional => true
+    #  array_node :recoupment_policy_details, 'RecoupmentPolicyDetails', :class => RecoupmentPolicyDetails, :default_value => []
+    #  array_node :shipping_category_details, 'ShippingCategoryDetails', :class => ShippingCategoryDetails, :default_value => []
     class GeteBayDetails < Abstract
       include XML::Mapping
       include Initializer
@@ -74,6 +78,8 @@ module Ebay # :nodoc:
       object_node :variation_details, 'VariationDetails', :class => VariationDetails, :optional => true
       array_node :exclude_shipping_location_details, 'ExcludeShippingLocationDetails', :class => ExcludeShippingLocationDetails, :default_value => []
       time_node :update_time, 'UpdateTime', :optional => true
+      array_node :recoupment_policy_details, 'RecoupmentPolicyDetails', :class => RecoupmentPolicyDetails, :default_value => []
+      array_node :shipping_category_details, 'ShippingCategoryDetails', :class => ShippingCategoryDetails, :default_value => []
     end
   end
 end

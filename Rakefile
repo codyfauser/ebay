@@ -5,6 +5,9 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 require 'rake/gempackagetask'
 require 'rake/contrib/rubyforgepublisher'
+gem 'activesupport'
+gem 'libxml-ruby'
+require 'xml'
 
 PKG_VERSION = "0.12.0"
 PKG_NAME = "ebayapi"
