@@ -1,6 +1,7 @@
 require 'ebay/types/listing_duration_reference'
 require 'ebay/types/listing_enhancement_duration_reference'
 require 'ebay/types/store_owner_extended_listing_durations'
+require 'ebay/types/condition_values'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -109,6 +110,8 @@ module Ebay # :nodoc:
     #  text_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :optional => true
     #  numeric_node :min_item_compatibility, 'MinItemCompatibility', :optional => true
     #  numeric_node :max_item_compatibility, 'MaxItemCompatibility', :optional => true
+    #  text_node :condition_enabled, 'ConditionEnabled', :optional => true
+    #  object_node :condition_values, 'ConditionValues', :class => ConditionValues, :optional => true
     class CategoryFeature
       include XML::Mapping
       include Initializer
@@ -217,6 +220,8 @@ module Ebay # :nodoc:
       text_node :item_compatibility_enabled, 'ItemCompatibilityEnabled', :optional => true
       numeric_node :min_item_compatibility, 'MinItemCompatibility', :optional => true
       numeric_node :max_item_compatibility, 'MaxItemCompatibility', :optional => true
+      text_node :condition_enabled, 'ConditionEnabled', :optional => true
+      object_node :condition_values, 'ConditionValues', :class => ConditionValues, :optional => true
     end
   end
 end

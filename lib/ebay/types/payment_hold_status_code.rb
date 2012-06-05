@@ -7,6 +7,7 @@ module Ebay # :nodoc:
       MerchantHold = 'MerchantHold'
       Released = 'Released'
       None = 'None'
+      NewSellerHold = 'NewSellerHold'
     end
   end
 end

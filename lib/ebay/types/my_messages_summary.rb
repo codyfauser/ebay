@@ -10,6 +10,8 @@ module Ebay # :nodoc:
     #  numeric_node :flagged_message_count, 'FlaggedMessageCount', :optional => true
     #  numeric_node :total_alert_count, 'TotalAlertCount', :optional => true
     #  numeric_node :total_message_count, 'TotalMessageCount', :optional => true
+    #  numeric_node :new_high_priority_count, 'NewHighPriorityCount', :optional => true
+    #  numeric_node :total_high_priority_count, 'TotalHighPriorityCount', :optional => true
     class MyMessagesSummary
       include XML::Mapping
       include Initializer
@@ -21,6 +23,8 @@ module Ebay # :nodoc:
       numeric_node :flagged_message_count, 'FlaggedMessageCount', :optional => true
       numeric_node :total_alert_count, 'TotalAlertCount', :optional => true
       numeric_node :total_message_count, 'TotalMessageCount', :optional => true
+      numeric_node :new_high_priority_count, 'NewHighPriorityCount', :optional => true
+      numeric_node :total_high_priority_count, 'TotalHighPriorityCount', :optional => true
     end
   end
 end

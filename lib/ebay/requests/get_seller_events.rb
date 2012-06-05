@@ -12,6 +12,7 @@ module Ebay # :nodoc:
     #  boolean_node :new_item_filter, 'NewItemFilter', 'true', 'false', :optional => true
     #  boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
     #  boolean_node :include_variation_specifics, 'IncludeVariationSpecifics', 'true', 'false', :optional => true
+    #  boolean_node :hide_variations, 'HideVariations', 'true', 'false', :optional => true
     class GetSellerEvents < Abstract
       include XML::Mapping
       include Initializer
@@ -26,6 +27,7 @@ module Ebay # :nodoc:
       boolean_node :new_item_filter, 'NewItemFilter', 'true', 'false', :optional => true
       boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
       boolean_node :include_variation_specifics, 'IncludeVariationSpecifics', 'true', 'false', :optional => true
+      boolean_node :hide_variations, 'HideVariations', 'true', 'false', :optional => true
     end
   end
 end

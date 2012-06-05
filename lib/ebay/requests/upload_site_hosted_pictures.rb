@@ -9,6 +9,8 @@ module Ebay # :nodoc:
     #  object_node :picture_data, 'PictureData', :class => Base64Binary, :optional => true
     #  text_node :picture_upload_policy, 'PictureUploadPolicy', :optional => true
     #  text_node :external_picture_url, 'ExternalPictureURL', :optional => true
+    #  value_array_node :picture_watermarks, 'PictureWatermark', :default_value => []
+    #  numeric_node :extension_in_days, 'ExtensionInDays', :optional => true
     class UploadSiteHostedPictures < Abstract
       include XML::Mapping
       include Initializer
@@ -19,6 +21,8 @@ module Ebay # :nodoc:
       object_node :picture_data, 'PictureData', :class => Base64Binary, :optional => true
       text_node :picture_upload_policy, 'PictureUploadPolicy', :optional => true
       text_node :external_picture_url, 'ExternalPictureURL', :optional => true
+      value_array_node :picture_watermarks, 'PictureWatermark', :default_value => []
+      numeric_node :extension_in_days, 'ExtensionInDays', :optional => true
     end
   end
 end

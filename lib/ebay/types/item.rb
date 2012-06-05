@@ -151,6 +151,11 @@ module Ebay # :nodoc:
     #  object_node :variations, 'Variations', :class => Variations, :optional => true
     #  array_node :item_compatibility_lists, 'ItemCompatibilityList', 'Compatibility', :class => ItemCompatibility, :default_value => []
     #  numeric_node :item_compatibility_count, 'ItemCompatibilityCount', :optional => true
+    #  numeric_node :condition_id, 'ConditionID', :optional => true
+    #  text_node :condition_display_name, 'ConditionDisplayName', :optional => true
+    #  text_node :tax_category, 'TaxCategory', :optional => true
+    #  text_node :quantity_available_hint, 'QuantityAvailableHint', :optional => true
+    #  numeric_node :quantity_threshold, 'QuantityThreshold', :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -271,6 +276,11 @@ module Ebay # :nodoc:
       object_node :variations, 'Variations', :class => Variations, :optional => true
       array_node :item_compatibility_lists, 'ItemCompatibilityList', 'Compatibility', :class => ItemCompatibility, :default_value => []
       numeric_node :item_compatibility_count, 'ItemCompatibilityCount', :optional => true
+      numeric_node :condition_id, 'ConditionID', :optional => true
+      text_node :condition_display_name, 'ConditionDisplayName', :optional => true
+      text_node :tax_category, 'TaxCategory', :optional => true
+      text_node :quantity_available_hint, 'QuantityAvailableHint', :optional => true
+      numeric_node :quantity_threshold, 'QuantityThreshold', :optional => true
     end
   end
 end

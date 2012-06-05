@@ -14,17 +14,15 @@ module Ebay
         @xml = XML::Parser.string(data).parse.root
         
         @elements = schema.collect_elements
-        @elements.uniq!
         @attributes = schema.collect_attributes
-        @attributes.uniq!
+        
         # Only want the simple types that have an enumeration (codes)
         @simple_types = schema.collect_simpletypes
-        @simple_types.uniq!
         
         @code_types = @simple_types.reject{ |e| e.restriction.enumeration.empty? || Ignores.include?(e.name.name) }
 
         @complex_types = schema.collect_complextypes
-        @complex_types.uniq!
+        
         @fault_types = nil
         if schema.respond_to?(:collect_faulttypes)
           @fault_types = schema.collect_faulttypes

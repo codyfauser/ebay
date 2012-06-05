@@ -6,6 +6,7 @@ require 'test/unit'
 require 'ebay'
 require 'http_mock'
 require 'credentials'
+require 'activesupport'
 
 
 class Test::Unit::TestCase #:nodoc:
