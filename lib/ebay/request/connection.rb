@@ -29,12 +29,52 @@ module Ebay #:nodoc:
   class Connection #:nodoc:
     attr_reader :site
 
+     # Setup logger
+    @@logger = Logger.new(STDOUT)
+    def logger
+      @@logger
+    end
+    def self.log_level=(level)
+      @@logger.level = level
+    end
+    self.log_level = Logger::WARN
+
+
     def initialize(site)
       @site = site
     end
 
     def post(path, body, headers)
-      request(:post, path, body, headers)
+      #request(:post, path, body, headers)
+
+      if logger.debug?
+        logger.debug("Request Path:")
+        logger.debug(path)
+        logger.debug("Request Headers:")
+        logger.debug(headers)
+        logger.debug("Request Body:")
+        logger.debug(body)
+        logger.debug("Request Headers:")
+        logger.debug(headers)
+      end
+
+      begin
+        response = request(:post, path, body, headers)
+      rescue => e
+        if logger.debug?
+          logger.debug("Response Error:")
+          logger.debug(e)
+          logger.debug(e.backtrace)
+        end
+        raise
+      end
+
+      if logger.debug?
+        logger.debug("Response:")
+        logger.debug(response)
+      end
+
+      response
     end
 
     private
