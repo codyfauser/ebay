@@ -1,6 +1,12 @@
 eBay API Client for Ruby
 ========================
 
+Current API version on master branch is *863*.
+
+If you want to use version *725* checkout correspondent branch here https://github.com/main24/ebayapi-19/tree/schema-version-725
+
+========================
+
 This is a fork of the "kayoom/ebayapi" code. The ruby19 branch is merge into master.
 
 The api implements the ebay Trading API. To get a list of calls look here:
