@@ -39,6 +39,13 @@ module Ebay # :nodoc:
       boolean_node :include_variations, 'IncludeVariations', 'true', 'false', :optional => true
       text_node :rental_type_filter, 'RentalTypeFilter', :optional => true
       text_node :listing_type, 'ListingType', :optional => true
+
+      def pagination
+        return unless @pagination
+
+        Pagination.new entries_per_page: @pagination.fetch(:entries_per_page, 200),
+                       page_number: @pagination.fetch(:page_number, 1)
+      end
     end
   end
 end
