@@ -23,6 +23,13 @@ module Ebay # :nodoc:
       text_node :listing_type, 'ListingType', :optional => true
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true
       array_node :item_transaction_ids, 'ItemTransactionIDArray', 'ItemTransactionID', :class => ItemTransactionID, :default_value => []
+
+      def pagination
+        return unless @pagination
+
+        Pagination.new entries_per_page: @pagination.fetch(:entries_per_page, 100),
+                       page_number: @pagination.fetch(:page_number, 1)
+      end
     end
   end
 end
