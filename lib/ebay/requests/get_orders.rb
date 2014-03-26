@@ -18,6 +18,8 @@ module Ebay # :nodoc:
       value_array_node :order_ids, 'OrderIDArray', 'OrderID', :default_value => []
       time_node :create_time_from, 'CreateTimeFrom', :optional => true
       time_node :create_time_to, 'CreateTimeTo', :optional => true
+      time_node :modify_time_from, 'ModTimeFrom', :optional => true
+      time_node :modify_time_to, 'ModTimeTo', :optional => true
       text_node :order_role, 'OrderRole', :optional => true
       text_node :order_status, 'OrderStatus', :optional => true
       text_node :listing_type, 'ListingType', :optional => true
