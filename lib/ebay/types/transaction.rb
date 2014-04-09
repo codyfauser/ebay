@@ -11,6 +11,7 @@ require 'ebay/types/listing_checkout_redirect_preference'
 require 'ebay/types/refund'
 require 'ebay/types/variation'
 require 'ebay/types/rental_transaction_info'
+require 'ebay/types/taxes'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -103,8 +104,7 @@ module Ebay # :nodoc:
       object_node :variation, 'Variation', :class => Variation, :optional => true
       text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
       array_node :rental_transaction_infos, 'RentalTransactionInfoArray', 'RentalTransactionInfo', :class => RentalTransactionInfo, :default_value => []
+      object_node :taxes, 'Taxes', class: Taxes, optional: true
     end
   end
 end
-
-
