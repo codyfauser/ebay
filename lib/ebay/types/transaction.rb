@@ -105,6 +105,8 @@ module Ebay # :nodoc:
       text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
       array_node :rental_transaction_infos, 'RentalTransactionInfoArray', 'RentalTransactionInfo', :class => RentalTransactionInfo, :default_value => []
       object_node :taxes, 'Taxes', class: Taxes, optional: true
+      money_node :actual_shipping_cost, 'ActualShippingCost', optional: true
+      money_node :actual_handling_cost, 'ActualHandlingCost', optional: true
     end
   end
 end
