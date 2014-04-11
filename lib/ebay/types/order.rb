@@ -33,27 +33,28 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'Order'
-      text_node :order_id, 'OrderID', :optional => true
-      text_node :order_status, 'OrderStatus', :optional => true
-      money_node :adjustment_amount, 'AdjustmentAmount', :optional => true
-      money_node :amount_paid, 'AmountPaid', :optional => true
-      money_node :amount_saved, 'AmountSaved', :optional => true
-      object_node :checkout_status, 'CheckoutStatus', :class => CheckoutStatus, :optional => true
-      object_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :optional => true
-      text_node :creating_user_role, 'CreatingUserRole', :optional => true
-      time_node :created_time, 'CreatedTime', :optional => true
-      value_array_node :payment_methods, 'PaymentMethods', :default_value => []
-      text_node :seller_email, 'SellerEmail', :optional => true
-      object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
-      object_node :shipping_service_selected, 'ShippingServiceSelected', :class => ShippingServiceOptions, :optional => true
-      money_node :subtotal, 'Subtotal', :optional => true
-      money_node :total, 'Total', :optional => true
-      array_node :external_transactions, 'ExternalTransaction', :class => ExternalTransaction, :default_value => []
-      array_node :transactions, 'TransactionArray', 'Transaction', :class => Transaction, :default_value => []
-      text_node :buyer_user_id, 'BuyerUserID', :optional => true
-      time_node :paid_time, 'PaidTime', :optional => true
-      time_node :shipped_time, 'ShippedTime', :optional => true
-      boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
+      text_node :order_id, 'OrderID', optional: true
+      text_node :order_status, 'OrderStatus', optional: true
+      money_node :adjustment_amount, 'AdjustmentAmount', optional: true
+      money_node :amount_paid, 'AmountPaid', optional: true
+      money_node :amount_saved, 'AmountSaved', optional: true
+      object_node :checkout_status, 'CheckoutStatus', class: CheckoutStatus, optional: true
+      text_node :cancel_reason, 'CancelReason', optional: true
+      object_node :shipping_details, 'ShippingDetails', class: ShippingDetails, optional: true
+      text_node :creating_user_role, 'CreatingUserRole', optional: true
+      time_node :created_time, 'CreatedTime', optional: true
+      value_array_node :payment_methods, 'PaymentMethods', default_value: []
+      text_node :seller_email, 'SellerEmail', optional: true
+      object_node :shipping_address, 'ShippingAddress', class: Address, optional: true
+      object_node :shipping_service_selected, 'ShippingServiceSelected', class: ShippingServiceOptions, optional: true
+      money_node :subtotal, 'Subtotal', optional: true
+      money_node :total, 'Total', optional: true
+      array_node :external_transactions, 'ExternalTransaction', class: ExternalTransaction, default_value: []
+      array_node :transactions, 'TransactionArray', 'Transaction', class: Transaction, default_value: []
+      text_node :buyer_user_id, 'BuyerUserID', optional: true
+      time_node :paid_time, 'PaidTime', optional: true
+      time_node :shipped_time, 'ShippedTime', optional: true
+      boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', optional: true
     end
   end
 end
