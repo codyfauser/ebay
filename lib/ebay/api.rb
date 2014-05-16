@@ -81,13 +81,19 @@ module Ebay #:nodoc:
     end
 
     def self.ru_url(options = {})
-      ru_name_url + "ws/eBayISAPI.dll?SignIn&RuName=#{options[:ru_name] || self.ru_name}&SessID=#{options[:session_id]}"
+      ruparams = generate_ruparams_query options[:ruparams]
+      ru_name_url + [ru_path, "RuName=#{options[:ru_name] || self.ru_name}", "SessID=#{options[:session_id]}", ruparams].join('&')
     end
 
     # The URI that all requests using service_key are sent to.
     def self.service_uri_by_service_key(service_key)
       URI.parse(using_sandbox? ?  services[service_key][:sandbox_url] :  services[service_key][:production_url]) unless services.nil? ||  service_key.nil?
     end
+
+    def self.ru_path
+      "ws/eBayISAPI.dll?SignIn"
+    end
+
 
     # Simply yields the Ebay::Api class itself.  This makes configuration a bit nicer looking:
     #
@@ -140,6 +146,13 @@ module Ebay #:nodoc:
     end
 
     private
+
+    def self.generate_ruparams_query ruparams
+      return '' if !ruparams.is_a?(Hash) || ruparams.blank?
+
+      "ruparams=" + ruparams.map{ |key, value| key.to_s + "%3D" + value.to_s }.join("%26")
+    end
+
     def commit(request_class, params, service_key = nil)
       format = params.delete(:format) || @format
 
