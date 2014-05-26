@@ -25,6 +25,13 @@ module Ebay # :nodoc:
       text_node :sort_order, 'SortOrder', :optional => true
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true
       object_node :sale_date_range, 'SaleDateRange', :class => TimeRange, :optional => true
+
+      def pagination
+        return unless @pagination
+
+        Pagination.new entries_per_page: @pagination.fetch(:entries_per_page, 100),
+                       page_number: @pagination.fetch(:page_number, 1)
+      end
     end
   end
 end
