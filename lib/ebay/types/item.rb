@@ -188,6 +188,7 @@ module Ebay # :nodoc:
       value_array_node :listing_enhancements, 'ListingEnhancement', :default_value => []
       text_node :listing_type, 'ListingType', :optional => true
       text_node :location, 'Location', :optional => true
+      boolean_node :out_of_stock_control, 'OutOfStockControl', 'true', 'false', optional: true
       numeric_node :lot_size, 'LotSize', :optional => true
       text_node :partner_code, 'PartnerCode', :optional => true
       text_node :partner_name, 'PartnerName', :optional => true
