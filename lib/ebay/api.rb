@@ -256,7 +256,7 @@ module Ebay #:nodoc:
     def parse(content, format)
       case format
         when :object
-          xml = REXML::Document.new(content)
+          xml = REXML::Document.new(content.encode("UTF-8", replace: ''))
           # Fixes the wrong case of API returned by eBay
           fix_root_element_name(xml)
           result = XML::Mapping.load_object_from_xml(xml.root)
