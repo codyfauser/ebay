@@ -21,4 +21,15 @@ class ConfigTest < Test::Unit::TestCase
     request = GeteBayOfficialTime.new(:auth_token => 'test')
     assert_equal 'test', request.auth_token
   end
+
+  def test_default_net_read_timeout
+    assert_equal 2000, Api.net_read_timeout
+  end
+
+  def test_override_net_read_timeout
+    Api.configure do |config|
+      config.net_read_timeout = 1000
+    end
+    assert_equal 1000, Api.net_read_timeout
+  end
 end

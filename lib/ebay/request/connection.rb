@@ -79,6 +79,7 @@ module Ebay #:nodoc:
     end
 
     private
+
     def request(method, *arguments)
       response = http.send(method, *arguments)
 
@@ -97,9 +98,10 @@ module Ebay #:nodoc:
     end
 
     def http
-      http             = Net::HTTP.new(@site.host, @site.port)
-      http.use_ssl     = @site.is_a?(URI::HTTPS)
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl?
+      http              = Net::HTTP.new(@site.host, @site.port)
+      http.use_ssl      = @site.is_a?(URI::HTTPS)
+      http.verify_mode  = OpenSSL::SSL::VERIFY_NONE if http.use_ssl?
+      http.read_timeout = Ebay::Api.net_read_timeout
       http
     end
   end

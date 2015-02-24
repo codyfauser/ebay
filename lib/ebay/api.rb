@@ -47,7 +47,7 @@ module Ebay #:nodoc:
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id, :services
     cattr_accessor :ru_name_sandbox_url, :ru_name_production_url, :ru_name
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
-    cattr_accessor :username, :password
+    cattr_accessor :username, :password, :net_read_timeout
     attr_reader :auth_token, :site_id
 
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
@@ -56,6 +56,7 @@ module Ebay #:nodoc:
     self.ru_name_production_url = "https://signin.ebay.com/"
     self.use_sandbox = false
     self.services = nil
+    self.net_read_timeout = 2000
 
     # Make the default site US
     self.site_id = 0
