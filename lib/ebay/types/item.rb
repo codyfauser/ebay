@@ -182,6 +182,7 @@ module Ebay # :nodoc:
       value_array_node :gift_services, 'GiftServices', :default_value => []
       text_node :hit_counter, 'HitCounter', :optional => true
       text_node :item_id, 'ItemID', :optional => true
+      text_node :relist_parent_id, 'RelistParentID', :optional => true
       object_node :listing_details, 'ListingDetails', :class => ListingDetails, :optional => true
       object_node :listing_designer, 'ListingDesigner', :class => ListingDesigner, :optional => true
       text_node :listing_duration, 'ListingDuration', :optional => true
