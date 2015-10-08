@@ -26,6 +26,8 @@ module Ebay # :nodoc:
     #  boolean_node :weight_required, 'WeightRequired', 'true', 'false', :optional => true
     #  text_node :detail_version, 'DetailVersion', :optional => true
     #  time_node :update_time, 'UpdateTime', :optional => true
+    #  money_node :total_shipping_cost, 'TotalShippingCost', :optional => true
+
     class ShippingServiceDetails
       include XML::Mapping
       include Initializer
@@ -52,6 +54,7 @@ module Ebay # :nodoc:
       boolean_node :weight_required, 'WeightRequired', 'true', 'false', :optional => true
       text_node :detail_version, 'DetailVersion', :optional => true
       time_node :update_time, 'UpdateTime', :optional => true
+      money_node :total_shipping_cost, 'TotalShippingCost', :optional => true
     end
   end
 end

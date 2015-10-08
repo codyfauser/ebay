@@ -59,6 +59,7 @@ module Ebay # :nodoc:
       text_node :address_id, 'AddressID', :optional => true
       text_node :address_owner, 'AddressOwner', :optional => true
       text_node :address_status, 'AddressStatus', :optional => true
+      text_node :address_usage, 'AddressUsage', :optional => true
       text_node :external_address_id, 'ExternalAddressID', :optional => true
       text_node :international_name, 'InternationalName', :optional => true
       text_node :international_state_and_city, 'InternationalStateAndCity', :optional => true

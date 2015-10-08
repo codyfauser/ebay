@@ -4,6 +4,7 @@ require 'ebay/types/address'
 require 'ebay/types/shipping_service_options'
 require 'ebay/types/external_transaction'
 require 'ebay/types/transaction'
+require 'ebay/types/multi_leg_shipping_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -29,7 +30,8 @@ module Ebay # :nodoc:
     #  time_node :paid_time, 'PaidTime', :optional => true
     #  time_node :shipped_time, 'ShippedTime', :optional => true
     #  boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
-    # boolean_node :is_multi_leg_shipping, 'IsMultiLegShipping', 'true', 'false', optional: true
+    #  boolean_node :is_multi_leg_shipping, 'IsMultiLegShipping', 'true', 'false', optional: true
+    #  object_node :multi_leg_shipping_details, 'MultiLegShippingDetails', class: MultiLegShippingDetails, optional: true
 
     class Order
       include XML::Mapping
@@ -58,6 +60,7 @@ module Ebay # :nodoc:
       time_node :shipped_time, 'ShippedTime', optional: true
       boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', optional: true
       boolean_node :is_multi_leg_shipping, 'IsMultiLegShipping', 'true', 'false', optional: true
+      object_node :multi_leg_shipping_details, 'MultiLegShippingDetails', class: MultiLegShippingDetails, optional: true
     end
   end
 end
