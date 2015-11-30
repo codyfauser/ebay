@@ -218,6 +218,7 @@ module Ebay # :nodoc:
       text_node :time_left, 'TimeLeft', :optional => true
       text_node :title, 'Title', :optional => true
       text_node :uuid, 'UUID', :optional => true
+      text_node :condition_id, 'ConditionID', :optional => true
       object_node :vat_details, 'VATDetails', :class => VATDetails, :optional => true
       text_node :seller_vacation_note, 'SellerVacationNote', :optional => true
       numeric_node :watch_count, 'WatchCount', :optional => true
