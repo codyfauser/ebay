@@ -1,5 +1,8 @@
 require 'xml/mapping/base'
-require 'ebay/types/rental_price_value'
+# TODO: look later
+# most likely required, but affects the classes generator (schema update process)
+# i.e. it failed to load this file, because that is one of generated classes
+# require 'ebay/types/rental_price_value'
 
 class RentalPriceValueNode < XML::Mapping::SingleAttributeNode
   def initialize_impl(path)

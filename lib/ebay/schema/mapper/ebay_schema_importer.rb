@@ -11,7 +11,7 @@ module Ebay
       Ignores = [ 'RecipientRelationCodeType' ]
 
       def initialize(schema, data)
-        @xml = XML::Parser.string(data).parse.root
+        @xml = LibXML::XML::Parser.string(data).parse.root
 
         @elements = schema.collect_elements
         @elements.uniq!
@@ -128,7 +128,8 @@ module Ebay
       end
 
       def remove_unused_files
-        @unused_files.uniq!.each do |file|
+        @unused_files.uniq!
+        @unused_files.each do |file|
           if File.exists?(file)
             puts "Removing #{file}"
             File.delete(file)
