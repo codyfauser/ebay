@@ -23,4 +23,8 @@ Gem::Specification.new do |s|
   s.add_dependency("rubyjedi-soap4r", ["~> 1.5.8.20100619003610"])
   s.add_dependency("libxml-ruby", ["~> 2.7.0"])
   s.add_dependency("money", ["~> 6.0"])
+
+  s.add_development_dependency "bundler", "~> 1.10"
+  s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "test-unit", "~> 3.1"
 end
