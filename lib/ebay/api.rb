@@ -43,7 +43,7 @@ module Ebay #:nodoc:
     cattr_accessor :username, :password
     attr_reader :auth_token, :site_id
     
-    self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
+    self.sandbox_url = 'https://open.api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
     self.use_sandbox = false
 
