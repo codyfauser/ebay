@@ -1,24 +1,30 @@
-require 'ebay/types/item_rating_details'
+require 'ebay/types/item_rating_detail_array'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :item_id, 'ItemID', :optional => true
-    #  text_node :comment_text, 'CommentText', :optional => true
-    #  text_node :comment_type, 'CommentType', :optional => true
-    #  text_node :transaction_id, 'TransactionID', :optional => true
-    #  text_node :target_user, 'TargetUser', :optional => true
-    #  array_node :seller_item_rating_details, 'SellerItemRatingDetailArray', 'ItemRatingDetails', :class => ItemRatingDetails, :default_value => []
+    #  value_array_node :item_ids, 'ItemID', :default_value => []
+    #  text_node :comment_text, 'CommentText'
+    #  value_array_node :comment_types, 'CommentType', :default_value => []
+    #  text_node :transaction_id, 'TransactionID'
+    #  value_array_node :target_users, 'TargetUser', :default_value => []
+    #  array_node :seller_item_rating_details, 'SellerItemRatingDetailArray', :class => ItemRatingDetailArray, :default_value => []
+    #  text_node :order_line_item_id, 'OrderLineItemID'
+    #  value_array_node :item_arrived_within_edd_types, 'ItemArrivedWithinEDDType', :default_value => []
+    #  boolean_node :item_delivered_within_edd, 'ItemDeliveredWithinEDD', 'true', 'false'
     class LeaveFeedback < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'LeaveFeedbackRequest'
-      text_node :item_id, 'ItemID', :optional => true
-      text_node :comment_text, 'CommentText', :optional => true
-      text_node :comment_type, 'CommentType', :optional => true
-      text_node :transaction_id, 'TransactionID', :optional => true
-      text_node :target_user, 'TargetUser', :optional => true
-      array_node :seller_item_rating_details, 'SellerItemRatingDetailArray', 'ItemRatingDetails', :class => ItemRatingDetails, :default_value => []
+      value_array_node :item_ids, 'ItemID', :default_value => []
+      text_node :comment_text, 'CommentText'
+      value_array_node :comment_types, 'CommentType', :default_value => []
+      text_node :transaction_id, 'TransactionID'
+      value_array_node :target_users, 'TargetUser', :default_value => []
+      array_node :seller_item_rating_details, 'SellerItemRatingDetailArray', :class => ItemRatingDetailArray, :default_value => []
+      text_node :order_line_item_id, 'OrderLineItemID'
+      value_array_node :item_arrived_within_edd_types, 'ItemArrivedWithinEDDType', :default_value => []
+      boolean_node :item_delivered_within_edd, 'ItemDeliveredWithinEDD', 'true', 'false'
     end
   end
 end

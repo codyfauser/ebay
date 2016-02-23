@@ -4,14 +4,14 @@ require 'ebay/types/transaction'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :order, 'Order', :class => Order, :optional => true
-    #  object_node :transaction, 'Transaction', :class => Transaction, :optional => true
+    #  array_node :orders, 'Order', :class => Order, :default_value => []
+    #  array_node :transactions, 'Transaction', :class => Transaction, :default_value => []
     class OrderTransaction
       include XML::Mapping
       include Initializer
       root_element_name 'OrderTransaction'
-      object_node :order, 'Order', :class => Order, :optional => true
-      object_node :transaction, 'Transaction', :class => Transaction, :optional => true
+      array_node :orders, 'Order', :class => Order, :default_value => []
+      array_node :transactions, 'Transaction', :class => Transaction, :default_value => []
     end
   end
 end

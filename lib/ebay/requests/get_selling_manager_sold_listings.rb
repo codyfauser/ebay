@@ -5,33 +5,26 @@ require 'ebay/types/time_range'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  object_node :search, 'Search', :class => SellingManagerSearch, :optional => true
-    #  numeric_node :store_category_id, 'StoreCategoryID', :optional => true
-    #  value_array_node :filters, 'Filter', :default_value => []
-    #  boolean_node :archived, 'Archived', 'true', 'false', :optional => true
-    #  text_node :sort, 'Sort', :optional => true
-    #  text_node :sort_order, 'SortOrder', :optional => true
-    #  object_node :pagination, 'Pagination', :class => Pagination, :optional => true
-    #  object_node :sale_date_range, 'SaleDateRange', :class => TimeRange, :optional => true
+    #  array_node :searches, 'Search', :class => SellingManagerSearch, :default_value => []
+    #  numeric_node :store_category_id, 'StoreCategoryID'
+    #  text_node :filter, 'Filter'
+    #  boolean_node :archived, 'Archived', 'true', 'false'
+    #  value_array_node :sorts, 'Sort', :default_value => []
+    #  value_array_node :sort_orders, 'SortOrder', :default_value => []
+    #  array_node :paginations, 'Pagination', :class => Pagination, :default_value => []
+    #  array_node :sale_date_ranges, 'SaleDateRange', :class => TimeRange, :default_value => []
     class GetSellingManagerSoldListings < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSellingManagerSoldListingsRequest'
-      object_node :search, 'Search', :class => SellingManagerSearch, :optional => true
-      numeric_node :store_category_id, 'StoreCategoryID', :optional => true
-      value_array_node :filters, 'Filter', :default_value => []
-      boolean_node :archived, 'Archived', 'true', 'false', :optional => true
-      text_node :sort, 'Sort', :optional => true
-      text_node :sort_order, 'SortOrder', :optional => true
-      object_node :pagination, 'Pagination', :class => Pagination, :optional => true
-      object_node :sale_date_range, 'SaleDateRange', :class => TimeRange, :optional => true
-
-      def pagination
-        return unless @pagination
-
-        Pagination.new entries_per_page: @pagination.fetch(:entries_per_page, 100),
-                       page_number: @pagination.fetch(:page_number, 1)
-      end
+      array_node :searches, 'Search', :class => SellingManagerSearch, :default_value => []
+      numeric_node :store_category_id, 'StoreCategoryID'
+      text_node :filter, 'Filter'
+      boolean_node :archived, 'Archived', 'true', 'false'
+      value_array_node :sorts, 'Sort', :default_value => []
+      value_array_node :sort_orders, 'SortOrder', :default_value => []
+      array_node :paginations, 'Pagination', :class => Pagination, :default_value => []
+      array_node :sale_date_ranges, 'SaleDateRange', :class => TimeRange, :default_value => []
     end
   end
 end

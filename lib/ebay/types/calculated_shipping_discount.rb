@@ -3,14 +3,14 @@ require 'ebay/types/discount_profile'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :discount_name, 'DiscountName', :optional => true
-    #  array_node :discount_profiles, 'DiscountProfile', :class => DiscountProfile, :default_value => []
+    #  value_array_node :discount_names, 'DiscountName', :default_value => []
+    #  object_node :discount_profile, 'DiscountProfile', :class => DiscountProfile
     class CalculatedShippingDiscount
       include XML::Mapping
       include Initializer
       root_element_name 'CalculatedShippingDiscount'
-      text_node :discount_name, 'DiscountName', :optional => true
-      array_node :discount_profiles, 'DiscountProfile', :class => DiscountProfile, :default_value => []
+      value_array_node :discount_names, 'DiscountName', :default_value => []
+      object_node :discount_profile, 'DiscountProfile', :class => DiscountProfile
     end
   end
 end

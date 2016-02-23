@@ -2,16 +2,16 @@
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :item_id, 'ItemID', :optional => true
-    #  text_node :ending_reason, 'EndingReason', :optional => true
-    #  text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
+    #  value_array_node :item_ids, 'ItemID', :default_value => []
+    #  value_array_node :ending_reasons, 'EndingReason', :default_value => []
+    #  text_node :seller_inventory_id, 'SellerInventoryID'
     class EndItem < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'EndItemRequest'
-      text_node :item_id, 'ItemID', :optional => true
-      text_node :ending_reason, 'EndingReason', :optional => true
-      text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
+      value_array_node :item_ids, 'ItemID', :default_value => []
+      value_array_node :ending_reasons, 'EndingReason', :default_value => []
+      text_node :seller_inventory_id, 'SellerInventoryID'
     end
   end
 end

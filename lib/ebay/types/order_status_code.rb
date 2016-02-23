@@ -12,6 +12,8 @@ module Ebay # :nodoc:
       Authenticated = 'Authenticated'
       InProcess = 'InProcess'
       Invalid = 'Invalid'
+      All = 'All'
+      CancelPending = 'CancelPending'
     end
   end
 end

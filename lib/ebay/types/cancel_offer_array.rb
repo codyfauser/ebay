@@ -3,12 +3,12 @@ require 'ebay/types/cancel_offer'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :cancel_offers, 'CancelOffer', :class => CancelOffer, :default_value => []
+    #  object_node :cancel_offer, 'CancelOffer', :class => CancelOffer
     class CancelOfferArray
       include XML::Mapping
       include Initializer
       root_element_name 'CancelOfferArray'
-      array_node :cancel_offers, 'CancelOffer', :class => CancelOffer, :default_value => []
+      object_node :cancel_offer, 'CancelOffer', :class => CancelOffer
     end
   end
 end

@@ -1,19 +1,20 @@
+require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  money_node :promotion_price, 'PromotionPrice', :optional => true
-    #  text_node :promotion_price_type, 'PromotionPriceType', :optional => true
-    #  numeric_node :bid_count, 'BidCount', :optional => true
-    #  money_node :converted_promotion_price, 'ConvertedPromotionPrice', :optional => true
+    #  array_node :promotion_prices, 'PromotionPrice', :class => Amount, :default_value => []
+    #  value_array_node :promotion_price_types, 'PromotionPriceType', :default_value => []
+    #  numeric_node :bid_count, 'BidCount'
+    #  array_node :converted_promotion_prices, 'ConvertedPromotionPrice', :class => Amount, :default_value => []
     class PromotionDetails
       include XML::Mapping
       include Initializer
       root_element_name 'PromotionDetails'
-      money_node :promotion_price, 'PromotionPrice', :optional => true
-      text_node :promotion_price_type, 'PromotionPriceType', :optional => true
-      numeric_node :bid_count, 'BidCount', :optional => true
-      money_node :converted_promotion_price, 'ConvertedPromotionPrice', :optional => true
+      array_node :promotion_prices, 'PromotionPrice', :class => Amount, :default_value => []
+      value_array_node :promotion_price_types, 'PromotionPriceType', :default_value => []
+      numeric_node :bid_count, 'BidCount'
+      array_node :converted_promotion_prices, 'ConvertedPromotionPrice', :class => Amount, :default_value => []
     end
   end
 end

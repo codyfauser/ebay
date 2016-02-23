@@ -3,26 +3,26 @@ require 'ebay/types/item'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :listing_flow, 'ListingFlow', :optional => true
-    #  object_node :item, 'Item', :class => Item, :optional => true
-    #  value_array_node :recommendation_engines, 'RecommendationEngine', :default_value => []
-    #  text_node :query, 'Query', :optional => true
-    #  text_node :correlation_id, 'CorrelationID', :optional => true
-    #  text_node :deleted_field, 'DeletedField', :optional => true
-    #  boolean_node :exclude_relationships, 'ExcludeRelationships', 'true', 'false', :optional => true
-    #  boolean_node :include_confidence, 'IncludeConfidence', 'true', 'false', :optional => true
+    #  value_array_node :listing_flows, 'ListingFlow', :default_value => []
+    #  array_node :items, 'Item', :class => Item, :default_value => []
+    #  text_node :recommendation_engine, 'RecommendationEngine'
+    #  text_node :query, 'Query'
+    #  text_node :correlation_id, 'CorrelationID'
+    #  text_node :deleted_field, 'DeletedField'
+    #  boolean_node :exclude_relationships, 'ExcludeRelationships', 'true', 'false'
+    #  boolean_node :include_confidence, 'IncludeConfidence', 'true', 'false'
     class GetRecommendationsRequestContainer
       include XML::Mapping
       include Initializer
       root_element_name 'GetRecommendationsRequestContainer'
-      text_node :listing_flow, 'ListingFlow', :optional => true
-      object_node :item, 'Item', :class => Item, :optional => true
-      value_array_node :recommendation_engines, 'RecommendationEngine', :default_value => []
-      text_node :query, 'Query', :optional => true
-      text_node :correlation_id, 'CorrelationID', :optional => true
-      text_node :deleted_field, 'DeletedField', :optional => true
-      boolean_node :exclude_relationships, 'ExcludeRelationships', 'true', 'false', :optional => true
-      boolean_node :include_confidence, 'IncludeConfidence', 'true', 'false', :optional => true
+      value_array_node :listing_flows, 'ListingFlow', :default_value => []
+      array_node :items, 'Item', :class => Item, :default_value => []
+      text_node :recommendation_engine, 'RecommendationEngine'
+      text_node :query, 'Query'
+      text_node :correlation_id, 'CorrelationID'
+      text_node :deleted_field, 'DeletedField'
+      boolean_node :exclude_relationships, 'ExcludeRelationships', 'true', 'false'
+      boolean_node :include_confidence, 'IncludeConfidence', 'true', 'false'
     end
   end
 end

@@ -3,14 +3,14 @@ require 'ebay/types/promotional_sale'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :action, 'Action', :optional => true
-    #  object_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSale, :optional => true
+    #  value_array_node :actions, 'Action', :default_value => []
+    #  array_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSale, :default_value => []
     class SetPromotionalSale < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'SetPromotionalSaleRequest'
-      text_node :action, 'Action', :optional => true
-      object_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSale, :optional => true
+      value_array_node :actions, 'Action', :default_value => []
+      array_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSale, :default_value => []
     end
   end
 end

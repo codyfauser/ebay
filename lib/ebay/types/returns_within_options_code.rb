@@ -9,6 +9,7 @@ module Ebay # :nodoc:
       Days14 = 'Days_14'
       Days30 = 'Days_30'
       Days60 = 'Days_60'
+      Months1 = 'Months_1'
     end
   end
 end

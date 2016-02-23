@@ -3,14 +3,14 @@ require 'ebay/types/reminder_customization'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  object_node :buying_reminders, 'BuyingReminders', :class => ReminderCustomization, :optional => true
-    #  object_node :selling_reminders, 'SellingReminders', :class => ReminderCustomization, :optional => true
+    #  array_node :buying_reminders, 'BuyingReminders', :class => ReminderCustomization, :default_value => []
+    #  array_node :selling_reminders, 'SellingReminders', :class => ReminderCustomization, :default_value => []
     class GetMyeBayReminders < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetMyeBayRemindersRequest'
-      object_node :buying_reminders, 'BuyingReminders', :class => ReminderCustomization, :optional => true
-      object_node :selling_reminders, 'SellingReminders', :class => ReminderCustomization, :optional => true
+      array_node :buying_reminders, 'BuyingReminders', :class => ReminderCustomization, :default_value => []
+      array_node :selling_reminders, 'SellingReminders', :class => ReminderCustomization, :default_value => []
     end
   end
 end

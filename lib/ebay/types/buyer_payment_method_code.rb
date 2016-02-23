@@ -33,6 +33,13 @@ module Ebay # :nodoc:
       Paymate = 'Paymate'
       ProPay = 'ProPay'
       PayOnPickup = 'PayOnPickup'
+      Diners = 'Diners'
+      StandardPayment = 'StandardPayment'
+      DirectDebit = 'DirectDebit'
+      CreditCard = 'CreditCard'
+      PayUponInvoice = 'PayUponInvoice'
+      QIWI = 'QIWI'
+      PayPalCredit = 'PayPalCredit'
     end
   end
 end

@@ -20,6 +20,8 @@ module Ebay # :nodoc:
       Refunded = 'Refunded'
       WaitingForCODPayment = 'WaitingForCODPayment'
       PaidCOD = 'PaidCOD'
+      Paid = 'Paid'
+      PayUponInvoice = 'PayUponInvoice'
     end
   end
 end

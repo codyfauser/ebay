@@ -2,18 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :url_type, 'URLType', :optional => true
-    #  text_node :url, 'URL', :optional => true
-    #  text_node :detail_version, 'DetailVersion', :optional => true
-    #  time_node :update_time, 'UpdateTime', :optional => true
+    #  value_array_node :url_types, 'URLType', :default_value => []
+    #  text_node :url, 'URL'
+    #  text_node :detail_version, 'DetailVersion'
+    #  time_node :update_time, 'UpdateTime'
     class URLDetails
       include XML::Mapping
       include Initializer
       root_element_name 'URLDetails'
-      text_node :url_type, 'URLType', :optional => true
-      text_node :url, 'URL', :optional => true
-      text_node :detail_version, 'DetailVersion', :optional => true
-      time_node :update_time, 'UpdateTime', :optional => true
+      value_array_node :url_types, 'URLType', :default_value => []
+      text_node :url, 'URL'
+      text_node :detail_version, 'DetailVersion'
+      time_node :update_time, 'UpdateTime'
     end
   end
 end

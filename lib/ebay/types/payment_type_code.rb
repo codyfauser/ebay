@@ -8,6 +8,8 @@ module Ebay # :nodoc:
       SellerDeniedPayment = 'SellerDeniedPayment'
       AdminReversal = 'AdminReversal'
       AllOther = 'AllOther'
+      RentalExtension = 'RentalExtension'
+      RentalBuyout = 'RentalBuyout'
     end
   end
 end

@@ -3,12 +3,12 @@ require 'ebay/types/add_item_response_container'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  array_node :add_item_response_containers, 'AddItemResponseContainer', :class => AddItemResponseContainer, :default_value => []
+    #  object_node :add_item_response_container, 'AddItemResponseContainer', :class => AddItemResponseContainer
     class AddItems < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddItemsResponse'
-      array_node :add_item_response_containers, 'AddItemResponseContainer', :class => AddItemResponseContainer, :default_value => []
+      object_node :add_item_response_container, 'AddItemResponseContainer', :class => AddItemResponseContainer
     end
   end
 end

@@ -2,14 +2,14 @@
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :dispute_id, 'DisputeID', :optional => true
-    #  text_node :dispute_resolution_reason, 'DisputeResolutionReason', :optional => true
+    #  value_array_node :dispute_ids, 'DisputeID', :default_value => []
+    #  value_array_node :dispute_resolution_reasons, 'DisputeResolutionReason', :default_value => []
     class SellerReverseDispute < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'SellerReverseDisputeRequest'
-      text_node :dispute_id, 'DisputeID', :optional => true
-      text_node :dispute_resolution_reason, 'DisputeResolutionReason', :optional => true
+      value_array_node :dispute_ids, 'DisputeID', :default_value => []
+      value_array_node :dispute_resolution_reasons, 'DisputeResolutionReason', :default_value => []
     end
   end
 end

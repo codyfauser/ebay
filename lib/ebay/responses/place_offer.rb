@@ -4,16 +4,18 @@ require 'ebay/types/best_offer'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :selling_status, 'SellingStatus', :class => SellingStatus, :optional => true
-    #  text_node :transaction_id, 'TransactionID', :optional => true
-    #  object_node :best_offer, 'BestOffer', :class => BestOffer, :optional => true
+    #  array_node :selling_statuses, 'SellingStatus', :class => SellingStatus, :default_value => []
+    #  text_node :transaction_id, 'TransactionID'
+    #  array_node :best_offers, 'BestOffer', :class => BestOffer, :default_value => []
+    #  text_node :order_line_item_id, 'OrderLineItemID'
     class PlaceOffer < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'PlaceOfferResponse'
-      object_node :selling_status, 'SellingStatus', :class => SellingStatus, :optional => true
-      text_node :transaction_id, 'TransactionID', :optional => true
-      object_node :best_offer, 'BestOffer', :class => BestOffer, :optional => true
+      array_node :selling_statuses, 'SellingStatus', :class => SellingStatus, :default_value => []
+      text_node :transaction_id, 'TransactionID'
+      array_node :best_offers, 'BestOffer', :class => BestOffer, :default_value => []
+      text_node :order_line_item_id, 'OrderLineItemID'
     end
   end
 end

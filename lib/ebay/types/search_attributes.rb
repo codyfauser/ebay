@@ -4,17 +4,17 @@ module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
     #  numeric_node :attribute_id, 'AttributeID'
-    #  text_node :date_specifier, 'DateSpecifier', :optional => true
-    #  text_node :range_specifier, 'RangeSpecifier', :optional => true
-    #  array_node :value_lists, 'ValueList', :class => Val, :default_value => []
+    #  value_array_node :date_specifiers, 'DateSpecifier', :default_value => []
+    #  value_array_node :range_specifiers, 'RangeSpecifier', :default_value => []
+    #  object_node :value_list, 'ValueList', :class => Val
     class SearchAttributes
       include XML::Mapping
       include Initializer
       root_element_name 'SearchAttributes'
       numeric_node :attribute_id, 'AttributeID'
-      text_node :date_specifier, 'DateSpecifier', :optional => true
-      text_node :range_specifier, 'RangeSpecifier', :optional => true
-      array_node :value_lists, 'ValueList', :class => Val, :default_value => []
+      value_array_node :date_specifiers, 'DateSpecifier', :default_value => []
+      value_array_node :range_specifiers, 'RangeSpecifier', :default_value => []
+      object_node :value_list, 'ValueList', :class => Val
     end
   end
 end

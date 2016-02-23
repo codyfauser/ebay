@@ -2,16 +2,16 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :file_name, 'FileName', :optional => true
-    #  text_node :file_version, 'FileVersion', :optional => true
-    #  text_node :file_content, 'FileContent', :optional => true
+    #  text_node :file_name, 'FileName'
+    #  text_node :file_version, 'FileVersion'
+    #  text_node :file_content, 'FileContent'
     class XSLFile
       include XML::Mapping
       include Initializer
       root_element_name 'XSLFile'
-      text_node :file_name, 'FileName', :optional => true
-      text_node :file_version, 'FileVersion', :optional => true
-      text_node :file_content, 'FileContent', :optional => true
+      text_node :file_name, 'FileName'
+      text_node :file_version, 'FileVersion'
+      text_node :file_content, 'FileContent'
       # The content of the XSL stylesheet
       def file_content
         if @file_content
@@ -24,7 +24,6 @@ module Ebay # :nodoc:
         stylesheet = base64string.unpack('m').first
         stylesheet.sub!(/urn:schemas-microsoft-com:xslt/, 'http://exslt.org/common')
         stylesheet.sub!(/exclude-result-prefixes="x"/, 'exclude-result-prefixes="x xal"')
-        stylesheet
       end
     end
   end

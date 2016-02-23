@@ -25,6 +25,9 @@ module Ebay # :nodoc:
       ListingFeatureDetails = 'ListingFeatureDetails'
       VariationDetails = 'VariationDetails'
       ExcludeShippingLocationDetails = 'ExcludeShippingLocationDetails'
+      RecoupmentPolicyDetails = 'RecoupmentPolicyDetails'
+      ShippingCategoryDetails = 'ShippingCategoryDetails'
+      ProductDetails = 'ProductDetails'
     end
   end
 end

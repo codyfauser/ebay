@@ -4,57 +4,56 @@ require 'ebay/types/shipping_service_package_details'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :description, 'Description', :optional => true
-    #  boolean_node :expedited_service, 'ExpeditedService', 'true', 'false', :optional => true
-    #  boolean_node :international_service, 'InternationalService', 'true', 'false', :optional => true
-    #  text_node :shipping_service, 'ShippingService', :optional => true
-    #  numeric_node :shipping_service_id, 'ShippingServiceID', :optional => true
-    #  numeric_node :shipping_time_max, 'ShippingTimeMax', :optional => true
-    #  numeric_node :shipping_time_min, 'ShippingTimeMin', :optional => true
-    #  text_node :shipping_service_code, 'ShippingServiceCode', :optional => true
-    #  value_array_node :service_types, 'ServiceType', :default_value => []
-    #  value_array_node :shipping_packages, 'ShippingPackage', :default_value => []
-    #  boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false', :optional => true
-    #  boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false', :optional => true
-    #  boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
-    #  value_array_node :shipping_carriers, 'ShippingCarrier', :default_value => []
-    #  boolean_node :cod_service, 'CODService', 'true', 'false', :optional => true
-    #  array_node :deprecation_details, 'DeprecationDetails', :class => AnnouncementMessage, :default_value => []
-    #  numeric_node :mapped_to_shipping_service_id, 'MappedToShippingServiceID', :optional => true
-    #  text_node :cost_group_flat, 'CostGroupFlat', :optional => true
-    #  array_node :shipping_service_package_details, 'ShippingServicePackageDetails', :class => ShippingServicePackageDetails, :default_value => []
-    #  boolean_node :weight_required, 'WeightRequired', 'true', 'false', :optional => true
-    #  text_node :detail_version, 'DetailVersion', :optional => true
-    #  time_node :update_time, 'UpdateTime', :optional => true
-    #  money_node :total_shipping_cost, 'TotalShippingCost', :optional => true
-
+    #  text_node :description, 'Description'
+    #  boolean_node :expedited_service, 'ExpeditedService', 'true', 'false'
+    #  boolean_node :international_service, 'InternationalService', 'true', 'false'
+    #  text_node :shipping_service, 'ShippingService'
+    #  numeric_node :shipping_service_id, 'ShippingServiceID'
+    #  numeric_node :shipping_time_max, 'ShippingTimeMax'
+    #  numeric_node :shipping_time_min, 'ShippingTimeMin'
+    #  value_array_node :shipping_service_codes, 'ShippingServiceCode', :default_value => []
+    #  text_node :service_type, 'ServiceType'
+    #  text_node :shipping_package, 'ShippingPackage'
+    #  boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false'
+    #  boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false'
+    #  boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false'
+    #  text_node :shipping_carrier, 'ShippingCarrier'
+    #  boolean_node :cod_service, 'CODService', 'true', 'false'
+    #  object_node :deprecation_details, 'DeprecationDetails', :class => AnnouncementMessage
+    #  numeric_node :mapped_to_shipping_service_id, 'MappedToShippingServiceID'
+    #  text_node :cost_group_flat, 'CostGroupFlat'
+    #  object_node :shipping_service_package_details, 'ShippingServicePackageDetails', :class => ShippingServicePackageDetails
+    #  boolean_node :weight_required, 'WeightRequired', 'true', 'false'
+    #  text_node :detail_version, 'DetailVersion'
+    #  time_node :update_time, 'UpdateTime'
+    #  text_node :shipping_category, 'ShippingCategory'
     class ShippingServiceDetails
       include XML::Mapping
       include Initializer
       root_element_name 'ShippingServiceDetails'
-      text_node :description, 'Description', :optional => true
-      boolean_node :expedited_service, 'ExpeditedService', 'true', 'false', :optional => true
-      boolean_node :international_service, 'InternationalService', 'true', 'false', :optional => true
-      text_node :shipping_service, 'ShippingService', :optional => true
-      numeric_node :shipping_service_id, 'ShippingServiceID', :optional => true
-      numeric_node :shipping_time_max, 'ShippingTimeMax', :optional => true
-      numeric_node :shipping_time_min, 'ShippingTimeMin', :optional => true
-      text_node :shipping_service_code, 'ShippingServiceCode', :optional => true
-      value_array_node :service_types, 'ServiceType', :default_value => []
-      value_array_node :shipping_packages, 'ShippingPackage', :default_value => []
-      boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false', :optional => true
-      boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false', :optional => true
-      boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false', :optional => true
-      value_array_node :shipping_carriers, 'ShippingCarrier', :default_value => []
-      boolean_node :cod_service, 'CODService', 'true', 'false', :optional => true
-      array_node :deprecation_details, 'DeprecationDetails', :class => AnnouncementMessage, :default_value => []
-      numeric_node :mapped_to_shipping_service_id, 'MappedToShippingServiceID', :optional => true
-      text_node :cost_group_flat, 'CostGroupFlat', :optional => true
-      array_node :shipping_service_package_details, 'ShippingServicePackageDetails', :class => ShippingServicePackageDetails, :default_value => []
-      boolean_node :weight_required, 'WeightRequired', 'true', 'false', :optional => true
-      text_node :detail_version, 'DetailVersion', :optional => true
-      time_node :update_time, 'UpdateTime', :optional => true
-      money_node :total_shipping_cost, 'TotalShippingCost', :optional => true
+      text_node :description, 'Description'
+      boolean_node :expedited_service, 'ExpeditedService', 'true', 'false'
+      boolean_node :international_service, 'InternationalService', 'true', 'false'
+      text_node :shipping_service, 'ShippingService'
+      numeric_node :shipping_service_id, 'ShippingServiceID'
+      numeric_node :shipping_time_max, 'ShippingTimeMax'
+      numeric_node :shipping_time_min, 'ShippingTimeMin'
+      value_array_node :shipping_service_codes, 'ShippingServiceCode', :default_value => []
+      text_node :service_type, 'ServiceType'
+      text_node :shipping_package, 'ShippingPackage'
+      boolean_node :dimensions_required, 'DimensionsRequired', 'true', 'false'
+      boolean_node :valid_for_selling_flow, 'ValidForSellingFlow', 'true', 'false'
+      boolean_node :surcharge_applicable, 'SurchargeApplicable', 'true', 'false'
+      text_node :shipping_carrier, 'ShippingCarrier'
+      boolean_node :cod_service, 'CODService', 'true', 'false'
+      object_node :deprecation_details, 'DeprecationDetails', :class => AnnouncementMessage
+      numeric_node :mapped_to_shipping_service_id, 'MappedToShippingServiceID'
+      text_node :cost_group_flat, 'CostGroupFlat'
+      object_node :shipping_service_package_details, 'ShippingServicePackageDetails', :class => ShippingServicePackageDetails
+      boolean_node :weight_required, 'WeightRequired', 'true', 'false'
+      text_node :detail_version, 'DetailVersion'
+      time_node :update_time, 'UpdateTime'
+      text_node :shipping_category, 'ShippingCategory'
     end
   end
 end

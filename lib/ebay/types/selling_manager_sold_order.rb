@@ -1,72 +1,77 @@
 require 'ebay/types/selling_manager_sold_transaction'
 require 'ebay/types/address'
 require 'ebay/types/shipping_details'
+require 'ebay/types/amount'
 require 'ebay/types/vat_rate'
 require 'ebay/types/selling_manager_order_status'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :selling_manager_sold_transactions, 'SellingManagerSoldTransaction', :class => SellingManagerSoldTransaction, :default_value => []
-    #  object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
-    #  object_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :optional => true
-    #  money_node :cash_on_delivery_cost, 'CashOnDeliveryCost', :optional => true
-    #  money_node :total_amount, 'TotalAmount', :optional => true
-    #  numeric_node :total_quantity, 'TotalQuantity', :optional => true
-    #  money_node :item_cost, 'ItemCost', :optional => true
-    #  array_node :vat_rates, 'VATRate', :class => VATRate, :default_value => []
-    #  money_node :net_insurance_fee, 'NetInsuranceFee', :optional => true
-    #  money_node :vat_insurance_fee, 'VATInsuranceFee', :optional => true
-    #  money_node :vat_shipping_fee, 'VATShippingFee', :optional => true
-    #  money_node :net_shipping_fee, 'NetShippingFee', :optional => true
-    #  money_node :net_total_amount, 'NetTotalAmount', :optional => true
-    #  money_node :vat_total_amount, 'VATTotalAmount', :optional => true
-    #  money_node :actual_shipping_cost, 'ActualShippingCost', :optional => true
-    #  money_node :adjustment_amount, 'AdjustmentAmount', :optional => true
-    #  text_node :notes_to_buyer, 'NotesToBuyer', :optional => true
-    #  text_node :notes_from_buyer, 'NotesFromBuyer', :optional => true
-    #  text_node :notes_to_seller, 'NotesToSeller', :optional => true
-    #  object_node :order_status, 'OrderStatus', :class => SellingManagerOrderStatus, :optional => true
-    #  text_node :unpaid_item_status, 'UnpaidItemStatus', :optional => true
-    #  money_node :sale_price, 'SalePrice', :optional => true
-    #  numeric_node :emails_sent, 'EmailsSent', :optional => true
-    #  numeric_node :days_since_sale, 'DaysSinceSale', :optional => true
-    #  text_node :buyer_id, 'BuyerID', :optional => true
-    #  text_node :buyer_email, 'BuyerEmail', :optional => true
-    #  numeric_node :sale_record_id, 'SaleRecordID', :optional => true
-    #  time_node :creation_time, 'CreationTime', :optional => true
+    #  object_node :selling_manager_sold_transaction, 'SellingManagerSoldTransaction', :class => SellingManagerSoldTransaction
+    #  array_node :shipping_addresses, 'ShippingAddress', :class => Address, :default_value => []
+    #  array_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :default_value => []
+    #  array_node :cash_on_delivery_costs, 'CashOnDeliveryCost', :class => Amount, :default_value => []
+    #  array_node :total_amounts, 'TotalAmount', :class => Amount, :default_value => []
+    #  numeric_node :total_quantity, 'TotalQuantity'
+    #  array_node :item_costs, 'ItemCost', :class => Amount, :default_value => []
+    #  object_node :vat_rate, 'VATRate', :class => VATRate
+    #  array_node :net_insurance_fees, 'NetInsuranceFee', :class => Amount, :default_value => []
+    #  array_node :vat_insurance_fees, 'VATInsuranceFee', :class => Amount, :default_value => []
+    #  array_node :vat_shipping_fees, 'VATShippingFee', :class => Amount, :default_value => []
+    #  array_node :net_shipping_fees, 'NetShippingFee', :class => Amount, :default_value => []
+    #  array_node :net_total_amounts, 'NetTotalAmount', :class => Amount, :default_value => []
+    #  array_node :vat_total_amounts, 'VATTotalAmount', :class => Amount, :default_value => []
+    #  array_node :actual_shipping_costs, 'ActualShippingCost', :class => Amount, :default_value => []
+    #  array_node :adjustment_amounts, 'AdjustmentAmount', :class => Amount, :default_value => []
+    #  text_node :notes_to_buyer, 'NotesToBuyer'
+    #  text_node :notes_from_buyer, 'NotesFromBuyer'
+    #  text_node :notes_to_seller, 'NotesToSeller'
+    #  array_node :order_statuses, 'OrderStatus', :class => SellingManagerOrderStatus, :default_value => []
+    #  value_array_node :unpaid_item_statuses, 'UnpaidItemStatus', :default_value => []
+    #  array_node :sale_prices, 'SalePrice', :class => Amount, :default_value => []
+    #  numeric_node :emails_sent, 'EmailsSent'
+    #  numeric_node :days_since_sale, 'DaysSinceSale'
+    #  text_node :buyer_id, 'BuyerID'
+    #  text_node :buyer_email, 'BuyerEmail'
+    #  numeric_node :sale_record_id, 'SaleRecordID'
+    #  time_node :creation_time, 'CreationTime'
+    #  array_node :refund_amounts, 'RefundAmount', :class => Amount, :default_value => []
+    #  text_node :refund_status, 'RefundStatus'
     class SellingManagerSoldOrder
       include XML::Mapping
       include Initializer
       root_element_name 'SellingManagerSoldOrder'
-      array_node :selling_manager_sold_transactions, 'SellingManagerSoldTransaction', :class => SellingManagerSoldTransaction, :default_value => []
-      object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
-      object_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :optional => true
-      money_node :cash_on_delivery_cost, 'CashOnDeliveryCost', :optional => true
-      money_node :total_amount, 'TotalAmount', :optional => true
-      numeric_node :total_quantity, 'TotalQuantity', :optional => true
-      money_node :item_cost, 'ItemCost', :optional => true
-      array_node :vat_rates, 'VATRate', :class => VATRate, :default_value => []
-      money_node :net_insurance_fee, 'NetInsuranceFee', :optional => true
-      money_node :vat_insurance_fee, 'VATInsuranceFee', :optional => true
-      money_node :vat_shipping_fee, 'VATShippingFee', :optional => true
-      money_node :net_shipping_fee, 'NetShippingFee', :optional => true
-      money_node :net_total_amount, 'NetTotalAmount', :optional => true
-      money_node :vat_total_amount, 'VATTotalAmount', :optional => true
-      money_node :actual_shipping_cost, 'ActualShippingCost', :optional => true
-      money_node :adjustment_amount, 'AdjustmentAmount', :optional => true
-      text_node :notes_to_buyer, 'NotesToBuyer', :optional => true
-      text_node :notes_from_buyer, 'NotesFromBuyer', :optional => true
-      text_node :notes_to_seller, 'NotesToSeller', :optional => true
-      object_node :order_status, 'OrderStatus', :class => SellingManagerOrderStatus, :optional => true
-      text_node :unpaid_item_status, 'UnpaidItemStatus', :optional => true
-      money_node :sale_price, 'SalePrice', :optional => true
-      numeric_node :emails_sent, 'EmailsSent', :optional => true
-      numeric_node :days_since_sale, 'DaysSinceSale', :optional => true
-      text_node :buyer_id, 'BuyerID', :optional => true
-      text_node :buyer_email, 'BuyerEmail', :optional => true
-      numeric_node :sale_record_id, 'SaleRecordID', :optional => true
-      time_node :creation_time, 'CreationTime', :optional => true
+      object_node :selling_manager_sold_transaction, 'SellingManagerSoldTransaction', :class => SellingManagerSoldTransaction
+      array_node :shipping_addresses, 'ShippingAddress', :class => Address, :default_value => []
+      array_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :default_value => []
+      array_node :cash_on_delivery_costs, 'CashOnDeliveryCost', :class => Amount, :default_value => []
+      array_node :total_amounts, 'TotalAmount', :class => Amount, :default_value => []
+      numeric_node :total_quantity, 'TotalQuantity'
+      array_node :item_costs, 'ItemCost', :class => Amount, :default_value => []
+      object_node :vat_rate, 'VATRate', :class => VATRate
+      array_node :net_insurance_fees, 'NetInsuranceFee', :class => Amount, :default_value => []
+      array_node :vat_insurance_fees, 'VATInsuranceFee', :class => Amount, :default_value => []
+      array_node :vat_shipping_fees, 'VATShippingFee', :class => Amount, :default_value => []
+      array_node :net_shipping_fees, 'NetShippingFee', :class => Amount, :default_value => []
+      array_node :net_total_amounts, 'NetTotalAmount', :class => Amount, :default_value => []
+      array_node :vat_total_amounts, 'VATTotalAmount', :class => Amount, :default_value => []
+      array_node :actual_shipping_costs, 'ActualShippingCost', :class => Amount, :default_value => []
+      array_node :adjustment_amounts, 'AdjustmentAmount', :class => Amount, :default_value => []
+      text_node :notes_to_buyer, 'NotesToBuyer'
+      text_node :notes_from_buyer, 'NotesFromBuyer'
+      text_node :notes_to_seller, 'NotesToSeller'
+      array_node :order_statuses, 'OrderStatus', :class => SellingManagerOrderStatus, :default_value => []
+      value_array_node :unpaid_item_statuses, 'UnpaidItemStatus', :default_value => []
+      array_node :sale_prices, 'SalePrice', :class => Amount, :default_value => []
+      numeric_node :emails_sent, 'EmailsSent'
+      numeric_node :days_since_sale, 'DaysSinceSale'
+      text_node :buyer_id, 'BuyerID'
+      text_node :buyer_email, 'BuyerEmail'
+      numeric_node :sale_record_id, 'SaleRecordID'
+      time_node :creation_time, 'CreationTime'
+      array_node :refund_amounts, 'RefundAmount', :class => Amount, :default_value => []
+      text_node :refund_status, 'RefundStatus'
     end
   end
 end

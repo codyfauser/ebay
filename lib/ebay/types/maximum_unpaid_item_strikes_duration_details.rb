@@ -2,14 +2,14 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :period, 'Period', :optional => true
-    #  text_node :description, 'Description', :optional => true
+    #  value_array_node :periods, 'Period', :default_value => []
+    #  text_node :description, 'Description'
     class MaximumUnpaidItemStrikesDurationDetails
       include XML::Mapping
       include Initializer
       root_element_name 'MaximumUnpaidItemStrikesDurationDetails'
-      text_node :period, 'Period', :optional => true
-      text_node :description, 'Description', :optional => true
+      value_array_node :periods, 'Period', :default_value => []
+      text_node :description, 'Description'
     end
   end
 end

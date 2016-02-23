@@ -21,6 +21,7 @@ module Ebay # :nodoc:
       SellerDoesntShipToCountry = 'SellerDoesntShipToCountry'
       BuyerNotPaid = 'BuyerNotPaid'
       UPIAssistanceDisabled = 'UPIAssistanceDisabled'
+      SellerRanOutOfStock = 'SellerRanOutOfStock'
     end
   end
 end

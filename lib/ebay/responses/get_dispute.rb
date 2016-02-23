@@ -3,12 +3,12 @@ require 'ebay/types/dispute'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :dispute, 'Dispute', :class => Dispute, :optional => true
+    #  array_node :disputes, 'Dispute', :class => Dispute, :default_value => []
     class GetDispute < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetDisputeResponse'
-      object_node :dispute, 'Dispute', :class => Dispute, :optional => true
+      array_node :disputes, 'Dispute', :class => Dispute, :default_value => []
     end
   end
 end

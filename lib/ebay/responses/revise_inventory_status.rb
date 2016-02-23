@@ -4,14 +4,14 @@ require 'ebay/types/inventory_fees'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  array_node :inventory_statuses, 'InventoryStatus', :class => InventoryStatus, :default_value => []
-    #  array_node :fees, 'Fees', :class => InventoryFees, :default_value => []
+    #  object_node :inventory_status, 'InventoryStatus', :class => InventoryStatus
+    #  object_node :fees, 'Fees', :class => InventoryFees
     class ReviseInventoryStatus < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'ReviseInventoryStatusResponse'
-      array_node :inventory_statuses, 'InventoryStatus', :class => InventoryStatus, :default_value => []
-      array_node :fees, 'Fees', :class => InventoryFees, :default_value => []
+      object_node :inventory_status, 'InventoryStatus', :class => InventoryStatus
+      object_node :fees, 'Fees', :class => InventoryFees
     end
   end
 end

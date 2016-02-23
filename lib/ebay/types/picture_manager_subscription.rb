@@ -1,17 +1,18 @@
+require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :subscription_level, 'SubscriptionLevel', :optional => true
-    #  money_node :fee, 'Fee', :optional => true
-    #  numeric_node :storage_size, 'StorageSize', :optional => true
+    #  value_array_node :subscription_levels, 'SubscriptionLevel', :default_value => []
+    #  array_node :fees, 'Fee', :class => Amount, :default_value => []
+    #  numeric_node :storage_size, 'StorageSize'
     class PictureManagerSubscription
       include XML::Mapping
       include Initializer
       root_element_name 'PictureManagerSubscription'
-      text_node :subscription_level, 'SubscriptionLevel', :optional => true
-      money_node :fee, 'Fee', :optional => true
-      numeric_node :storage_size, 'StorageSize', :optional => true
+      value_array_node :subscription_levels, 'SubscriptionLevel', :default_value => []
+      array_node :fees, 'Fee', :class => Amount, :default_value => []
+      numeric_node :storage_size, 'StorageSize'
     end
   end
 end

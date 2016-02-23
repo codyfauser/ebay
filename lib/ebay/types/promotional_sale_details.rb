@@ -1,17 +1,18 @@
+require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  money_node :original_price, 'OriginalPrice', :optional => true
-    #  time_node :start_time, 'StartTime', :optional => true
-    #  time_node :end_time, 'EndTime', :optional => true
+    #  array_node :original_prices, 'OriginalPrice', :class => Amount, :default_value => []
+    #  time_node :start_time, 'StartTime'
+    #  time_node :end_time, 'EndTime'
     class PromotionalSaleDetails
       include XML::Mapping
       include Initializer
       root_element_name 'PromotionalSaleDetails'
-      money_node :original_price, 'OriginalPrice', :optional => true
-      time_node :start_time, 'StartTime', :optional => true
-      time_node :end_time, 'EndTime', :optional => true
+      array_node :original_prices, 'OriginalPrice', :class => Amount, :default_value => []
+      time_node :start_time, 'StartTime'
+      time_node :end_time, 'EndTime'
     end
   end
 end

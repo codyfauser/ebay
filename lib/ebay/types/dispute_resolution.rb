@@ -2,16 +2,16 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :dispute_resolution_record_type, 'DisputeResolutionRecordType', :optional => true
-    #  text_node :dispute_resolution_reason, 'DisputeResolutionReason', :optional => true
-    #  time_node :resolution_time, 'ResolutionTime', :optional => true
+    #  value_array_node :dispute_resolution_record_types, 'DisputeResolutionRecordType', :default_value => []
+    #  value_array_node :dispute_resolution_reasons, 'DisputeResolutionReason', :default_value => []
+    #  time_node :resolution_time, 'ResolutionTime'
     class DisputeResolution
       include XML::Mapping
       include Initializer
       root_element_name 'DisputeResolution'
-      text_node :dispute_resolution_record_type, 'DisputeResolutionRecordType', :optional => true
-      text_node :dispute_resolution_reason, 'DisputeResolutionReason', :optional => true
-      time_node :resolution_time, 'ResolutionTime', :optional => true
+      value_array_node :dispute_resolution_record_types, 'DisputeResolutionRecordType', :default_value => []
+      value_array_node :dispute_resolution_reasons, 'DisputeResolutionReason', :default_value => []
+      time_node :resolution_time, 'ResolutionTime'
     end
   end
 end

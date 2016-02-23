@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  text_node :status, 'Status', :optional => true
+    #  value_array_node :statuses, 'Status', :default_value => []
     class GetStoreCategoryUpdateStatus < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetStoreCategoryUpdateStatusResponse'
-      text_node :status, 'Status', :optional => true
+      value_array_node :statuses, 'Status', :default_value => []
     end
   end
 end

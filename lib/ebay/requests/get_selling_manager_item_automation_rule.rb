@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :item_id, 'ItemID', :optional => true
+    #  value_array_node :item_ids, 'ItemID', :default_value => []
     class GetSellingManagerItemAutomationRule < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSellingManagerItemAutomationRuleRequest'
-      text_node :item_id, 'ItemID', :optional => true
+      value_array_node :item_ids, 'ItemID', :default_value => []
     end
   end
 end

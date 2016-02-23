@@ -2,18 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :status, 'Status', :optional => true
-    #  text_node :eias_token, 'EIASToken', :optional => true
-    #  time_node :expiration_time, 'ExpirationTime', :optional => true
-    #  time_node :revocation_time, 'RevocationTime', :optional => true
+    #  value_array_node :statuses, 'Status', :default_value => []
+    #  text_node :eias_token, 'EIASToken'
+    #  time_node :expiration_time, 'ExpirationTime'
+    #  time_node :revocation_time, 'RevocationTime'
     class TokenStatus
       include XML::Mapping
       include Initializer
       root_element_name 'TokenStatus'
-      text_node :status, 'Status', :optional => true
-      text_node :eias_token, 'EIASToken', :optional => true
-      time_node :expiration_time, 'ExpirationTime', :optional => true
-      time_node :revocation_time, 'RevocationTime', :optional => true
+      value_array_node :statuses, 'Status', :default_value => []
+      text_node :eias_token, 'EIASToken'
+      time_node :expiration_time, 'ExpirationTime'
+      time_node :revocation_time, 'RevocationTime'
     end
   end
 end

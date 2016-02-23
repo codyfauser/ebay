@@ -2,28 +2,28 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :name_face, 'NameFace', :optional => true
-    #  text_node :name_size, 'NameSize', :optional => true
-    #  text_node :name_color, 'NameColor', :optional => true
-    #  text_node :title_face, 'TitleFace', :optional => true
-    #  text_node :title_size, 'TitleSize', :optional => true
-    #  text_node :title_color, 'TitleColor', :optional => true
-    #  text_node :desc_face, 'DescFace', :optional => true
-    #  text_node :desc_size, 'DescSize', :optional => true
-    #  text_node :desc_color, 'DescColor', :optional => true
+    #  value_array_node :name_faces, 'NameFace', :default_value => []
+    #  value_array_node :name_sizes, 'NameSize', :default_value => []
+    #  text_node :name_color, 'NameColor'
+    #  value_array_node :title_faces, 'TitleFace', :default_value => []
+    #  value_array_node :title_sizes, 'TitleSize', :default_value => []
+    #  text_node :title_color, 'TitleColor'
+    #  value_array_node :desc_faces, 'DescFace', :default_value => []
+    #  value_array_node :desc_sizes, 'DescSize', :default_value => []
+    #  text_node :desc_color, 'DescColor'
     class StoreFont
       include XML::Mapping
       include Initializer
       root_element_name 'StoreFont'
-      text_node :name_face, 'NameFace', :optional => true
-      text_node :name_size, 'NameSize', :optional => true
-      text_node :name_color, 'NameColor', :optional => true
-      text_node :title_face, 'TitleFace', :optional => true
-      text_node :title_size, 'TitleSize', :optional => true
-      text_node :title_color, 'TitleColor', :optional => true
-      text_node :desc_face, 'DescFace', :optional => true
-      text_node :desc_size, 'DescSize', :optional => true
-      text_node :desc_color, 'DescColor', :optional => true
+      value_array_node :name_faces, 'NameFace', :default_value => []
+      value_array_node :name_sizes, 'NameSize', :default_value => []
+      text_node :name_color, 'NameColor'
+      value_array_node :title_faces, 'TitleFace', :default_value => []
+      value_array_node :title_sizes, 'TitleSize', :default_value => []
+      text_node :title_color, 'TitleColor'
+      value_array_node :desc_faces, 'DescFace', :default_value => []
+      value_array_node :desc_sizes, 'DescSize', :default_value => []
+      text_node :desc_color, 'DescColor'
     end
   end
 end

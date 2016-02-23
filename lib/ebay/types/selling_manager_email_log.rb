@@ -2,18 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :email_type, 'EmailType', :optional => true
-    #  text_node :custom_email_name, 'CustomEmailName', :optional => true
-    #  text_node :email_state, 'EmailState', :optional => true
-    #  time_node :event_time, 'EventTime', :optional => true
+    #  value_array_node :email_types, 'EmailType', :default_value => []
+    #  text_node :custom_email_name, 'CustomEmailName'
+    #  value_array_node :email_states, 'EmailState', :default_value => []
+    #  time_node :event_time, 'EventTime'
     class SellingManagerEmailLog
       include XML::Mapping
       include Initializer
       root_element_name 'SellingManagerEmailLog'
-      text_node :email_type, 'EmailType', :optional => true
-      text_node :custom_email_name, 'CustomEmailName', :optional => true
-      text_node :email_state, 'EmailState', :optional => true
-      time_node :event_time, 'EventTime', :optional => true
+      value_array_node :email_types, 'EmailType', :default_value => []
+      text_node :custom_email_name, 'CustomEmailName'
+      value_array_node :email_states, 'EmailState', :default_value => []
+      time_node :event_time, 'EventTime'
     end
   end
 end

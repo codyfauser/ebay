@@ -2,14 +2,14 @@
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  text_node :order_id, 'OrderID', :optional => true
-    #  time_node :created_time, 'CreatedTime', :optional => true
+    #  value_array_node :order_ids, 'OrderID', :default_value => []
+    #  time_node :created_time, 'CreatedTime'
     class AddOrder < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddOrderResponse'
-      text_node :order_id, 'OrderID', :optional => true
-      time_node :created_time, 'CreatedTime', :optional => true
+      value_array_node :order_ids, 'OrderID', :default_value => []
+      time_node :created_time, 'CreatedTime'
     end
   end
 end

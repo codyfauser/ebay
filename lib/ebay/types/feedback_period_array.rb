@@ -3,12 +3,12 @@ require 'ebay/types/feedback_period'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :feedback_periods, 'FeedbackPeriod', :class => FeedbackPeriod, :default_value => []
+    #  object_node :feedback_period, 'FeedbackPeriod', :class => FeedbackPeriod
     class FeedbackPeriodArray
       include XML::Mapping
       include Initializer
       root_element_name 'FeedbackPeriodArray'
-      array_node :feedback_periods, 'FeedbackPeriod', :class => FeedbackPeriod, :default_value => []
+      object_node :feedback_period, 'FeedbackPeriod', :class => FeedbackPeriod
     end
   end
 end

@@ -12,6 +12,8 @@ module Ebay # :nodoc:
       All = 'All'
       ContactMyBidder = 'ContactMyBidder'
       ContacteBayMemberViaAnonymousEmail = 'ContacteBayMemberViaAnonymousEmail'
+      ClassifiedsContactSeller = 'ClassifiedsContactSeller'
+      ClassifiedsBestOffer = 'ClassifiedsBestOffer'
     end
   end
 end

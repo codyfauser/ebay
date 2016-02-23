@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :event_types, 'EventType', :default_value => []
+    #  text_node :event_type, 'EventType'
     class SupportedEventTypesArray
       include XML::Mapping
       include Initializer
       root_element_name 'SupportedEventTypesArray'
-      value_array_node :event_types, 'EventType', :default_value => []
+      text_node :event_type, 'EventType'
     end
   end
 end

@@ -3,12 +3,12 @@ require 'ebay/types/store_subscription'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :subscriptions, 'Subscription', :class => StoreSubscription, :default_value => []
+    #  object_node :subscription, 'Subscription', :class => StoreSubscription
     class StoreSubscriptionArray
       include XML::Mapping
       include Initializer
       root_element_name 'StoreSubscriptionArray'
-      array_node :subscriptions, 'Subscription', :class => StoreSubscription, :default_value => []
+      object_node :subscription, 'Subscription', :class => StoreSubscription
     end
   end
 end

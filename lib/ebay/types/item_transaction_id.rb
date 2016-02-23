@@ -2,16 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :item_id, 'ItemID', :optional => true
-    #  text_node :transaction_id, 'TransactionID', :optional => true
-    #  text_node :sku, 'SKU', :optional => true
+    #  value_array_node :item_ids, 'ItemID', :default_value => []
+    #  text_node :transaction_id, 'TransactionID'
+    #  value_array_node :skus, 'SKU', :default_value => []
+    #  text_node :order_line_item_id, 'OrderLineItemID'
     class ItemTransactionID
       include XML::Mapping
       include Initializer
       root_element_name 'ItemTransactionID'
-      text_node :item_id, 'ItemID', :optional => true
-      text_node :transaction_id, 'TransactionID', :optional => true
-      text_node :sku, 'SKU', :optional => true
+      value_array_node :item_ids, 'ItemID', :default_value => []
+      text_node :transaction_id, 'TransactionID'
+      value_array_node :skus, 'SKU', :default_value => []
+      text_node :order_line_item_id, 'OrderLineItemID'
     end
   end
 end

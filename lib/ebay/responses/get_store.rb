@@ -3,12 +3,12 @@ require 'ebay/types/store'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :store, 'Store', :class => Store, :optional => true
+    #  array_node :stores, 'Store', :class => Store, :default_value => []
     class GetStore < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetStoreResponse'
-      object_node :store, 'Store', :class => Store, :optional => true
+      array_node :stores, 'Store', :class => Store, :default_value => []
     end
   end
 end

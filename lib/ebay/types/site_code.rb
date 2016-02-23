@@ -28,6 +28,7 @@ module Ebay # :nodoc:
       Poland = 'Poland'
       Sweden = 'Sweden'
       CanadaFrench = 'CanadaFrench'
+      Russia = 'Russia'
     end
   end
 end

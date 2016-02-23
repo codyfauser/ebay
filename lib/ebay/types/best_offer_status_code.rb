@@ -12,6 +12,8 @@ module Ebay # :nodoc:
       Active = 'Active'
       Countered = 'Countered'
       All = 'All'
+      PendingBuyerPayment = 'PendingBuyerPayment'
+      PendingBuyerConfirmation = 'PendingBuyerConfirmation'
     end
   end
 end

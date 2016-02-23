@@ -5,6 +5,12 @@ module Ebay # :nodoc:
       extend Enumeration
       OnDemand = 'OnDemand'
       DailyPickup = 'DailyPickup'
+      StandardList = 'StandardList'
+      Counter = 'Counter'
+      Discounted = 'Discounted'
+      CommercialPlus = 'CommercialPlus'
+      GoldSilver = 'GoldSilver'
+      PlatTitanium = 'PlatTitanium'
     end
   end
 end

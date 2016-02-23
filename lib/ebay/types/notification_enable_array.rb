@@ -3,12 +3,12 @@ require 'ebay/types/notification_enable'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :notification_enables, 'NotificationEnable', :class => NotificationEnable, :default_value => []
+    #  object_node :notification_enable, 'NotificationEnable', :class => NotificationEnable
     class NotificationEnableArray
       include XML::Mapping
       include Initializer
       root_element_name 'NotificationEnableArray'
-      array_node :notification_enables, 'NotificationEnable', :class => NotificationEnable, :default_value => []
+      object_node :notification_enable, 'NotificationEnable', :class => NotificationEnable
     end
   end
 end

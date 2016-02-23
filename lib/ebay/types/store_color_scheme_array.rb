@@ -3,12 +3,12 @@ require 'ebay/types/store_color_scheme'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :color_schemes, 'ColorScheme', :class => StoreColorScheme, :default_value => []
+    #  object_node :color_scheme, 'ColorScheme', :class => StoreColorScheme
     class StoreColorSchemeArray
       include XML::Mapping
       include Initializer
       root_element_name 'StoreColorSchemeArray'
-      array_node :color_schemes, 'ColorScheme', :class => StoreColorScheme, :default_value => []
+      object_node :color_scheme, 'ColorScheme', :class => StoreColorScheme
     end
   end
 end

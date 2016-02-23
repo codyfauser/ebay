@@ -9,6 +9,7 @@ module Ebay # :nodoc:
       DirectDebit = 'DirectDebit'
       DirectDebitPendingSignatureMandate = 'DirectDebitPendingSignatureMandate'
       EBayDirectPay = 'eBayDirectPay'
+      DirectDebitPendingVerification = 'DirectDebitPendingVerification'
     end
   end
 end

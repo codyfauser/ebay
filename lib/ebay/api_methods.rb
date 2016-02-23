@@ -233,6 +233,14 @@ module Ebay
     def end_items(params = {})
       commit(Ebay::Requests::EndItems, params)
     end
+    # Builds Ebay::Requests#ExtendSiteHostedPictures
+    #
+    # Returns Ebay::Responses#ExtendSiteHostedPictures
+    #
+    # Official Documentation for ExtendSiteHostedPictures[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ExtendSiteHostedPictures.html]
+    def extend_site_hosted_pictures(params = {})
+      commit(Ebay::Requests::ExtendSiteHostedPictures, params)
+    end
     # Builds Ebay::Requests#FetchToken
     #
     # Returns Ebay::Responses#FetchToken
@@ -273,22 +281,6 @@ module Ebay
     def get_api_access_rules(params = {})
       commit(Ebay::Requests::GetApiAccessRules, params)
     end
-    # Builds Ebay::Requests#GetAttributesCS
-    #
-    # Returns Ebay::Responses#GetAttributesCS
-    #
-    # Official Documentation for GetAttributesCS[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetAttributesCS.html]
-    def get_attributes_cs(params = {})
-      commit(Ebay::Requests::GetAttributesCS, params)
-    end
-    # Builds Ebay::Requests#GetAttributesXSL
-    #
-    # Returns Ebay::Responses#GetAttributesXSL
-    #
-    # Official Documentation for GetAttributesXSL[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetAttributesXSL.html]
-    def get_attributes_xsl(params = {})
-      commit(Ebay::Requests::GetAttributesXSL, params)
-    end
     # Builds Ebay::Requests#GetBestOffers
     #
     # Returns Ebay::Responses#GetBestOffers
@@ -313,14 +305,6 @@ module Ebay
     def get_categories(params = {})
       commit(Ebay::Requests::GetCategories, params)
     end
-    # Builds Ebay::Requests#GetCategory2CS
-    #
-    # Returns Ebay::Responses#GetCategory2CS
-    #
-    # Official Documentation for GetCategory2CS[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetCategory2CS.html]
-    def get_category2_cs(params = {})
-      commit(Ebay::Requests::GetCategory2CS, params)
-    end
     # Builds Ebay::Requests#GetCategoryFeatures
     #
     # Returns Ebay::Responses#GetCategoryFeatures
@@ -328,14 +312,6 @@ module Ebay
     # Official Documentation for GetCategoryFeatures[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetCategoryFeatures.html]
     def get_category_features(params = {})
       commit(Ebay::Requests::GetCategoryFeatures, params)
-    end
-    # Builds Ebay::Requests#GetCategoryListings
-    #
-    # Returns Ebay::Responses#GetCategoryListings
-    #
-    # Official Documentation for GetCategoryListings[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetCategoryListings.html]
-    def get_category_listings(params = {})
-      commit(Ebay::Requests::GetCategoryListings, params)
     end
     # Builds Ebay::Requests#GetCategoryMappings
     #
@@ -385,14 +361,6 @@ module Ebay
     def get_contextual_keywords(params = {})
       commit(Ebay::Requests::GetContextualKeywords, params)
     end
-    # Builds Ebay::Requests#GetCrossPromotions
-    #
-    # Returns Ebay::Responses#GetCrossPromotions
-    #
-    # Official Documentation for GetCrossPromotions[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetCrossPromotions.html]
-    def get_cross_promotions(params = {})
-      commit(Ebay::Requests::GetCrossPromotions, params)
-    end
     # Builds Ebay::Requests#GetDescriptionTemplates
     #
     # Returns Ebay::Responses#GetDescriptionTemplates
@@ -417,14 +385,6 @@ module Ebay
     def get_feedback(params = {})
       commit(Ebay::Requests::GetFeedback, params)
     end
-    # Builds Ebay::Requests#GetHighBidders
-    #
-    # Returns Ebay::Responses#GetHighBidders
-    #
-    # Official Documentation for GetHighBidders[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetHighBidders.html]
-    def get_high_bidders(params = {})
-      commit(Ebay::Requests::GetHighBidders, params)
-    end
     # Builds Ebay::Requests#GetItem
     #
     # Returns Ebay::Responses#GetItem
@@ -432,14 +392,6 @@ module Ebay
     # Official Documentation for GetItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetItem.html]
     def get_item(params = {})
       commit(Ebay::Requests::GetItem, params)
-    end
-    # Builds Ebay::Requests#GetItemRecommendations
-    #
-    # Returns Ebay::Responses#GetItemRecommendations
-    #
-    # Official Documentation for GetItemRecommendations[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetItemRecommendations.html]
-    def get_item_recommendations(params = {})
-      commit(Ebay::Requests::GetItemRecommendations, params)
     end
     # Builds Ebay::Requests#GetItemShipping
     #
@@ -545,70 +497,6 @@ module Ebay
     def get_orders(params = {})
       commit(Ebay::Requests::GetOrders, params)
     end
-    # Builds Ebay::Requests#GetPictureManagerDetails
-    #
-    # Returns Ebay::Responses#GetPictureManagerDetails
-    #
-    # Official Documentation for GetPictureManagerDetails[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetPictureManagerDetails.html]
-    def get_picture_manager_details(params = {})
-      commit(Ebay::Requests::GetPictureManagerDetails, params)
-    end
-    # Builds Ebay::Requests#GetPictureManagerOptions
-    #
-    # Returns Ebay::Responses#GetPictureManagerOptions
-    #
-    # Official Documentation for GetPictureManagerOptions[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetPictureManagerOptions.html]
-    def get_picture_manager_options(params = {})
-      commit(Ebay::Requests::GetPictureManagerOptions, params)
-    end
-    # Builds Ebay::Requests#GetPopularKeywords
-    #
-    # Returns Ebay::Responses#GetPopularKeywords
-    #
-    # Official Documentation for GetPopularKeywords[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetPopularKeywords.html]
-    def get_popular_keywords(params = {})
-      commit(Ebay::Requests::GetPopularKeywords, params)
-    end
-    # Builds Ebay::Requests#GetProductFamilyMembers
-    #
-    # Returns Ebay::Responses#GetProductFamilyMembers
-    #
-    # Official Documentation for GetProductFamilyMembers[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetProductFamilyMembers.html]
-    def get_product_family_members(params = {})
-      commit(Ebay::Requests::GetProductFamilyMembers, params)
-    end
-    # Builds Ebay::Requests#GetProductFinder
-    #
-    # Returns Ebay::Responses#GetProductFinder
-    #
-    # Official Documentation for GetProductFinder[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetProductFinder.html]
-    def get_product_finder(params = {})
-      commit(Ebay::Requests::GetProductFinder, params)
-    end
-    # Builds Ebay::Requests#GetProductFinderXSL
-    #
-    # Returns Ebay::Responses#GetProductFinderXSL
-    #
-    # Official Documentation for GetProductFinderXSL[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetProductFinderXSL.html]
-    def get_product_finder_xsl(params = {})
-      commit(Ebay::Requests::GetProductFinderXSL, params)
-    end
-    # Builds Ebay::Requests#GetProductSearchPage
-    #
-    # Returns Ebay::Responses#GetProductSearchPage
-    #
-    # Official Documentation for GetProductSearchPage[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetProductSearchPage.html]
-    def get_product_search_page(params = {})
-      commit(Ebay::Requests::GetProductSearchPage, params)
-    end
-    # Builds Ebay::Requests#GetProductSearchResults
-    #
-    # Returns Ebay::Responses#GetProductSearchResults
-    #
-    # Official Documentation for GetProductSearchResults[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetProductSearchResults.html]
-    def get_product_search_results(params = {})
-      commit(Ebay::Requests::GetProductSearchResults, params)
-    end
     # Builds Ebay::Requests#GetProductSellingPages
     #
     # Returns Ebay::Responses#GetProductSellingPages
@@ -617,22 +505,6 @@ module Ebay
     def get_product_selling_pages(params = {})
       commit(Ebay::Requests::GetProductSellingPages, params)
     end
-    # Builds Ebay::Requests#GetProducts
-    #
-    # Returns Ebay::Responses#GetProducts
-    #
-    # Official Documentation for GetProducts[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetProducts.html]
-    def get_products(params = {})
-      commit(Ebay::Requests::GetProducts, params)
-    end
-    # Builds Ebay::Requests#GetPromotionRules
-    #
-    # Returns Ebay::Responses#GetPromotionRules
-    #
-    # Official Documentation for GetPromotionRules[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetPromotionRules.html]
-    def get_promotion_rules(params = {})
-      commit(Ebay::Requests::GetPromotionRules, params)
-    end
     # Builds Ebay::Requests#GetPromotionalSaleDetails
     #
     # Returns Ebay::Responses#GetPromotionalSaleDetails
@@ -640,14 +512,6 @@ module Ebay
     # Official Documentation for GetPromotionalSaleDetails[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetPromotionalSaleDetails.html]
     def get_promotional_sale_details(params = {})
       commit(Ebay::Requests::GetPromotionalSaleDetails, params)
-    end
-    # Builds Ebay::Requests#GetSearchResults
-    #
-    # Returns Ebay::Responses#GetSearchResults
-    #
-    # Official Documentation for GetSearchResults[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetSearchResults.html]
-    def get_search_results(params = {})
-      commit(Ebay::Requests::GetSearchResults, params)
     end
     # Builds Ebay::Requests#GetSellerDashboard
     #
@@ -889,22 +753,6 @@ module Ebay
     def get_vero_report_status(params = {})
       commit(Ebay::Requests::GetVeROReportStatus, params)
     end
-    # Builds Ebay::Requests#GetWantItNowPost
-    #
-    # Returns Ebay::Responses#GetWantItNowPost
-    #
-    # Official Documentation for GetWantItNowPost[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetWantItNowPost.html]
-    def get_want_it_now_post(params = {})
-      commit(Ebay::Requests::GetWantItNowPost, params)
-    end
-    # Builds Ebay::Requests#GetWantItNowSearchResults
-    #
-    # Returns Ebay::Responses#GetWantItNowSearchResults
-    #
-    # Official Documentation for GetWantItNowSearchResults[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetWantItNowSearchResults.html]
-    def get_want_it_now_search_results(params = {})
-      commit(Ebay::Requests::GetWantItNowSearchResults, params)
-    end
     # Builds Ebay::Requests#GeteBayDetails
     #
     # Returns Ebay::Responses#GeteBayDetails
@@ -992,14 +840,6 @@ module Ebay
     # Official Documentation for RespondToFeedback[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_RespondToFeedback.html]
     def respond_to_feedback(params = {})
       commit(Ebay::Requests::RespondToFeedback, params)
-    end
-    # Builds Ebay::Requests#RespondToWantItNowPost
-    #
-    # Returns Ebay::Responses#RespondToWantItNowPost
-    #
-    # Official Documentation for RespondToWantItNowPost[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_RespondToWantItNowPost.html]
-    def respond_to_want_it_now_post(params = {})
-      commit(Ebay::Requests::RespondToWantItNowPost, params)
     end
     # Builds Ebay::Requests#ReviseCheckoutStatus
     #
@@ -1129,14 +969,6 @@ module Ebay
     def set_notification_preferences(params = {})
       commit(Ebay::Requests::SetNotificationPreferences, params)
     end
-    # Builds Ebay::Requests#SetPictureManagerDetails
-    #
-    # Returns Ebay::Responses#SetPictureManagerDetails
-    #
-    # Official Documentation for SetPictureManagerDetails[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_SetPictureManagerDetails.html]
-    def set_picture_manager_details(params = {})
-      commit(Ebay::Requests::SetPictureManagerDetails, params)
-    end
     # Builds Ebay::Requests#SetPromotionalSale
     #
     # Returns Ebay::Responses#SetPromotionalSale
@@ -1233,14 +1065,6 @@ module Ebay
     def set_user_notes(params = {})
       commit(Ebay::Requests::SetUserNotes, params)
     end
-    # Builds Ebay::Requests#SetUserPreferences
-    #
-    # Returns Ebay::Responses#SetUserPreferences
-    #
-    # Official Documentation for SetUserPreferences[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_SetUserPreferences.html]
-    def set_user_preferences(params = {})
-      commit(Ebay::Requests::SetUserPreferences, params)
-    end
     # Builds Ebay::Requests#UploadSiteHostedPictures
     #
     # Returns Ebay::Responses#UploadSiteHostedPictures
@@ -1304,27 +1128,6 @@ module Ebay
     # Official Documentation for VerifyRelistItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_VerifyRelistItem.html]
     def verify_relist_item(params = {})
       commit(Ebay::Requests::VerifyRelistItem, params)
-    end
-    # Builds Ebay::Requests#UpdateRentalStatus
-    #
-    # Returns Ebay::Responses#UpdateRentalStatus
-    #
-    def update_rental_status(params = {})
-      commit(Ebay::Requests::UpdateRentalStatus, params, "half_rental_service")
-    end
-    # Builds Ebay::Requests#GetVersion
-    #
-    # Returns Ebay::Responses#GetVersion
-    #
-    def get_version(params = {})
-      commit(Ebay::Requests::GetVersion, params, "half_rental_service")
-    end
-    # Builds Ebay::Requests#FileRentalDispute
-    #
-    # Returns Ebay::Responses#FileRentalDispute
-    #
-    def file_rental_dispute(params = {})
-      commit(Ebay::Requests::FileRentalDispute, params, "half_rental_service")
     end
   end
 end

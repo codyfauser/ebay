@@ -3,12 +3,12 @@ require 'ebay/types/store_custom_page'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :custom_pages, 'CustomPage', :class => StoreCustomPage, :default_value => []
+    #  object_node :custom_page, 'CustomPage', :class => StoreCustomPage
     class StoreCustomPageArray
       include XML::Mapping
       include Initializer
       root_element_name 'StoreCustomPageArray'
-      array_node :custom_pages, 'CustomPage', :class => StoreCustomPage, :default_value => []
+      object_node :custom_page, 'CustomPage', :class => StoreCustomPage
     end
   end
 end

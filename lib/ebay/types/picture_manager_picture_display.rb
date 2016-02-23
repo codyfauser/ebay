@@ -2,20 +2,20 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :display_type, 'DisplayType', :optional => true
-    #  text_node :url, 'URL', :optional => true
-    #  numeric_node :size, 'Size', :optional => true
-    #  numeric_node :height, 'Height', :optional => true
-    #  numeric_node :width, 'Width', :optional => true
+    #  value_array_node :display_types, 'DisplayType', :default_value => []
+    #  text_node :url, 'URL'
+    #  numeric_node :size, 'Size'
+    #  numeric_node :height, 'Height'
+    #  numeric_node :width, 'Width'
     class PictureManagerPictureDisplay
       include XML::Mapping
       include Initializer
       root_element_name 'PictureManagerPictureDisplay'
-      text_node :display_type, 'DisplayType', :optional => true
-      text_node :url, 'URL', :optional => true
-      numeric_node :size, 'Size', :optional => true
-      numeric_node :height, 'Height', :optional => true
-      numeric_node :width, 'Width', :optional => true
+      value_array_node :display_types, 'DisplayType', :default_value => []
+      text_node :url, 'URL'
+      numeric_node :size, 'Size'
+      numeric_node :height, 'Height'
+      numeric_node :width, 'Width'
     end
   end
 end

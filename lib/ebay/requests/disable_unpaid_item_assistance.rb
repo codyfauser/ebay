@@ -2,16 +2,18 @@
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :item_id, 'ItemID', :optional => true
-    #  text_node :transaction_id, 'TransactionID', :optional => true
-    #  text_node :dispute_id, 'DisputeID', :optional => true
+    #  value_array_node :item_ids, 'ItemID', :default_value => []
+    #  text_node :transaction_id, 'TransactionID'
+    #  value_array_node :dispute_ids, 'DisputeID', :default_value => []
+    #  text_node :order_line_item_id, 'OrderLineItemID'
     class DisableUnpaidItemAssistance < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'DisableUnpaidItemAssistanceRequest'
-      text_node :item_id, 'ItemID', :optional => true
-      text_node :transaction_id, 'TransactionID', :optional => true
-      text_node :dispute_id, 'DisputeID', :optional => true
+      value_array_node :item_ids, 'ItemID', :default_value => []
+      text_node :transaction_id, 'TransactionID'
+      value_array_node :dispute_ids, 'DisputeID', :default_value => []
+      text_node :order_line_item_id, 'OrderLineItemID'
     end
   end
 end

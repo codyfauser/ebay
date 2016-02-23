@@ -3,18 +3,18 @@ require 'ebay/types/pagination'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :item_id, 'ItemID', :optional => true
-    #  text_node :best_offer_id, 'BestOfferID', :optional => true
-    #  text_node :best_offer_status, 'BestOfferStatus', :optional => true
-    #  object_node :pagination, 'Pagination', :class => Pagination, :optional => true
+    #  value_array_node :item_ids, 'ItemID', :default_value => []
+    #  value_array_node :best_offer_ids, 'BestOfferID', :default_value => []
+    #  value_array_node :best_offer_statuses, 'BestOfferStatus', :default_value => []
+    #  array_node :paginations, 'Pagination', :class => Pagination, :default_value => []
     class GetBestOffers < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetBestOffersRequest'
-      text_node :item_id, 'ItemID', :optional => true
-      text_node :best_offer_id, 'BestOfferID', :optional => true
-      text_node :best_offer_status, 'BestOfferStatus', :optional => true
-      object_node :pagination, 'Pagination', :class => Pagination, :optional => true
+      value_array_node :item_ids, 'ItemID', :default_value => []
+      value_array_node :best_offer_ids, 'BestOfferID', :default_value => []
+      value_array_node :best_offer_statuses, 'BestOfferStatus', :default_value => []
+      array_node :paginations, 'Pagination', :class => Pagination, :default_value => []
     end
   end
 end

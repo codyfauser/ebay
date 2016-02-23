@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :message_ids, 'MessageID', :default_value => []
+    #  text_node :message_id, 'MessageID'
     class MyMessagesMessageIDArray
       include XML::Mapping
       include Initializer
       root_element_name 'MyMessagesMessageIDArray'
-      value_array_node :message_ids, 'MessageID', :default_value => []
+      text_node :message_id, 'MessageID'
     end
   end
 end

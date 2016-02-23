@@ -1,23 +1,24 @@
+require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  money_node :converted_max_bid, 'ConvertedMaxBid', :optional => true
-    #  money_node :max_bid, 'MaxBid', :optional => true
-    #  numeric_node :quantity_bid, 'QuantityBid', :optional => true
-    #  numeric_node :quantity_won, 'QuantityWon', :optional => true
-    #  boolean_node :winning, 'Winning', 'true', 'false', :optional => true
-    #  boolean_node :bid_assistant, 'BidAssistant', 'true', 'false', :optional => true
+    #  array_node :converted_max_bids, 'ConvertedMaxBid', :class => Amount, :default_value => []
+    #  array_node :max_bids, 'MaxBid', :class => Amount, :default_value => []
+    #  numeric_node :quantity_bid, 'QuantityBid'
+    #  numeric_node :quantity_won, 'QuantityWon'
+    #  boolean_node :winning, 'Winning', 'true', 'false'
+    #  boolean_node :bid_assistant, 'BidAssistant', 'true', 'false'
     class BiddingDetails
       include XML::Mapping
       include Initializer
       root_element_name 'BiddingDetails'
-      money_node :converted_max_bid, 'ConvertedMaxBid', :optional => true
-      money_node :max_bid, 'MaxBid', :optional => true
-      numeric_node :quantity_bid, 'QuantityBid', :optional => true
-      numeric_node :quantity_won, 'QuantityWon', :optional => true
-      boolean_node :winning, 'Winning', 'true', 'false', :optional => true
-      boolean_node :bid_assistant, 'BidAssistant', 'true', 'false', :optional => true
+      array_node :converted_max_bids, 'ConvertedMaxBid', :class => Amount, :default_value => []
+      array_node :max_bids, 'MaxBid', :class => Amount, :default_value => []
+      numeric_node :quantity_bid, 'QuantityBid'
+      numeric_node :quantity_won, 'QuantityWon'
+      boolean_node :winning, 'Winning', 'true', 'false'
+      boolean_node :bid_assistant, 'BidAssistant', 'true', 'false'
     end
   end
 end

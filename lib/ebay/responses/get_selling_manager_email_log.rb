@@ -3,12 +3,12 @@ require 'ebay/types/selling_manager_email_log'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  array_node :email_logs, 'EmailLog', :class => SellingManagerEmailLog, :default_value => []
+    #  object_node :email_log, 'EmailLog', :class => SellingManagerEmailLog
     class GetSellingManagerEmailLog < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSellingManagerEmailLogResponse'
-      array_node :email_logs, 'EmailLog', :class => SellingManagerEmailLog, :default_value => []
+      object_node :email_log, 'EmailLog', :class => SellingManagerEmailLog
     end
   end
 end

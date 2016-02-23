@@ -4,22 +4,22 @@ require 'ebay/types/seller_payment'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
-    #  boolean_node :has_more_payments, 'HasMorePayments', 'true', 'false', :optional => true
-    #  array_node :seller_payments, 'SellerPayment', :class => SellerPayment, :default_value => []
-    #  numeric_node :payments_per_page, 'PaymentsPerPage', :optional => true
-    #  numeric_node :page_number, 'PageNumber', :optional => true
-    #  numeric_node :returned_payment_count_actual, 'ReturnedPaymentCountActual', :optional => true
+    #  array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
+    #  boolean_node :has_more_payments, 'HasMorePayments', 'true', 'false'
+    #  object_node :seller_payment, 'SellerPayment', :class => SellerPayment
+    #  numeric_node :payments_per_page, 'PaymentsPerPage'
+    #  numeric_node :page_number, 'PageNumber'
+    #  numeric_node :returned_payment_count_actual, 'ReturnedPaymentCountActual'
     class GetSellerPayments < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSellerPaymentsResponse'
-      object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
-      boolean_node :has_more_payments, 'HasMorePayments', 'true', 'false', :optional => true
-      array_node :seller_payments, 'SellerPayment', :class => SellerPayment, :default_value => []
-      numeric_node :payments_per_page, 'PaymentsPerPage', :optional => true
-      numeric_node :page_number, 'PageNumber', :optional => true
-      numeric_node :returned_payment_count_actual, 'ReturnedPaymentCountActual', :optional => true
+      array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
+      boolean_node :has_more_payments, 'HasMorePayments', 'true', 'false'
+      object_node :seller_payment, 'SellerPayment', :class => SellerPayment
+      numeric_node :payments_per_page, 'PaymentsPerPage'
+      numeric_node :page_number, 'PageNumber'
+      numeric_node :returned_payment_count_actual, 'ReturnedPaymentCountActual'
     end
   end
 end
