@@ -3,3 +3,4 @@ examples/config.rb
 examples/run_ruby.sh
 .ruby-gemset
 .ruby-version
+.bundle
