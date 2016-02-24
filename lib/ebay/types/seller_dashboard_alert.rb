@@ -2,14 +2,14 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :severities, 'Severity', :default_value => []
-    #  text_node :text, 'Text'
+    #  text_node :severity, 'Severity', :optional => true
+    #  text_node :text, 'Text', :optional => true
     class SellerDashboardAlert
       include XML::Mapping
       include Initializer
       root_element_name 'SellerDashboardAlert'
-      value_array_node :severities, 'Severity', :default_value => []
-      text_node :text, 'Text'
+      text_node :severity, 'Severity', :optional => true
+      text_node :text, 'Text', :optional => true
     end
   end
 end

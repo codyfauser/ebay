@@ -1,18 +1,17 @@
-require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :mismatch_types, 'MismatchType', :default_value => []
-    #  time_node :action_required_by, 'ActionRequiredBy'
-    #  array_node :mismatch_amounts, 'MismatchAmount', :class => Amount, :default_value => []
+    #  text_node :mismatch_type, 'MismatchType', :optional => true
+    #  date_time_node :action_required_by, 'ActionRequiredBy', :optional => true
+    #  money_node :mismatch_amount, 'MismatchAmount', :optional => true
     class EBayPaymentMismatchDetails
       include XML::Mapping
       include Initializer
       root_element_name 'EBayPaymentMismatchDetails'
-      value_array_node :mismatch_types, 'MismatchType', :default_value => []
-      time_node :action_required_by, 'ActionRequiredBy'
-      array_node :mismatch_amounts, 'MismatchAmount', :class => Amount, :default_value => []
+      text_node :mismatch_type, 'MismatchType', :optional => true
+      date_time_node :action_required_by, 'ActionRequiredBy', :optional => true
+      money_node :mismatch_amount, 'MismatchAmount', :optional => true
     end
   end
 end

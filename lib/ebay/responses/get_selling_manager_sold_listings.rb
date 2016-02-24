@@ -4,14 +4,14 @@ require 'ebay/types/pagination_result'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :sale_record, 'SaleRecord', :class => SellingManagerSoldOrder
-    #  array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
+    #  array_node :sale_records, 'SaleRecord', :class => SellingManagerSoldOrder, :default_value => []
+    #  object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
     class GetSellingManagerSoldListings < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSellingManagerSoldListingsResponse'
-      object_node :sale_record, 'SaleRecord', :class => SellingManagerSoldOrder
-      array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
+      array_node :sale_records, 'SaleRecord', :class => SellingManagerSoldOrder, :default_value => []
+      object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
     end
   end
 end

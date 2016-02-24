@@ -3,12 +3,12 @@ require 'ebay/types/transaction'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :transaction, 'Transaction', :class => Transaction
+    #  array_node :transactions, 'Transaction', :class => Transaction, :default_value => []
     class TransactionArray
       include XML::Mapping
       include Initializer
       root_element_name 'TransactionArray'
-      object_node :transaction, 'Transaction', :class => Transaction
+      array_node :transactions, 'Transaction', :class => Transaction, :default_value => []
     end
   end
 end

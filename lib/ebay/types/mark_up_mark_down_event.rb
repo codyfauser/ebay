@@ -2,16 +2,24 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :types, 'Type', :default_value => []
-    #  time_node :time, 'Time'
-    #  text_node :reason, 'Reason'
+    #  text_node :type, 'Type', :optional => true
+def type
+  @type
+end
+
+    #  date_time_node :time, 'Time', :optional => true
+    #  text_node :reason, 'Reason', :optional => true
     class MarkUpMarkDownEvent
       include XML::Mapping
       include Initializer
       root_element_name 'MarkUpMarkDownEvent'
-      value_array_node :types, 'Type', :default_value => []
-      time_node :time, 'Time'
-      text_node :reason, 'Reason'
+      text_node :type, 'Type', :optional => true
+def type
+  @type
+end
+
+      date_time_node :time, 'Time', :optional => true
+      text_node :reason, 'Reason', :optional => true
     end
   end
 end

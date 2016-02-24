@@ -3,12 +3,12 @@ require 'ebay/types/vero_reported_item'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :reported_item, 'ReportedItem', :class => VeROReportedItem
+    #  array_node :reported_items, 'ReportedItem', :class => VeROReportedItem, :default_value => []
     class VeROReportedItemDetails
       include XML::Mapping
       include Initializer
       root_element_name 'VeROReportedItemDetails'
-      object_node :reported_item, 'ReportedItem', :class => VeROReportedItem
+      array_node :reported_items, 'ReportedItem', :class => VeROReportedItem, :default_value => []
     end
   end
 end

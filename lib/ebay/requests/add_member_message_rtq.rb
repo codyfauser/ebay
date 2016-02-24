@@ -3,14 +3,14 @@ require 'ebay/types/member_message'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  value_array_node :item_ids, 'ItemID', :default_value => []
-    #  array_node :member_messages, 'MemberMessage', :class => MemberMessage, :default_value => []
+    #  text_node :item_id, 'ItemID', :optional => true
+    #  object_node :member_message, 'MemberMessage', :class => MemberMessage, :optional => true
     class AddMemberMessageRTQ < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddMemberMessageRTQRequest'
-      value_array_node :item_ids, 'ItemID', :default_value => []
-      array_node :member_messages, 'MemberMessage', :class => MemberMessage, :default_value => []
+      text_node :item_id, 'ItemID', :optional => true
+      object_node :member_message, 'MemberMessage', :class => MemberMessage, :optional => true
     end
   end
 end

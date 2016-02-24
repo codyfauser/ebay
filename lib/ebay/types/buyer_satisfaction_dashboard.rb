@@ -3,14 +3,14 @@ require 'ebay/types/seller_dashboard_alert'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :statuses, 'Status', :default_value => []
-    #  object_node :alert, 'Alert', :class => SellerDashboardAlert
+    #  text_node :status, 'Status', :optional => true
+    #  array_node :alerts, 'Alert', :class => SellerDashboardAlert, :default_value => []
     class BuyerSatisfactionDashboard
       include XML::Mapping
       include Initializer
       root_element_name 'BuyerSatisfactionDashboard'
-      value_array_node :statuses, 'Status', :default_value => []
-      object_node :alert, 'Alert', :class => SellerDashboardAlert
+      text_node :status, 'Status', :optional => true
+      array_node :alerts, 'Alert', :class => SellerDashboardAlert, :default_value => []
     end
   end
 end

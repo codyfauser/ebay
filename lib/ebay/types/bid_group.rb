@@ -3,18 +3,18 @@ require 'ebay/types/bid_group_item'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :bid_group_item, 'BidGroupItem', :class => BidGroupItem
-    #  numeric_node :bid_group_id, 'BidGroupID'
-    #  text_node :bid_group_name, 'BidGroupName'
-    #  value_array_node :bid_group_statuses, 'BidGroupStatus', :default_value => []
+    #  array_node :bid_group_items, 'BidGroupItem', :class => BidGroupItem, :default_value => []
+    #  numeric_node :bid_group_id, 'BidGroupID', :optional => true
+    #  text_node :bid_group_name, 'BidGroupName', :optional => true
+    #  text_node :bid_group_status, 'BidGroupStatus', :optional => true
     class BidGroup
       include XML::Mapping
       include Initializer
       root_element_name 'BidGroup'
-      object_node :bid_group_item, 'BidGroupItem', :class => BidGroupItem
-      numeric_node :bid_group_id, 'BidGroupID'
-      text_node :bid_group_name, 'BidGroupName'
-      value_array_node :bid_group_statuses, 'BidGroupStatus', :default_value => []
+      array_node :bid_group_items, 'BidGroupItem', :class => BidGroupItem, :default_value => []
+      numeric_node :bid_group_id, 'BidGroupID', :optional => true
+      text_node :bid_group_name, 'BidGroupName', :optional => true
+      text_node :bid_group_status, 'BidGroupStatus', :optional => true
     end
   end
 end

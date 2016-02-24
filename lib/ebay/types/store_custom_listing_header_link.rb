@@ -4,14 +4,14 @@ module Ebay # :nodoc:
     # == Attributes
     #  numeric_node :link_id, 'LinkID'
     #  numeric_node :order, 'Order'
-    #  value_array_node :link_types, 'LinkType', :default_value => []
+    #  text_node :link_type, 'LinkType', :optional => true
     class StoreCustomListingHeaderLink
       include XML::Mapping
       include Initializer
       root_element_name 'StoreCustomListingHeaderLink'
       numeric_node :link_id, 'LinkID'
       numeric_node :order, 'Order'
-      value_array_node :link_types, 'LinkType', :default_value => []
+      text_node :link_type, 'LinkType', :optional => true
     end
   end
 end

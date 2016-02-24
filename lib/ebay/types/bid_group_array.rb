@@ -3,12 +3,12 @@ require 'ebay/types/bid_group'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :bid_group, 'BidGroup', :class => BidGroup
+    #  array_node :bid_groups, 'BidGroup', :class => BidGroup, :default_value => []
     class BidGroupArray
       include XML::Mapping
       include Initializer
       root_element_name 'BidGroupArray'
-      object_node :bid_group, 'BidGroup', :class => BidGroup
+      array_node :bid_groups, 'BidGroup', :class => BidGroup, :default_value => []
     end
   end
 end

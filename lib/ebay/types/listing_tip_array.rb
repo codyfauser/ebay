@@ -3,12 +3,12 @@ require 'ebay/types/listing_tip'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :listing_tip, 'ListingTip', :class => ListingTip
+    #  array_node :listing_tips, 'ListingTip', :class => ListingTip, :default_value => []
     class ListingTipArray
       include XML::Mapping
       include Initializer
       root_element_name 'ListingTipArray'
-      object_node :listing_tip, 'ListingTip', :class => ListingTip
+      array_node :listing_tips, 'ListingTip', :class => ListingTip, :default_value => []
     end
   end
 end

@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :detail_name, 'DetailName'
+    #  value_array_node :detail_names, 'DetailName', :default_value => []
     class GeteBayDetails < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GeteBayDetailsRequest'
-      text_node :detail_name, 'DetailName'
+      value_array_node :detail_names, 'DetailName', :default_value => []
     end
   end
 end

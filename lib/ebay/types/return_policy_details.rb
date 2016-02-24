@@ -10,34 +10,34 @@ require 'ebay/types/restocking_fee_value_details'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :refund, 'Refund', :class => RefundDetails
-    #  object_node :returns_within, 'ReturnsWithin', :class => ReturnsWithinDetails
-    #  object_node :returns_accepted, 'ReturnsAccepted', :class => ReturnsAcceptedDetails
-    #  boolean_node :description, 'Description', 'true', 'false'
-    #  object_node :warranty_offered, 'WarrantyOffered', :class => WarrantyOfferedDetails
-    #  object_node :warranty_type, 'WarrantyType', :class => WarrantyTypeDetails
-    #  object_node :warranty_duration, 'WarrantyDuration', :class => WarrantyDurationDetails
-    #  boolean_node :ean, 'EAN', 'true', 'false'
-    #  object_node :shipping_cost_paid_by, 'ShippingCostPaidBy', :class => ShippingCostPaidByDetails
-    #  object_node :restocking_fee_value, 'RestockingFeeValue', :class => RestockingFeeValueDetails
-    #  text_node :detail_version, 'DetailVersion'
-    #  time_node :update_time, 'UpdateTime'
+    #  array_node :refunds, 'Refund', :class => RefundDetails, :default_value => []
+    #  array_node :returns_withins, 'ReturnsWithin', :class => ReturnsWithinDetails, :default_value => []
+    #  array_node :returns_accepteds, 'ReturnsAccepted', :class => ReturnsAcceptedDetails, :default_value => []
+    #  boolean_node :description, 'Description', 'true', 'false', :optional => true
+    #  array_node :warranty_offereds, 'WarrantyOffered', :class => WarrantyOfferedDetails, :default_value => []
+    #  array_node :warranty_types, 'WarrantyType', :class => WarrantyTypeDetails, :default_value => []
+    #  array_node :warranty_durations, 'WarrantyDuration', :class => WarrantyDurationDetails, :default_value => []
+    #  boolean_node :ean, 'EAN', 'true', 'false', :optional => true
+    #  array_node :shipping_cost_paid_bies, 'ShippingCostPaidBy', :class => ShippingCostPaidByDetails, :default_value => []
+    #  array_node :restocking_fee_values, 'RestockingFeeValue', :class => RestockingFeeValueDetails, :default_value => []
+    #  text_node :detail_version, 'DetailVersion', :optional => true
+    #  date_time_node :update_time, 'UpdateTime', :optional => true
     class ReturnPolicyDetails
       include XML::Mapping
       include Initializer
       root_element_name 'ReturnPolicyDetails'
-      object_node :refund, 'Refund', :class => RefundDetails
-      object_node :returns_within, 'ReturnsWithin', :class => ReturnsWithinDetails
-      object_node :returns_accepted, 'ReturnsAccepted', :class => ReturnsAcceptedDetails
-      boolean_node :description, 'Description', 'true', 'false'
-      object_node :warranty_offered, 'WarrantyOffered', :class => WarrantyOfferedDetails
-      object_node :warranty_type, 'WarrantyType', :class => WarrantyTypeDetails
-      object_node :warranty_duration, 'WarrantyDuration', :class => WarrantyDurationDetails
-      boolean_node :ean, 'EAN', 'true', 'false'
-      object_node :shipping_cost_paid_by, 'ShippingCostPaidBy', :class => ShippingCostPaidByDetails
-      object_node :restocking_fee_value, 'RestockingFeeValue', :class => RestockingFeeValueDetails
-      text_node :detail_version, 'DetailVersion'
-      time_node :update_time, 'UpdateTime'
+      array_node :refunds, 'Refund', :class => RefundDetails, :default_value => []
+      array_node :returns_withins, 'ReturnsWithin', :class => ReturnsWithinDetails, :default_value => []
+      array_node :returns_accepteds, 'ReturnsAccepted', :class => ReturnsAcceptedDetails, :default_value => []
+      boolean_node :description, 'Description', 'true', 'false', :optional => true
+      array_node :warranty_offereds, 'WarrantyOffered', :class => WarrantyOfferedDetails, :default_value => []
+      array_node :warranty_types, 'WarrantyType', :class => WarrantyTypeDetails, :default_value => []
+      array_node :warranty_durations, 'WarrantyDuration', :class => WarrantyDurationDetails, :default_value => []
+      boolean_node :ean, 'EAN', 'true', 'false', :optional => true
+      array_node :shipping_cost_paid_bies, 'ShippingCostPaidBy', :class => ShippingCostPaidByDetails, :default_value => []
+      array_node :restocking_fee_values, 'RestockingFeeValue', :class => RestockingFeeValueDetails, :default_value => []
+      text_node :detail_version, 'DetailVersion', :optional => true
+      date_time_node :update_time, 'UpdateTime', :optional => true
     end
   end
 end

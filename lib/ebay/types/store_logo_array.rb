@@ -3,12 +3,12 @@ require 'ebay/types/store_logo'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :logo, 'Logo', :class => StoreLogo
+    #  array_node :logos, 'Logo', :class => StoreLogo, :default_value => []
     class StoreLogoArray
       include XML::Mapping
       include Initializer
       root_element_name 'StoreLogoArray'
-      object_node :logo, 'Logo', :class => StoreLogo
+      array_node :logos, 'Logo', :class => StoreLogo, :default_value => []
     end
   end
 end

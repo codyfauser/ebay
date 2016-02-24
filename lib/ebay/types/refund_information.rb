@@ -3,12 +3,12 @@ require 'ebay/types/refund_transaction_info'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :refund, 'Refund', :class => RefundTransactionInfo
+    #  array_node :refunds, 'Refund', :class => RefundTransactionInfo, :default_value => []
     class RefundInformation
       include XML::Mapping
       include Initializer
       root_element_name 'RefundInformation'
-      object_node :refund, 'Refund', :class => RefundTransactionInfo
+      array_node :refunds, 'Refund', :class => RefundTransactionInfo, :default_value => []
     end
   end
 end

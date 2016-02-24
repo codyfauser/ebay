@@ -3,12 +3,12 @@ require 'ebay/types/selling_manager_alert'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :alert, 'Alert', :class => SellingManagerAlert
+    #  array_node :alerts, 'Alert', :class => SellingManagerAlert, :default_value => []
     class GetSellingManagerAlerts < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSellingManagerAlertsResponse'
-      object_node :alert, 'Alert', :class => SellingManagerAlert
+      array_node :alerts, 'Alert', :class => SellingManagerAlert, :default_value => []
     end
   end
 end

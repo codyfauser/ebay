@@ -2,14 +2,14 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :dispute_filter_types, 'DisputeFilterType', :default_value => []
-    #  numeric_node :total_available, 'TotalAvailable'
+    #  text_node :dispute_filter_type, 'DisputeFilterType', :optional => true
+    #  numeric_node :total_available, 'TotalAvailable', :optional => true
     class DisputeFilterCount
       include XML::Mapping
       include Initializer
       root_element_name 'DisputeFilterCount'
-      value_array_node :dispute_filter_types, 'DisputeFilterType', :default_value => []
-      numeric_node :total_available, 'TotalAvailable'
+      text_node :dispute_filter_type, 'DisputeFilterType', :optional => true
+      numeric_node :total_available, 'TotalAvailable', :optional => true
     end
   end
 end

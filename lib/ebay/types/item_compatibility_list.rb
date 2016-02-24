@@ -3,14 +3,14 @@ require 'ebay/types/item_compatibility'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :compatibility, 'Compatibility', :class => ItemCompatibility
-    #  boolean_node :replace_all, 'ReplaceAll', 'true', 'false'
+    #  array_node :compatibilities, 'Compatibility', :class => ItemCompatibility, :default_value => []
+    #  boolean_node :replace_all, 'ReplaceAll', 'true', 'false', :optional => true
     class ItemCompatibilityList
       include XML::Mapping
       include Initializer
       root_element_name 'ItemCompatibilityList'
-      object_node :compatibility, 'Compatibility', :class => ItemCompatibility
-      boolean_node :replace_all, 'ReplaceAll', 'true', 'false'
+      array_node :compatibilities, 'Compatibility', :class => ItemCompatibility, :default_value => []
+      boolean_node :replace_all, 'ReplaceAll', 'true', 'false', :optional => true
     end
   end
 end

@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :site_ids, 'SiteID', :default_value => []
+    #  text_node :site_id, 'SiteID', :optional => true
     class SiteLocation
       include XML::Mapping
       include Initializer
       root_element_name 'SiteLocation'
-      value_array_node :site_ids, 'SiteID', :default_value => []
+      text_node :site_id, 'SiteID', :optional => true
     end
   end
 end

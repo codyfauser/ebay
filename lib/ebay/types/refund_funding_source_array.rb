@@ -3,12 +3,12 @@ require 'ebay/types/refund_funding_source'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :refund_funding_source, 'RefundFundingSource', :class => RefundFundingSource
+    #  array_node :refund_funding_sources, 'RefundFundingSource', :class => RefundFundingSource, :default_value => []
     class RefundFundingSourceArray
       include XML::Mapping
       include Initializer
       root_element_name 'RefundFundingSourceArray'
-      object_node :refund_funding_source, 'RefundFundingSource', :class => RefundFundingSource
+      array_node :refund_funding_sources, 'RefundFundingSource', :class => RefundFundingSource, :default_value => []
     end
   end
 end

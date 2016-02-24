@@ -3,14 +3,14 @@ require 'ebay/types/fee'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :item_ids, 'ItemID', :default_value => []
-    #  object_node :fee, 'Fee', :class => Fee
+    #  text_node :item_id, 'ItemID', :optional => true
+    #  array_node :fees, 'Fee', :class => Fee, :default_value => []
     class InventoryFees
       include XML::Mapping
       include Initializer
       root_element_name 'InventoryFees'
-      value_array_node :item_ids, 'ItemID', :default_value => []
-      object_node :fee, 'Fee', :class => Fee
+      text_node :item_id, 'ItemID', :optional => true
+      array_node :fees, 'Fee', :class => Fee, :default_value => []
     end
   end
 end

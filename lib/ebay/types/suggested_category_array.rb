@@ -3,12 +3,12 @@ require 'ebay/types/suggested_category'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :suggested_category, 'SuggestedCategory', :class => SuggestedCategory
+    #  array_node :suggested_categories, 'SuggestedCategory', :class => SuggestedCategory, :default_value => []
     class SuggestedCategoryArray
       include XML::Mapping
       include Initializer
       root_element_name 'SuggestedCategoryArray'
-      object_node :suggested_category, 'SuggestedCategory', :class => SuggestedCategory
+      array_node :suggested_categories, 'SuggestedCategory', :class => SuggestedCategory, :default_value => []
     end
   end
 end

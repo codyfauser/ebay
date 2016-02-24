@@ -1,27 +1,34 @@
-require 'ebay/types/time'
 require 'ebay/types/best_offer_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :types, 'Type', :default_value => []
-    #  value_array_node :relist_conditions, 'RelistCondition', :default_value => []
-    #  numeric_node :relist_after_days, 'RelistAfterDays'
-    #  numeric_node :relist_after_hours, 'RelistAfterHours'
-    #  array_node :relist_at_specific_time_of_days, 'RelistAtSpecificTimeOfDay', :class => Time, :default_value => []
-    #  array_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :default_value => []
-    #  numeric_node :listing_hold_inventory_level, 'ListingHoldInventoryLevel'
+    #  text_node :type, 'Type', :optional => true
+def type
+  @type
+end
+
+    #  text_node :relist_condition, 'RelistCondition', :optional => true
+    #  numeric_node :relist_after_days, 'RelistAfterDays', :optional => true
+    #  numeric_node :relist_after_hours, 'RelistAfterHours', :optional => true
+    #  time_node :relist_at_specific_time_of_day, 'RelistAtSpecificTimeOfDay', :optional => true
+    #  object_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :optional => true
+    #  numeric_node :listing_hold_inventory_level, 'ListingHoldInventoryLevel', :optional => true
     class SellingManagerAutoRelist
       include XML::Mapping
       include Initializer
       root_element_name 'SellingManagerAutoRelist'
-      value_array_node :types, 'Type', :default_value => []
-      value_array_node :relist_conditions, 'RelistCondition', :default_value => []
-      numeric_node :relist_after_days, 'RelistAfterDays'
-      numeric_node :relist_after_hours, 'RelistAfterHours'
-      array_node :relist_at_specific_time_of_days, 'RelistAtSpecificTimeOfDay', :class => Time, :default_value => []
-      array_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :default_value => []
-      numeric_node :listing_hold_inventory_level, 'ListingHoldInventoryLevel'
+      text_node :type, 'Type', :optional => true
+def type
+  @type
+end
+
+      text_node :relist_condition, 'RelistCondition', :optional => true
+      numeric_node :relist_after_days, 'RelistAfterDays', :optional => true
+      numeric_node :relist_after_hours, 'RelistAfterHours', :optional => true
+      time_node :relist_at_specific_time_of_day, 'RelistAtSpecificTimeOfDay', :optional => true
+      object_node :best_offer_details, 'BestOfferDetails', :class => BestOfferDetails, :optional => true
+      numeric_node :listing_hold_inventory_level, 'ListingHoldInventoryLevel', :optional => true
     end
   end
 end

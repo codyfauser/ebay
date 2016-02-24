@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  value_array_node :dispute_ids, 'DisputeID', :default_value => []
+    #  text_node :dispute_id, 'DisputeID', :optional => true
     class AddDispute < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddDisputeResponse'
-      value_array_node :dispute_ids, 'DisputeID', :default_value => []
+      text_node :dispute_id, 'DisputeID', :optional => true
     end
   end
 end

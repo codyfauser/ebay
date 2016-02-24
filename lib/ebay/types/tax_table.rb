@@ -3,12 +3,12 @@ require 'ebay/types/tax_jurisdiction'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :tax_jurisdiction, 'TaxJurisdiction', :class => TaxJurisdiction
+    #  array_node :tax_jurisdictions, 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
     class TaxTable
       include XML::Mapping
       include Initializer
       root_element_name 'TaxTable'
-      object_node :tax_jurisdiction, 'TaxJurisdiction', :class => TaxJurisdiction
+      array_node :tax_jurisdictions, 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
     end
   end
 end

@@ -2,18 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :sites, 'Site', :default_value => []
-    #  numeric_node :site_id, 'SiteID'
-    #  text_node :detail_version, 'DetailVersion'
-    #  time_node :update_time, 'UpdateTime'
+    #  text_node :site, 'Site', :optional => true
+    #  numeric_node :site_id, 'SiteID', :optional => true
+    #  text_node :detail_version, 'DetailVersion', :optional => true
+    #  date_time_node :update_time, 'UpdateTime', :optional => true
     class SiteDetails
       include XML::Mapping
       include Initializer
       root_element_name 'SiteDetails'
-      value_array_node :sites, 'Site', :default_value => []
-      numeric_node :site_id, 'SiteID'
-      text_node :detail_version, 'DetailVersion'
-      time_node :update_time, 'UpdateTime'
+      text_node :site, 'Site', :optional => true
+      numeric_node :site_id, 'SiteID', :optional => true
+      text_node :detail_version, 'DetailVersion', :optional => true
+      date_time_node :update_time, 'UpdateTime', :optional => true
     end
   end
 end

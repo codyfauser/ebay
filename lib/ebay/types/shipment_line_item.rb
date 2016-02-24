@@ -3,12 +3,12 @@ require 'ebay/types/line_item'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :line_item, 'LineItem', :class => LineItem
+    #  array_node :line_items, 'LineItem', :class => LineItem, :default_value => []
     class ShipmentLineItem
       include XML::Mapping
       include Initializer
       root_element_name 'ShipmentLineItem'
-      object_node :line_item, 'LineItem', :class => LineItem
+      array_node :line_items, 'LineItem', :class => LineItem, :default_value => []
     end
   end
 end

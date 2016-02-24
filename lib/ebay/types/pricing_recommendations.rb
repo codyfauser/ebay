@@ -3,12 +3,12 @@ require 'ebay/types/product_info'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :product_infos, 'ProductInfo', :class => ProductInfo, :default_value => []
+    #  object_node :product_info, 'ProductInfo', :class => ProductInfo, :optional => true
     class PricingRecommendations
       include XML::Mapping
       include Initializer
       root_element_name 'PricingRecommendations'
-      array_node :product_infos, 'ProductInfo', :class => ProductInfo, :default_value => []
+      object_node :product_info, 'ProductInfo', :class => ProductInfo, :optional => true
     end
   end
 end

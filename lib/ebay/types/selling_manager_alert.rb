@@ -2,26 +2,26 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :alert_types, 'AlertType', :default_value => []
-    #  value_array_node :sold_alerts, 'SoldAlert', :default_value => []
-    #  value_array_node :inventory_alerts, 'InventoryAlert', :default_value => []
-    #  value_array_node :automation_alerts, 'AutomationAlert', :default_value => []
-    #  value_array_node :paisa_pay_alerts, 'PaisaPayAlert', :default_value => []
-    #  value_array_node :general_alerts, 'GeneralAlert', :default_value => []
-    #  numeric_node :duration_in_days, 'DurationInDays'
-    #  numeric_node :count, 'Count'
+    #  text_node :alert_type, 'AlertType', :optional => true
+    #  text_node :sold_alert, 'SoldAlert', :optional => true
+    #  text_node :inventory_alert, 'InventoryAlert', :optional => true
+    #  text_node :automation_alert, 'AutomationAlert', :optional => true
+    #  text_node :paisa_pay_alert, 'PaisaPayAlert', :optional => true
+    #  text_node :general_alert, 'GeneralAlert', :optional => true
+    #  numeric_node :duration_in_days, 'DurationInDays', :optional => true
+    #  numeric_node :count, 'Count', :optional => true
     class SellingManagerAlert
       include XML::Mapping
       include Initializer
       root_element_name 'SellingManagerAlert'
-      value_array_node :alert_types, 'AlertType', :default_value => []
-      value_array_node :sold_alerts, 'SoldAlert', :default_value => []
-      value_array_node :inventory_alerts, 'InventoryAlert', :default_value => []
-      value_array_node :automation_alerts, 'AutomationAlert', :default_value => []
-      value_array_node :paisa_pay_alerts, 'PaisaPayAlert', :default_value => []
-      value_array_node :general_alerts, 'GeneralAlert', :default_value => []
-      numeric_node :duration_in_days, 'DurationInDays'
-      numeric_node :count, 'Count'
+      text_node :alert_type, 'AlertType', :optional => true
+      text_node :sold_alert, 'SoldAlert', :optional => true
+      text_node :inventory_alert, 'InventoryAlert', :optional => true
+      text_node :automation_alert, 'AutomationAlert', :optional => true
+      text_node :paisa_pay_alert, 'PaisaPayAlert', :optional => true
+      text_node :general_alert, 'GeneralAlert', :optional => true
+      numeric_node :duration_in_days, 'DurationInDays', :optional => true
+      numeric_node :count, 'Count', :optional => true
     end
   end
 end

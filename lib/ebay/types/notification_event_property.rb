@@ -2,16 +2,16 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :event_types, 'EventType', :default_value => []
-    #  value_array_node :names, 'Name', :default_value => []
-    #  text_node :value, 'Value'
+    #  text_node :event_type, 'EventType', :optional => true
+    #  text_node :name, 'Name', :optional => true
+    #  text_node :value, 'Value', :optional => true
     class NotificationEventProperty
       include XML::Mapping
       include Initializer
       root_element_name 'NotificationEventProperty'
-      value_array_node :event_types, 'EventType', :default_value => []
-      value_array_node :names, 'Name', :default_value => []
-      text_node :value, 'Value'
+      text_node :event_type, 'EventType', :optional => true
+      text_node :name, 'Name', :optional => true
+      text_node :value, 'Value', :optional => true
     end
   end
 end

@@ -2,18 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :countries, 'Country', :default_value => []
-    #  text_node :description, 'Description'
-    #  text_node :detail_version, 'DetailVersion'
-    #  time_node :update_time, 'UpdateTime'
+    #  text_node :country, 'Country', :optional => true
+    #  text_node :description, 'Description', :optional => true
+    #  text_node :detail_version, 'DetailVersion', :optional => true
+    #  date_time_node :update_time, 'UpdateTime', :optional => true
     class CountryDetails
       include XML::Mapping
       include Initializer
       root_element_name 'CountryDetails'
-      value_array_node :countries, 'Country', :default_value => []
-      text_node :description, 'Description'
-      text_node :detail_version, 'DetailVersion'
-      time_node :update_time, 'UpdateTime'
+      text_node :country, 'Country', :optional => true
+      text_node :description, 'Description', :optional => true
+      text_node :detail_version, 'DetailVersion', :optional => true
+      date_time_node :update_time, 'UpdateTime', :optional => true
     end
   end
 end

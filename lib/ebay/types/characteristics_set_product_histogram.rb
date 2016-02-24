@@ -3,12 +3,12 @@ require 'ebay/types/histogram_entry'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :histogram_entry, 'HistogramEntry', :class => HistogramEntry
+    #  array_node :histogram_entries, 'HistogramEntry', :class => HistogramEntry, :default_value => []
     class CharacteristicsSetProductHistogram
       include XML::Mapping
       include Initializer
       root_element_name 'CharacteristicsSetProductHistogram'
-      object_node :histogram_entry, 'HistogramEntry', :class => HistogramEntry
+      array_node :histogram_entries, 'HistogramEntry', :class => HistogramEntry, :default_value => []
     end
   end
 end

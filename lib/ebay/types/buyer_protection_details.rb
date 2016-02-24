@@ -2,14 +2,14 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :buyer_protection_sources, 'BuyerProtectionSource', :default_value => []
-    #  value_array_node :buyer_protection_statuses, 'BuyerProtectionStatus', :default_value => []
+    #  text_node :buyer_protection_source, 'BuyerProtectionSource', :optional => true
+    #  text_node :buyer_protection_status, 'BuyerProtectionStatus', :optional => true
     class BuyerProtectionDetails
       include XML::Mapping
       include Initializer
       root_element_name 'BuyerProtectionDetails'
-      value_array_node :buyer_protection_sources, 'BuyerProtectionSource', :default_value => []
-      value_array_node :buyer_protection_statuses, 'BuyerProtectionStatus', :default_value => []
+      text_node :buyer_protection_source, 'BuyerProtectionSource', :optional => true
+      text_node :buyer_protection_status, 'BuyerProtectionStatus', :optional => true
     end
   end
 end

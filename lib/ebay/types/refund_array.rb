@@ -3,12 +3,12 @@ require 'ebay/types/refund'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :refund, 'Refund', :class => Refund
+    #  array_node :refunds, 'Refund', :class => Refund, :default_value => []
     class RefundArray
       include XML::Mapping
       include Initializer
       root_element_name 'RefundArray'
-      object_node :refund, 'Refund', :class => Refund
+      array_node :refunds, 'Refund', :class => Refund, :default_value => []
     end
   end
 end

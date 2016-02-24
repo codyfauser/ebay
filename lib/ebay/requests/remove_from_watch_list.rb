@@ -3,16 +3,16 @@ require 'ebay/types/variation_key'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  text_node :item_id, 'ItemID'
-    #  boolean_node :remove_all_items, 'RemoveAllItems', 'true', 'false'
-    #  object_node :variation_key, 'VariationKey', :class => VariationKey
+    #  value_array_node :item_ids, 'ItemID', :default_value => []
+    #  boolean_node :remove_all_items, 'RemoveAllItems', 'true', 'false', :optional => true
+    #  array_node :variation_keys, 'VariationKey', :class => VariationKey, :default_value => []
     class RemoveFromWatchList < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'RemoveFromWatchListRequest'
-      text_node :item_id, 'ItemID'
-      boolean_node :remove_all_items, 'RemoveAllItems', 'true', 'false'
-      object_node :variation_key, 'VariationKey', :class => VariationKey
+      value_array_node :item_ids, 'ItemID', :default_value => []
+      boolean_node :remove_all_items, 'RemoveAllItems', 'true', 'false', :optional => true
+      array_node :variation_keys, 'VariationKey', :class => VariationKey, :default_value => []
     end
   end
 end

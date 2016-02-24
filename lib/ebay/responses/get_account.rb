@@ -5,26 +5,26 @@ require 'ebay/types/pagination_result'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  text_node :account_id, 'AccountID'
-    #  array_node :account_summaries, 'AccountSummary', :class => AccountSummary, :default_value => []
-    #  value_array_node :currencies, 'Currency', :default_value => []
-    #  array_node :account_entries, 'AccountEntries', :class => AccountEntries, :default_value => []
-    #  array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
-    #  boolean_node :has_more_entries, 'HasMoreEntries', 'true', 'false'
-    #  numeric_node :entries_per_page, 'EntriesPerPage'
-    #  numeric_node :page_number, 'PageNumber'
+    #  text_node :account_id, 'AccountID', :optional => true
+    #  object_node :account_summary, 'AccountSummary', :class => AccountSummary, :optional => true
+    #  text_node :currency, 'Currency', :optional => true
+    #  object_node :account_entries, 'AccountEntries', :class => AccountEntries, :optional => true
+    #  object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
+    #  boolean_node :has_more_entries, 'HasMoreEntries', 'true', 'false', :optional => true
+    #  numeric_node :entries_per_page, 'EntriesPerPage', :optional => true
+    #  numeric_node :page_number, 'PageNumber', :optional => true
     class GetAccount < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetAccountResponse'
-      text_node :account_id, 'AccountID'
-      array_node :account_summaries, 'AccountSummary', :class => AccountSummary, :default_value => []
-      value_array_node :currencies, 'Currency', :default_value => []
-      array_node :account_entries, 'AccountEntries', :class => AccountEntries, :default_value => []
-      array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
-      boolean_node :has_more_entries, 'HasMoreEntries', 'true', 'false'
-      numeric_node :entries_per_page, 'EntriesPerPage'
-      numeric_node :page_number, 'PageNumber'
+      text_node :account_id, 'AccountID', :optional => true
+      object_node :account_summary, 'AccountSummary', :class => AccountSummary, :optional => true
+      text_node :currency, 'Currency', :optional => true
+      object_node :account_entries, 'AccountEntries', :class => AccountEntries, :optional => true
+      object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
+      boolean_node :has_more_entries, 'HasMoreEntries', 'true', 'false', :optional => true
+      numeric_node :entries_per_page, 'EntriesPerPage', :optional => true
+      numeric_node :page_number, 'PageNumber', :optional => true
     end
   end
 end

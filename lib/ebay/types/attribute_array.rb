@@ -3,12 +3,12 @@ require 'ebay/types/attribute'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :attribute, 'Attribute', :class => Attribute
+    #  array_node :attributes, 'Attribute', :class => Attribute, :default_value => []
     class AttributeArray
       include XML::Mapping
       include Initializer
       root_element_name 'AttributeArray'
-      object_node :attribute, 'Attribute', :class => Attribute
+      array_node :attributes, 'Attribute', :class => Attribute, :default_value => []
     end
   end
 end

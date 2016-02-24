@@ -3,12 +3,12 @@ require 'ebay/types/api_access_rule'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :api_access_rule, 'ApiAccessRule', :class => ApiAccessRule
+    #  array_node :api_access_rules, 'ApiAccessRule', :class => ApiAccessRule, :default_value => []
     class GetApiAccessRules < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetApiAccessRulesResponse'
-      object_node :api_access_rule, 'ApiAccessRule', :class => ApiAccessRule
+      array_node :api_access_rules, 'ApiAccessRule', :class => ApiAccessRule, :default_value => []
     end
   end
 end

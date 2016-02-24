@@ -3,12 +3,12 @@ require 'ebay/types/payment_transaction_code'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :payment, 'Payment', :class => PaymentTransactionCode
+    #  array_node :payments, 'Payment', :class => PaymentTransactionCode, :default_value => []
     class PaymentInformationCode
       include XML::Mapping
       include Initializer
       root_element_name 'PaymentInformationCode'
-      object_node :payment, 'Payment', :class => PaymentTransactionCode
+      array_node :payments, 'Payment', :class => PaymentTransactionCode, :default_value => []
     end
   end
 end

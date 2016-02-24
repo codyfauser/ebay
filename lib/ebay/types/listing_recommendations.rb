@@ -3,12 +3,12 @@ require 'ebay/types/listing_recommendation'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :recommendation, 'Recommendation', :class => ListingRecommendation
+    #  array_node :recommendations, 'Recommendation', :class => ListingRecommendation, :default_value => []
     class ListingRecommendations
       include XML::Mapping
       include Initializer
       root_element_name 'ListingRecommendations'
-      object_node :recommendation, 'Recommendation', :class => ListingRecommendation
+      array_node :recommendations, 'Recommendation', :class => ListingRecommendation, :default_value => []
     end
   end
 end

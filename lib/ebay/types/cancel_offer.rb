@@ -3,14 +3,14 @@ require 'ebay/types/offer'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :offers, 'Offer', :class => Offer, :default_value => []
-    #  text_node :explanation, 'Explanation'
+    #  object_node :offer, 'Offer', :class => Offer, :optional => true
+    #  text_node :explanation, 'Explanation', :optional => true
     class CancelOffer
       include XML::Mapping
       include Initializer
       root_element_name 'CancelOffer'
-      array_node :offers, 'Offer', :class => Offer, :default_value => []
-      text_node :explanation, 'Explanation'
+      object_node :offer, 'Offer', :class => Offer, :optional => true
+      text_node :explanation, 'Explanation', :optional => true
     end
   end
 end

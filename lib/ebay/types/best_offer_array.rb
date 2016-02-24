@@ -3,12 +3,12 @@ require 'ebay/types/best_offer'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :best_offer, 'BestOffer', :class => BestOffer
+    #  array_node :best_offers, 'BestOffer', :class => BestOffer, :default_value => []
     class BestOfferArray
       include XML::Mapping
       include Initializer
       root_element_name 'BestOfferArray'
-      object_node :best_offer, 'BestOffer', :class => BestOffer
+      array_node :best_offers, 'BestOffer', :class => BestOffer, :default_value => []
     end
   end
 end

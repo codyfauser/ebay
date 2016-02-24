@@ -3,12 +3,12 @@ require 'ebay/types/modify_name'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :modify_name, 'ModifyName', :class => ModifyName
+    #  array_node :modify_names, 'ModifyName', :class => ModifyName, :default_value => []
     class ModifyNameArray
       include XML::Mapping
       include Initializer
       root_element_name 'ModifyNameArray'
-      object_node :modify_name, 'ModifyName', :class => ModifyName
+      array_node :modify_names, 'ModifyName', :class => ModifyName, :default_value => []
     end
   end
 end

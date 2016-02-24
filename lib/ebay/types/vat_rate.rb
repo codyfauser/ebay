@@ -2,18 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :item_ids, 'ItemID', :default_value => []
-    #  text_node :transaction_id, 'TransactionID'
-    #  numeric_node :vat_percent, 'VATPercent'
-    #  text_node :order_line_item_id, 'OrderLineItemID'
+    #  text_node :item_id, 'ItemID', :optional => true
+    #  text_node :transaction_id, 'TransactionID', :optional => true
+    #  numeric_node :vat_percent, 'VATPercent', :optional => true
+    #  text_node :order_line_item_id, 'OrderLineItemID', :optional => true
     class VATRate
       include XML::Mapping
       include Initializer
       root_element_name 'VATRate'
-      value_array_node :item_ids, 'ItemID', :default_value => []
-      text_node :transaction_id, 'TransactionID'
-      numeric_node :vat_percent, 'VATPercent'
-      text_node :order_line_item_id, 'OrderLineItemID'
+      text_node :item_id, 'ItemID', :optional => true
+      text_node :transaction_id, 'TransactionID', :optional => true
+      numeric_node :vat_percent, 'VATPercent', :optional => true
+      text_node :order_line_item_id, 'OrderLineItemID', :optional => true
     end
   end
 end

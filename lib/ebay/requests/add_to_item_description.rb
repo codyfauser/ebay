@@ -2,14 +2,14 @@
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  value_array_node :item_ids, 'ItemID', :default_value => []
-    #  text_node :description, 'Description'
+    #  text_node :item_id, 'ItemID', :optional => true
+    #  text_node :description, 'Description', :optional => true
     class AddToItemDescription < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddToItemDescriptionRequest'
-      value_array_node :item_ids, 'ItemID', :default_value => []
-      text_node :description, 'Description'
+      text_node :item_id, 'ItemID', :optional => true
+      text_node :description, 'Description', :optional => true
     end
   end
 end

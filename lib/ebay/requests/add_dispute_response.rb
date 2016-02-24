@@ -2,22 +2,22 @@
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  value_array_node :dispute_ids, 'DisputeID', :default_value => []
-    #  text_node :message_text, 'MessageText'
-    #  value_array_node :dispute_activities, 'DisputeActivity', :default_value => []
-    #  text_node :shipping_carrier_used, 'ShippingCarrierUsed'
-    #  text_node :shipment_track_number, 'ShipmentTrackNumber'
-    #  time_node :shipping_time, 'ShippingTime'
+    #  text_node :dispute_id, 'DisputeID', :optional => true
+    #  text_node :message_text, 'MessageText', :optional => true
+    #  text_node :dispute_activity, 'DisputeActivity', :optional => true
+    #  text_node :shipping_carrier_used, 'ShippingCarrierUsed', :optional => true
+    #  text_node :shipment_track_number, 'ShipmentTrackNumber', :optional => true
+    #  date_time_node :shipping_time, 'ShippingTime', :optional => true
     class AddDisputeResponse < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddDisputeResponseRequest'
-      value_array_node :dispute_ids, 'DisputeID', :default_value => []
-      text_node :message_text, 'MessageText'
-      value_array_node :dispute_activities, 'DisputeActivity', :default_value => []
-      text_node :shipping_carrier_used, 'ShippingCarrierUsed'
-      text_node :shipment_track_number, 'ShipmentTrackNumber'
-      time_node :shipping_time, 'ShippingTime'
+      text_node :dispute_id, 'DisputeID', :optional => true
+      text_node :message_text, 'MessageText', :optional => true
+      text_node :dispute_activity, 'DisputeActivity', :optional => true
+      text_node :shipping_carrier_used, 'ShippingCarrierUsed', :optional => true
+      text_node :shipment_track_number, 'ShipmentTrackNumber', :optional => true
+      date_time_node :shipping_time, 'ShippingTime', :optional => true
     end
   end
 end

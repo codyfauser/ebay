@@ -3,12 +3,12 @@ require 'ebay/types/order'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  array_node :orders, 'Order', :class => Order, :default_value => []
+    #  object_node :order, 'Order', :class => Order, :optional => true
     class AddOrder < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddOrderRequest'
-      array_node :orders, 'Order', :class => Order, :default_value => []
+      object_node :order, 'Order', :class => Order, :optional => true
     end
   end
 end

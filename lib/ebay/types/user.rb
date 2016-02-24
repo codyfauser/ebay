@@ -7,100 +7,100 @@ require 'ebay/types/bidding_summary'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  boolean_node :about_me_page, 'AboutMePage', 'true', 'false'
-    #  text_node :eias_token, 'EIASToken'
-    #  text_node :email, 'Email'
-    #  numeric_node :feedback_score, 'FeedbackScore'
-    #  numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount'
-    #  numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount'
-    #  numeric_node :positive_feedback_percent, 'PositiveFeedbackPercent'
-    #  boolean_node :feedback_private, 'FeedbackPrivate', 'true', 'false'
-    #  value_array_node :feedback_rating_stars, 'FeedbackRatingStar', :default_value => []
-    #  boolean_node :id_verified, 'IDVerified', 'true', 'false'
-    #  boolean_node :ebay_good_standing, 'eBayGoodStanding', 'true', 'false'
-    #  boolean_node :new_user, 'NewUser', 'true', 'false'
-    #  array_node :registration_addresses, 'RegistrationAddress', :class => Address, :default_value => []
-    #  time_node :registration_date, 'RegistrationDate'
-    #  value_array_node :sites, 'Site', :default_value => []
-    #  value_array_node :statuses, 'Status', :default_value => []
-    #  value_array_node :user_ids, 'UserID', :default_value => []
-    #  boolean_node :user_id_changed, 'UserIDChanged', 'true', 'false'
-    #  time_node :user_id_last_changed, 'UserIDLastChanged'
-    #  value_array_node :vat_statuses, 'VATStatus', :default_value => []
-    #  array_node :buyer_infos, 'BuyerInfo', :class => Buyer, :default_value => []
-    #  array_node :seller_infos, 'SellerInfo', :class => Seller, :default_value => []
-    #  value_array_node :business_roles, 'BusinessRole', :default_value => []
-    #  array_node :charity_affiliations, 'CharityAffiliations', :class => CharityAffiliations, :default_value => []
-    #  value_array_node :paypal_account_levels, 'PayPalAccountLevel', :default_value => []
-    #  value_array_node :paypal_account_types, 'PayPalAccountType', :default_value => []
-    #  value_array_node :paypal_account_statuses, 'PayPalAccountStatus', :default_value => []
-    #  text_node :user_subscription, 'UserSubscription'
-    #  boolean_node :site_verified, 'SiteVerified', 'true', 'false'
-    #  text_node :skype_id, 'SkypeID'
-    #  boolean_node :ebay_wiki_read_only, 'eBayWikiReadOnly', 'true', 'false'
-    #  numeric_node :tuv_level, 'TUVLevel'
-    #  text_node :vatid, 'VATID'
-    #  boolean_node :motors_dealer, 'MotorsDealer', 'true', 'false'
-    #  value_array_node :seller_payment_methods, 'SellerPaymentMethod', :default_value => []
-    #  array_node :bidding_summaries, 'BiddingSummary', :class => BiddingSummary, :default_value => []
-    #  boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false'
-    #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount'
-    #  boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false'
-    #  text_node :billing_email, 'BillingEmail'
-    #  boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false'
-    #  text_node :static_alias, 'StaticAlias'
-    #  array_node :shipping_addresses, 'ShippingAddress', :class => Address, :default_value => []
-    #  text_node :user_first_name, 'UserFirstName'
-    #  text_node :user_last_name, 'UserLastName'
+    #  boolean_node :about_me_page, 'AboutMePage', 'true', 'false', :optional => true
+    #  text_node :eias_token, 'EIASToken', :optional => true
+    #  text_node :email, 'Email', :optional => true
+    #  numeric_node :feedback_score, 'FeedbackScore', :optional => true
+    #  numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
+    #  numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount', :optional => true
+    #  numeric_node :positive_feedback_percent, 'PositiveFeedbackPercent', :optional => true
+    #  boolean_node :feedback_private, 'FeedbackPrivate', 'true', 'false', :optional => true
+    #  text_node :feedback_rating_star, 'FeedbackRatingStar', :optional => true
+    #  boolean_node :id_verified, 'IDVerified', 'true', 'false', :optional => true
+    #  boolean_node :ebay_good_standing, 'eBayGoodStanding', 'true', 'false', :optional => true
+    #  boolean_node :new_user, 'NewUser', 'true', 'false', :optional => true
+    #  object_node :registration_address, 'RegistrationAddress', :class => Address, :optional => true
+    #  date_time_node :registration_date, 'RegistrationDate', :optional => true
+    #  text_node :site, 'Site', :optional => true
+    #  text_node :status, 'Status', :optional => true
+    #  text_node :user_id, 'UserID', :optional => true
+    #  boolean_node :user_id_changed, 'UserIDChanged', 'true', 'false', :optional => true
+    #  date_time_node :user_id_last_changed, 'UserIDLastChanged', :optional => true
+    #  text_node :vat_status, 'VATStatus', :optional => true
+    #  object_node :buyer_info, 'BuyerInfo', :class => Buyer, :optional => true
+    #  object_node :seller_info, 'SellerInfo', :class => Seller, :optional => true
+    #  text_node :business_role, 'BusinessRole', :optional => true
+    #  object_node :charity_affiliations, 'CharityAffiliations', :class => CharityAffiliations, :optional => true
+    #  text_node :paypal_account_level, 'PayPalAccountLevel', :optional => true
+    #  text_node :paypal_account_type, 'PayPalAccountType', :optional => true
+    #  text_node :paypal_account_status, 'PayPalAccountStatus', :optional => true
+    #  value_array_node :user_subscriptions, 'UserSubscription', :default_value => []
+    #  boolean_node :site_verified, 'SiteVerified', 'true', 'false', :optional => true
+    #  text_node :skype_id, 'SkypeID', :optional => true
+    #  boolean_node :ebay_wiki_read_only, 'eBayWikiReadOnly', 'true', 'false', :optional => true
+    #  numeric_node :tuv_level, 'TUVLevel', :optional => true
+    #  text_node :vatid, 'VATID', :optional => true
+    #  boolean_node :motors_dealer, 'MotorsDealer', 'true', 'false', :optional => true
+    #  text_node :seller_payment_method, 'SellerPaymentMethod', :optional => true
+    #  object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
+    #  boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
+    #  numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
+    #  boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
+    #  text_node :billing_email, 'BillingEmail', :optional => true
+    #  boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false', :optional => true
+    #  text_node :static_alias, 'StaticAlias', :optional => true
+    #  object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
+    #  text_node :user_first_name, 'UserFirstName', :optional => true
+    #  text_node :user_last_name, 'UserLastName', :optional => true
     class User
       include XML::Mapping
       include Initializer
       root_element_name 'User'
-      boolean_node :about_me_page, 'AboutMePage', 'true', 'false'
-      text_node :eias_token, 'EIASToken'
-      text_node :email, 'Email'
-      numeric_node :feedback_score, 'FeedbackScore'
-      numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount'
-      numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount'
-      numeric_node :positive_feedback_percent, 'PositiveFeedbackPercent'
-      boolean_node :feedback_private, 'FeedbackPrivate', 'true', 'false'
-      value_array_node :feedback_rating_stars, 'FeedbackRatingStar', :default_value => []
-      boolean_node :id_verified, 'IDVerified', 'true', 'false'
-      boolean_node :ebay_good_standing, 'eBayGoodStanding', 'true', 'false'
-      boolean_node :new_user, 'NewUser', 'true', 'false'
-      array_node :registration_addresses, 'RegistrationAddress', :class => Address, :default_value => []
-      time_node :registration_date, 'RegistrationDate'
-      value_array_node :sites, 'Site', :default_value => []
-      value_array_node :statuses, 'Status', :default_value => []
-      value_array_node :user_ids, 'UserID', :default_value => []
-      boolean_node :user_id_changed, 'UserIDChanged', 'true', 'false'
-      time_node :user_id_last_changed, 'UserIDLastChanged'
-      value_array_node :vat_statuses, 'VATStatus', :default_value => []
-      array_node :buyer_infos, 'BuyerInfo', :class => Buyer, :default_value => []
-      array_node :seller_infos, 'SellerInfo', :class => Seller, :default_value => []
-      value_array_node :business_roles, 'BusinessRole', :default_value => []
-      array_node :charity_affiliations, 'CharityAffiliations', :class => CharityAffiliations, :default_value => []
-      value_array_node :paypal_account_levels, 'PayPalAccountLevel', :default_value => []
-      value_array_node :paypal_account_types, 'PayPalAccountType', :default_value => []
-      value_array_node :paypal_account_statuses, 'PayPalAccountStatus', :default_value => []
-      text_node :user_subscription, 'UserSubscription'
-      boolean_node :site_verified, 'SiteVerified', 'true', 'false'
-      text_node :skype_id, 'SkypeID'
-      boolean_node :ebay_wiki_read_only, 'eBayWikiReadOnly', 'true', 'false'
-      numeric_node :tuv_level, 'TUVLevel'
-      text_node :vatid, 'VATID'
-      boolean_node :motors_dealer, 'MotorsDealer', 'true', 'false'
-      value_array_node :seller_payment_methods, 'SellerPaymentMethod', :default_value => []
-      array_node :bidding_summaries, 'BiddingSummary', :class => BiddingSummary, :default_value => []
-      boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false'
-      numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount'
-      boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false'
-      text_node :billing_email, 'BillingEmail'
-      boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false'
-      text_node :static_alias, 'StaticAlias'
-      array_node :shipping_addresses, 'ShippingAddress', :class => Address, :default_value => []
-      text_node :user_first_name, 'UserFirstName'
-      text_node :user_last_name, 'UserLastName'
+      boolean_node :about_me_page, 'AboutMePage', 'true', 'false', :optional => true
+      text_node :eias_token, 'EIASToken', :optional => true
+      text_node :email, 'Email', :optional => true
+      numeric_node :feedback_score, 'FeedbackScore', :optional => true
+      numeric_node :unique_negative_feedback_count, 'UniqueNegativeFeedbackCount', :optional => true
+      numeric_node :unique_positive_feedback_count, 'UniquePositiveFeedbackCount', :optional => true
+      numeric_node :positive_feedback_percent, 'PositiveFeedbackPercent', :optional => true
+      boolean_node :feedback_private, 'FeedbackPrivate', 'true', 'false', :optional => true
+      text_node :feedback_rating_star, 'FeedbackRatingStar', :optional => true
+      boolean_node :id_verified, 'IDVerified', 'true', 'false', :optional => true
+      boolean_node :ebay_good_standing, 'eBayGoodStanding', 'true', 'false', :optional => true
+      boolean_node :new_user, 'NewUser', 'true', 'false', :optional => true
+      object_node :registration_address, 'RegistrationAddress', :class => Address, :optional => true
+      date_time_node :registration_date, 'RegistrationDate', :optional => true
+      text_node :site, 'Site', :optional => true
+      text_node :status, 'Status', :optional => true
+      text_node :user_id, 'UserID', :optional => true
+      boolean_node :user_id_changed, 'UserIDChanged', 'true', 'false', :optional => true
+      date_time_node :user_id_last_changed, 'UserIDLastChanged', :optional => true
+      text_node :vat_status, 'VATStatus', :optional => true
+      object_node :buyer_info, 'BuyerInfo', :class => Buyer, :optional => true
+      object_node :seller_info, 'SellerInfo', :class => Seller, :optional => true
+      text_node :business_role, 'BusinessRole', :optional => true
+      object_node :charity_affiliations, 'CharityAffiliations', :class => CharityAffiliations, :optional => true
+      text_node :paypal_account_level, 'PayPalAccountLevel', :optional => true
+      text_node :paypal_account_type, 'PayPalAccountType', :optional => true
+      text_node :paypal_account_status, 'PayPalAccountStatus', :optional => true
+      value_array_node :user_subscriptions, 'UserSubscription', :default_value => []
+      boolean_node :site_verified, 'SiteVerified', 'true', 'false', :optional => true
+      text_node :skype_id, 'SkypeID', :optional => true
+      boolean_node :ebay_wiki_read_only, 'eBayWikiReadOnly', 'true', 'false', :optional => true
+      numeric_node :tuv_level, 'TUVLevel', :optional => true
+      text_node :vatid, 'VATID', :optional => true
+      boolean_node :motors_dealer, 'MotorsDealer', 'true', 'false', :optional => true
+      text_node :seller_payment_method, 'SellerPaymentMethod', :optional => true
+      object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
+      boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
+      numeric_node :unique_neutral_feedback_count, 'UniqueNeutralFeedbackCount', :optional => true
+      boolean_node :enterprise_seller, 'EnterpriseSeller', 'true', 'false', :optional => true
+      text_node :billing_email, 'BillingEmail', :optional => true
+      boolean_node :qualifies_for_selling, 'QualifiesForSelling', 'true', 'false', :optional => true
+      text_node :static_alias, 'StaticAlias', :optional => true
+      object_node :shipping_address, 'ShippingAddress', :class => Address, :optional => true
+      text_node :user_first_name, 'UserFirstName', :optional => true
+      text_node :user_last_name, 'UserLastName', :optional => true
     end
   end
 end

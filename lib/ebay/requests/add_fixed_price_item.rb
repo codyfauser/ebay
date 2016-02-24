@@ -3,12 +3,12 @@ require 'ebay/types/item'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  array_node :items, 'Item', :class => Item, :default_value => []
+    #  object_node :item, 'Item', :class => Item, :optional => true
     class AddFixedPriceItem < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'AddFixedPriceItemRequest'
-      array_node :items, 'Item', :class => Item, :default_value => []
+      object_node :item, 'Item', :class => Item, :optional => true
     end
   end
 end

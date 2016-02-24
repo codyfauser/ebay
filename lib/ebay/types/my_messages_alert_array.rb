@@ -3,12 +3,12 @@ require 'ebay/types/my_messages_alert'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :alert, 'Alert', :class => MyMessagesAlert
+    #  array_node :alerts, 'Alert', :class => MyMessagesAlert, :default_value => []
     class MyMessagesAlertArray
       include XML::Mapping
       include Initializer
       root_element_name 'MyMessagesAlertArray'
-      object_node :alert, 'Alert', :class => MyMessagesAlert
+      array_node :alerts, 'Alert', :class => MyMessagesAlert, :default_value => []
     end
   end
 end

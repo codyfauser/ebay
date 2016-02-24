@@ -3,12 +3,12 @@ require 'ebay/types/feedback_detail'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :feedback_detail, 'FeedbackDetail', :class => FeedbackDetail
+    #  array_node :feedback_details, 'FeedbackDetail', :class => FeedbackDetail, :default_value => []
     class FeedbackDetailArray
       include XML::Mapping
       include Initializer
       root_element_name 'FeedbackDetailArray'
-      object_node :feedback_detail, 'FeedbackDetail', :class => FeedbackDetail
+      array_node :feedback_details, 'FeedbackDetail', :class => FeedbackDetail, :default_value => []
     end
   end
 end

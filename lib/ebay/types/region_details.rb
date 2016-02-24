@@ -2,18 +2,18 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :region_id, 'RegionID'
-    #  text_node :description, 'Description'
-    #  text_node :detail_version, 'DetailVersion'
-    #  time_node :update_time, 'UpdateTime'
+    #  text_node :region_id, 'RegionID', :optional => true
+    #  text_node :description, 'Description', :optional => true
+    #  text_node :detail_version, 'DetailVersion', :optional => true
+    #  date_time_node :update_time, 'UpdateTime', :optional => true
     class RegionDetails
       include XML::Mapping
       include Initializer
       root_element_name 'RegionDetails'
-      text_node :region_id, 'RegionID'
-      text_node :description, 'Description'
-      text_node :detail_version, 'DetailVersion'
-      time_node :update_time, 'UpdateTime'
+      text_node :region_id, 'RegionID', :optional => true
+      text_node :description, 'Description', :optional => true
+      text_node :detail_version, 'DetailVersion', :optional => true
+      date_time_node :update_time, 'UpdateTime', :optional => true
     end
   end
 end

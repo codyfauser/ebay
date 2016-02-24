@@ -1,16 +1,15 @@
-require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  value_array_node :levels, 'Level', :default_value => []
-    #  array_node :fees, 'Fee', :class => Amount, :default_value => []
+    #  text_node :level, 'Level', :optional => true
+    #  money_node :fee, 'Fee', :optional => true
     class StoreSubscription
       include XML::Mapping
       include Initializer
       root_element_name 'StoreSubscription'
-      value_array_node :levels, 'Level', :default_value => []
-      array_node :fees, 'Fee', :class => Amount, :default_value => []
+      text_node :level, 'Level', :optional => true
+      money_node :fee, 'Fee', :optional => true
     end
   end
 end

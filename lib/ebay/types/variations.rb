@@ -6,18 +6,18 @@ require 'ebay/types/modify_name_array'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :variation, 'Variation', :class => Variation
-    #  object_node :pictures, 'Pictures', :class => Pictures
-    #  array_node :variation_specifics_sets, 'VariationSpecificsSet', :class => NameValueListArray, :default_value => []
-    #  array_node :modify_name_lists, 'ModifyNameList', :class => ModifyNameArray, :default_value => []
+    #  array_node :variations, 'Variation', :class => Variation, :default_value => []
+    #  array_node :pictures, 'Pictures', :class => Pictures, :default_value => []
+    #  object_node :variation_specifics_set, 'VariationSpecificsSet', :class => NameValueListArray, :optional => true
+    #  object_node :modify_name_list, 'ModifyNameList', :class => ModifyNameArray, :optional => true
     class Variations
       include XML::Mapping
       include Initializer
       root_element_name 'Variations'
-      object_node :variation, 'Variation', :class => Variation
-      object_node :pictures, 'Pictures', :class => Pictures
-      array_node :variation_specifics_sets, 'VariationSpecificsSet', :class => NameValueListArray, :default_value => []
-      array_node :modify_name_lists, 'ModifyNameList', :class => ModifyNameArray, :default_value => []
+      array_node :variations, 'Variation', :class => Variation, :default_value => []
+      array_node :pictures, 'Pictures', :class => Pictures, :default_value => []
+      object_node :variation_specifics_set, 'VariationSpecificsSet', :class => NameValueListArray, :optional => true
+      object_node :modify_name_list, 'ModifyNameList', :class => ModifyNameArray, :optional => true
     end
   end
 end

@@ -1,14 +1,13 @@
-require 'ebay/types/time'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :cutoff_times, 'CutoffTime', :class => Time, :default_value => []
+    #  time_node :cutoff_time, 'CutoffTime', :optional => true
     class DispatchCutoffTimePreferences
       include XML::Mapping
       include Initializer
       root_element_name 'DispatchCutoffTimePreferences'
-      array_node :cutoff_times, 'CutoffTime', :class => Time, :default_value => []
+      time_node :cutoff_time, 'CutoffTime', :optional => true
     end
   end
 end

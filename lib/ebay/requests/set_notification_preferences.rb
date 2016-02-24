@@ -6,20 +6,20 @@ require 'ebay/types/notification_event_property'
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  array_node :application_delivery_preferences, 'ApplicationDeliveryPreferences', :class => ApplicationDeliveryPreferences, :default_value => []
-    #  array_node :user_delivery_preferences, 'UserDeliveryPreferenceArray', :class => NotificationEnableArray, :default_value => []
-    #  array_node :user_data, 'UserData', :class => NotificationUserData, :default_value => []
-    #  object_node :event_property, 'EventProperty', :class => NotificationEventProperty
-    #  text_node :delivery_url_name, 'DeliveryURLName'
+    #  object_node :application_delivery_preferences, 'ApplicationDeliveryPreferences', :class => ApplicationDeliveryPreferences, :optional => true
+    #  object_node :user_delivery_preferences, 'UserDeliveryPreferenceArray', :class => NotificationEnableArray, :optional => true
+    #  object_node :user_data, 'UserData', :class => NotificationUserData, :optional => true
+    #  array_node :event_properties, 'EventProperty', :class => NotificationEventProperty, :default_value => []
+    #  text_node :delivery_url_name, 'DeliveryURLName', :optional => true
     class SetNotificationPreferences < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'SetNotificationPreferencesRequest'
-      array_node :application_delivery_preferences, 'ApplicationDeliveryPreferences', :class => ApplicationDeliveryPreferences, :default_value => []
-      array_node :user_delivery_preferences, 'UserDeliveryPreferenceArray', :class => NotificationEnableArray, :default_value => []
-      array_node :user_data, 'UserData', :class => NotificationUserData, :default_value => []
-      object_node :event_property, 'EventProperty', :class => NotificationEventProperty
-      text_node :delivery_url_name, 'DeliveryURLName'
+      object_node :application_delivery_preferences, 'ApplicationDeliveryPreferences', :class => ApplicationDeliveryPreferences, :optional => true
+      object_node :user_delivery_preferences, 'UserDeliveryPreferenceArray', :class => NotificationEnableArray, :optional => true
+      object_node :user_data, 'UserData', :class => NotificationUserData, :optional => true
+      array_node :event_properties, 'EventProperty', :class => NotificationEventProperty, :default_value => []
+      text_node :delivery_url_name, 'DeliveryURLName', :optional => true
     end
   end
 end

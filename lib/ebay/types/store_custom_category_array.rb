@@ -3,12 +3,12 @@ require 'ebay/types/store_custom_category'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :custom_category, 'CustomCategory', :class => StoreCustomCategory
+    #  array_node :custom_categories, 'CustomCategory', :class => StoreCustomCategory, :default_value => []
     class StoreCustomCategoryArray
       include XML::Mapping
       include Initializer
       root_element_name 'StoreCustomCategoryArray'
-      object_node :custom_category, 'CustomCategory', :class => StoreCustomCategory
+      array_node :custom_categories, 'CustomCategory', :class => StoreCustomCategory, :default_value => []
     end
   end
 end

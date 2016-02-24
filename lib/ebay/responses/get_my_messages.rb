@@ -5,16 +5,16 @@ require 'ebay/types/my_messages_message_array'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  array_node :summaries, 'Summary', :class => MyMessagesSummary, :default_value => []
-    #  array_node :alerts, 'Alerts', :class => MyMessagesAlertArray, :default_value => []
-    #  array_node :messages, 'Messages', :class => MyMessagesMessageArray, :default_value => []
+    #  object_node :summary, 'Summary', :class => MyMessagesSummary, :optional => true
+    #  object_node :alerts, 'Alerts', :class => MyMessagesAlertArray, :optional => true
+    #  object_node :messages, 'Messages', :class => MyMessagesMessageArray, :optional => true
     class GetMyMessages < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetMyMessagesResponse'
-      array_node :summaries, 'Summary', :class => MyMessagesSummary, :default_value => []
-      array_node :alerts, 'Alerts', :class => MyMessagesAlertArray, :default_value => []
-      array_node :messages, 'Messages', :class => MyMessagesMessageArray, :default_value => []
+      object_node :summary, 'Summary', :class => MyMessagesSummary, :optional => true
+      object_node :alerts, 'Alerts', :class => MyMessagesAlertArray, :optional => true
+      object_node :messages, 'Messages', :class => MyMessagesMessageArray, :optional => true
     end
   end
 end

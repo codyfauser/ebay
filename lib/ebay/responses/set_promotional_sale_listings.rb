@@ -2,12 +2,12 @@
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  value_array_node :statuses, 'Status', :default_value => []
+    #  text_node :status, 'Status', :optional => true
     class SetPromotionalSaleListings < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'SetPromotionalSaleListingsResponse'
-      value_array_node :statuses, 'Status', :default_value => []
+      text_node :status, 'Status', :optional => true
     end
   end
 end

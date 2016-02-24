@@ -1,19 +1,18 @@
 require 'ebay/types/item'
-require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :items, 'Item', :class => Item, :default_value => []
-    #  value_array_node :bid_group_item_statuses, 'BidGroupItemStatus', :default_value => []
-    #  array_node :max_bid_amounts, 'MaxBidAmount', :class => Amount, :default_value => []
+    #  object_node :item, 'Item', :class => Item, :optional => true
+    #  text_node :bid_group_item_status, 'BidGroupItemStatus', :optional => true
+    #  money_node :max_bid_amount, 'MaxBidAmount', :optional => true
     class BidGroupItem
       include XML::Mapping
       include Initializer
       root_element_name 'BidGroupItem'
-      array_node :items, 'Item', :class => Item, :default_value => []
-      value_array_node :bid_group_item_statuses, 'BidGroupItemStatus', :default_value => []
-      array_node :max_bid_amounts, 'MaxBidAmount', :class => Amount, :default_value => []
+      object_node :item, 'Item', :class => Item, :optional => true
+      text_node :bid_group_item_status, 'BidGroupItemStatus', :optional => true
+      money_node :max_bid_amount, 'MaxBidAmount', :optional => true
     end
   end
 end

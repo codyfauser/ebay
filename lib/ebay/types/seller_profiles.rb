@@ -5,16 +5,16 @@ require 'ebay/types/seller_payment_profile'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :seller_shipping_profiles, 'SellerShippingProfile', :class => SellerShippingProfile, :default_value => []
-    #  array_node :seller_return_profiles, 'SellerReturnProfile', :class => SellerReturnProfile, :default_value => []
-    #  array_node :seller_payment_profiles, 'SellerPaymentProfile', :class => SellerPaymentProfile, :default_value => []
+    #  object_node :seller_shipping_profile, 'SellerShippingProfile', :class => SellerShippingProfile, :optional => true
+    #  object_node :seller_return_profile, 'SellerReturnProfile', :class => SellerReturnProfile, :optional => true
+    #  object_node :seller_payment_profile, 'SellerPaymentProfile', :class => SellerPaymentProfile, :optional => true
     class SellerProfiles
       include XML::Mapping
       include Initializer
       root_element_name 'SellerProfiles'
-      array_node :seller_shipping_profiles, 'SellerShippingProfile', :class => SellerShippingProfile, :default_value => []
-      array_node :seller_return_profiles, 'SellerReturnProfile', :class => SellerReturnProfile, :default_value => []
-      array_node :seller_payment_profiles, 'SellerPaymentProfile', :class => SellerPaymentProfile, :default_value => []
+      object_node :seller_shipping_profile, 'SellerShippingProfile', :class => SellerShippingProfile, :optional => true
+      object_node :seller_return_profile, 'SellerReturnProfile', :class => SellerReturnProfile, :optional => true
+      object_node :seller_payment_profile, 'SellerPaymentProfile', :class => SellerPaymentProfile, :optional => true
     end
   end
 end

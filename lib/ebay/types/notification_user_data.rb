@@ -4,16 +4,16 @@ require 'ebay/types/summary_event_schedule'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  array_node :sms_subscriptions, 'SMSSubscription', :class => SMSSubscription, :default_value => []
-    #  object_node :summary_schedule, 'SummarySchedule', :class => SummaryEventSchedule
-    #  text_node :external_user_data, 'ExternalUserData'
+    #  object_node :sms_subscription, 'SMSSubscription', :class => SMSSubscription, :optional => true
+    #  array_node :summary_schedules, 'SummarySchedule', :class => SummaryEventSchedule, :default_value => []
+    #  text_node :external_user_data, 'ExternalUserData', :optional => true
     class NotificationUserData
       include XML::Mapping
       include Initializer
       root_element_name 'NotificationUserData'
-      array_node :sms_subscriptions, 'SMSSubscription', :class => SMSSubscription, :default_value => []
-      object_node :summary_schedule, 'SummarySchedule', :class => SummaryEventSchedule
-      text_node :external_user_data, 'ExternalUserData'
+      object_node :sms_subscription, 'SMSSubscription', :class => SMSSubscription, :optional => true
+      array_node :summary_schedules, 'SummarySchedule', :class => SummaryEventSchedule, :default_value => []
+      text_node :external_user_data, 'ExternalUserData', :optional => true
     end
   end
 end

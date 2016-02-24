@@ -5,24 +5,24 @@ require 'ebay/types/user'
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
-    #  boolean_node :has_more_items, 'HasMoreItems', 'true', 'false'
-    #  array_node :items, 'ItemArray', :class => ItemArray, :default_value => []
-    #  numeric_node :items_per_page, 'ItemsPerPage'
-    #  numeric_node :page_number, 'PageNumber'
-    #  numeric_node :returned_item_count_actual, 'ReturnedItemCountActual'
-    #  array_node :sellers, 'Seller', :class => User, :default_value => []
+    #  object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
+    #  boolean_node :has_more_items, 'HasMoreItems', 'true', 'false', :optional => true
+    #  object_node :items, 'ItemArray', :class => ItemArray, :optional => true
+    #  numeric_node :items_per_page, 'ItemsPerPage', :optional => true
+    #  numeric_node :page_number, 'PageNumber', :optional => true
+    #  numeric_node :returned_item_count_actual, 'ReturnedItemCountActual', :optional => true
+    #  object_node :seller, 'Seller', :class => User, :optional => true
     class GetSellerList < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSellerListResponse'
-      array_node :pagination_results, 'PaginationResult', :class => PaginationResult, :default_value => []
-      boolean_node :has_more_items, 'HasMoreItems', 'true', 'false'
-      array_node :items, 'ItemArray', :class => ItemArray, :default_value => []
-      numeric_node :items_per_page, 'ItemsPerPage'
-      numeric_node :page_number, 'PageNumber'
-      numeric_node :returned_item_count_actual, 'ReturnedItemCountActual'
-      array_node :sellers, 'Seller', :class => User, :default_value => []
+      object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
+      boolean_node :has_more_items, 'HasMoreItems', 'true', 'false', :optional => true
+      object_node :items, 'ItemArray', :class => ItemArray, :optional => true
+      numeric_node :items_per_page, 'ItemsPerPage', :optional => true
+      numeric_node :page_number, 'PageNumber', :optional => true
+      numeric_node :returned_item_count_actual, 'ReturnedItemCountActual', :optional => true
+      object_node :seller, 'Seller', :class => User, :optional => true
     end
   end
 end

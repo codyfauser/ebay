@@ -3,12 +3,12 @@ require 'ebay/types/lookup_attribute'
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :lookup_attribute, 'LookupAttribute', :class => LookupAttribute
+    #  array_node :lookup_attributes, 'LookupAttribute', :class => LookupAttribute, :default_value => []
     class LookupAttributeArray
       include XML::Mapping
       include Initializer
       root_element_name 'LookupAttributeArray'
-      object_node :lookup_attribute, 'LookupAttribute', :class => LookupAttribute
+      array_node :lookup_attributes, 'LookupAttribute', :class => LookupAttribute, :default_value => []
     end
   end
 end
