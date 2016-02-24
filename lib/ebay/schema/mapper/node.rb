@@ -88,7 +88,7 @@ end
     end
 
     class DateTimeNode < TextNode
-      self.override_type = 'time_node'
+      self.override_type = 'date_time_node'
     end
 
     class ValueArrayNode < Node

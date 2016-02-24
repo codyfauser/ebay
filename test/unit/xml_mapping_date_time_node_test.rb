@@ -2,10 +2,10 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class Widget
   include XML::Mapping
-  time_node :shipped_on, 'ShippedOn', :default_value => nil
+  date_time_node :shipped_on, 'ShippedOn', :default_value => nil
 end
 
-class TimeNodeTest < Test::Unit::TestCase
+class DateTimeNodeTest < Test::Unit::TestCase
   
   def setup
     @xml = <<-END
