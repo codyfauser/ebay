@@ -3,7 +3,7 @@ module Ebay
     class RubyClassGenerator
       include Inflections
       include RubyClassGeneratorHelper
-      BuiltInTypes = ['string', 'anyURI', 'int', 'float', 'long', 'dateTime', 'boolean', 'token', 'decimal', 'duration', 'double']
+      BuiltInTypes = ['string', 'anyURI', 'int', 'float', 'long', 'dateTime', 'time', 'boolean', 'token', 'decimal', 'duration', 'double']
 
       attr_reader :ignored_classes, :documentation
 
@@ -232,6 +232,8 @@ module Ebay
           NumericNode.new(name, options)
         when 'dateTime'
           DateTimeNode.new(name, options)
+        when 'time'
+          TimeNode.new(name, options)
         when 'boolean'
           BooleanNode.new(name, options)
         end

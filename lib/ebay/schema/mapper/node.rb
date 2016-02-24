@@ -91,6 +91,10 @@ end
       self.override_type = 'date_time_node'
     end
 
+    class TimeNode < TextNode
+      self.override_type = 'time_node'
+    end
+
     class ValueArrayNode < Node
       def to_s
         result = "#{declaration.pluralize}, '#{@name}', "
