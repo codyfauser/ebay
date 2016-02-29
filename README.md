@@ -36,3 +36,7 @@ corresponding scheme.
     rake schema:update
     rake classes:generate
     rake test
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/main24/ebayapi-19
