@@ -3,6 +3,8 @@ eBay API Client for Ruby
 
 Current API version is *951*
 
+[![Build Status](https://secure.travis-ci.org/main24/ebayapi-19.png)](http://travis-ci.org/main24/ebayapi-19)
+
 ========================
 
 This is a fork of the "CPlus/ebayapi-19" code.
