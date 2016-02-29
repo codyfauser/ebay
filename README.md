@@ -27,3 +27,12 @@ Some key features:
 For examples of many common tasks see the examples folder. Start with get_ebay_time.rb.
 You need to get a develper account and place a config.rb (see template) in the
 examples directory.
+
+## API Version and Schema Updates
+
+Please follow this steps whenever you need to update API version and
+corresponding scheme.
+
+    rake schema:update
+    rake classes:generate
+    rake test
