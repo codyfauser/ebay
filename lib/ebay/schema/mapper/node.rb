@@ -8,14 +8,14 @@ module Ebay
       def initialize(name, attributes = {})
         @name = name
         @type = attributes[:type]
-        @min = attributes[:min] || "1"
-        @max = attributes[:max] || "1"
+        @min = attributes[:min] || 1
+        @max = attributes[:max] || 1
         @field = attributes[:field]
         @child = attributes[:child]
       end
 
       def optional?
-        @min == "0"
+        @min == 0
       end
 
       def accessor_name
@@ -73,7 +73,7 @@ end
     class BooleanNode < Node
       def to_s
         result = "#{declaration}, '#{@name}', 'true', 'false'"
-        result << ', :optional => true' if @min == '0'
+        result << ', :optional => true' if optional?
         result
       end
     end
@@ -118,7 +118,7 @@ end
     class MoneyNode < Node
       def to_s
         result = "#{declaration}, '#{@name}'"
-        result << ', :optional => true' if @min == '0'
+        result << ', :optional => true' if optional?
         result
       end
     end
@@ -130,7 +130,7 @@ end
 
       def to_s
         result = "#{declaration}, '#{@name}', :class => #{class_name}"
-        result << ', :optional => true' if @min == '0'
+        result << ', :optional => true' if optional?
         result
       end
     end
@@ -142,7 +142,7 @@ end
 
       def to_s
         result = "#{declaration}, '#{@name}', :class => #{class_name}"
-        result << ', :optional => true' if @min == '0'
+        result << ', :optional => true' if optional?
         if @name == 'Type'
           result += <<-ENDMETHOD
 

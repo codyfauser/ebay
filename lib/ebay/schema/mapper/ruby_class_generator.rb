@@ -156,10 +156,10 @@ module Ebay
         elsif simple_content?
           content = @type.simplecontent
           result = []
-          result << build_node_for_built_in_type(trim_type(name), content.extension.base.name, :field => '', :min => '0')
+          result << build_node_for_built_in_type(trim_type(name), content.extension.base.name, :field => '', :min => 0)
 
           result.concat(content.attributes.collect do |a|
-            TextNode.new(trim_code_type(a.type.name), :field => "@#{a.name.name}", :min => '0')
+            TextNode.new(trim_code_type(a.type.name), :field => "@#{a.name.name}", :min => 0)
           end)
           result
         else
@@ -183,7 +183,7 @@ module Ebay
 
       def nodes_for_complex_attributes
         @type.attributes.collect do |a|
-          build_node_for_built_in_type(trim_code_type(a.name.name), a.type.name, :field => "@#{a.name.name}", :min => '0')
+          build_node_for_built_in_type(trim_code_type(a.name.name), a.type.name, :field => "@#{a.name.name}", :min => 0)
         end
       end
 
@@ -203,8 +203,8 @@ module Ebay
       def node_for(element)
         name = element.name.name
         type = element.type.name
-        min = element.minoccurs || "1"
-        max = element.maxoccurs || "1"
+        min = element.minoccurs
+        max = element.maxoccurs
 
         options = { :type => type,
           :min => min,
@@ -244,11 +244,11 @@ module Ebay
         simple_type = @simple_types.find_name(type)
 
         case max
-        when "1"
+        when 1
           if simple_type
             TextNode.new(name, options)
           elsif element = @complex_types.find_name(type)
-            if element.elements.size == 1 && element.elements[0].maxoccurs == "unbounded"
+            if element.elements.size == 1 && element.elements[0].maxoccurs.nil?
               # Found a container!
               child = element.elements[0]
 
