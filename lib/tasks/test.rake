@@ -1,7 +1,7 @@
 require 'rake/testtask'
 
-desc "Default: Run all the unit tests"
-task :default => [ 'test:units' ]
+desc "Default: Run all the tests"
+task :default => [ 'test' ]
 
 namespace :test do
   desc 'Run all unit tests.'
@@ -11,7 +11,7 @@ namespace :test do
     t.verbose = true
   end
 
-  desc 'Run all unit tests.'
+  desc 'Run all mapping tests.'
   Rake::TestTask.new(:mapping) do |t|
     t.libs << "test"
   	t.pattern = 'test/mapping/**/*_test.rb'
