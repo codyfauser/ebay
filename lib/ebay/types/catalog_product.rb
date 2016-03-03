@@ -1,5 +1,5 @@
 require 'ebay/types/external_product_id'
-require 'ebay/types/name_value_list_array'
+require 'ebay/types/name_value_list'
 require 'ebay/types/review_details'
 
 module Ebay # :nodoc:
@@ -13,7 +13,7 @@ module Ebay # :nodoc:
     #  object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
     #  numeric_node :product_reference_id, 'ProductReferenceID', :optional => true
     #  numeric_node :attribute_set_id, 'AttributeSetID', :optional => true
-    #  object_node :item_specifics, 'ItemSpecifics', :class => NameValueListArray, :optional => true
+    #  array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
     #  numeric_node :review_count, 'ReviewCount', :optional => true
     #  object_node :review_details, 'ReviewDetails', :class => ReviewDetails, :optional => true
     #  text_node :product_state, 'ProductState', :optional => true
@@ -29,7 +29,7 @@ module Ebay # :nodoc:
       object_node :external_product_id, 'ExternalProductID', :class => ExternalProductID, :optional => true
       numeric_node :product_reference_id, 'ProductReferenceID', :optional => true
       numeric_node :attribute_set_id, 'AttributeSetID', :optional => true
-      object_node :item_specifics, 'ItemSpecifics', :class => NameValueListArray, :optional => true
+      array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
       numeric_node :review_count, 'ReviewCount', :optional => true
       object_node :review_details, 'ReviewDetails', :class => ReviewDetails, :optional => true
       text_node :product_state, 'ProductState', :optional => true

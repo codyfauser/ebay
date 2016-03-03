@@ -1,14 +1,14 @@
-require 'ebay/types/vero_reason_code_details'
+require 'ebay/types/vero_site_detail'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :vero_reason_code_details, 'VeROReasonCodeDetails', :class => VeROReasonCodeDetails, :optional => true
+    #  array_node :vero_reason_code_details, 'VeROReasonCodeDetails', 'VeROSiteDetail', :class => VeROSiteDetail, :default_value => []
     class GetVeROReasonCodeDetails < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetVeROReasonCodeDetailsResponse'
-      object_node :vero_reason_code_details, 'VeROReasonCodeDetails', :class => VeROReasonCodeDetails, :optional => true
+      array_node :vero_reason_code_details, 'VeROReasonCodeDetails', 'VeROSiteDetail', :class => VeROSiteDetail, :default_value => []
     end
   end
 end

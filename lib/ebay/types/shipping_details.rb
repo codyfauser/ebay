@@ -2,7 +2,7 @@ require 'ebay/types/calculated_shipping_rate'
 require 'ebay/types/sales_tax'
 require 'ebay/types/shipping_service_options'
 require 'ebay/types/international_shipping_service_options'
-require 'ebay/types/tax_table'
+require 'ebay/types/tax_jurisdiction'
 require 'ebay/types/insurance_details'
 require 'ebay/types/flat_shipping_discount'
 require 'ebay/types/calculated_shipping_discount'
@@ -31,7 +31,7 @@ module Ebay # :nodoc:
     #  text_node :shipping_type, 'ShippingType', :optional => true
     #  numeric_node :selling_manager_sales_record_number, 'SellingManagerSalesRecordNumber', :optional => true
     #  boolean_node :third_party_checkout, 'ThirdPartyCheckout', 'true', 'false', :optional => true
-    #  object_node :tax_table, 'TaxTable', :class => TaxTable, :optional => true
+    #  array_node :tax_tables, 'TaxTable', 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
     #  boolean_node :get_it_fast, 'GetItFast', 'true', 'false', :optional => true
     #  text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
     #  money_node :default_shipping_cost, 'DefaultShippingCost', :optional => true
@@ -73,7 +73,7 @@ module Ebay # :nodoc:
       text_node :shipping_type, 'ShippingType', :optional => true
       numeric_node :selling_manager_sales_record_number, 'SellingManagerSalesRecordNumber', :optional => true
       boolean_node :third_party_checkout, 'ThirdPartyCheckout', 'true', 'false', :optional => true
-      object_node :tax_table, 'TaxTable', :class => TaxTable, :optional => true
+      array_node :tax_tables, 'TaxTable', 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
       boolean_node :get_it_fast, 'GetItFast', 'true', 'false', :optional => true
       text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
       money_node :default_shipping_cost, 'DefaultShippingCost', :optional => true

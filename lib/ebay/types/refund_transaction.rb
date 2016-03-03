@@ -1,4 +1,4 @@
-require 'ebay/types/refund_line_array'
+require 'ebay/types/refund_line'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -6,7 +6,7 @@ module Ebay # :nodoc:
     #  text_node :order_id, 'OrderID', :optional => true
     #  text_node :item_id, 'ItemID', :optional => true
     #  text_node :transaction_id, 'TransactionID', :optional => true
-    #  object_node :refund_lines, 'RefundLineArray', :class => RefundLineArray, :optional => true
+    #  array_node :refund_lines, 'RefundLineArray', 'RefundLine', :class => RefundLine, :default_value => []
     class RefundTransaction
       include XML::Mapping
       include Initializer
@@ -14,7 +14,7 @@ module Ebay # :nodoc:
       text_node :order_id, 'OrderID', :optional => true
       text_node :item_id, 'ItemID', :optional => true
       text_node :transaction_id, 'TransactionID', :optional => true
-      object_node :refund_lines, 'RefundLineArray', :class => RefundLineArray, :optional => true
+      array_node :refund_lines, 'RefundLineArray', 'RefundLine', :class => RefundLine, :default_value => []
     end
   end
 end

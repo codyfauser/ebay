@@ -1,14 +1,14 @@
-require 'ebay/types/order_array'
+require 'ebay/types/order'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :orders, 'OrderArray', :class => OrderArray, :optional => true
+    #  array_node :orders, 'OrderArray', 'Order', :class => Order, :default_value => []
     class GetOrderTransactions < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetOrderTransactionsResponse'
-      object_node :orders, 'OrderArray', :class => OrderArray, :optional => true
+      array_node :orders, 'OrderArray', 'Order', :class => Order, :default_value => []
     end
   end
 end

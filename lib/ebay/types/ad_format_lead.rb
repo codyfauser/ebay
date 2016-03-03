@@ -1,5 +1,5 @@
 require 'ebay/types/address'
-require 'ebay/types/member_message_exchange_array'
+require 'ebay/types/member_message_exchange'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -12,7 +12,7 @@ module Ebay # :nodoc:
     #  text_node :item_id, 'ItemID', :optional => true
     #  text_node :item_title, 'ItemTitle', :optional => true
     #  text_node :user_id, 'UserID', :optional => true
-    #  object_node :member_message, 'MemberMessage', :class => MemberMessageExchangeArray, :optional => true
+    #  array_node :member_messages, 'MemberMessage', 'MemberMessageExchange', :class => MemberMessageExchange, :default_value => []
     #  text_node :status, 'Status', :optional => true
     #  money_node :lead_fee, 'LeadFee', :optional => true
     #  text_node :external_email, 'ExternalEmail', :optional => true
@@ -35,7 +35,7 @@ module Ebay # :nodoc:
       text_node :item_id, 'ItemID', :optional => true
       text_node :item_title, 'ItemTitle', :optional => true
       text_node :user_id, 'UserID', :optional => true
-      object_node :member_message, 'MemberMessage', :class => MemberMessageExchangeArray, :optional => true
+      array_node :member_messages, 'MemberMessage', 'MemberMessageExchange', :class => MemberMessageExchange, :default_value => []
       text_node :status, 'Status', :optional => true
       money_node :lead_fee, 'LeadFee', :optional => true
       text_node :external_email, 'ExternalEmail', :optional => true

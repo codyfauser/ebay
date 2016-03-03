@@ -1,4 +1,4 @@
-require 'ebay/types/extended_picture_details'
+require 'ebay/types/picture_ur_ls'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -12,7 +12,7 @@ module Ebay # :nodoc:
     #  text_node :gallery_status, 'GalleryStatus', :optional => true
     #  text_node :gallery_error_info, 'GalleryErrorInfo', :optional => true
     #  text_node :external_picture_url, 'ExternalPictureURL', :optional => true
-    #  object_node :extended_picture_details, 'ExtendedPictureDetails', :class => ExtendedPictureDetails, :optional => true
+    #  array_node :extended_picture_details, 'ExtendedPictureDetails', 'PictureURLs', :class => PictureURLs, :default_value => []
     class PictureDetails
       include XML::Mapping
       include Initializer
@@ -26,7 +26,7 @@ module Ebay # :nodoc:
       text_node :gallery_status, 'GalleryStatus', :optional => true
       text_node :gallery_error_info, 'GalleryErrorInfo', :optional => true
       text_node :external_picture_url, 'ExternalPictureURL', :optional => true
-      object_node :extended_picture_details, 'ExtendedPictureDetails', :class => ExtendedPictureDetails, :optional => true
+      array_node :extended_picture_details, 'ExtendedPictureDetails', 'PictureURLs', :class => PictureURLs, :default_value => []
     end
   end
 end

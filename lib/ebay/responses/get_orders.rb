@@ -1,12 +1,12 @@
 require 'ebay/types/pagination_result'
-require 'ebay/types/order_array'
+require 'ebay/types/order'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
     #  object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
     #  boolean_node :has_more_orders, 'HasMoreOrders', 'true', 'false', :optional => true
-    #  object_node :orders, 'OrderArray', :class => OrderArray, :optional => true
+    #  array_node :orders, 'OrderArray', 'Order', :class => Order, :default_value => []
     #  numeric_node :orders_per_page, 'OrdersPerPage', :optional => true
     #  numeric_node :page_number, 'PageNumber', :optional => true
     #  numeric_node :returned_order_count_actual, 'ReturnedOrderCountActual', :optional => true
@@ -16,7 +16,7 @@ module Ebay # :nodoc:
       root_element_name 'GetOrdersResponse'
       object_node :pagination_result, 'PaginationResult', :class => PaginationResult, :optional => true
       boolean_node :has_more_orders, 'HasMoreOrders', 'true', 'false', :optional => true
-      object_node :orders, 'OrderArray', :class => OrderArray, :optional => true
+      array_node :orders, 'OrderArray', 'Order', :class => Order, :default_value => []
       numeric_node :orders_per_page, 'OrdersPerPage', :optional => true
       numeric_node :page_number, 'PageNumber', :optional => true
       numeric_node :returned_order_count_actual, 'ReturnedOrderCountActual', :optional => true

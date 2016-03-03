@@ -1,4 +1,4 @@
-require 'ebay/types/name_value_list_array'
+require 'ebay/types/name_value_list'
 require 'ebay/types/selling_status'
 require 'ebay/types/selling_manager_product_inventory_status'
 require 'ebay/types/discount_price_info'
@@ -10,7 +10,7 @@ module Ebay # :nodoc:
     #  text_node :sku, 'SKU', :optional => true
     #  money_node :start_price, 'StartPrice', :optional => true
     #  numeric_node :quantity, 'Quantity', :optional => true
-    #  object_node :variation_specifics, 'VariationSpecifics', :class => NameValueListArray, :optional => true
+    #  array_node :variation_specifics, 'VariationSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
     #  numeric_node :units_available, 'UnitsAvailable', :optional => true
     #  money_node :unit_cost, 'UnitCost', :optional => true
     #  object_node :selling_status, 'SellingStatus', :class => SellingStatus, :optional => true
@@ -29,7 +29,7 @@ module Ebay # :nodoc:
       text_node :sku, 'SKU', :optional => true
       money_node :start_price, 'StartPrice', :optional => true
       numeric_node :quantity, 'Quantity', :optional => true
-      object_node :variation_specifics, 'VariationSpecifics', :class => NameValueListArray, :optional => true
+      array_node :variation_specifics, 'VariationSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
       numeric_node :units_available, 'UnitsAvailable', :optional => true
       money_node :unit_cost, 'UnitCost', :optional => true
       object_node :selling_status, 'SellingStatus', :class => SellingStatus, :optional => true

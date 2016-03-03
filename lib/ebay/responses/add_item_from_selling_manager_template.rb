@@ -1,4 +1,4 @@
-require 'ebay/types/fees'
+require 'ebay/types/fee'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -6,7 +6,7 @@ module Ebay # :nodoc:
     #  text_node :item_id, 'ItemID', :optional => true
     #  date_time_node :start_time, 'StartTime', :optional => true
     #  date_time_node :end_time, 'EndTime', :optional => true
-    #  object_node :fees, 'Fees', :class => Fees, :optional => true
+    #  array_node :fees, 'Fees', 'Fee', :class => Fee, :default_value => []
     #  text_node :category_id, 'CategoryID', :optional => true
     #  text_node :category2_id, 'Category2ID', :optional => true
     class AddItemFromSellingManagerTemplate < Abstract
@@ -16,7 +16,7 @@ module Ebay # :nodoc:
       text_node :item_id, 'ItemID', :optional => true
       date_time_node :start_time, 'StartTime', :optional => true
       date_time_node :end_time, 'EndTime', :optional => true
-      object_node :fees, 'Fees', :class => Fees, :optional => true
+      array_node :fees, 'Fees', 'Fee', :class => Fee, :default_value => []
       text_node :category_id, 'CategoryID', :optional => true
       text_node :category2_id, 'Category2ID', :optional => true
     end

@@ -1,14 +1,14 @@
-require 'ebay/types/store_custom_page_array'
+require 'ebay/types/store_custom_page'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :custom_pages, 'CustomPageArray', :class => StoreCustomPageArray, :optional => true
+    #  array_node :custom_pages, 'CustomPageArray', 'CustomPage', :class => StoreCustomPage, :default_value => []
     class GetStoreCustomPage < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetStoreCustomPageResponse'
-      object_node :custom_pages, 'CustomPageArray', :class => StoreCustomPageArray, :optional => true
+      array_node :custom_pages, 'CustomPageArray', 'CustomPage', :class => StoreCustomPage, :default_value => []
     end
   end
 end

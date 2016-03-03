@@ -11,7 +11,7 @@ module Ebay # :nodoc:
     #  object_node :maximum_buyer_policy_violations, 'MaximumBuyerPolicyViolations', :class => MaximumBuyerPolicyViolationsDetails, :optional => true
     #  object_node :maximum_item_requirements, 'MaximumItemRequirements', :class => MaximumItemRequirementsDetails, :optional => true
     #  object_node :maximum_unpaid_item_strikes_info, 'MaximumUnpaidItemStrikesInfo', :class => MaximumUnpaidItemStrikesInfoDetails, :optional => true
-    #  object_node :minimum_feedback_score, 'MinimumFeedbackScore', :class => MinimumFeedbackScoreDetails, :optional => true
+    #  array_node :minimum_feedback_scores, 'MinimumFeedbackScore', :class => MinimumFeedbackScoreDetails, :default_value => []
     #  boolean_node :ship_to_registration_country, 'ShipToRegistrationCountry', 'true', 'false', :optional => true
     #  object_node :verified_user_requirements, 'VerifiedUserRequirements', :class => VerifiedUserRequirementsDetails, :optional => true
     #  text_node :detail_version, 'DetailVersion', :optional => true
@@ -24,7 +24,7 @@ module Ebay # :nodoc:
       object_node :maximum_buyer_policy_violations, 'MaximumBuyerPolicyViolations', :class => MaximumBuyerPolicyViolationsDetails, :optional => true
       object_node :maximum_item_requirements, 'MaximumItemRequirements', :class => MaximumItemRequirementsDetails, :optional => true
       object_node :maximum_unpaid_item_strikes_info, 'MaximumUnpaidItemStrikesInfo', :class => MaximumUnpaidItemStrikesInfoDetails, :optional => true
-      object_node :minimum_feedback_score, 'MinimumFeedbackScore', :class => MinimumFeedbackScoreDetails, :optional => true
+      array_node :minimum_feedback_scores, 'MinimumFeedbackScore', :class => MinimumFeedbackScoreDetails, :default_value => []
       boolean_node :ship_to_registration_country, 'ShipToRegistrationCountry', 'true', 'false', :optional => true
       object_node :verified_user_requirements, 'VerifiedUserRequirements', :class => VerifiedUserRequirementsDetails, :optional => true
       text_node :detail_version, 'DetailVersion', :optional => true

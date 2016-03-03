@@ -1,14 +1,14 @@
-require 'ebay/types/listing_tip_array'
+require 'ebay/types/listing_tip'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :listing_tips, 'ListingTipArray', :class => ListingTipArray, :optional => true
+    #  array_node :listing_tips, 'ListingTipArray', 'ListingTip', :class => ListingTip, :default_value => []
     class ListingAnalyzerRecommendations
       include XML::Mapping
       include Initializer
       root_element_name 'ListingAnalyzerRecommendations'
-      object_node :listing_tips, 'ListingTipArray', :class => ListingTipArray, :optional => true
+      array_node :listing_tips, 'ListingTipArray', 'ListingTip', :class => ListingTip, :default_value => []
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'ebay/types/store_logo'
 require 'ebay/types/store_theme'
-require 'ebay/types/store_custom_category_array'
+require 'ebay/types/store_custom_category'
 require 'ebay/types/store_custom_listing_header'
 
 module Ebay # :nodoc:
@@ -20,7 +20,7 @@ module Ebay # :nodoc:
     #  text_node :custom_header_layout, 'CustomHeaderLayout', :optional => true
     #  text_node :custom_header, 'CustomHeader', :optional => true
     #  boolean_node :export_listings, 'ExportListings', 'true', 'false', :optional => true
-    #  object_node :custom_categories, 'CustomCategories', :class => StoreCustomCategoryArray, :optional => true
+    #  array_node :custom_categories, 'CustomCategories', 'CustomCategory', :class => StoreCustomCategory, :default_value => []
     #  object_node :custom_listing_header, 'CustomListingHeader', :class => StoreCustomListingHeader, :optional => true
     #  text_node :merch_display, 'MerchDisplay', :optional => true
     #  date_time_node :last_opened_time, 'LastOpenedTime', :optional => true
@@ -43,7 +43,7 @@ module Ebay # :nodoc:
       text_node :custom_header_layout, 'CustomHeaderLayout', :optional => true
       text_node :custom_header, 'CustomHeader', :optional => true
       boolean_node :export_listings, 'ExportListings', 'true', 'false', :optional => true
-      object_node :custom_categories, 'CustomCategories', :class => StoreCustomCategoryArray, :optional => true
+      array_node :custom_categories, 'CustomCategories', 'CustomCategory', :class => StoreCustomCategory, :default_value => []
       object_node :custom_listing_header, 'CustomListingHeader', :class => StoreCustomListingHeader, :optional => true
       text_node :merch_display, 'MerchDisplay', :optional => true
       date_time_node :last_opened_time, 'LastOpenedTime', :optional => true

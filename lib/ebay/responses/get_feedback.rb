@@ -1,11 +1,11 @@
-require 'ebay/types/feedback_detail_array'
+require 'ebay/types/feedback_detail'
 require 'ebay/types/feedback_summary'
 require 'ebay/types/pagination_result'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :feedback_details, 'FeedbackDetailArray', :class => FeedbackDetailArray, :optional => true
+    #  array_node :feedback_details, 'FeedbackDetailArray', 'FeedbackDetail', :class => FeedbackDetail, :default_value => []
     #  numeric_node :feedback_detail_item_total, 'FeedbackDetailItemTotal', :optional => true
     #  object_node :feedback_summary, 'FeedbackSummary', :class => FeedbackSummary, :optional => true
     #  numeric_node :feedback_score, 'FeedbackScore', :optional => true
@@ -16,7 +16,7 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'GetFeedbackResponse'
-      object_node :feedback_details, 'FeedbackDetailArray', :class => FeedbackDetailArray, :optional => true
+      array_node :feedback_details, 'FeedbackDetailArray', 'FeedbackDetail', :class => FeedbackDetail, :default_value => []
       numeric_node :feedback_detail_item_total, 'FeedbackDetailItemTotal', :optional => true
       object_node :feedback_summary, 'FeedbackSummary', :class => FeedbackSummary, :optional => true
       numeric_node :feedback_score, 'FeedbackScore', :optional => true

@@ -1,15 +1,15 @@
-require 'ebay/types/suggested_category_array'
+require 'ebay/types/suggested_category'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
     # == Attributes
-    #  object_node :suggested_categories, 'SuggestedCategoryArray', :class => SuggestedCategoryArray, :optional => true
+    #  array_node :suggested_categories, 'SuggestedCategoryArray', 'SuggestedCategory', :class => SuggestedCategory, :default_value => []
     #  numeric_node :category_count, 'CategoryCount', :optional => true
     class GetSuggestedCategories < Abstract
       include XML::Mapping
       include Initializer
       root_element_name 'GetSuggestedCategoriesResponse'
-      object_node :suggested_categories, 'SuggestedCategoryArray', :class => SuggestedCategoryArray, :optional => true
+      array_node :suggested_categories, 'SuggestedCategoryArray', 'SuggestedCategory', :class => SuggestedCategory, :default_value => []
       numeric_node :category_count, 'CategoryCount', :optional => true
     end
   end

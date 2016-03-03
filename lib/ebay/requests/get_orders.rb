@@ -1,10 +1,9 @@
-require 'ebay/types/order_id_array'
 require 'ebay/types/pagination'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
     # == Attributes
-    #  object_node :order_ids, 'OrderIDArray', :class => OrderIDArray, :optional => true
+    #  value_array_node :order_ids, 'OrderIDArray', 'OrderID', :default_value => []
     #  date_time_node :create_time_from, 'CreateTimeFrom', :optional => true
     #  date_time_node :create_time_to, 'CreateTimeTo', :optional => true
     #  text_node :order_role, 'OrderRole', :optional => true
@@ -20,7 +19,7 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'GetOrdersRequest'
-      object_node :order_ids, 'OrderIDArray', :class => OrderIDArray, :optional => true
+      value_array_node :order_ids, 'OrderIDArray', 'OrderID', :default_value => []
       date_time_node :create_time_from, 'CreateTimeFrom', :optional => true
       date_time_node :create_time_to, 'CreateTimeTo', :optional => true
       text_node :order_role, 'OrderRole', :optional => true

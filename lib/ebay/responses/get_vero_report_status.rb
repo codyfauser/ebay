@@ -1,5 +1,5 @@
 require 'ebay/types/pagination_result'
-require 'ebay/types/vero_reported_item_details'
+require 'ebay/types/vero_reported_item'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -10,7 +10,7 @@ module Ebay # :nodoc:
     #  numeric_node :page_number, 'PageNumber', :optional => true
     #  numeric_node :vero_report_packet_id, 'VeROReportPacketID', :optional => true
     #  text_node :vero_report_packet_status, 'VeROReportPacketStatus', :optional => true
-    #  object_node :reported_item_details, 'ReportedItemDetails', :class => VeROReportedItemDetails, :optional => true
+    #  array_node :reported_item_details, 'ReportedItemDetails', 'ReportedItem', :class => VeROReportedItem, :default_value => []
     class GetVeROReportStatus < Abstract
       include XML::Mapping
       include Initializer
@@ -21,7 +21,7 @@ module Ebay # :nodoc:
       numeric_node :page_number, 'PageNumber', :optional => true
       numeric_node :vero_report_packet_id, 'VeROReportPacketID', :optional => true
       text_node :vero_report_packet_status, 'VeROReportPacketStatus', :optional => true
-      object_node :reported_item_details, 'ReportedItemDetails', :class => VeROReportedItemDetails, :optional => true
+      array_node :reported_item_details, 'ReportedItemDetails', 'ReportedItem', :class => VeROReportedItem, :default_value => []
     end
   end
 end

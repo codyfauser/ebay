@@ -1,17 +1,17 @@
-require 'ebay/types/payment_information'
-require 'ebay/types/refund_information'
+require 'ebay/types/payment_transaction'
+require 'ebay/types/refund_transaction_info'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :payments, 'Payments', :class => PaymentInformation, :optional => true
-    #  object_node :refunds, 'Refunds', :class => RefundInformation, :optional => true
+    #  array_node :payments, 'Payments', 'Payment', :class => PaymentTransaction, :default_value => []
+    #  array_node :refunds, 'Refunds', 'Refund', :class => RefundTransactionInfo, :default_value => []
     class PaymentsInformation
       include XML::Mapping
       include Initializer
       root_element_name 'PaymentsInformation'
-      object_node :payments, 'Payments', :class => PaymentInformation, :optional => true
-      object_node :refunds, 'Refunds', :class => RefundInformation, :optional => true
+      array_node :payments, 'Payments', 'Payment', :class => PaymentTransaction, :default_value => []
+      array_node :refunds, 'Refunds', 'Refund', :class => RefundTransactionInfo, :default_value => []
     end
   end
 end

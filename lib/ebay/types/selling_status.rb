@@ -1,6 +1,6 @@
 require 'ebay/types/user'
 require 'ebay/types/promotional_sale_details'
-require 'ebay/types/suggested_bid_value'
+require 'ebay/types/amount'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -22,7 +22,7 @@ module Ebay # :nodoc:
     #  boolean_node :admin_ended, 'AdminEnded', 'true', 'false', :optional => true
     #  boolean_node :sold_as_bin, 'SoldAsBin', 'true', 'false', :optional => true
     #  numeric_node :quantity_sold_by_pickup_in_store, 'QuantitySoldByPickupInStore', :optional => true
-    #  object_node :suggested_bid_values, 'SuggestedBidValues', :class => SuggestedBidValue, :optional => true
+    #  array_node :suggested_bid_values, 'SuggestedBidValues', 'BidValue', :class => Amount, :default_value => []
     class SellingStatus
       include XML::Mapping
       include Initializer
@@ -44,7 +44,7 @@ module Ebay # :nodoc:
       boolean_node :admin_ended, 'AdminEnded', 'true', 'false', :optional => true
       boolean_node :sold_as_bin, 'SoldAsBin', 'true', 'false', :optional => true
       numeric_node :quantity_sold_by_pickup_in_store, 'QuantitySoldByPickupInStore', :optional => true
-      object_node :suggested_bid_values, 'SuggestedBidValues', :class => SuggestedBidValue, :optional => true
+      array_node :suggested_bid_values, 'SuggestedBidValues', 'BidValue', :class => Amount, :default_value => []
     end
   end
 end

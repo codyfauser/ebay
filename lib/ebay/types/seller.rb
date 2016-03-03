@@ -1,11 +1,8 @@
 require 'ebay/types/address'
 require 'ebay/types/scheduling_info'
 require 'ebay/types/pro_stores_checkout_preference'
-require 'ebay/types/charity_affiliation_details'
-require 'ebay/types/integrated_merchant_credit_card_info'
+require 'ebay/types/charity_affiliation_detail'
 require 'ebay/types/feature_eligibility'
-require 'ebay/types/top_rated_seller_details'
-require 'ebay/types/recoupment_policy_consent'
 require 'ebay/types/seller_ebay_payment_process_consent_code'
 
 module Ebay # :nodoc:
@@ -33,13 +30,13 @@ module Ebay # :nodoc:
     #  boolean_node :charity_registered, 'CharityRegistered', 'true', 'false', :optional => true
     #  boolean_node :safe_payment_exempt, 'SafePaymentExempt', 'true', 'false', :optional => true
     #  numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
-    #  object_node :charity_affiliation_details, 'CharityAffiliationDetails', :class => CharityAffiliationDetails, :optional => true
+    #  array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
     #  numeric_node :transaction_percent, 'TransactionPercent', :optional => true
-    #  object_node :integrated_merchant_credit_card_info, 'IntegratedMerchantCreditCardInfo', :class => IntegratedMerchantCreditCardInfo, :optional => true
+    #  value_array_node :integrated_merchant_credit_card_infos, 'IntegratedMerchantCreditCardInfo', 'SupportedSite', :default_value => []
     #  object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
     #  boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
-    #  object_node :top_rated_seller_details, 'TopRatedSellerDetails', :class => TopRatedSellerDetails, :optional => true
-    #  object_node :recoupment_policy_consent, 'RecoupmentPolicyConsent', :class => RecoupmentPolicyConsent, :optional => true
+    #  value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+    #  value_array_node :recoupment_policy_consents, 'RecoupmentPolicyConsent', 'Site', :default_value => []
     #  boolean_node :domestic_rate_table, 'DomesticRateTable', 'true', 'false', :optional => true
     #  boolean_node :international_rate_table, 'InternationalRateTable', 'true', 'false', :optional => true
     #  text_node :seller_ebay_payment_process_status, 'SellereBayPaymentProcessStatus', :optional => true
@@ -70,13 +67,13 @@ module Ebay # :nodoc:
       boolean_node :charity_registered, 'CharityRegistered', 'true', 'false', :optional => true
       boolean_node :safe_payment_exempt, 'SafePaymentExempt', 'true', 'false', :optional => true
       numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
-      object_node :charity_affiliation_details, 'CharityAffiliationDetails', :class => CharityAffiliationDetails, :optional => true
+      array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
       numeric_node :transaction_percent, 'TransactionPercent', :optional => true
-      object_node :integrated_merchant_credit_card_info, 'IntegratedMerchantCreditCardInfo', :class => IntegratedMerchantCreditCardInfo, :optional => true
+      value_array_node :integrated_merchant_credit_card_infos, 'IntegratedMerchantCreditCardInfo', 'SupportedSite', :default_value => []
       object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
       boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
-      object_node :top_rated_seller_details, 'TopRatedSellerDetails', :class => TopRatedSellerDetails, :optional => true
-      object_node :recoupment_policy_consent, 'RecoupmentPolicyConsent', :class => RecoupmentPolicyConsent, :optional => true
+      value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+      value_array_node :recoupment_policy_consents, 'RecoupmentPolicyConsent', 'Site', :default_value => []
       boolean_node :domestic_rate_table, 'DomesticRateTable', 'true', 'false', :optional => true
       boolean_node :international_rate_table, 'InternationalRateTable', 'true', 'false', :optional => true
       text_node :seller_ebay_payment_process_status, 'SellereBayPaymentProcessStatus', :optional => true

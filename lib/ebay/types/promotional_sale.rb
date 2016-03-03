@@ -1,11 +1,10 @@
-require 'ebay/types/item_id_array'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
     #  numeric_node :promotional_sale_id, 'PromotionalSaleID', :optional => true
     #  text_node :promotional_sale_name, 'PromotionalSaleName', :optional => true
-    #  object_node :promotional_sale_item_ids, 'PromotionalSaleItemIDArray', :class => ItemIDArray, :optional => true
+    #  value_array_node :promotional_sale_item_ids, 'PromotionalSaleItemIDArray', 'ItemID', :default_value => []
     #  text_node :status, 'Status', :optional => true
     #  text_node :discount_type, 'DiscountType', :optional => true
     #  numeric_node :discount_value, 'DiscountValue', :optional => true
@@ -18,7 +17,7 @@ module Ebay # :nodoc:
       root_element_name 'PromotionalSale'
       numeric_node :promotional_sale_id, 'PromotionalSaleID', :optional => true
       text_node :promotional_sale_name, 'PromotionalSaleName', :optional => true
-      object_node :promotional_sale_item_ids, 'PromotionalSaleItemIDArray', :class => ItemIDArray, :optional => true
+      value_array_node :promotional_sale_item_ids, 'PromotionalSaleItemIDArray', 'ItemID', :default_value => []
       text_node :status, 'Status', :optional => true
       text_node :discount_type, 'DiscountType', :optional => true
       numeric_node :discount_value, 'DiscountValue', :optional => true

@@ -8,7 +8,7 @@ require 'ebay/types/shipping_service_options'
 require 'ebay/types/feedback_info'
 require 'ebay/types/order'
 require 'ebay/types/listing_checkout_redirect_preference'
-require 'ebay/types/refund_array'
+require 'ebay/types/refund'
 require 'ebay/types/variation'
 require 'ebay/types/taxes'
 require 'ebay/types/payment_hold_detail'
@@ -16,9 +16,9 @@ require 'ebay/types/seller_discounts'
 require 'ebay/types/multi_leg_shipping_details'
 require 'ebay/types/unpaid_item'
 require 'ebay/types/payments_information'
-require 'ebay/types/pickup_details'
+require 'ebay/types/pickup_options'
 require 'ebay/types/pickup_method_selected'
-require 'ebay/types/buyer_package_enclosures'
+require 'ebay/types/buyer_package_enclosure'
 require 'ebay/types/gift_summary'
 require 'ebay/types/digital_delivery_selected'
 
@@ -56,7 +56,7 @@ module Ebay # :nodoc:
     #  object_node :containing_order, 'ContainingOrder', :class => Order, :optional => true
     #  money_node :final_value_fee, 'FinalValueFee', :optional => true
     #  object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
-    #  object_node :refunds, 'RefundArray', :class => RefundArray, :optional => true
+    #  array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
     #  text_node :transaction_site_id, 'TransactionSiteID', :optional => true
     #  text_node :platform, 'Platform', :optional => true
     #  text_node :cart_id, 'CartID', :optional => true
@@ -82,11 +82,11 @@ module Ebay # :nodoc:
     #  object_node :unpaid_item, 'UnpaidItem', :class => UnpaidItem, :optional => true
     #  boolean_node :intangible_item, 'IntangibleItem', 'true', 'false', :optional => true
     #  object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
-    #  object_node :pickup_details, 'PickupDetails', :class => PickupDetails, :optional => true
+    #  array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
     #  object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
     #  money_node :shipping_convenience_charge, 'ShippingConvenienceCharge', :optional => true
     #  text_node :logistics_plan_type, 'LogisticsPlanType', :optional => true
-    #  object_node :buyer_package_enclosures, 'BuyerPackageEnclosures', :class => BuyerPackageEnclosures, :optional => true
+    #  array_node :buyer_package_enclosures, 'BuyerPackageEnclosures', 'BuyerPackageEnclosure', :class => BuyerPackageEnclosure, :default_value => []
     #  text_node :inventory_reservation_id, 'InventoryReservationID', :optional => true
     #  text_node :extended_order_id, 'ExtendedOrderID', :optional => true
     #  boolean_node :ebay_plus_transaction, 'eBayPlusTransaction', 'true', 'false', :optional => true
@@ -128,7 +128,7 @@ module Ebay # :nodoc:
       object_node :containing_order, 'ContainingOrder', :class => Order, :optional => true
       money_node :final_value_fee, 'FinalValueFee', :optional => true
       object_node :listing_checkout_redirect_preference, 'ListingCheckoutRedirectPreference', :class => ListingCheckoutRedirectPreference, :optional => true
-      object_node :refunds, 'RefundArray', :class => RefundArray, :optional => true
+      array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
       text_node :transaction_site_id, 'TransactionSiteID', :optional => true
       text_node :platform, 'Platform', :optional => true
       text_node :cart_id, 'CartID', :optional => true
@@ -154,11 +154,11 @@ module Ebay # :nodoc:
       object_node :unpaid_item, 'UnpaidItem', :class => UnpaidItem, :optional => true
       boolean_node :intangible_item, 'IntangibleItem', 'true', 'false', :optional => true
       object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
-      object_node :pickup_details, 'PickupDetails', :class => PickupDetails, :optional => true
+      array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
       object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
       money_node :shipping_convenience_charge, 'ShippingConvenienceCharge', :optional => true
       text_node :logistics_plan_type, 'LogisticsPlanType', :optional => true
-      object_node :buyer_package_enclosures, 'BuyerPackageEnclosures', :class => BuyerPackageEnclosures, :optional => true
+      array_node :buyer_package_enclosures, 'BuyerPackageEnclosures', 'BuyerPackageEnclosure', :class => BuyerPackageEnclosure, :default_value => []
       text_node :inventory_reservation_id, 'InventoryReservationID', :optional => true
       text_node :extended_order_id, 'ExtendedOrderID', :optional => true
       boolean_node :ebay_plus_transaction, 'eBayPlusTransaction', 'true', 'false', :optional => true

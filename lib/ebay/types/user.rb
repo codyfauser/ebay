@@ -1,7 +1,7 @@
 require 'ebay/types/address'
 require 'ebay/types/buyer'
 require 'ebay/types/seller'
-require 'ebay/types/charity_affiliations'
+require 'ebay/types/charity_id'
 require 'ebay/types/bidding_summary'
 
 module Ebay # :nodoc:
@@ -30,7 +30,7 @@ module Ebay # :nodoc:
     #  object_node :buyer_info, 'BuyerInfo', :class => Buyer, :optional => true
     #  object_node :seller_info, 'SellerInfo', :class => Seller, :optional => true
     #  text_node :business_role, 'BusinessRole', :optional => true
-    #  object_node :charity_affiliations, 'CharityAffiliations', :class => CharityAffiliations, :optional => true
+    #  array_node :charity_affiliations, 'CharityAffiliations', 'CharityID', :class => CharityID, :default_value => []
     #  text_node :paypal_account_level, 'PayPalAccountLevel', :optional => true
     #  text_node :paypal_account_type, 'PayPalAccountType', :optional => true
     #  text_node :paypal_account_status, 'PayPalAccountStatus', :optional => true
@@ -79,7 +79,7 @@ module Ebay # :nodoc:
       object_node :buyer_info, 'BuyerInfo', :class => Buyer, :optional => true
       object_node :seller_info, 'SellerInfo', :class => Seller, :optional => true
       text_node :business_role, 'BusinessRole', :optional => true
-      object_node :charity_affiliations, 'CharityAffiliations', :class => CharityAffiliations, :optional => true
+      array_node :charity_affiliations, 'CharityAffiliations', 'CharityID', :class => CharityID, :default_value => []
       text_node :paypal_account_level, 'PayPalAccountLevel', :optional => true
       text_node :paypal_account_type, 'PayPalAccountType', :optional => true
       text_node :paypal_account_status, 'PayPalAccountStatus', :optional => true

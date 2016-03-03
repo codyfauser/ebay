@@ -1,14 +1,14 @@
-require 'ebay/types/payment_information_code'
+require 'ebay/types/payment_transaction_code'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  object_node :payments, 'Payments', :class => PaymentInformationCode, :optional => true
+    #  array_node :payments, 'Payments', 'Payment', :class => PaymentTransactionCode, :default_value => []
     class PaymentsInformationCode
       include XML::Mapping
       include Initializer
       root_element_name 'PaymentsInformationCode'
-      object_node :payments, 'Payments', :class => PaymentInformationCode, :optional => true
+      array_node :payments, 'Payments', 'Payment', :class => PaymentTransactionCode, :default_value => []
     end
   end
 end

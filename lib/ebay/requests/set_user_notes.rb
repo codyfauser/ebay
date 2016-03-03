@@ -1,4 +1,4 @@
-require 'ebay/types/name_value_list_array'
+require 'ebay/types/name_value_list'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -7,7 +7,7 @@ module Ebay # :nodoc:
     #  text_node :action, 'Action', :optional => true
     #  text_node :note_text, 'NoteText', :optional => true
     #  text_node :transaction_id, 'TransactionID', :optional => true
-    #  object_node :variation_specifics, 'VariationSpecifics', :class => NameValueListArray, :optional => true
+    #  array_node :variation_specifics, 'VariationSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
     #  text_node :sku, 'SKU', :optional => true
     #  text_node :order_line_item_id, 'OrderLineItemID', :optional => true
     class SetUserNotes < Abstract
@@ -18,7 +18,7 @@ module Ebay # :nodoc:
       text_node :action, 'Action', :optional => true
       text_node :note_text, 'NoteText', :optional => true
       text_node :transaction_id, 'TransactionID', :optional => true
-      object_node :variation_specifics, 'VariationSpecifics', :class => NameValueListArray, :optional => true
+      array_node :variation_specifics, 'VariationSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
       text_node :sku, 'SKU', :optional => true
       text_node :order_line_item_id, 'OrderLineItemID', :optional => true
     end

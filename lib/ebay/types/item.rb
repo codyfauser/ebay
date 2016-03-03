@@ -1,6 +1,6 @@
-require 'ebay/types/attribute_set_array'
-require 'ebay/types/attribute_array'
-require 'ebay/types/lookup_attribute_array'
+require 'ebay/types/attribute_set'
+require 'ebay/types/attribute'
+require 'ebay/types/lookup_attribute'
 require 'ebay/types/payment_details'
 require 'ebay/types/bidding_details'
 require 'ebay/types/charity'
@@ -23,7 +23,7 @@ require 'ebay/types/picture_details'
 require 'ebay/types/listing_checkout_redirect_preference'
 require 'ebay/types/address'
 require 'ebay/types/extended_contact_details'
-require 'ebay/types/name_value_list_array'
+require 'ebay/types/name_value_list'
 require 'ebay/types/buyer_protection_details'
 require 'ebay/types/item_policy_violation'
 require 'ebay/types/business_seller_details'
@@ -34,7 +34,7 @@ require 'ebay/types/item_compatibility_list'
 require 'ebay/types/discount_price_info'
 require 'ebay/types/quantity_info'
 require 'ebay/types/seller_profiles'
-require 'ebay/types/shipping_service_cost_override_list'
+require 'ebay/types/shipping_service_cost_override'
 require 'ebay/types/ship_package_details'
 require 'ebay/types/quantity_restriction_per_buyer_info'
 require 'ebay/types/unit_info'
@@ -45,9 +45,9 @@ module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
     #  text_node :application_data, 'ApplicationData', :optional => true
-    #  object_node :attribute_sets, 'AttributeSetArray', :class => AttributeSetArray, :optional => true
-    #  object_node :attributes, 'AttributeArray', :class => AttributeArray, :optional => true
-    #  object_node :lookup_attributes, 'LookupAttributeArray', :class => LookupAttributeArray, :optional => true
+    #  array_node :attribute_sets, 'AttributeSetArray', 'AttributeSet', :class => AttributeSet, :default_value => []
+    #  array_node :attributes, 'AttributeArray', 'Attribute', :class => Attribute, :default_value => []
+    #  array_node :lookup_attributes, 'LookupAttributeArray', 'LookupAttribute', :class => LookupAttribute, :default_value => []
     #  boolean_node :auto_pay, 'AutoPay', 'true', 'false', :optional => true
     #  object_node :payment_details, 'PaymentDetails', :class => PaymentDetails, :optional => true
     #  object_node :bidding_details, 'BiddingDetails', :class => BiddingDetails, :optional => true
@@ -138,7 +138,7 @@ module Ebay # :nodoc:
     #  object_node :extended_seller_contact_details, 'ExtendedSellerContactDetails', :class => ExtendedContactDetails, :optional => true
     #  numeric_node :lead_count, 'LeadCount', :optional => true
     #  numeric_node :new_lead_count, 'NewLeadCount', :optional => true
-    #  object_node :item_specifics, 'ItemSpecifics', :class => NameValueListArray, :optional => true
+    #  array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
     #  text_node :group_category_id, 'GroupCategoryID', :optional => true
     #  money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
     #  boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
@@ -175,7 +175,7 @@ module Ebay # :nodoc:
     #  text_node :vrm_link, 'VRMLink', :optional => true
     #  object_node :quantity_info, 'QuantityInfo', :class => QuantityInfo, :optional => true
     #  object_node :seller_profiles, 'SellerProfiles', :class => SellerProfiles, :optional => true
-    #  object_node :shipping_service_cost_override_list, 'ShippingServiceCostOverrideList', :class => ShippingServiceCostOverrideList, :optional => true
+    #  array_node :shipping_service_cost_override_lists, 'ShippingServiceCostOverrideList', 'ShippingServiceCostOverride', :class => ShippingServiceCostOverride, :default_value => []
     #  object_node :shipping_package_details, 'ShippingPackageDetails', :class => ShipPackageDetails, :optional => true
     #  boolean_node :top_rated_listing, 'TopRatedListing', 'true', 'false', :optional => true
     #  object_node :quantity_restriction_per_buyer, 'QuantityRestrictionPerBuyer', :class => QuantityRestrictionPerBuyerInfo, :optional => true
@@ -204,9 +204,9 @@ module Ebay # :nodoc:
       include Initializer
       root_element_name 'Item'
       text_node :application_data, 'ApplicationData', :optional => true
-      object_node :attribute_sets, 'AttributeSetArray', :class => AttributeSetArray, :optional => true
-      object_node :attributes, 'AttributeArray', :class => AttributeArray, :optional => true
-      object_node :lookup_attributes, 'LookupAttributeArray', :class => LookupAttributeArray, :optional => true
+      array_node :attribute_sets, 'AttributeSetArray', 'AttributeSet', :class => AttributeSet, :default_value => []
+      array_node :attributes, 'AttributeArray', 'Attribute', :class => Attribute, :default_value => []
+      array_node :lookup_attributes, 'LookupAttributeArray', 'LookupAttribute', :class => LookupAttribute, :default_value => []
       boolean_node :auto_pay, 'AutoPay', 'true', 'false', :optional => true
       object_node :payment_details, 'PaymentDetails', :class => PaymentDetails, :optional => true
       object_node :bidding_details, 'BiddingDetails', :class => BiddingDetails, :optional => true
@@ -297,7 +297,7 @@ module Ebay # :nodoc:
       object_node :extended_seller_contact_details, 'ExtendedSellerContactDetails', :class => ExtendedContactDetails, :optional => true
       numeric_node :lead_count, 'LeadCount', :optional => true
       numeric_node :new_lead_count, 'NewLeadCount', :optional => true
-      object_node :item_specifics, 'ItemSpecifics', :class => NameValueListArray, :optional => true
+      array_node :item_specifics, 'ItemSpecifics', 'NameValueList', :class => NameValueList, :default_value => []
       text_node :group_category_id, 'GroupCategoryID', :optional => true
       money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
       boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
@@ -334,7 +334,7 @@ module Ebay # :nodoc:
       text_node :vrm_link, 'VRMLink', :optional => true
       object_node :quantity_info, 'QuantityInfo', :class => QuantityInfo, :optional => true
       object_node :seller_profiles, 'SellerProfiles', :class => SellerProfiles, :optional => true
-      object_node :shipping_service_cost_override_list, 'ShippingServiceCostOverrideList', :class => ShippingServiceCostOverrideList, :optional => true
+      array_node :shipping_service_cost_override_lists, 'ShippingServiceCostOverrideList', 'ShippingServiceCostOverride', :class => ShippingServiceCostOverride, :default_value => []
       object_node :shipping_package_details, 'ShippingPackageDetails', :class => ShipPackageDetails, :optional => true
       boolean_node :top_rated_listing, 'TopRatedListing', 'true', 'false', :optional => true
       object_node :quantity_restriction_per_buyer, 'QuantityRestrictionPerBuyer', :class => QuantityRestrictionPerBuyerInfo, :optional => true

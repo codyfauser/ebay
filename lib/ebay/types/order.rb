@@ -3,16 +3,16 @@ require 'ebay/types/shipping_details'
 require 'ebay/types/address'
 require 'ebay/types/shipping_service_options'
 require 'ebay/types/external_transaction'
-require 'ebay/types/transaction_array'
+require 'ebay/types/transaction'
 require 'ebay/types/payment_hold_detail'
-require 'ebay/types/refund_array'
+require 'ebay/types/refund'
 require 'ebay/types/multi_leg_shipping_details'
 require 'ebay/types/payments_information'
-require 'ebay/types/pickup_details'
+require 'ebay/types/pickup_options'
 require 'ebay/types/pickup_method_selected'
 require 'ebay/types/cancel_detail'
 require 'ebay/types/tax_identifier'
-require 'ebay/types/buyer_package_enclosures'
+require 'ebay/types/buyer_package_enclosure'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -33,7 +33,7 @@ module Ebay # :nodoc:
     #  money_node :subtotal, 'Subtotal', :optional => true
     #  money_node :total, 'Total', :optional => true
     #  array_node :external_transactions, 'ExternalTransaction', :class => ExternalTransaction, :default_value => []
-    #  object_node :transactions, 'TransactionArray', :class => TransactionArray, :optional => true
+    #  array_node :transactions, 'TransactionArray', 'Transaction', :class => Transaction, :default_value => []
     #  text_node :buyer_user_id, 'BuyerUserID', :optional => true
     #  date_time_node :paid_time, 'PaidTime', :optional => true
     #  date_time_node :shipped_time, 'ShippedTime', :optional => true
@@ -45,11 +45,11 @@ module Ebay # :nodoc:
     #  object_node :payment_hold_details, 'PaymentHoldDetails', :class => PaymentHoldDetail, :optional => true
     #  money_node :refund_amount, 'RefundAmount', :optional => true
     #  text_node :refund_status, 'RefundStatus', :optional => true
-    #  object_node :refunds, 'RefundArray', :class => RefundArray, :optional => true
+    #  array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
     #  boolean_node :is_multi_leg_shipping, 'IsMultiLegShipping', 'true', 'false', :optional => true
     #  object_node :multi_leg_shipping_details, 'MultiLegShippingDetails', :class => MultiLegShippingDetails, :optional => true
     #  object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
-    #  object_node :pickup_details, 'PickupDetails', :class => PickupDetails, :optional => true
+    #  array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
     #  object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
     #  text_node :seller_user_id, 'SellerUserID', :optional => true
     #  text_node :seller_eias_token, 'SellerEIASToken', :optional => true
@@ -60,7 +60,7 @@ module Ebay # :nodoc:
     #  array_node :cancel_details, 'CancelDetail', :class => CancelDetail, :default_value => []
     #  text_node :logistics_plan_type, 'LogisticsPlanType', :optional => true
     #  array_node :buyer_tax_identifiers, 'BuyerTaxIdentifier', :class => TaxIdentifier, :default_value => []
-    #  object_node :buyer_package_enclosures, 'BuyerPackageEnclosures', :class => BuyerPackageEnclosures, :optional => true
+    #  array_node :buyer_package_enclosures, 'BuyerPackageEnclosures', 'BuyerPackageEnclosure', :class => BuyerPackageEnclosure, :default_value => []
     #  text_node :extended_order_id, 'ExtendedOrderID', :optional => true
     #  boolean_node :contains_ebay_plus_transaction, 'ContainseBayPlusTransaction', 'true', 'false', :optional => true
     class Order
@@ -83,7 +83,7 @@ module Ebay # :nodoc:
       money_node :subtotal, 'Subtotal', :optional => true
       money_node :total, 'Total', :optional => true
       array_node :external_transactions, 'ExternalTransaction', :class => ExternalTransaction, :default_value => []
-      object_node :transactions, 'TransactionArray', :class => TransactionArray, :optional => true
+      array_node :transactions, 'TransactionArray', 'Transaction', :class => Transaction, :default_value => []
       text_node :buyer_user_id, 'BuyerUserID', :optional => true
       date_time_node :paid_time, 'PaidTime', :optional => true
       date_time_node :shipped_time, 'ShippedTime', :optional => true
@@ -95,11 +95,11 @@ module Ebay # :nodoc:
       object_node :payment_hold_details, 'PaymentHoldDetails', :class => PaymentHoldDetail, :optional => true
       money_node :refund_amount, 'RefundAmount', :optional => true
       text_node :refund_status, 'RefundStatus', :optional => true
-      object_node :refunds, 'RefundArray', :class => RefundArray, :optional => true
+      array_node :refunds, 'RefundArray', 'Refund', :class => Refund, :default_value => []
       boolean_node :is_multi_leg_shipping, 'IsMultiLegShipping', 'true', 'false', :optional => true
       object_node :multi_leg_shipping_details, 'MultiLegShippingDetails', :class => MultiLegShippingDetails, :optional => true
       object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
-      object_node :pickup_details, 'PickupDetails', :class => PickupDetails, :optional => true
+      array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
       object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
       text_node :seller_user_id, 'SellerUserID', :optional => true
       text_node :seller_eias_token, 'SellerEIASToken', :optional => true
@@ -110,7 +110,7 @@ module Ebay # :nodoc:
       array_node :cancel_details, 'CancelDetail', :class => CancelDetail, :default_value => []
       text_node :logistics_plan_type, 'LogisticsPlanType', :optional => true
       array_node :buyer_tax_identifiers, 'BuyerTaxIdentifier', :class => TaxIdentifier, :default_value => []
-      object_node :buyer_package_enclosures, 'BuyerPackageEnclosures', :class => BuyerPackageEnclosures, :optional => true
+      array_node :buyer_package_enclosures, 'BuyerPackageEnclosures', 'BuyerPackageEnclosure', :class => BuyerPackageEnclosure, :default_value => []
       text_node :extended_order_id, 'ExtendedOrderID', :optional => true
       boolean_node :contains_ebay_plus_transaction, 'ContainseBayPlusTransaction', 'true', 'false', :optional => true
     end
