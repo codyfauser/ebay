@@ -9,6 +9,9 @@ module Ebay
         @name = name
         @type = attributes[:type]
         @min = attributes[:min] || 1
+        # TODO: do something with this...
+        # maxoccurs is nil when 'unbounded' and 1:Fixnum by default
+        # https://github.com/rubyjedi/soap4r/blob/a1a6115bb6b3dfb518bf643128a3682cdd390932/lib/wsdl/xmlSchema/any.rb#L43
         @max = attributes[:max] || 1
         @field = attributes[:field]
         @child = attributes[:child]

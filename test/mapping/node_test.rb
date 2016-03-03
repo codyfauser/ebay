@@ -13,7 +13,7 @@ class NodeTest < Test::Unit::TestCase
   end
 
   def test_create_optional_text_node
-    node = TextNode.new('Item', :type => 'string', :min => "0")
+    node = TextNode.new('Item', :type => 'string', :min => 0)
     assert node.optional?
     assert_equal "text_node :item, 'Item', :optional => true", node.to_s
   end
@@ -55,7 +55,7 @@ class NodeTest < Test::Unit::TestCase
 
   def test_create_datetime_node
     node = DateTimeNode.new('Timestamp', :type => 'dateTime')
-    assert_equal "time_node :timestamp, 'Timestamp'", node.to_s
+    assert_equal "date_time_node :timestamp, 'Timestamp'", node.to_s
   end
 
   def test_indent_text
@@ -76,7 +76,7 @@ END
   end
 
   def test_optional_node
-    node = Node.new('Name', :min => "0")
+    node = Node.new('Name', :min => 0)
     assert node.optional?
   end
 
@@ -101,7 +101,7 @@ END
   end
 
   def test_money_node_not_required
-    node = MoneyNode.new('Fee', :min => '0')
+    node = MoneyNode.new('Fee', :min => 0)
     assert_equal "money_node :fee, 'Fee', :optional => true", node.to_s
   end
 
