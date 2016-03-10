@@ -497,14 +497,6 @@ module Ebay
     def get_orders(params = {})
       commit(Ebay::Requests::GetOrders, params)
     end
-    # Builds Ebay::Requests#GetProductSellingPages
-    #
-    # Returns Ebay::Responses#GetProductSellingPages
-    #
-    # Official Documentation for GetProductSellingPages[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetProductSellingPages.html]
-    def get_product_selling_pages(params = {})
-      commit(Ebay::Requests::GetProductSellingPages, params)
-    end
     # Builds Ebay::Requests#GetPromotionalSaleDetails
     #
     # Returns Ebay::Responses#GetPromotionalSaleDetails
@@ -1064,6 +1056,14 @@ module Ebay
     # Official Documentation for SetUserNotes[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_SetUserNotes.html]
     def set_user_notes(params = {})
       commit(Ebay::Requests::SetUserNotes, params)
+    end
+    # Builds Ebay::Requests#SetUserPreferences
+    #
+    # Returns Ebay::Responses#SetUserPreferences
+    #
+    # Official Documentation for SetUserPreferences[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_SetUserPreferences.html]
+    def set_user_preferences(params = {})
+      commit(Ebay::Requests::SetUserPreferences, params)
     end
     # Builds Ebay::Requests#UploadSiteHostedPictures
     #
