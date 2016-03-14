@@ -12,6 +12,9 @@ module Ebay # :nodoc:
       text_node :name, 'Name', :optional => true
       text_node :value, 'Value', :optional => true
       text_node :source, 'Source', :optional => true
+      # Workaround for accepting array of values
+      # For example as it is required for VariationSpecificsSet
+      array_node :values, 'Value', :optional => true, class: String
     end
   end
 end
