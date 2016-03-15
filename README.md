@@ -1,8 +1,6 @@
 eBay API Client for Ruby
 ========================
 
-Current API version is *951*
-
 [![Build Status](https://secure.travis-ci.org/main24/ebayapi-19.png)](http://travis-ci.org/main24/ebayapi-19)
 
 ========================
@@ -21,7 +19,7 @@ Some key features:
 
 * Simple and easy to use Ruby implementation.
 * Ability to return a raw response for calls that return an extremely large response such as GetCategoriesRequest.
-* Up-to-date with the eBay API version 951
+* Up-to-date with the eBay API, see /lib/ebay/schema/version.rb
 * Months of usage in a production environment.
 * Support for Platform Notifications baked right in.
 
