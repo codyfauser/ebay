@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency("activesupport", ["> 3.1.0"])
   s.add_dependency("xml-mapping", ["~> 0.9.1"])
-  s.add_dependency("rubyjedi-soap4r", ["~> 1.5.8.20100619003610"])
+  s.add_dependency("rubyjedi-soap4r", ["~> 2.0.2.1"])
   s.add_dependency("libxml-ruby", ["~> 2.7.0"])
   s.add_dependency("money", ["~> 6.0"])
 
