@@ -37,6 +37,9 @@ corresponding scheme.
     rake classes:generate
     rake test
 
+**Maintainers Note:** Each schema update must be tagged `schema-vXXX` where
+`XXX` is schema version.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/main24/ebayapi-19
