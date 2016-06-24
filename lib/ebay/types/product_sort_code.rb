@@ -4,7 +4,6 @@ module Ebay # :nodoc:
       extend Enumerable
       extend Enumeration
       PopularityAsc = 'PopularityAsc'
-      PopularityAsc = 'PopularityAsc'
       PopularityDesc = 'PopularityDesc'
       RatingAsc = 'RatingAsc'
       RatingDesc = 'RatingDesc'
