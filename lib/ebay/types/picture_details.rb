@@ -6,6 +6,7 @@ module Ebay # :nodoc:
     #  text_node :gallery_type, 'GalleryType', :optional => true
     #  text_node :gallery_url, 'GalleryURL', :optional => true
     #  text_node :photo_display, 'PhotoDisplay', :optional => true
+    #  value_array_node :picture_urls, 'PictureURL', :default_value => []
     #  text_node :picture_url, 'PictureURL', :optional => true
     #  text_node :picture_source, 'PictureSource', :optional => true
     #  text_node :gallery_duration, 'GalleryDuration', :optional => true
@@ -20,6 +21,7 @@ module Ebay # :nodoc:
       text_node :gallery_type, 'GalleryType', :optional => true
       text_node :gallery_url, 'GalleryURL', :optional => true
       text_node :photo_display, 'PhotoDisplay', :optional => true
+      value_array_node :picture_urls, 'PictureURL', :default_value => [], :optional => true
       text_node :picture_url, 'PictureURL', :optional => true
       text_node :picture_source, 'PictureSource', :optional => true
       text_node :gallery_duration, 'GalleryDuration', :optional => true
