@@ -12,6 +12,7 @@ module Ebay # :nodoc:
     #  text_node :variation_picture, 'VariationPicture', :optional => true
     #  text_node :variation_specifics, 'VariationSpecifics', :optional => true
     #  text_node :value_format, 'ValueFormat', :optional => true
+    #  text_node :product_required, 'ProductRequired', :optional => true
     class RecommendationValidationRules
       include XML::Mapping
       include Initializer
@@ -25,6 +26,7 @@ module Ebay # :nodoc:
       text_node :variation_picture, 'VariationPicture', :optional => true
       text_node :variation_specifics, 'VariationSpecifics', :optional => true
       text_node :value_format, 'ValueFormat', :optional => true
+      text_node :product_required, 'ProductRequired', :optional => true
     end
   end
 end
