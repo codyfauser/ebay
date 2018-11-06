@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ebayapi (1.0.0)
+    ebayapi (1.0.1)
       activesupport (~> 4.2.0)
       libxml-ruby (~> 2.7.0)
       money (~> 6.0)

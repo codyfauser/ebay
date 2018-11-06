@@ -58,3 +58,9 @@ Version 1.0.0 (November 6, 2018)
 * Ruby 2.5.0
 * Added TravisCI
 * Upgraded dependencies
+
+Version 1.0.1 (November 6, 2018)
+-----------------------------
+
+* Actualized Gemfile.lock
+* Fixed ruby version on TravisCI
