@@ -49,3 +49,12 @@ Version 0.12.0 (July 5, 2009)
 * Improve RDoc documentation
 * Updated to eBay schema version 487
 * Updated the README
+
+Version 1.0.0 (November 6, 2018)
+-----------------------------
+
+* Updated all schemes
+* Forced use of TLSv1_2
+* Ruby 2.5.0
+* Added TravisCI
+* Upgraded dependencies
