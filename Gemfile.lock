@@ -2,11 +2,11 @@ PATH
   remote: .
   specs:
     ebayapi (0.20.0)
-      activesupport (> 3.1.0)
+      activesupport (~> 4.2.0)
       libxml-ruby (~> 2.7.0)
       money (~> 6.0)
       rubyjedi-soap4r (~> 2.0.2.1)
-      xml-mapping (~> 0.9.1)
+      xml-mapping (> 0.9.1)
 
 GEM
   remote: http://rubygems.org/
@@ -17,27 +17,27 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    httpclient (2.8.0)
-    i18n (0.7.0)
-    json (1.8.3)
+    concurrent-ruby (1.0.5)
+    httpclient (2.8.3)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
+    json (1.8.6)
     libxml-ruby (2.7.0)
     logger-application (0.0.2)
-    minitest (5.8.4)
-    money (6.7.0)
-      i18n (>= 0.6.4, <= 0.7.0)
-      sixarm_ruby_unaccent (>= 1.1.1, < 2)
+    minitest (5.11.3)
+    money (6.10.1)
+      i18n (>= 0.6.4, < 1.0)
     power_assert (0.2.4)
     rake (10.4.2)
     rubyjedi-soap4r (2.0.2.1)
       httpclient (~> 2.6)
       logger-application (~> 0.0.2)
-    sixarm_ruby_unaccent (1.1.1)
     test-unit (3.1.5)
       power_assert
-    thread_safe (0.3.5)
-    tzinfo (1.2.2)
+    thread_safe (0.3.6)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    xml-mapping (0.9.1)
+    xml-mapping (0.10.0)
 
 PLATFORMS
   ruby
@@ -49,4 +49,4 @@ DEPENDENCIES
   test-unit (~> 3.1)
 
 BUNDLED WITH
-   1.11.2
+   1.16.1
