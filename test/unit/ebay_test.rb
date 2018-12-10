@@ -76,9 +76,23 @@ class EbayTest < Test::Unit::TestCase
       assert_equal ErrorClassificationCode::RequestError, error.error_classification
     end
   end
-  
+
+  def test_raise_on_error_with_request_limit_exceeded_failure
+    Ebay::HttpMock.respond_with responses(:verify_add_item_request_limit_exceeded_failure)
+    begin
+      @ebay.verify_add_item
+    rescue Ebay::RequestError => exception
+      assert_equal 1, exception.errors.size
+      error = exception.errors.first
+      assert_equal 'Your application has exceeded usage limit on this call.', error.short_message
+      assert_equal 'Your application has exceeded usage limit on this call, please make call to GetAPIAccessRules to check your call usage.', error.long_message
+      assert_equal ErrorClassificationCode::RequestError, error.error_classification
+      assert_equal exception.class, Ebay::RequestLimitExceeded
+    end
+  end
+
   def test_unknown_request_raises_no_method_error
-    assert_raise(NoMethodError) do 
+    assert_raise(NoMethodError) do
       @ebay.get_sushi
     end
   end
