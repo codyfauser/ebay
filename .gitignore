@@ -4,3 +4,4 @@ examples/run_ruby.sh
 .ruby-gemset
 .ruby-version
 .bundle
+Gemfile.lock
