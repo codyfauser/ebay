@@ -6,6 +6,11 @@ require 'ebay/api_methods'
 
 module Ebay #:nodoc:
   class EbayError < StandardError #:nodoc:
+    def self.full_error_message(errors)
+      errors.map do |error|
+        error.long_message if error.respond_to?(:long_message)
+      end.join("\n").to_s
+    end
   end
 
   class RequestError < EbayError #:nodoc:
@@ -13,13 +18,11 @@ module Ebay #:nodoc:
 
     def initialize(errors)
       @errors = errors
-      message = @errors.map do |error|
-        error.long_message if error.respond_to?(:long_message)
-      end
-      message = message.join("\n").to_s
-      super(message)
+      super(self.class.full_error_message(errors))
     end
   end
+
+  class RequestLimitExceeded < RequestError; end
 
   # == Overview
   # Api is the main proxy class responsible for instantiating and invoking
@@ -263,7 +266,11 @@ module Ebay #:nodoc:
           result = XML::Mapping.load_object_from_xml(xml.root)
           case result.ack
             when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
-              raise RequestError.new(result.errors)
+              if EbayError.full_error_message(result.errors) =~ /GetAPIAccessRules/
+                raise RequestLimitExceeded.new(result.errors)
+              else
+                raise RequestError.new(result.errors)
+              end
           end
         when :raw
           result = content
