@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files        = Dir["{lib,test}/**/*", "[A-Z]*", "init.rb"]
   s.require_path = "lib"
 
-  s.required_rubygems_version = ">= 1.3.4"
+  s.required_ruby_version = Gem::Requirement.new(">= 2.5")
 
   s.add_dependency "activesupport", ">= 4.2.0", "< 7"
   s.add_dependency "xml-mapping", "> 0.9.1", "< 1"
