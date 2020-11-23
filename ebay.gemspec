@@ -4,7 +4,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require 'ebay/version'
 
 Gem::Specification.new do |s|
-  s.name        = "ebayapi"
+  s.name        = "ebay"
   s.version     = Ebay::VERSION
   s.author      = "Cody Fauser"
   s.email       = "codyfauser@gmail.com"
@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.files        = Dir["{lib,test}/**/*", "[A-Z]*", "init.rb"]
   s.require_path = "lib"
 
-  s.rubyforge_project = s.name
   s.required_rubygems_version = ">= 1.3.4"
 
   s.add_dependency("activesupport", ["~> 4.2.0"])

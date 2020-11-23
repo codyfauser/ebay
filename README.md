@@ -38,6 +38,19 @@ corresponding scheme.
 `XXX` is schema version.
 
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'ebay', github: 'veeqo/ebay'
+```
+
+And then execute:
+
+    $ bundle
+
+
 ## Credits
 
 This is a fork of original [`ebay`](https://github.com/codyfauser/ebay) gem by [codyfauser](https://github.com/codyfauser).
