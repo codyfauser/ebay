@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = "Ruby interface to the eBay XML Trading API"
   s.description = "A ruby library for interacting with the eBay XML Trading API, based on self-generated request and response classes."
 
-  s.files        = Dir["{lib,test}/**/*", "[A-Z]*", "init.rb"]
+  s.files        = Dir["CHANGELOG.md", "MIT-LICENSE", "README.md", "lib/**/*"]
   s.require_path = "lib"
 
   s.required_ruby_version = Gem::Requirement.new(">= 2.5")
