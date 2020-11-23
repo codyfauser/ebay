@@ -17,15 +17,15 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.4"
 
-  s.add_dependency("activesupport", ["~> 4.2.0"])
-  s.add_dependency("xml-mapping", ["> 0.9.1"])
-  s.add_dependency("soap4r-ng", ["~> 2.0.4"])
-  s.add_dependency("httpclient", ["~> 2.6"])
-  s.add_dependency("logger-application", ["~> 0.0.2"])
-  s.add_dependency("libxml-ruby", ["~> 2.9"])
-  s.add_dependency("money", ["~> 6.0"])
+  s.add_dependency "activesupport", ">= 4.2.0", "< 7"
+  s.add_dependency "xml-mapping", "> 0.9.1", "< 1"
+  s.add_dependency "soap4r-ng", ">= 2.0.4", "< 3"
+  s.add_dependency "httpclient", ">= 2.6", "< 3"
+  s.add_dependency "logger-application", "~> 0.0.2"
+  s.add_dependency "libxml-ruby", ">= 2.9", "< 4"
+  s.add_dependency "money", "~> 6.0"
 
   s.add_development_dependency "bundler"
-  s.add_development_dependency "rake", "~> 10.0"
-  s.add_development_dependency "test-unit", "~> 3.1"
+  s.add_development_dependency "rake", ">= 10.0"
+  s.add_development_dependency "test-unit", ">= 3.1"
 end

@@ -5,3 +5,4 @@ examples/run_ruby.sh
 .ruby-version
 .bundle
 Gemfile.lock
+gemfiles/*.lock

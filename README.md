@@ -51,6 +51,10 @@ And then execute:
     $ bundle
 
 
+## Testing
+
+Run `wwtd --parallel` to test with appraisals. Run `rake` to test with current Gemfile.
+
 ## Credits
 
 This is a fork of original [`ebay`](https://github.com/codyfauser/ebay) gem by [codyfauser](https://github.com/codyfauser).
