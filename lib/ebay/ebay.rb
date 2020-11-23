@@ -23,7 +23,7 @@ module Ebay
   end
 end
 
-if File.exists?(File.dirname(__FILE__) + '/requests.rb') && File.exists?(File.dirname(__FILE__) + '/responses.rb')
+if File.exist?(File.dirname(__FILE__) + '/requests.rb') && File.exist?(File.dirname(__FILE__) + '/responses.rb')
   require 'ebay/types'
   require 'ebay/request/base'
   require 'ebay/response/base'
