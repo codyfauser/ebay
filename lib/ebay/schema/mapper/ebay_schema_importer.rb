@@ -130,7 +130,7 @@ module Ebay
       def remove_unused_files
         @unused_files.uniq!
         @unused_files.each do |file|
-          if File.exists?(file)
+          if File.exist?(file)
             puts "Removing #{file}"
             File.delete(file)
           end

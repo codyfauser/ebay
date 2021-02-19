@@ -9,6 +9,7 @@ namespace :test do
     t.libs << "test"
   	t.pattern = 'test/unit/**/*_test.rb'
     t.verbose = true
+    t.warning = false
   end
 
   desc 'Run all mapping tests.'
@@ -16,6 +17,7 @@ namespace :test do
     t.libs << "test"
   	t.pattern = 'test/mapping/**/*_test.rb'
     t.verbose = true
+    t.warning = false
   end
 end
 

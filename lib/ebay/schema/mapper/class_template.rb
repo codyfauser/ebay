@@ -25,7 +25,7 @@ module Ebay
       end
 
       def exists?
-        File.exists?(template_path)
+        File.exist?(template_path)
       end
 
       private

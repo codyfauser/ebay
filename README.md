@@ -1,11 +1,8 @@
 eBay API Client for Ruby
 ========================
 
-[![Build Status](https://secure.travis-ci.org/main24/ebayapi-19.png)](http://travis-ci.org/main24/ebayapi-19)
-
+[![Build Status](https://travis-ci.com/veeqo/ebay.svg?branch=master)](https://travis-ci.com/veeqo/ebay)
 ========================
-
-This is a fork of the "CPlus/ebayapi-19" code.
 
 The api implements the ebay Trading API. To get a list of calls look here:
 http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/index.html
@@ -40,6 +37,34 @@ corresponding scheme.
 **Maintainers Note:** Each schema update must be tagged `schema-vXXX` where
 `XXX` is schema version.
 
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'ebay', github: 'veeqo/ebay'
+```
+
+And then execute:
+
+    $ bundle
+
+
+## Testing
+
+Run `wwtd --parallel` to test with appraisals. Run `rake` to test with current Gemfile.
+
+## Credits
+
+This is a fork of original [`ebay`](https://github.com/codyfauser/ebay) gem by [codyfauser](https://github.com/codyfauser).
+It has commits applied from other forks:
+- [bkr/ebay](https://github.com/bkr/ebay)
+- [kayoom/ebayapi](https://github.com/kayoom/ebayapi)
+- [CPlus/ebayapi-19](https://github.com/CPlus/ebayapi-19)
+- [main24/ebayapi-19](https://github.com/main24/ebayapi-19)
+
+
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/main24/ebayapi-19
+Bug reports and pull requests are welcome on GitHub at https://github.com/veeqo/ebay
