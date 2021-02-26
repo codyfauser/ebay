@@ -25,17 +25,20 @@ module Ebay
   end
 
   class Response
-    attr_accessor :body, :code
+    attr_accessor :body, :code, :headers
 
-    def initialize(body, code = 200)
-      @body, @code = body, code
+    def initialize(body, code: 200, headers: {})
+      @body = body
+      @code = code
+      @headers = headers
     end
 
     def success?
       (200..299).include?(code)
     end
 
-    def [](index)
+    def [](header)
+      headers[header]
     end
   end
   

@@ -12,8 +12,20 @@ class Test::Unit::TestCase #:nodoc:
   FIXTURES_DIR = File.dirname(__FILE__) + '/fixtures'
 
   protected
-  def responses(name, code = 200)
-    Ebay::Response.new(load_response(name), code)
+  def responses(name, code: 200, headers: {})
+    parse_response(
+      load_response(name),
+      code: code,
+      headers: headers
+    )
+  end
+
+  def parse_response(raw_response, code: 200, headers: {})
+    Ebay::Response.new(
+      raw_response,
+      code: code,
+      headers: headers
+    )
   end
 
   def load_response(name)

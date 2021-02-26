@@ -46,6 +46,7 @@ module Ebay #:nodoc:
     include Inflections
     include ApiMethods
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
+    DEFAULT_ENCODING = 'UTF-8'
 
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id, :services
     cattr_accessor :ru_name_sandbox_url, :ru_name_production_url, :ru_name
@@ -247,35 +248,46 @@ module Ebay #:nodoc:
 
     def decompress(response)
       content = case response['Content-Encoding']
-                  when 'gzip'
-                    gzr = Zlib::GzipReader.new(StringIO.new(response.body))
-                    decoded = gzr.read
-                    gzr.close
-                    decoded
-                  else
-                    response.body
+                when 'gzip'
+                  gzr = Zlib::GzipReader.new(StringIO.new(response.body))
+                  decoded = gzr.read
+                  gzr.close
+                  decoded
+                else
+                  response.body
                 end
+
+      encoding = get_encoding(response)
+      content.force_encoding(encoding)
+    end
+
+    def get_encoding(response)
+      encoding = if (matched_encoding = response['Content-Type'].to_s.match(/charset=(\w.*)?/))
+        matched_encoding[1]
+      end
+
+      encoding || DEFAULT_ENCODING
     end
 
     def parse(content, format)
       case format
-        when :object
-          xml = REXML::Document.new(content.encode("UTF-8", replace: ''))
-          # Fixes the wrong case of API returned by eBay
-          fix_root_element_name(xml)
-          result = XML::Mapping.load_object_from_xml(xml.root)
-          case result.ack
-            when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
-              if EbayError.full_error_message(result.errors) =~ /GetAPIAccessRules/
-                raise RequestLimitExceeded.new(result.errors)
-              else
-                raise RequestError.new(result.errors)
-              end
-          end
-        when :raw
-          result = content
-        else
-          raise ArgumentError, "Unknown response format '#{format}' requested"
+      when :object
+        xml = REXML::Document.new(content)
+        # Fixes the wrong case of API returned by eBay
+        fix_root_element_name(xml)
+        result = XML::Mapping.load_object_from_xml(xml.root)
+        case result.ack
+          when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
+            if EbayError.full_error_message(result.errors) =~ /GetAPIAccessRules/
+              raise RequestLimitExceeded.new(result.errors)
+            else
+              raise RequestError.new(result.errors)
+            end
+        end
+      when :raw
+        result = content
+      else
+        raise ArgumentError, "Unknown response format '#{format}' requested"
       end
       result
     end

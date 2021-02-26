@@ -91,6 +91,48 @@ class EbayTest < Test::Unit::TestCase
     end
   end
 
+  def test_force_encoding_to_default
+    response_in_ascii = load_response(:local_lang_chars).force_encoding('ASCII-8BIT')
+    Ebay::HttpMock.respond_with parse_response(response_in_ascii)
+    order = @ebay.get_orders(order_ids: ['00000000000-11111111111']).orders.first
+
+    assert_equal 'Jüss DÖe', order.shipping_address.name
+    assert_equal 'Österreich', order.shipping_address.country_name
+    assert_equal 'UTF-8', order.shipping_address.country_name.encoding.to_s
+  end
+
+  def test_extracting_non_matching_encoding
+    response_in_ascii = load_response(:local_lang_chars).force_encoding('ASCII-8BIT')
+    Ebay::HttpMock.respond_with parse_response(response_in_ascii, headers: { 'Content-Type' => 'text/html; charset=utf-8' })
+    order = @ebay.get_orders(order_ids: ['00000000000-11111111111']).orders.first
+
+    assert_equal 'Jüss DÖe', order.shipping_address.name
+    assert_equal 'Österreich', order.shipping_address.country_name
+    assert_equal 'UTF-8', order.shipping_address.country_name.encoding.to_s
+  end
+
+  def test_extracting_matching_encoding
+    response_in_ascii = load_response(:local_lang_chars).force_encoding('ASCII-8BIT')
+    Ebay::HttpMock.respond_with parse_response(response_in_ascii, headers: { 'Content-Type' => 'text/html; charset=ascii-8bit' })
+    order = @ebay.get_orders(order_ids: ['00000000000-11111111111']).orders.first
+
+    assert_equal 'Jüss DÖe', order.shipping_address.name
+    assert_equal 'Österreich', order.shipping_address.country_name
+    assert_equal 'UTF-8', order.shipping_address.country_name.encoding.to_s
+  end
+
+  def test_encoding_conversion_gzip
+    response_in_ascii = load_response(:local_lang_chars).force_encoding('ASCII-8BIT')
+    compressed = Zlib.gzip(response_in_ascii)
+
+    Ebay::HttpMock.respond_with parse_response(compressed, headers: { 'Content-Encoding' => 'gzip' })
+    order = @ebay.get_orders(order_ids: ['00000000000-11111111111']).orders.first
+
+    assert_equal 'Jüss DÖe', order.shipping_address.name
+    assert_equal 'Österreich', order.shipping_address.country_name
+    assert_equal 'UTF-8', order.shipping_address.country_name.encoding.to_s
+  end
+
   def test_unknown_request_raises_no_method_error
     assert_raise(NoMethodError) do
       @ebay.get_sushi
